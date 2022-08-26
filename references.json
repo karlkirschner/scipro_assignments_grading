@@ -1,0 +1,17 @@
+{
+   "generalCriteria":"https://git.fslab.de/kkirsc2m/scipro_assignments_oer_test/-/raw/master/criteria/general.json",
+   "assignmentSpecificCriteria":[
+      {  
+         "id": 1,
+         "title":"Assignment 1 - Gravity",
+         "enabled": true,
+         "url":"https://git.fslab.de/kkirsc2m/scipro_assignments_oer_test/-/raw/master/criteria/assignment1.json"
+      },
+      {
+         "id": 2,
+         "title":"Assignment 2 - Velocity",
+         "enabled": true,
+         "url":"https://git.fslab.de/kkirsc2m/scipro_assignments_oer_test/-/raw/master/criteria/assignment2.json"
+      }
+   ]
+}

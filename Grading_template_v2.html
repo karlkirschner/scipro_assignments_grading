@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        const debug = false;
+
+        let generalCriteria = {
+            academicScholarship: {
+                title: "Academic Scholarship",
+                additionalNotes: true,
+                positive: [
+                    {
+                        mainPoint: "Good scholarship that includes the following",
+                        subPoints: [
+                            "citing source of information and knowledge",
+                            "excellent job on citations important libraries and source of knowledge",
+                            "consistent formatting of references"
+                        ]
+                    }
+                ],
+                neutral: [
+                    {
+                        mainPoint: "Source of information",
+                        subPoints: [
+                            "Be careful when citing websites. When possible cite peer-reviewed papers or academic books.",
+                            "When citing websites, include the date visited.",
+                            "Take care to provide the references with same formatting structure."
+                        ]
+                    }
+                ],
+                negative: [
+                    {
+                        mainPoint: "Poor scholarship due to the following",
+                        subPoints: [
+                            "not citing Python3 libraries that were used:",
+                            "not citing the sources for information (e.g. equations, datasets):",
+                            "as a university student, you should be citing sources of knowledge - something that you will need to do for your thesis"
+                        ]
+                    }
+                ]
+            },
+            jupyterNotebooks: {
+                title: "Jupyter Notebooks",
+                additionalNotes: true,
+                positive: [
+                    {
+                        mainPoint: "General Structure",
+                        subPoints: [
+                            "Good use of cells structure to separate ideas (e.g. thoughts, tasks/subtasks, user-defined functions)."
+                        ]
+                    },
+                    {
+                        mainPoint: "Markdown Cells",
+                        subPoints: [
+                            "Good use of the markdown cells to communicate the problem being investigated, your ideas/thoughts and methodological workflow."
+                        ]
+                    }
+                ],
+                neutral: [
+                    {
+                        mainPoint: "General Structure",
+                        subPoints: [
+                            "Some separation concerning the tasks, subtasks, or ideas into different cells is seen in your solution. However, more could have been done to improve the notebook's organization and understanding."
+                        ]
+                    },
+                    {
+                        mainPoint: "Markdown Cells",
+                        subPoints: [
+                            "Some use of markdown cells uage is demonstrated in your solution. However, some more information would have improved the notebook's ability to convey your thoughts/ideas."
+                        ]
+                    }
+                ],
+                negative: [
+                    {
+                        mainPoint: "General Structure",
+                        subPoints: [
+                            "Significant work was needed to better separate the tasks, subtasks, or ideas into separate cells for improving the notebook's organization and understanding."
+                        ]
+                    },
+                    {
+                        mainPoint: "Markdown Cells",
+                        subPoints: [
+                            "Please provided more context through markdown cells that states the problem being investigated, your ideas/thoughts and methodological workflow."
+                        ]
+                    }
+                ]
+            },
+            codeFormatting: {
+                title: "Code Formatting",
+                additionalNotes: true,
+                positive: [
+                    {
+                        mainPoint: "Good code formatting that includes",
+                        subPoints: [
+                            "Consistent and correct use of spacing",
+                            "Consistent and good use of blank lines (separating ideas and improving readability)",
+                            "Consistent and good indentation (i.e. 4 spaces)",
+                            "Proper line lengths",
+                            "Following PEP8 guidelines",
+                            "Proper f-string statements",
+                            "Descriptive object/variable names (i.e. readable)",
+                            "Appropriate amount of block commenting done (i.e. # on its own line)",
+                            "Appropriate amount of inline commenting done (i.e. # at the end of a code line)",
+                            "Appropriate amount of docstrings done (i.e. using triple quotes)",
+                            "Good English spelling",
+                            "Consistent usage of the English language (i.e. not mixing in non-English words)",
+                            "Clean, concise and readable code"
+                        ]
+                    }
+                ],
+                negative: [
+                    {
+                        mainPoint: "The following code formatting issues could have been improved",
+                        subPoints: [
+                            "Consistent and correct use of spacing",
+                            "Consistent and good use of blank lines (separating ideas and improving readability)",
+                            "Watch the over use or unnecessary use of blank lines",
+                            "Consistent and good indentation (i.e. 4 spaces)",
+                            "Proper line lengths",
+                            "Following PEP8 guidelines",
+                            "Proper f-string statements",
+                            "Descriptive object/variable names (i.e. readable)",
+                            "Object/variable names could have been more descriptive.",
+                            "No or poor use of block commenting (i.e. # on its own line)",
+                            "No or poor use of in-line commenting (i.e. # at the end of a code line)",
+                            "No or poor use of docstrings (i.e. using triple quotes)",
+                            "Excessive amounts of commenting done that is for obvious things, or not relevant (i.e. singificantly distracts from the main focus)",
+                            "All imported libraries should be alphabetized",
+                            "All libraries used should be collected into a single cell at the top of the code/Jupyter-notebook",
+                            "English spelling (i.e. incorrect spelling)",
+                            "Consistent usage of the English language (i.e. not mixing in non-English words)",
+                            "Clean, concise and readable code"
+                        ]
+                    }
+                ]
+            },
+            codingConcept: {
+                title: "Coding Concept",
+                additionalNotes: true,
+                positive: [
+                    {
+                        mainPoint: "Data Structures",
+                        subPoints: [
+                            "Good use of dictionaries."
+                        ]
+                    },
+                ],
+                negative: [
+                    {
+                        mainPoint: "Data Structures",
+                        subPoints: [
+                            "Would have been better to use dictionaries instead of lists in this assignment."
+                        ]
+                    },
+                    {
+                        mainPoint: "General",
+                        subPoints: [
+                            "It is better to use 'if-elif-else' statements, rather than 'if-if-if' for readability and speed."
+                        ]
+                    }
+                ]
+            },
+            userDefinedFunctions: {
+                title: "User-defined Functions",
+                additionalNotes: true,
+                positive: [
+                    {
+                        mainPoint: "Good use of the following",
+                        subPoints: [
+                            "type hinting",
+                            "context via block comments",
+                            "what the function does",
+                            "what the input variables mean (i.e. defined)",
+                            "what the function returns",
+                            "internal checks using 'if not isinstance' statements with a 'raise' statement",
+                            "setting optional variable to a default value of 'None'"
+                        ]
+                    },
+                ],
+                neutral: [
+                    {
+                        mainPoint: "Use of 'assert' over 'raise'",
+                        subPoints: [
+                            "It is better to use a 'raise' statement because 'assert' statements can be bypassed. Note that for develpment work, the use of 'assert' is okay."
+                        ]
+                    },
+                ],
+                negative: [
+                    {
+                        mainPoint: "Your functions had the following problems",
+                        subPoints: [
+                            "you missed the chance to make user defined functions in tasks",
+                            "type hinting",
+                            "setting the passed variable to a default value of 'None'",
+                            "context via block comments",
+                            "what the function does",
+                            "what the input variables mean (i.e. defined)",
+                            "what the function returns",
+                            "no internal checks (i.e. 'if not isinstance' statements)",
+                            "when using 'if-elif-else' statements, the main part of the function should be nested under the else statement",
+                            "setting optional variable to a default value of 'None'"
+                        ]
+                    }
+                ]
+            },
+            callingFunction: {
+                title: "Calling a Function",
+                additionalNotes: true,
+                positive: [],
+                negative: [
+                    {
+                        mainPoint: "",
+                        subPoints: ["When calling a function, including your user-defined functions, one should reference the parameter that a value is being passed to. For example, 'my_function(param1=a, param2=b)' and not 'my_function(a, b)'. Doing so ensure that the values are passed to the corect parameter."]
+                    }
+                ]
+            },
+            plotting: {
+                title: "Plotting (Pandas or Matplotlib)",
+                additionalNotes: true,
+                positive: [
+                    {
+                        mainPoint: "The plots were good regarding",
+                        subPoints: [
+                            "axis labels",
+                            "units",
+                            "line style",
+                            "line thickness",
+                            "point style",
+                            "point size",
+                            "title",
+                            "legend",
+                            "font size"
+                        ]
+                    },
+                ],
+                negative: [
+                    {
+                        mainPoint: "The following would have improved the plots",
+                        subPoints: [
+                            "axis labels",
+                            "units",
+                            "line style",
+                            "line thickness",
+                            "point style",
+                            "point size",
+                            "title",
+                            "legend",
+                            "font size"
+                        ]
+                    }
+                ]
+            },
+            numpy: {
+                title: "Numpy Library",
+                additionalNotes: true,
+                positive: [
+                    {
+                        mainPoint: "The following points were well done",
+                        subPoints: [
+                            "good job on using ndarrays (simulated density and experimental value) for your Numpy function",
+                            "your Numpy function is indeed faster than your function using regular Python lists",
+                        ]
+                    },
+                ],
+                neutral: [
+                    {
+                        mainPoint: "The following points would improve the Numpy solution slightly",
+                        subPoints: [
+                            "the experimental value was passed as a float to your Numpy function, when converting to an ndarray object might have been better",
+                            "converting the Pandas' dataframe outside of your Numpy function might have improved its performance -- Remember to have a function that optimally does a single task",
+                            "please follow the standard practice within the community by importing Numpy as 'np'"
+                        ]
+                    },
+                ],
+                negative: [
+                    {
+                        mainPoint: "The following points need improvements",
+                        subPoints: [
+                            "for your Numpy function, you did not use ndarrays. Instead you passed the following data type to the function:",
+                            "iterating over the ndarray is not needed since it is vectorized, and results in a loss of performance",
+                            "your Numpy function should not be performing slower than your function that uses regular Python lists",
+                            "your function using Python lists has a performance of:",
+                            "your Numpy function has a performance of:"
+                        ]
+                    }
+                ]
+            },
+            sciPy: {
+                title: "SciPy Library",
+                additionalNotes: true,
+                positive: [
+                    {
+                        mainPoint: "",
+                        subPoints: [
+                            "Good job on using SciPy optimize function"
+                        ]
+                    },
+                ],
+                negative: [
+                    {
+                        mainPoint: "",
+                        subPoints: [
+                            "You needed to use SciPy's optimize function to find the optimal value of the variable."
+                        ]
+                    }
+                ]
+            },
+            significantFigures: {
+                title: "Significant Figures",
+                additionalNotes: true,
+                positive: [
+                    {
+                        mainPoint: "",
+                        subPoints: [
+                            "Your numbers are reported with the correct significant figures."
+                        ]
+                    },
+                ],
+                negative: [
+                    {
+                        mainPoint: "",
+                        subPoints: [
+                            "Your numbers do not have the correct significant figures."
+                        ]
+                    }
+                ]
+            },
+            general: {
+                title: "General Feedback",
+                additionalNotes: true,
+                positive: [
+                    {
+                        mainPoint: "",
+                        subPoints: [
+                            "Excellent job on this assignment!",
+                            "Very good job on this assignment!",
+                            "Good job on this assignment."
+                        ]
+                    },
+                ],
+                negative: [
+                    {
+                        mainPoint: [],
+                        subPoints: [
+                            "Your code does not run because:",
+                            "You used the following libraries that were not allowed in the assignment:",
+                            "You imported libraries that were unused -- this is confusing."
+                        ]
+                    }
+                ]
+            },
+
+        }
+
+        if (!debug) {
+            var specificCriteria = []
+
+            $.ajax({
+                dataType: "json",
+                // url: "https://raw.githubusercontent.com/xMinhx/test-assignment-criteria/main/references.json",
+                url: "https://git.fslab.de/kkirsc2m/scipro_assignments_oer_test/-/raw/master/references.json",
+                success: function (data) {
+                    $.ajax({
+                        dataType: "json",
+                        url: data.generalCriteria,
+                        success: function (data) {
+                            generalCriteria = data;
+                        },
+                        complete: function () {
+                            var promises = [];
+                            for (const assignment of data.assignmentSpecificCriteria) {
+                                if (assignment.enabled) {
+                                    const request = $.ajax({
+                                        dataType: "json",
+                                        url: assignment.url,
+                                        success: function (data) {
+                                            assignment.content = data;
+                                            specificCriteria.push(assignment);
+                                        }
+                                    });
+                                    promises.push(request);
+                                }
+                            }
+                            Promise.all(promises).then(function () {
+                                specificCriteria.sort((a, b) => { return a.id - b.id });
+                                generateTemplate(generalCriteria, specificCriteria);
+                            }).catch(err => console.log(err));
+                        }
+                    });
+                },
+            });
+        }
+
+
+
+
+    </script>
+
+    <title>Scientific Python - Grading template</title>
+    <!--CSS code for a floating box for grades-->
+    <style>
+        body {
+            background-color: #FAFAFA;
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .side {
+            border-radius: 5px;
+            width: 300px;
+            border: 1px solid;
+            background-color: #ADD8E6;
+            min-height: 200px;
+            position: fixed;
+            padding: 5px;
+            right: 55px;
+            top: 200px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        input[type=number]::-webkit-inner-spin-button {
+            opacity: 1
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 3rem;
+        }
+
+        .reset-button {
+            background-color: #f44336;
+        }
+
+        .generate-button {
+            background-color: rgb(88, 184, 243);
+            margin-bottom: 5rem;
+            margin-top: 5rem;
+        }
+
+        .save-button {
+            background-color: rgb(79, 212, 79);
+        }
+
+        .button-box {
+            display: table;
+            margin: 0 auto;
+        }
+
+        .button:active {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+
+        ul {
+            margin: 2px;
+            margin-left: 2rem;
+        }
+
+        .category-title {
+            font-size: 22px;
+            font-weight: bolder;
+            margin: 0;
+            margin-bottom: 2rem;
+        }
+
+        .mainpoint-label {
+            font-size: 1rem;
+            font-weight: bolder;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            margin-left: 2rem;
+        }
+
+        .category {
+            margin-top: 3rem;
+            margin-left: 3rem;
+            margin-right: 3rem;
+            margin-bottom: 3rem;
+            padding-left: 3rem;
+            padding-right: 3rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            background-color: #FFFFFF;
+            border-radius: 25px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .positive {
+            color: blue;
+            font-size: 1.3rem;
+            font-weight: bolder;
+            margin-bottom: 0px;
+        }
+
+        .neutral {
+            margin-top: 1.3rem;
+            color: green;
+            font-size: 1.3rem;
+            font-weight: bolder;
+            margin-bottom: 0px;
+        }
+
+        .negative {
+            margin-top: 1.3rem;
+            color: red;
+            font-size: 1.3rem;
+            font-weight: bolder;
+            margin-bottom: 0px;
+        }
+
+        .subpoint-textbox {
+            margin-left: 1.2rem;
+            margin-bottom: 1rem;
+            display: block;
+
+        }
+
+        .textarea-container {
+            margin-left: 5rem;
+            margin-right: 5rem;
+            margin-bottom: 5rem;
+            height: 600px;
+        }
+
+        #textarea-evaluation {
+            width: 100%;
+            height: 100%;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+        }
+
+        .textarea-notes {
+            width: 70%;
+            height: 150px;
+            margin-left: 5rem;
+        }
+
+        .tabs {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tabs button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tabs button:hover {
+            background-color: #ddd;
+        }
+
+        .tabs button.active {
+            background-color: #ccc;
+        }
+
+        .assignment-specific-title {
+            margin-left: 5rem;
+        }
+
+        .assignment-section-title {
+            margin-left: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <center>
+            <h1>Scientific Programming for Python</h1>
+            <h2>Grading Template</h2>
+            <p>The goal of this form is 1) enable faster grading and 2) unifies the feedback given to the students due
+                to multiple graders.</p>
+            <center />
+    </header>
+
+    <div class="side">
+        <b>Grading</b>
+        <table style="width:100%">
+            <tr>
+                <td>Code quality & design</td>
+                <td><input type="number" value="6" min="0.0" max="6.0" step="0.5"></td>
+            </tr>
+
+            <tr>
+                <td>Code excution & results</td>
+                <td><input type="number" value="6" min="0.0" max="6.0" step="0.5"></td>
+            </tr>
+
+            <tr>
+                <td>Assignment requirements</td>
+                <td><input type="number" value="6" min="0.0" max="6.0" step="0.5"></td>
+            </tr>
+
+            <tr>
+                <td>Scientific programming</td>
+                <td><input type="number" value="6" min="0.0" max="6.0" step="0.5"></td>
+            </tr>
+
+            <tr>
+                <td>Creativity</td>
+                <td><input type="number" value="4" min="0.0" max="4.0" step="0.5"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // ================ Object descriptions ==================
+
+        /** === assignmentSpecificCriteria {assignmentObject[]} ===
+         * An array containing multiple assignment objects.
+         */
+
+        /** === assignmentObject {object} ===
+         * @attribute {number} id - The id representing the order of the assignment.
+         * @attribute {string} title - The title of the assignment.
+         * @attribute {boolean} enabled - Whether the assignment template should be available to the grader.
+         * @attribute {string} url - The url to the raw format of the assignment.json (The assignment.json are of type generalCriteria)
+         * @attribute {generalCriteria} content - This will be automatically added via the code. Content is a generalCriteria objects related to the assignment.
+
+        /** === generalCriteria {object} ===
+        * An object which contains multiple categories {category}
+        */
+
+        /** === category {object} ===
+        * @attribute {string} title - The title of the category.
+        * @attribute {boolean} additionalNotes - Whether the category should have a textarea at the bottom of the category for additional notes.
+        * @attribute {mainPoint[]} positive - A list of positive mainPoint objects.
+        * @attribute {mainPoint[]} neutral - A list of neutral mainPoint objects.
+        * @attribute {mainPoint[]} negative - A list of negative mainPoint objects.
+        */
+
+        /** === mainPoint {object} ===
+        * @attribute {string} mainPoint - The label of the mainPoint.
+        * @attribute {string[]} subPoints - A list of the subPoints in relation to the mainPoint. (If a subPoint ends with a ":" an additional textfield will be generated.)
+        */
+
+        // =======================================================================
+
+        // This id is used for indexing the subPoints for easier storage and loading.
+        var idCount = 0;
+
+
+        // This method will load the generalCriteria object defined in this JavaScript code.
+        if (debug) {
+            generateTemplate(generalCriteria);
+        }
+
+        /**
+         * Generates the template for the grading form. Main entry to create the forms.
+         * @param {object} generalCriteria - The general criteria for the assignment. A form dictionary/object.
+         * @param {object} specificCriteria - An array of objects containing a form dictionary/object with it's metadata for each assignment.
+         */
+
+        function generateTemplate(generalCriteria, assignmentSpecificCriteria = []) {
+
+            // Generates "Reset" button
+            document.body.appendChild(generateButton("Reset", reset, ["button", "reset-button"]));
+
+            // Generates categories 
+            for (const category in generalCriteria) {
+                const container = generateCategory(generalCriteria[category], category);
+                document.body.appendChild(container);
+            }
+
+            // Generates assignment specific forms if available
+            if (assignmentSpecificCriteria.length > 0) {
+                const sectionTitle = document.createElement("h1");
+                sectionTitle.innerText = "Assignment Specific Criteria";
+                sectionTitle.classList.add("assignment-section-title")
+                document.body.appendChild(sectionTitle);
+                generateTabs(assignmentSpecificCriteria);
+            }
+
+            // Generates the "Generate" and "Save" buttons
+            const buttonBox = document.createElement("div");
+            buttonBox.classList.add("button-box");
+            buttonBox.appendChild(generateButton("Generate", evaluate, ["button", "generate-button"]));
+            buttonBox.appendChild(generateButton("⠀ Save ⠀", save, ["button", "save-button"]));
+            document.body.appendChild(buttonBox);
+
+            // Generates the textarea containing all checked points for the evaluation.
+            const textAreaContainer = document.createElement("div");
+            textAreaContainer.classList.add("textarea-container");
+            const textArea = document.createElement("textarea");
+            textArea.classList.add("textarea-evaluation")
+            textArea.id = "textarea-evaluation";
+            textAreaContainer.appendChild(textArea);
+            document.body.appendChild(textAreaContainer);
+
+            // Loads data which are stored in the LocalStorage
+            loadLocalStorage(generalCriteria, assignmentSpecificCriteria);
+        }
+
+        /**
+         * Generates button given a label, a function and classes.
+         * @param {string} label - The text to be displayed on the button
+         * @param {function} clickFunction - The function to be executed after clicked.
+         * @param {string[]} classList - A list of strings containing the class names
+         * @return {button} button - A button.
+         */
+        function generateButton(label, clickFunction, classList) {
+            const button = document.createElement("button");
+            button.innerText = label;
+            button.onclick = clickFunction;
+
+            for (const classLabel of classList) {
+                button.classList.add(classLabel);
+            }
+            return button;
+        }
+
+        /**
+         * Generates a category, using a category object and the title of the category for the additional field creation.
+         * @param {category} data - An category object.
+         * @param {string} category - The title of the category.
+         * @return {div} container - A container containing the category.
+         */
+        function generateCategory(data, category) {
+            // Generate category container
+            const container = document.createElement("div");
+            container.classList.add("category")
+
+            // Add title to category container
+            const title = document.createElement("p");
+            title.innerText = data["title"];
+            title.classList.add("category-title")
+            container.appendChild(title);
+
+            // Generate container containing positive, neutral and negative mainPoints.
+            const criteriaContainer = document.createElement("div");
+            criteriaContainer.classList.add("criteria");
+            container.append(criteriaContainer);
+
+            // Generates the mainPoints with it's subPoints for each criteria.
+            for (const criteria of ["positive", "neutral", "negative"]) {
+                if (Object.keys(data).includes(criteria)) {
+                    generateCriteria(criteriaContainer, data, criteria);
+                }
+            }
+            
+            // Generates the textarea of the corresponding category
+            if (data["additionalNotes"]) {
+                const title = document.createElement("p");
+                title.innerText = "Additional Notes:";
+                title.classList.add("mainpoint-label");
+                container.appendChild(title);
+                container.appendChild(generateAdditionalNotesArea(category));
+            }
+            return container;
+        }
+
+        /**
+         * Generate the mainPoints.
+         * @param {div} container - The container which the mainPoints will be added to.
+         * @param {mainPoint[]} data - A list containing mainPoint objects.
+         * @param {string} criteria - The criteria positive or neutral or negative, which are also keys of the corresponding category object.
+         */
+        function generateCriteria(container, data, criteria) {
+            // Generate criteria container
+            const title = document.createElement("p");
+            title.classList.add(criteria)
+            title.innerText = criteria[0].toUpperCase() + criteria.slice(1) + ":";
+            container.appendChild(title);
+
+            for (element of data[criteria]) {
+                generateMainPoint(container, element, criteria);
+            }
+
+        };
+
+        /**
+         * Generate the mainPoint.
+         * @param {div} container - The container which the mainPoint will be added to.
+         * @param {mainPoint} data - An mainPoint object
+         * @param {string} criteria - The criteria positive or neutral or negative, which are also keys of the corresponding category object.
+         */
+        function generateMainPoint(container, element, criteria) {
+            // Generate mainPoint
+            const label = document.createElement("p");
+            label.innerText = element["mainPoint"];
+            label.classList.add("mainpoint-label")
+            container.appendChild(label);
+
+            // Generate subPoints
+            const subPoints = generateSubPoints(container, element["subPoints"], criteria)
+            container.appendChild(subPoints);
+        };
+
+        /**
+         * Generate the subPoints.
+         * @param {div} container - The container which the subPoints will be added to.
+         * @param {string[]} subPoints - An list of strings representing the subPoints.
+         * @param {string} criteria - The criteria positive or neutral or negative, which are also keys of the corresponding category object.
+         * @return {div} subPointContainer - A div containing the subPoints.
+         */
+        function generateSubPoints(container, subPoints, criteria) {
+            // Generate subPoint container
+            const subPointContainer = document.createElement("div");
+            subPointContainer.id = "subPoint-" + criteria + "-" + idCount;
+            idCount++;
+
+            // Generate subPoints
+            const unorderedList = document.createElement("ul");
+            for (const subPoint of subPoints) {
+                const listElement = document.createElement("li");
+                const checkBox = document.createElement("input");
+                checkBox.type = "checkbox";
+                checkBox.value = subPoint;
+                checkBox.id = idCount;
+
+                const label = document.createElement("label");
+                label.htmlFor = idCount++;
+                label.innerText = subPoint;
+
+                listElement.appendChild(checkBox);
+                listElement.appendChild(label);
+
+                // Add textbox if subPoint ends with ":" or ": "
+                if (subPoint.endsWith(":") || subPoint.endsWith(": ")) {
+                    const textBox = generateSubPointTextBox(subPoint);
+                    listElement.appendChild(textBox);
+                }
+
+                unorderedList.appendChild(listElement);
+            }
+            subPointContainer.appendChild(unorderedList);
+            return subPointContainer;
+        }
+
+        /**
+         * Generate a text field for a subPoint.
+         * @param {string} subPoint - A string representing the subPoint.
+         * @return {textArea} textBox - A textArea corresponding to the given subPoint.
+         */
+        function generateSubPointTextBox(subPoint) {
+            const textBox = document.createElement("textarea");
+            textBox.classList.add("subpoint-textbox");
+            textBox.type = "text";
+            textBox.id = subPoint;
+            return textBox;
+        }
+
+        /**
+         * Generate a text field for a subPoint.
+         * @param {string} subPoint - A string representing the subPoint.
+         * @return {textArea} textArea - A textArea corresponding to the given category.
+         */
+        function generateAdditionalNotesArea(category) {
+            const textArea = document.createElement("textarea");
+            textArea.id = category;
+            textArea.classList.add("textarea-notes");
+            return textArea;
+        }
+
+        /**
+         * Cleares the local storage and saves the data in the forms to the local storage
+         */
+        function save() {
+            window.localStorage.clear();
+
+            // Save values of the checkboxes
+            const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
+            for (const input of allInputs) {
+                localStorage.setItem(input.id, "checked");
+            }
+
+            // Save values of the category textareas.
+            const allTextNotes = document.querySelectorAll(".textarea-notes");
+            for (const textNote of allTextNotes) {
+                if (textNote.value.length > 0)
+                    localStorage.setItem(textNote.id, textNote.value);
+            }
+
+            // Save values of the subPoint textboxes.
+            const allSubPoinTextBox = document.querySelectorAll(".subpoint-textbox");
+            for (const textBox of allSubPoinTextBox) {
+                if (textBox.value.length > 0)
+                    localStorage.setItem(textBox.id, textBox.value);
+            }
+
+            // Save the textarea containing all checked checkboxes (Filled after "Generate")
+            const textArea = document.getElementById("textarea-evaluation");
+            if (textArea.value.length > 0) {
+                localStorage.setItem("textarea-evaluation", textArea.value);
+            }
+
+            alert("Saved!")
+        }
+
+        /**
+         * Loads the local storage. If debug mode is given the local storage will be cleared instead.
+         * @param {generalCriteria} generalCriteria - An generalCriteria object.
+         * @param {assignmentObject[]} - An array containing multiple assignment objects
+         */
+        function loadLocalStorage(generalCriteria, assignmentSpecificCriteria) {
+            if (debug) {
+                localStorage.clear();
+            }
+
+            // Load checkboxes from local storage
+            for (const key in localStorage) {
+                if (key.match("^[0-9]*$")) {
+                    const checkBox = document.getElementById(key);
+                    checkBox.checked = true;
+                }
+            }
+
+            // Load evaluation textbox from local storage
+            const textAreaStorageValue = localStorage.getItem("textarea-evaluation")
+            if (textAreaStorageValue !== undefined) {
+                document.getElementById("textarea-evaluation").value = textAreaStorageValue;
+            }
+
+            // Load textareas from the categories of the generalCriteria object
+            for (const key of Object.keys(generalCriteria)) {
+                const textAreaNoteValue = localStorage.getItem(key);
+                document.getElementById(key).value = textAreaNoteValue;
+            }
+
+            // Load textareas from the list of assignmentObjects
+            for (const assignment of assignmentSpecificCriteria) {
+                for (const key of Object.keys(assignment.content)) {
+                    const storageValue = localStorage.getItem(key);
+                    const textArea = document.getElementById(key);
+                    
+                    if(textArea){
+                        textArea.value = storageValue;
+                    }
+                }
+            }
+
+            // Load textareas from subPoints
+            for (const key in localStorage) {
+                if (key.endsWith(":") || key.endsWith(": ")) {
+                    const subPointTextBoxValue = localStorage.getItem(key);
+                    document.getElementById(key).value = subPointTextBoxValue;
+                }
+            }
+        }
+
+
+        /**
+         * Clears local storage and remove all inputs
+         */
+        function reset() {
+            const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
+            const allTextAreaNotes = document.querySelectorAll(".textarea-notes")
+            const allSubPoinTextBox = document.querySelectorAll(".subpoint-textbox");
+
+            window.localStorage.clear();
+            document.getElementById("textarea-evaluation").value = "";
+
+            for (const input of allInputs) {
+                input.checked = false;
+            }
+
+            for (const textNotes of allTextAreaNotes) {
+                textNotes.value = "";
+            }
+
+            for (const subPointTextBox of allSubPoinTextBox) {
+                subPointTextBox.value = "";
+            }
+
+        }
+
+        /**
+         * If a string contains multiple lines. Add indentation to all of those lines.
+         * @param {string} text - A multi-line text to be indented.
+        */
+        function multiLineIndent(text) {
+            let newText = "";
+            for (const line of text.split("\n")) {
+                newText += "          " + line + "\n";
+            }
+            return newText;
+        }
+
+        /**
+         * Entrypoint to the evaluation text of the template.
+        */
+        function evaluate() {
+            const firstEvaluation = generateEvaluation(generalCriteria, "GENERAL NOTES\n\n");
+
+            const activeTab = document.querySelector(".active.tab");
+            for (const assignment of specificCriteria) {
+                if (activeTab && assignment.title === activeTab.id) {
+                    generateEvaluation(assignment.content, firstEvaluation + "\nASSIGNMENT SPECIFIC NOTES\n\n");
+                }
+            }
+        }
+
+        /**
+         * Given a generalCriteria object create a text containing all checked checkboxes with it's notes.
+         * @param {generalCriteria} data - An general criteria object.
+         * @param {string} previousEvaluation - A string, that will be prepended to the generated text.
+         */
+        function generateEvaluation(data, previousEvaluation = "") {
+            const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
+            const values = []
+            for (const input of allInputs) {
+                values.push(input.value);
+            }
+
+            evaluationText = previousEvaluation;
+
+            for (const category in data) {
+                // Flags to determine whether the text contains these information.
+                let alreadyAddedCategory = false;
+                let alreadyAddedPositive = false;
+                let alreadyAddedNeutral = false;
+                let alreadyAddedNegative = false;
+
+                for (const criteria of ["positive", "neutral", "negative"]) {
+                    let alreadyAddedMainPoint = false;
+
+                    if (Object.keys(data[category]).includes(criteria)) {
+                        for (const element of data[category][criteria]) {
+                            for (const subPoint of element["subPoints"]) {
+
+                                if (values.includes(subPoint)) {
+                                    if (!alreadyAddedCategory) {
+                                        evaluationText += data[category]["title"] + "\n";
+                                        alreadyAddedCategory = true;
+                                    }
+                                    if (criteria === "positive" && !alreadyAddedPositive) {
+                                        evaluationText += "\nPositive:\n";
+                                        alreadyAddedPositive = true;
+                                    }
+                                    if (criteria === "neutral" && !alreadyAddedNeutral) {
+                                        evaluationText += "\nNeutral:\n";
+                                        alreadyAddedNeutral += true;
+                                    }
+                                    if (criteria === "negative" && !alreadyAddedNegative) {
+                                        evaluationText += "\nNegative:\n";
+                                        alreadyAddedNegative += true;
+                                    }
+                                    if (!alreadyAddedMainPoint && element["mainPoint"].length > 0) {
+                                        evaluationText += "  - " + element["mainPoint"] + ":\n";
+                                        alreadyAddedMainPoint += true;
+                                    }
+                                    evaluationText += "      - " + subPoint + "\n";
+                                    if (subPoint.endsWith(":") || subPoint.endsWith(": ")) {
+                                        textBoxValue = multiLineIndent(document.getElementById(subPoint).value);
+                                        evaluationText += textBoxValue;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                const textNotes = document.getElementById(category)
+
+                if (textNotes && textNotes.value.length > 0) {
+                    if (!alreadyAddedCategory) {
+                        evaluationText += data[category]["title"] + "\n";
+                        alreadyAddedCategory = true;
+                    }
+
+                    evaluationText += "\nAdditional Notes:\n";
+                    evaluationText += textNotes.value + "\n";
+                }
+
+                if (alreadyAddedCategory) {
+                    evaluationText += "\n\n";
+                }
+            }
+            document.getElementById("textarea-evaluation").value = evaluationText;
+            return evaluationText;
+        }
+
+        /**
+         * Generate the assignment tabs. With it's content.
+         * @param {assignmentObject[]} assignmentSpecificCriteria - An array containing assignment objects.
+         */
+        function generateTabs(assignmentSpecificCriteria) {
+            // Generate the main tabs container
+            const tabs = document.createElement("div");
+            tabs.classList.add("tab-container");
+            const tabContentRoot = document.createElement("div");
+            tabs.classList.add("tabs");
+
+            function toogleTab(id) {
+                selectedTabContent = document.getElementById(id + " - content");
+                selectedButton = document.getElementById(id);
+
+                buttons = document.querySelectorAll(".tab");
+                tabContents = document.querySelectorAll(".tab-content");
+
+                for (const tabContent of tabContents) {
+                    tabContent.style.display = "none";
+                    tabContent.classList.remove("active");
+                }
+
+                for (const button of buttons) {
+                    button.classList.remove("active");
+                }
+
+                if (!selectedButton.classList.contains("active")) {
+                    selectedTabContent.style.display = "block";
+                    selectedButton.classList.add("active");
+                }
+            }
+
+            // Generate the assignment content.
+            for (const key in Object.keys(assignmentSpecificCriteria)) {
+                const assignment = assignmentSpecificCriteria[key];
+
+                // Generate the assignment content container
+                const tabContentContainer = document.createElement("div");
+                tabContentContainer.id = assignment["title"] + " - content";
+                tabContentContainer.style.display = "none";
+                const title = document.createElement("h2");
+                title.classList.add("assignment-specific-title");
+                title.innerText = assignment["title"];
+                tabContentContainer.appendChild(title);
+                tabContentContainer.classList.add("tab-content");
+                for (const category in assignment["content"]) {
+                    const container = generateCategory(assignment["content"][category], category);
+                    tabContentContainer.appendChild(container);
+                }
+
+                // Generate the tab corresponding to the assignment content.
+                const tab = document.createElement("button");
+                tab.innerHTML = assignment["title"];
+                tab.id = assignment["title"];
+                tab.classList.add("tab");
+                tab.addEventListener("click", () => {
+                    toogleTab(tab.id);
+                });
+
+
+                tabs.appendChild(tab);
+                tabContentRoot.appendChild(tabContentContainer);
+            }
+            document.body.appendChild(tabs);
+            document.body.appendChild(tabContentRoot);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

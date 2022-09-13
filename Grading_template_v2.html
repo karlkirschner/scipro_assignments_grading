@@ -87,170 +87,215 @@
         }
     ]
     },
-            jupyterNotebooks: {
-                title: "Jupyter Notebooks",
-                additionalNotes: true,
-                positive: [
-                    {
-                        mainPoint: "General Structure",
-                        subPoints: [
-                            "Good use of cells structure to separate ideas (e.g. thoughts, tasks/subtasks, user-defined functions)."
-                        ]
-                    },
-                    {
-                        mainPoint: "Markdown Cells",
-                        subPoints: [
-                            "Good use of the markdown cells to communicate the problem being investigated, your ideas/thoughts and methodological workflow."
-                        ]
-                    }
-                ],
-                neutral: [
-                    {
-                        mainPoint: "General Structure",
-                        subPoints: [
-                            "Some separation concerning the tasks, subtasks, or ideas into different cells is seen in your solution. However, more could have been done to improve the notebook's organization and understanding."
-                        ]
-                    },
-                    {
-                        mainPoint: "Markdown Cells",
-                        subPoints: [
-                            "Some use of markdown cells uage is demonstrated in your solution. However, some more information would have improved the notebook's ability to convey your thoughts/ideas."
-                        ]
-                    }
-                ],
-                negative: [
-                    {
-                        mainPoint: "General Structure",
-                        subPoints: [
-                            "Significant work was needed to better separate the tasks, subtasks, or ideas into separate cells for improving the notebook's organization and understanding."
-                        ]
-                    },
-                    {
-                        mainPoint: "Markdown Cells",
-                        subPoints: [
-                            "Please provided more context through markdown cells that states the problem being investigated, your ideas/thoughts and methodological workflow."
-                        ]
-                    }
-                ]
-            },
-            codeFormatting: {
-                title: "Code Formatting",
-                additionalNotes: true,
-                positive: [
-                    {
-                        mainPoint: "Good code formatting that includes",
-                        subPoints: [
-                            "Consistent and correct use of spacing",
-                            "Consistent and good use of blank lines (separating ideas and improving readability)",
-                            "Consistent and good indentation (i.e. 4 spaces)",
-                            "Proper line lengths",
-                            "Following PEP8 guidelines",
-                            "Proper f-string statements",
-                            "Descriptive object/variable names (i.e. readable)",
-                            "Appropriate amount of block commenting done (i.e. # on its own line)",
-                            "Appropriate amount of inline commenting done (i.e. # at the end of a code line)",
-                            "Appropriate amount of docstrings done (i.e. using triple quotes)",
-                            "Good English spelling",
-                            "Consistent usage of the English language (i.e. not mixing in non-English words)",
-                            "Clean, concise and readable code"
-                        ]
-                    }
-                ],
-                negative: [
-                    {
-                        mainPoint: "The following code formatting issues could have been improved",
-                        subPoints: [
-                            "Consistent and correct use of spacing",
-                            "Consistent and good use of blank lines (separating ideas and improving readability)",
-                            "Watch the over use or unnecessary use of blank lines",
-                            "Consistent and good indentation (i.e. 4 spaces)",
-                            "Proper line lengths",
-                            "Following PEP8 guidelines",
-                            "Proper f-string statements",
-                            "Descriptive object/variable names (i.e. readable)",
-                            "Object/variable names could have been more descriptive.",
-                            "No or poor use of block commenting (i.e. # on its own line)",
-                            "No or poor use of in-line commenting (i.e. # at the end of a code line)",
-                            "No or poor use of docstrings (i.e. using triple quotes)",
-                            "Excessive amounts of commenting done that is for obvious things, or not relevant (i.e. singificantly distracts from the main focus)",
-                            "All imported libraries should be alphabetized",
-                            "All libraries used should be collected into a single cell at the top of the code/Jupyter-notebook",
-                            "English spelling (i.e. incorrect spelling)",
-                            "Consistent usage of the English language (i.e. not mixing in non-English words)",
-                            "Clean, concise and readable code"
-                        ]
-                    }
-                ]
-            },
-            codingConcept: {
-                title: "Coding Concept",
-                additionalNotes: true,
-                positive: [
-                    {
-                        mainPoint: "Data Structures",
-                        subPoints: [
-                            "Good use of dictionaries."
-                        ]
-                    },
-                ],
-                negative: [
-                    {
-                        mainPoint: "Data Structures",
-                        subPoints: [
-                            "Would have been better to use dictionaries instead of lists in this assignment."
-                        ]
-                    },
-                    {
-                        mainPoint: "General",
-                        subPoints: [
-                            "It is better to use 'if-elif-else' statements, rather than 'if-if-if' for readability and speed."
-                        ]
-                    }
-                ]
-            },
-            userDefinedFunctions: {
-                title: "User-defined Functions",
-                additionalNotes: true,
-                positive: [
-                    {
-                        mainPoint: "Good use of the following",
-                        subPoints: [
-                            "type hinting",
-                            "context via block comments",
-                            "what the function does",
-                            "what the input variables mean (i.e. defined)",
-                            "what the function returns",
-                            "internal checks using 'if not isinstance' statements with a 'raise' statement",
-                            "setting optional variable to a default value of 'None'"
-                        ]
-                    },
-                ],
-                neutral: [
-                    {
-                        mainPoint: "Use of 'assert' over 'raise'",
-                        subPoints: [
-                            "It is better to use a 'raise' statement because 'assert' statements can be bypassed. Note that for develpment work, the use of 'assert' is okay."
-                        ]
-                    },
-                ],
-                negative: [
-                    {
-                        mainPoint: "Your functions had the following problems",
-                        subPoints: [
-                            "you missed the chance to make user defined functions in tasks",
-                            "type hinting",
-                            "setting the passed variable to a default value of 'None'",
-                            "context via block comments",
-                            "what the function does",
-                            "what the input variables mean (i.e. defined)",
-                            "what the function returns",
-                            "no internal checks (i.e. 'if not isinstance' statements)",
-                            "when using 'if-elif-else' statements, the main part of the function should be nested under the else statement",
-                            "setting optional variable to a default value of 'None'"
-                        ]
-                    }
-                ]
-            },
+    "jupyterNotebooks":{
+        "title":"Jupyter Notebooks",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall Notebook Structure",
+            "subPoints":[
+                "Good use of cells structure to separate ideas (e.g. thoughts, tasks/subtasks, user-defined functions).",
+                "Good use of the Jupyter-notebook as a laboratory notebook.",
+                "Logical ordering and mixture of the markdown and code cells."
+            ]
+        },
+        {
+            "mainPoint":"Markdown Cells",
+            "subPoints":[
+                "Good use of markdown cells to communicate the problem being investigated; your thoughts and ideas; or methodological workflow."
+            ]
+        }
+    ],
+        "neutral":[
+        {
+            "mainPoint":"Overall Notebook Structure",
+            "subPoints":[
+                "Some separation concerning the tasks, subtasks, or ideas into different cells is seen in your solution. However, more could have been done to improve the notebook's organization and understanding."
+            ]
+        },
+        {
+            "mainPoint":"Markdown Cells",
+            "subPoints":[
+                "Some markdown cells usage is demonstrated in your solution. However, including some more information would have improved the notebook's ability to convey your thoughts/ideas."
+            ]
+        }
+      ],
+        "negative":[
+        {
+            "mainPoint":"Overall Notebook Structure",
+            "subPoints":[
+                "Significant work is needed to better separate the tasks, subtasks, or thoughts/ideas into separate cells for improving the notebook's organization and understanding."
+            ]
+        },
+        {
+            "mainPoint":"Markdown Cells",
+            "subPoints":[
+                "Please provided more context through markdown cells that state the problem being investigated; your ideas and thoughts; or the methodological workflow."
+            ]
+        }
+    ]
+    },
+    "codeFormatting":{
+        "title":"Code Formatting",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Very good code formatting that includes",
+            "subPoints":[
+                "all libraries used were alphabetized",
+                "all libraries used were listed at the top of the Jupyter-notebook",
+                "consistent and correct use of spacing",
+                "consistent and good use of blank lines (e.g. for separating ideas and improving readability)",
+                "consistent and good indentation (i.e. 4 spaces)",
+                "proper line lengths (e.g. no scrolling is needed)",
+                "proper f-string statements",
+                "descriptive object names (i.e. human readable)",
+                "appropriate amount of block commenting done (i.e. # comment on its own line)",
+                "appropriate amount of inline commenting done (i.e. # at the end of a code line)",
+                "appropriate amount of docstrings done (i.e. using triple quotes)",
+                "following PEP8 guidelines"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"The following formatting issues were present in your code",
+            "subPoints":[
+                "libraries were not alphabetized",
+                "libraries were not listed at the top of the Jupyter-notebook",
+                "spacing was inconsistent or incorrectly used",
+                "blank lines were inconsistently used",
+                "not enough blank lines were used to separate ideas within the code",
+                "too many blank lines were used",
+                "inconsistent or poor indentation (i.e. 4 spaces)",
+                "coding lines were too long (i.e. requiring scrolling)",
+                "coding lines were too short (i.e. deters from readability)",
+                "f-string statements were not used",
+                "object naming were not descriptive (i.e. human readable)",
+                "block commenting (i.e. # on its own line) was not done, or there was poor usage of them",
+                "in-line commenting (i.e. # at the end of a code line) was not done, or there was poor usage of them",
+                "docstrings (i.e. using triple quotes) was not done, or there was poor usage of them",
+                "excessive amounts of commenting done (e.g. for obvious points), or not relevant (i.e. singificantly distracts from the solution's main focus)",
+                "following PEP8 guidelines"
+            ]
+        }
+    ]
+    },
+    "codingConcept":{
+        "title":"Coding Concept",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Good use of data structures that includes",
+            "subPoints":[
+                "dictionaries (e.g. my_dictionary = {key_1: value_1, key_2: value_2})",
+                "sets (e.g. my_set = {item_1, item_2, item_3})",
+                "tuples (e.g. my_tuple = (item_1, item_2, item_3))",
+                "lists (e.g. my_list = [item_1, item_2, item_3])"
+            ]
+        },
+        {
+            "mainPoint":"Good use of the following coding concepts",
+            "subPoints":[
+                "list comprehension",
+                "looping over a dictionary",
+                "looping over a set",
+                "looping over a tuple",
+                "looping over a list",
+                "looping over two lists (with the same length) using the built-in function 'zip'",
+                "the built-in function 'enumerate'",
+                "the built-in function 'reversed'",
+                "the built-in function 'sorted'"
+            ]
+        },
+    ],
+        "neutral":[
+        {
+            "mainPoint":"The following data structures issues could have been used, which might have made your code a bit better",
+            "subPoints":[
+                "list comprehensions",
+                "the use of a dictionary instead of a list",
+                "the use of a tuple instead of a mutable list",
+                "the use of 'zip' to loop over two lists of equal length"
+            ]
+        },
+    ],
+        "negative":[
+        {
+            "mainPoint":"The following data structures issues would have improved your code",
+            "subPoints":[
+                "simplifying the list comprehension, or replacing with an 'if-elif-else' statements (i.e. to improve readability)",
+                "the use of a dictionary instead of a list would have been logical",
+                "the use of a tuple instead of a mutable list",
+                "the use of 'zip' to loop over two lists of equal length"
+            ]
+        },
+        {
+            "mainPoint":"The following general concepts were problematic",
+            "subPoints":[
+                "it is better to use 'if-elif-else' statements, rather than 'if-if-...' for readability and speed",
+                "copy-and-pasting code introduces confusion and increases the chances of errors",
+                "the code could have been more concisely formulated"
+            ]
+        }
+    ]
+    },
+    "userDefinedFunctions":{
+        "title":"User-defined Functions",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Good use of the following",
+            "subPoints":[
+                "including type hinting",
+                "providing context via block comments",
+                "stating what the function does",
+                "stating what the input objects are (i.e. defined)",
+                "stating what the function returns",
+                "proving internal checks using 'if not isinstance' and a 'raise' statement",
+                "setting an optional variable to a default value of 'None'",
+                "isolating concepts well to user-defined functions (i.e. improving reusability, transferability and debugging)"
+            ]
+        }
+    ],
+        "neutral":[
+        {
+            "mainPoint":"The use of 'assert' over 'raise' statements",
+            "subPoints":[
+                "It is better to use a 'raise' statement because 'assert' statements can be bypassed. Note that for development work, the use of 'assert' is okay."
+            ]
+        },
+        {
+            "mainPoint":"Too complex of a user-defined functions employed",
+            "subPoints":[
+                "While it is good to have used a user-defined functions, the function itself does too much. It is better to isolate concepts into different functions, and to make the functions as general-purpose as possible."
+            ]
+        },
+    ],
+        "negative":[
+        {
+            "mainPoint":"No user-defined functions employed",
+            "subPoints":[
+                "Your solution did not include user-defined functions. Defining your own function helps to isolate concepts, improves reusability, transferability and debugging. These are a major part of scientific programming."
+            ]
+        },
+        {
+            "mainPoint":"Your user-defined functions had the following problems",
+            "subPoints":[
+                "a lack of type hinting",
+                "incorrect type hinting",
+                "no context given using docstring",
+                "no statement about what the function does",
+                "no statement about the input variables (i.e. defined)",
+                "no statement about what the function returns",
+                "no internal checks (i.e. 'if not isinstance' statements)",
+                "not setting optional objects passed to a default value of 'None'",
+                "when using 'if-elif-else' statements, the main part of the function should be nested under the else statement",
+                "setting optional variable to a default value of 'None'"
+            ]
+        }
+    ]
+    },
             callingFunction: {
                 title: "Calling a Function",
                 additionalNotes: true,

@@ -1,46 +1,47 @@
 {
-   "academicScholarship":{
-      "title":"Academic Scholarship",
-      "additionalNotes":true,
-      "positive":[
-         {
+    "academicScholarship":{
+        "title":"Academic Scholarship",
+        "additionalNotes":true,
+        "positive":[
+        {
             "mainPoint":"Good scholarship that includes the following",
             "subPoints":[
-               "citing source of information and knowledge",
-               "excellent job on citations important libraries and source of knowledge",
-               "consistent formatting of references"
+                "citing source of information and knowledge",
+                "excellent job on citations important libraries and source of knowledge",
+                "consistent formatting of references"
             ]
-         }
-      ],
-      "neutral":[
-         {
+        }
+    ],
+        "neutral":[
+        {
             "mainPoint":"Source of information",
             "subPoints":[
-               "Be careful when citing websites. When possible cite peer-reviewed papers or academic books.",
-               "When citing websites, include the date visited.",
-               "Take care to provide the references with same formatting structure."
+                "Be careful when citing websites. When possible cite peer-reviewed papers or academic books.",
+                "When citing websites, include the date visited.",
+                "Take care to provide the references with same formatting structure."
             ]
-         }
-      ],
+        }
+    ],
       "negative":[
          {
             "mainPoint":"Poor scholarship due to the following",
             "subPoints":[
-               "not citing Python3 libraries that were used:",
-               "not citing the sources for information (e.g. equations, datasets):",
-               "as a university student, you should be citing sources of knowledge - something that you will need to do for your thesis"
+                "not citing Python3 libraries that were used:",
+                "not citing the sources for information (e.g. equations, datasets):",
+                "as a university student, you should be citing sources of knowledge - something that you will need to do for your thesis"
             ]
-         }
-      ]
-   },
-   "jupyterNotebooks":{
+        }
+    ]
+    },
+    "jupyterNotebooks":{
       "title":"Jupyter Notebooks",
       "additionalNotes":true,
       "positive":[
          {
             "mainPoint":"General Structure",
             "subPoints":[
-               "Good use of cells structure to separate ideas (e.g. thoughts, tasks/subtasks, user-defined functions)."
+                ""
+                "Good use of cells structure to separate ideas (e.g. thoughts, tasks/subtasks, user-defined functions)."
             ]
          },
          {
@@ -78,8 +79,8 @@
             ]
          }
       ]
-   },
-   "codeFormatting":{
+    },
+    "codeFormatting":{
       "title":"Code Formatting",
       "additionalNotes":true,
       "positive":[
@@ -101,8 +102,8 @@
                "Clean, concise and readable code"
             ]
          }
-      ],
-      "negative":[
+       ],
+       "negative":[
          {
             "mainPoint":"The following code formatting issues could have been improved",
             "subPoints":[
@@ -127,8 +128,8 @@
             ]
          }
       ]
-   },
-   "codingConcept":{
+    },
+    "codingConcept":{
       "title":"Coding Concept",
       "additionalNotes":true,
       "positive":[
@@ -153,8 +154,8 @@
             ]
          }
       ]
-   },
-   "userDefinedFunctions":{
+    },
+    "userDefinedFunctions":{
       "title":"User-defined Functions",
       "additionalNotes":true,
       "positive":[
@@ -196,8 +197,8 @@
             ]
          }
       ]
-   },
-   "callingFunction":{
+    },
+    "callingFunction":{
       "title":"Calling a Function",
       "additionalNotes":true,
       "positive":[
@@ -211,8 +212,8 @@
             ]
          }
       ]
-   },
-   "plotting":{
+    },
+    "plotting":{
       "title":"Plotting (Pandas or Matplotlib)",
       "additionalNotes":true,
       "positive":[
@@ -247,8 +248,8 @@
             ]
          }
       ]
-   },
-   "numpy":{
+    },
+    "numpy":{
       "title":"Numpy Library",
       "additionalNotes":true,
       "positive":[
@@ -282,8 +283,8 @@
             ]
          }
       ]
-   },
-   "sciPy":{
+    },
+    "sciPy":{
       "title":"SciPy Library",
       "additionalNotes":true,
       "positive":[
@@ -302,8 +303,8 @@
             ]
          }
       ]
-   },
-   "significantFigures":{
+    },
+    "significantFigures":{
       "title":"Significant Figures",
       "additionalNotes":true,
       "positive":[
@@ -322,8 +323,8 @@
             ]
          }
       ]
-   },
-   "general":{
+    },
+    "general":{
       "title":"General Feedback",
       "additionalNotes":true,
       "positive":[
@@ -348,5 +349,5 @@
             ]
          }
       ]
-   }
+    }
 }

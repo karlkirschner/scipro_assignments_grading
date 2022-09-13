@@ -13,40 +13,73 @@
         const debug = false;
 
         let generalCriteria = {
-            academicScholarship: {
-                title: "Academic Scholarship",
-                additionalNotes: true,
-                positive: [
-                    {
-                        mainPoint: "Good scholarship that includes the following",
-                        subPoints: [
-                            "citing source of information and knowledge",
-                            "excellent job on citations important libraries and source of knowledge",
-                            "consistent formatting of references"
-                        ]
-                    }
-                ],
-                neutral: [
-                    {
-                        mainPoint: "Source of information",
-                        subPoints: [
-                            "Be careful when citing websites. When possible cite peer-reviewed papers or academic books.",
-                            "When citing websites, include the date visited.",
-                            "Take care to provide the references with same formatting structure."
-                        ]
-                    }
-                ],
-                negative: [
-                    {
-                        mainPoint: "Poor scholarship due to the following",
-                        subPoints: [
-                            "not citing Python3 libraries that were used:",
-                            "not citing the sources for information (e.g. equations, datasets):",
-                            "as a university student, you should be citing sources of knowledge - something that you will need to do for your thesis"
-                        ]
-                    }
-                ]
-            },
+    "academicScholarship":{
+        "title":"Academic Scholarship",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Good scholarship that includes the following",
+            "subPoints":[
+                "citing source of information and knowledge",
+                "excellent job on citations important libraries and source of knowledge",
+                "consistent formatting of references"
+            ]
+        },
+        {
+            "mainPoint":"Good writing and communication that includes the following",
+            "subPoints":[
+                "complete sentences used when appropriate (e.g. within Markdown cells)",
+                "correct English spelling",
+                "consistent usage of the English language (i.e. not mixing in non-English words)",
+                "clean, concise and understandable setences"
+            ]
+        },
+    ],
+        "neutral":[
+        {
+            "mainPoint":"Generally good citing of information, but with a few issues that include",
+            "subPoints":[
+                "being careful when citing websites - when possible cite peer-reviewed papers or academic books",
+                "when citing websites, one should include the date visited",
+                "take care to provide the references with same formatting structure"
+            ]
+        },
+        {
+            "mainPoint":"Generally good writing and communication, with the following small issues",
+            "subPoints":[
+                "a few incomplete sentences when not appropriate (e.g. within Markdown cells)",
+                "a few misspelled English words",
+                "some mixing of English and German words",
+                "a few sentences that were not concise or understandable"
+            ]
+        },
+    ],
+        "negative":[
+        {
+            "mainPoint":"No citation of information.",
+            "subPoints":[
+                "As a university student, you should be citing sources of knowledge - something that you will need to do for your thesis",
+            ]
+        },
+        {
+            "mainPoint":"Poor citing of information, which includes the following",
+            "subPoints":[
+                "not citing Python3 libraries that were used:",
+                "not citing the sources for information (e.g. equations, datasets):",
+                "as a university student, you should be citing sources of knowledge - something that you will need to do for your thesis"
+            ]
+        },
+        {
+            "mainPoint":"Poor writing and communication that includes the following",
+            "subPoints":[
+                "lots of incomplete sentences when full sentences would have been appropriate ((e.g. within Markdown cells)",
+                "several misspelled English words",
+                "significant mixing of English and German words",
+                "sentences were not concisely written, or were not easily understandable"
+            ]
+        }
+    ]
+    },
             jupyterNotebooks: {
                 title: "Jupyter Notebooks",
                 additionalNotes: true,

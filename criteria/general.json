@@ -10,25 +10,58 @@
                 "excellent job on citations important libraries and source of knowledge",
                 "consistent formatting of references"
             ]
-        }
+        },
+        {
+            "mainPoint":"Good writing and communication that includes the following",
+            "subPoints":[
+                "complete sentences used when appropriate (e.g. within Markdown cells)",
+                "correct English spelling",
+                "consistent usage of the English language (i.e. not mixing in non-English words)",
+                "clean, concise and understandable setences"
+            ]
+        },
     ],
         "neutral":[
         {
-            "mainPoint":"Source of information",
+            "mainPoint":"Generally good citing of information, but with a few issues that include",
             "subPoints":[
-                "Be careful when citing websites. When possible cite peer-reviewed papers or academic books.",
-                "When citing websites, include the date visited.",
-                "Take care to provide the references with same formatting structure."
+                "being careful when citing websites - when possible cite peer-reviewed papers or academic books",
+                "when citing websites, one should include the date visited",
+                "take care to provide the references with same formatting structure"
             ]
-        }
+        },
+        {
+            "mainPoint":"Generally good writing and communication, with the following small issues",
+            "subPoints":[
+                "a few incomplete sentences when not appropriate (e.g. within Markdown cells)",
+                "a few misspelled English words",
+                "some mixing of English and German words",
+                "a few sentences that were not concise or understandable"
+            ]
+        },
     ],
         "negative":[
         {
-            "mainPoint":"Poor scholarship due to the following",
+            "mainPoint":"As a university student, you should be citing sources of knowledge - something that you will need to do for your thesis",
+            "subPoints":[
+                ""
+            ]
+        },
+        {
+            "mainPoint":"Poor citing of information, which includes the following",
             "subPoints":[
                 "not citing Python3 libraries that were used:",
                 "not citing the sources for information (e.g. equations, datasets):",
                 "as a university student, you should be citing sources of knowledge - something that you will need to do for your thesis"
+            ]
+        },
+        {
+            "mainPoint":"Poor writing and communication that includes the following",
+            "subPoints":[
+                "lots of incomplete sentences when full sentences would have been appropriate ((e.g. within Markdown cells)",
+                "several misspelled English words",
+                "significant mixing of English and German words",
+                "sentences were not concisely written, or were not easily understandable"
             ]
         }
     ]
@@ -38,15 +71,17 @@
         "additionalNotes":true,
         "positive":[
         {
-            "mainPoint":"General Structure",
+            "mainPoint":"Overall Notebook Structure",
             "subPoints":[
+                "Good use of the Jupyter-notebook as a laboratory notebook.",
+                "Logical ordering and mixture of markdown and code cells.",
                 "Good use of cells structure to separate ideas (e.g. thoughts, tasks/subtasks, user-defined functions)."
             ]
         },
         {
             "mainPoint":"Markdown Cells",
             "subPoints":[
-                "Good use of the markdown cells to communicate the problem being investigated, your ideas/thoughts and methodological workflow."
+                "Good use of the markdown cells to communicate the problem investigated; your thoughts and ideas; and/or methodological workflow."
             ]
         }
     ],
@@ -96,9 +131,6 @@
                 "Appropriate amount of block commenting done (i.e. # on its own line)",
                 "Appropriate amount of inline commenting done (i.e. # at the end of a code line)",
                 "Appropriate amount of docstrings done (i.e. using triple quotes)",
-                "Good English spelling",
-                "Consistent usage of the English language (i.e. not mixing in non-English words)",
-                "Clean, concise and readable code"
             ]
         }
     ],

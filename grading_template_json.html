@@ -10,483 +10,88 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        const debug = false;
+        const debug = true;
 
         let generalCriteria = {
-    "academicScholarship":{
-        "title":"Academic Scholarship (Citations and Writing)",
-        "additionalNotes":true,
-        "positive":[
-        {
-            "mainPoint":"Good scholarship that includes the following",
-            "subPoints":[
-                "citing source of information and knowledge",
-                "excellent job on citations of important libraries and sources of knowledge",
-                "consistent formatting of references"
-            ]
-        },
-        {
-            "mainPoint":"Good writing and communication that includes the following",
-            "subPoints":[
-                "complete sentences used when appropriate (e.g. within Markdown cells)",
-                "correct English spelling",
-                "consistent usage of the English language (i.e. not mixing in non-English words)",
-                "clean, concise and understandable sentences"
-            ]
-        },
-    ],
-        "neutral":[
-        {
-            "mainPoint":"Generally good citing of information, but with a few issues that include",
-            "subPoints":[
-                "being careful when citing websites - when possible cite peer-reviewed papers or academic books",
-                "when citing websites, one should include the date visited",
-                "take care to provide the references with the same formatting structure"
-            ]
-        },
-        {
-            "mainPoint":"Generally good writing and communication, with the following small issues",
-            "subPoints":[
-                "a few incomplete sentences when not appropriate (e.g. within Markdown cells)",
-                "a few misspelled English words",
-                "some mixing of English and German words",
-                "a few sentences that were not concisely written or understandable"
-            ]
-        },
-    ],
-        "negative":[
-        {
-            "mainPoint":"No citation of information",
-            "subPoints":[
-                "As a university student, you should be citing sources of knowledge. This is something that you will need to do for your thesis.",
-            ]
-        },
-        {
-            "mainPoint":"Poorly citing information, which includes the following",
-            "subPoints":[
-                "not citing Python3 libraries that were used:",
-                "not citing sources for information used (e.g. equations, datasets):"
-            ]
-        },
-        {
-            "mainPoint":"No (or very little) communication of ideas or thoughts",
-            "subPoints":[
-                "Communicating your thoughts and ideas is important (e.g. providing context for the code, clarification of workflow)."
-            ]
-        },
-        {
-            "mainPoint":"Poor writing and communication that includes the following",
-            "subPoints":[
-                "no context given for what problem was being solved",
-                "no presentation of thoughts or ideas concerning the workflow (or solution)",
-                "lots of incomplete sentences when full sentences would have been appropriate ((e.g. within Markdown cells)",
-                "several misspelled English words",
-                "significant mixing of English and German words",
-                "sentences were not concisely written, or not easily understood"
-            ]
-        }
-    ]
-    },
-    "jupyterNotebooks":{
-        "title":"Jupyter Notebooks",
-        "additionalNotes":true,
-        "positive":[
-        {
-            "mainPoint":"Overall Notebook Structure",
-            "subPoints":[
-                "Good use of cells structure to separate ideas (e.g. thoughts, tasks/subtasks, user-defined functions).",
-                "Good use of the Jupyter-notebook as a laboratory notebook.",
-                "Logical ordering and mixture of the markdown and code cells."
-            ]
-        },
-        {
-            "mainPoint":"Markdown Cells",
-            "subPoints":[
-                "Good use of markdown cells to communicate the problem being investigated; your thoughts and ideas; or methodological workflow."
-            ]
-        }
-    ],
-        "neutral":[
-        {
-            "mainPoint":"Overall Notebook Structure",
-            "subPoints":[
-                "Some separation concerning the tasks, subtasks, or ideas into different cells is seen in your solution. However, more could have been done to improve the notebook's organization and understanding."
-            ]
-        },
-        {
-            "mainPoint":"Markdown Cells",
-            "subPoints":[
-                "Some markdown cells usage is demonstrated in your solution. However, including some more information would have improved the notebook's ability to convey your thoughts/ideas."
-            ]
-        }
-      ],
-        "negative":[
-        {
-            "mainPoint":"Overall Notebook Structure",
-            "subPoints":[
-                "Significant work is needed to better separate the tasks, subtasks, or thoughts/ideas into separate cells for improving the notebook's organization and understanding."
-            ]
-        },
-        {
-            "mainPoint":"Markdown Cells",
-            "subPoints":[
-                "Please provided more context through markdown cells that state the problem being investigated; your ideas and thoughts; or the methodological workflow."
-            ]
-        }
-    ]
-    },
-    "codeFormatting":{
-        "title":"Code Formatting",
-        "additionalNotes":true,
-        "positive":[
-        {
-            "mainPoint":"Very good code formatting that includes",
-            "subPoints":[
-                "all libraries used were alphabetized",
-                "all libraries used were listed at the top of the Jupyter-notebook",
-                "consistent and correct use of spacing",
-                "consistent and good use of blank lines (e.g. for separating ideas and improving readability)",
-                "consistent and good indentation (i.e. 4 spaces)",
-                "proper line lengths (e.g. no scrolling is needed)",
-                "proper f-string statements",
-                "descriptive object names (i.e. human readable)",
-                "appropriate amount of block commenting done (i.e. # comment on its own line)",
-                "appropriate amount of inline commenting done (i.e. # at the end of a code line)",
-                "appropriate amount of docstrings done (i.e. using triple quotes)",
-                "following PEP8 guidelines"
-            ]
-        }
-    ],
-        "negative":[
-        {
-            "mainPoint":"The following formatting issues were present in your code",
-            "subPoints":[
-                "libraries were not alphabetized",
-                "libraries were not listed at the top of the Jupyter-notebook",
-                "spacing was inconsistent or incorrectly used",
-                "blank lines were inconsistently used",
-                "not enough blank lines were used to separate ideas within the code",
-                "too many blank lines were used",
-                "inconsistent or poor indentation (i.e. 4 spaces)",
-                "coding lines were too long (i.e. requiring scrolling)",
-                "coding lines were too short (i.e. deters from readability)",
-                "f-string statements were not used",
-                "object naming were not descriptive (i.e. human readable)",
-                "block commenting (i.e. # on its own line) was not done, or there was poor usage of them",
-                "in-line commenting (i.e. # at the end of a code line) was not done, or there was poor usage of them",
-                "docstrings (i.e. using triple quotes) was not done, or there was poor usage of them",
-                "excessive amounts of commenting done (e.g. for obvious points), or not relevant (i.e. singificantly distracts from the solution's main focus)",
-                "following PEP8 guidelines"
-            ]
-        }
-    ]
-    },
-    "codingConcept":{
-        "title":"Coding Concept",
-        "additionalNotes":true,
-        "positive":[
-        {
-            "mainPoint":"Good use of data structures that includes",
-            "subPoints":[
-                "dictionaries (e.g. my_dictionary = {key_1: value_1, key_2: value_2})",
-                "sets (e.g. my_set = {item_1, item_2, item_3})",
-                "tuples (e.g. my_tuple = (item_1, item_2, item_3))",
-                "lists (e.g. my_list = [item_1, item_2, item_3])"
-            ]
-        },
-        {
-            "mainPoint":"Good use of the following coding concepts",
-            "subPoints":[
-                "list comprehension",
-                "looping over a dictionary",
-                "looping over a set",
-                "looping over a tuple",
-                "looping over a list",
-                "looping over two lists (with the same length) using the built-in function 'zip'",
-                "the built-in function 'enumerate'",
-                "the built-in function 'reversed'",
-                "the built-in function 'sorted'"
-            ]
-        },
-    ],
-        "neutral":[
-        {
-            "mainPoint":"The following data structures issues could have been used, which might have made your code a bit better",
-            "subPoints":[
-                "list comprehensions",
-                "the use of a dictionary instead of a list",
-                "the use of a tuple instead of a mutable list",
-                "the use of 'zip' to loop over two lists of equal length"
-            ]
-        },
-    ],
-        "negative":[
-        {
-            "mainPoint":"The following data structures issues would have improved your code",
-            "subPoints":[
-                "simplifying the list comprehension, or replacing with an 'if-elif-else' statements (i.e. to improve readability)",
-                "the use of a dictionary instead of a list would have been logical",
-                "the use of a tuple instead of a mutable list",
-                "the use of 'zip' to loop over two lists of equal length"
-            ]
-        },
-        {
-            "mainPoint":"The following general concepts were problematic",
-            "subPoints":[
-                "it is better to use 'if-elif-else' statements, rather than 'if-if-...' for readability and speed",
-                "copy-and-pasting code introduces confusion and increases the chances of errors",
-                "the code could have been more concisely formulated"
-            ]
-        }
-    ]
-    },
-    "userDefinedFunctions":{
-        "title":"User-defined Functions",
-        "additionalNotes":true,
-        "positive":[
-        {
-            "mainPoint":"Good use of the following",
-            "subPoints":[
-                "including type hinting",
-                "providing context via block comments",
-                "stating what the function does",
-                "stating what the input objects are (i.e. defined)",
-                "stating what the function returns",
-                "proving internal checks using 'if not isinstance' and a 'raise' statement",
-                "setting an optional variable to a default value of 'None'",
-                "isolating concepts well to user-defined functions (i.e. improving reusability, transferability and debugging)"
-            ]
-        }
-    ],
-        "neutral":[
-        {
-            "mainPoint":"The use of 'assert' over 'raise' statements",
-            "subPoints":[
-                "It is better to use a 'raise' statement because 'assert' statements can be bypassed. Note that for development work, the use of 'assert' is okay."
-            ]
-        },
-        {
-            "mainPoint":"Too complex of a user-defined functions employed",
-            "subPoints":[
-                "While it is good to have used a user-defined functions, the function itself does too much. It is better to isolate concepts into different functions, and to make the functions as general-purpose as possible."
-            ]
-        },
-    ],
-        "negative":[
-        {
-            "mainPoint":"No user-defined functions employed",
-            "subPoints":[
-                "Your solution did not include user-defined functions. Defining your own function helps to isolate concepts, improves reusability, transferability and debugging. These are a major part of scientific programming."
-            ]
-        },
-        {
-            "mainPoint":"Your user-defined functions had the following problems",
-            "subPoints":[
-                "a lack of type hinting",
-                "incorrect type hinting",
-                "no context given using docstring",
-                "no statement about what the function does",
-                "no statement about the input variables (i.e. defined)",
-                "no statement about what the function returns",
-                "no internal checks (i.e. 'if not isinstance' statements)",
-                "not setting optional objects passed to a default value of 'None'",
-                "when using 'if-elif-else' statements, the main part of the function should be nested under the else statement"
-            ]
-        }
-    ]
-    },
-    "callingFunction":{
-        "title":"Calling a Function",
-        "additionalNotes":true,
-        "positive":[
-         
-      ],
-        "negative":[
-        {
-            "mainPoint":"",
-            "subPoints":[
-                "When calling a function, including your user-defined functions, one should reference the parameter that has an object being passed to it. For example, 'my_function(param1=a, param2=b)' and not 'my_function(a, b)'. Doing so ensure that the values are passed to the correct parameter."
-            ]
-        }
-    ]
-    },
-    "plotting":{
-        "title":"Plotting (using Pandas or Matplotlib)",
-        "additionalNotes":true,
-        "positive":[
-        {
-            "mainPoint":"Overall plot feedback",
-            "subPoints":[
-                "The choices behind the plot creation were well done, resulting in clear and informative data presentation."
-            ]
-        },
-        {
-            "mainPoint":"The plot details were good regarding",
-            "subPoints":[
-                "axis labels",
-                "units",
-                "line style",
-                "line thickness",
-                "point style",
-                "point size",
-                "title",
-                "legend",
-                "font size"
-            ]
-        }
-    ],
-    "neutral":[
-        {
-            "mainPoint":"Overall plot feedback",
-            "subPoints":[
-                "The choices behind the plot creation were generally good, but there is some room for improvement."
-            ]
-        },
-        {
-            "mainPoint":"Too many plots were done",
-            "subPoints":[
-                "It would have been good to plot the data together into a single (or a few) plots, thus allowing one to more easily compare the data."
-            ]
-        },
-        {
-            "mainPoint":"Too complicated of a plot was done",
-            "subPoints":[
-                "The amount of data presented in a single plot was too much. It would have been better to separate the data into more plots, allowing one to clearly observe the data.",
-                "The way that the data was presented was too complicated. Making the plot simpler would enable help the viewer understand that data easier."
-            ]
-        }
-    ],
-        "negative":[
-        {
-            "mainPoint":"Overall plot feedback",
-            "subPoints":[
-                "The type of plot was poorly choosen. It would have been more appropriate to plot the data as:"
-            ]
-        },
-        {
-            "mainPoint":"Adding the following things would have improved the plots",
-            "subPoints":[
-                "axis labels",
-                "units",
-                "title",
-                "legend",
-            ]
-        },
-        {
-            "mainPoint":"The choice in the following plot elements could have been done better",
-            "subPoints":[
-                "axis labels",
-                "units",
-                "line style",
-                "line thickness",
-                "point style",
-                "point size",
-                "font size"
-            ]
-        }
-    ]
-    },
-            numpy: {
-                title: "Numpy Library",
-                additionalNotes: true,
-                positive: [
-                    {
-                        mainPoint: "The following points were well done",
-                        subPoints: [
-                            "good job on using ndarrays (simulated density and experimental value) for your Numpy function",
-                            "your Numpy function is indeed faster than your function using regular Python lists",
-                        ]
-                    },
-                ],
-                neutral: [
-                    {
-                        mainPoint: "The following points would improve the Numpy solution slightly",
-                        subPoints: [
-                            "the experimental value was passed as a float to your Numpy function, when converting to an ndarray object might have been better",
-                            "converting the Pandas' dataframe outside of your Numpy function might have improved its performance -- Remember to have a function that optimally does a single task",
-                            "please follow the standard practice within the community by importing Numpy as 'np'"
-                        ]
-                    },
-                ],
-                negative: [
-                    {
-                        mainPoint: "The following points need improvements",
-                        subPoints: [
-                            "for your Numpy function, you did not use ndarrays. Instead you passed the following data type to the function:",
-                            "iterating over the ndarray is not needed since it is vectorized, and results in a loss of performance",
-                            "your Numpy function should not be performing slower than your function that uses regular Python lists",
-                            "your function using Python lists has a performance of:",
-                            "your Numpy function has a performance of:"
-                        ]
-                    }
-                ]
-            },
-            sciPy: {
-                title: "SciPy Library",
-                additionalNotes: true,
-                positive: [
-                    {
-                        mainPoint: "",
-                        subPoints: [
-                            "Good job on using SciPy optimize function"
-                        ]
-                    },
-                ],
-                negative: [
-                    {
-                        mainPoint: "",
-                        subPoints: [
-                            "You needed to use SciPy's optimize function to find the optimal value of the variable."
-                        ]
-                    }
-                ]
-            },
-            significantFigures: {
-                title: "Significant Figures",
-                additionalNotes: true,
-                positive: [
-                    {
-                        mainPoint: "",
-                        subPoints: [
-                            "Your numbers are reported with the correct significant figures."
-                        ]
-                    },
-                ],
-                negative: [
-                    {
-                        mainPoint: "",
-                        subPoints: [
-                            "Your numbers do not have the correct significant figures."
-                        ]
-                    }
-                ]
-            },
-            general: {
-                title: "General Feedback",
-                additionalNotes: true,
-                positive: [
-                    {
-                        mainPoint: "",
-                        subPoints: [
-                            "Excellent job on this assignment!",
-                            "Very good job on this assignment!",
-                            "Good job on this assignment."
-                        ]
-                    },
-                ],
-                negative: [
-                    {
-                        mainPoint: [],
-                        subPoints: [
-                            "Your code does not run because:",
-                            "You used the following libraries that were not allowed in the assignment:",
-                            "You imported libraries that were unused -- this is confusing."
-                        ]
-                    }
-                ]
-            },
 
+    //Local testing:
+    //    change `const debug = true` above
+    //    copy-paste desire code to check locally below and reload HTML document
+    "topic1":{
+        "title":"Topic 1",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"1st positive feedback for topic 1",
+            "subPoints":[
+                "Subpoint 1",
+                "Subpoint 2",
+                "Subpoint 3"
+            ]
+        },
+        {
+            "mainPoint":"2nd positive feedback for topic 1",
+            "subPoints":[
+                "Point 1"
+            ]
         }
+    ],
+        "neutral":[
+        {
+            "mainPoint":"1st netural feedback for topic 1",
+            "subPoints":[
+                "Subpoint 1"
+            ]
+        },
+      ],
+        "negative":[
+        {
+            "mainPoint":"1st negative feedback for topic 1",
+            "subPoints":[
+                "Subpoint 1",
+                "Subpoint 2 with comment box:"
+            ]
+        }
+    ]
+    },
+    "topic2":{
+        "title":"Topic 2",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"1st positive feedback for topic 2",
+            "subPoints":[
+                "Subpoint 1",
+                "Subpoint 2",
+                "Subpoint 3"
+            ]
+        },
+        {
+            "mainPoint":"2nd positive feedback for topic 2",
+            "subPoints":[
+                "Point 1"
+            ]
+        }
+    ],
+        "neutral":[
+        {
+            "mainPoint":"1st netural feedback for topic 2",
+            "subPoints":[
+                "Subpoint 1"
+            ]
+        },
+      ],
+        "negative":[
+        {
+            "mainPoint":"1st negative feedback for topic 2",
+            "subPoints":[
+                "Subpoint 1",
+                "Subpoint 2 with comment box:"
+            ]
+        }
+    ]
+    }
+}
 
         if (!debug) {
             var specificCriteria = []

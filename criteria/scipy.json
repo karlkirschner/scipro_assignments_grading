@@ -18,25 +18,5 @@
             ]
         }
     ]
-    },
-    "significantFigures":{
-        "title":"Significant Figures",
-        "additionalNotes":true,
-        "positive":[
-        {
-            "mainPoint":"",
-            "subPoints":[
-                "Your numbers are reported with the correct significant figures."
-            ]
-         }
-    ],
-        "negative":[
-        {
-            "mainPoint":"",
-            "subPoints":[
-                "Your numbers do not have the correct significant figures."
-            ]
-        }
-    ]
     }
 }

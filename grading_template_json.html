@@ -825,10 +825,10 @@
                 document.body.appendChild(container);
             }
 
-            // Generates assignment specific forms if available
+            // Generates library/assignment specific forms if available
             if (assignmentSpecificCriteria.length > 0) {
                 const sectionTitle = document.createElement("h1");
-                sectionTitle.innerText = "Assignment Specific Criteria";
+                sectionTitle.innerText = "Library and Assignment Specific Feedback";
                 sectionTitle.classList.add("assignment-section-title")
                 document.body.appendChild(sectionTitle);
                 generateTabs(assignmentSpecificCriteria);

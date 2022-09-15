@@ -296,42 +296,6 @@
         }
     ]
     },
-    "plotting":{
-        "title":"Plotting (Pandas or Matplotlib)",
-        "additionalNotes":true,
-        "positive":[
-        {
-            "mainPoint":"The plots were good regarding",
-            "subPoints":[
-                "axis labels",
-                "units",
-                "line style",
-                "line thickness",
-                "point style",
-                "point size",
-                "title",
-                "legend",
-                "font size"
-            ]
-        }
-    ],
-        "negative":[
-        {
-            "mainPoint":"The following would have improved the plots",
-            "subPoints":[
-                "axis labels",
-                "units",
-                "line style",
-                "line thickness",
-                "point style",
-                "point size",
-                "title",
-                "legend",
-                "font size"
-            ]
-        }
-    ]
-    },
     "numpy":{
         "title":"Numpy Library",
         "additionalNotes":true,

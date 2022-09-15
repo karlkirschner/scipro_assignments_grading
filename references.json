@@ -1,17 +1,17 @@
 {
-   "generalCriteria":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/general.json",
-   "assignmentSpecificCriteria":[
-      {  
-         "id": 1,
-         "title":"Assignment 1 - Gravity",
-         "enabled": true,
-         "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/assignment1.json"
-      },
-      {
-         "id": 2,
-         "title":"Plotting Data",
-         "enabled": true,
-         "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/plotting_data.json"
-      }
-   ]
+    "generalCriteria":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/general.json",
+    "assignmentSpecificCriteria":[
+        {  
+            "id": 1,
+            "title":"Assignment 1 - Gravity",
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/assignment1.json"
+        },
+        {
+            "id": 2,
+            "title":"Plotting Data",
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/plotting_data.json"
+        }
+    ]
 }

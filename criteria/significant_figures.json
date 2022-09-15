@@ -1,0 +1,22 @@
+{
+    "significantFigures":{
+        "title":"Significant Figures",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"",
+            "subPoints":[
+                "Your numbers are reported with the correct significant figures."
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"",
+            "subPoints":[
+                "Your numbers have incorrect significant figures."
+            ]
+        }
+    ]
+    }
+}

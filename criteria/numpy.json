@@ -1,0 +1,37 @@
+{
+    "numpy":{
+        "title":"Numpy Library",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"The following points were well done",
+            "subPoints":[
+                "good job on using ndarrays (simulated density and experimental value) for your Numpy function",
+                "your Numpy function is indeed faster than your function using regular Python lists"
+            ]
+        }
+    ],
+        "neutral":[
+        {
+            "mainPoint":"The following points would improve the Numpy solution slightly",
+            "subPoints":[
+                "the experimental value was passed as a float to your Numpy function, when converting to an ndarray object might have been better",
+                "converting the Pandas' dataframe outside of your Numpy function might have improved its performance -- Remember to have a function that optimally does a single task",
+                "please follow the standard practice within the community by importing Numpy as 'np'"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"The following points need improvements",
+            "subPoints":[
+                "for your Numpy function, you did not use ndarrays. Instead you passed the following data type to the function:",
+                "iterating over the ndarray is not needed since it is vectorized, and results in a loss of performance",
+                "your Numpy function should not be performing slower than your function that uses regular Python lists",
+                "your function using Python lists has a performance of:",
+                "your Numpy function has a performance of:"
+            ]
+        }
+    ]
+    }
+}

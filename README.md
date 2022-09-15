@@ -19,6 +19,6 @@ This repository contains the HTML and JSON documents needed for grading the cour
 **Partial Funding**: HEP 3 Funding Program for Open Educational Resources
 
 **Contribution**
-1. Karl N. Kirschner - conceptualization, feedback content and maintenance
-2. Abanoub Abdelmalak - conceptualization and early HTML prototyping
-3. Minh Truong - JSON coding
+1. Karl N. Kirschner - template conceptualization, feedback content and maintenance
+2. Abanoub Abdelmalak - template conceptualization and HTML prototyping
+3. Minh Truong - conceptualization and coding JSON components

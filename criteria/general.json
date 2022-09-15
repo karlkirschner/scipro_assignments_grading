@@ -284,9 +284,6 @@
     "callingFunction":{
         "title":"Calling a Function",
         "additionalNotes":true,
-        "positive":[
-         
-      ],
         "negative":[
         {
             "mainPoint":"",
@@ -315,7 +312,7 @@
                
             ],
             "subPoints":[
-                "Your code does not run because:",
+                "Your code does not run because of bad stuff:",
                 "You used the following libraries that were not allowed in the assignment:",
                 "You imported libraries that were unused -- this is confusing and cluters the code."
             ]

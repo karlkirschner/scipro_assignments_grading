@@ -276,8 +276,7 @@
                 "no statement about what the function returns",
                 "no internal checks (i.e. 'if not isinstance' statements)",
                 "not setting optional objects passed to a default value of 'None'",
-                "when using 'if-elif-else' statements, the main part of the function should be nested under the else statement",
-                "setting optional variable to a default value of 'None'"
+                "when using 'if-elif-else' statements, the main part of the function should be nested under the else statement"
             ]
         }
     ]
@@ -292,7 +291,7 @@
         {
             "mainPoint":"",
             "subPoints":[
-                "When calling a function, including your user-defined functions, one should reference the parameter that a value is being passed to. For example, 'my_function(param1=a, param2=b)' and not 'my_function(a, b)'. Doing so ensure that the values are passed to the corect parameter."
+                "When calling a function, including your user-defined functions, one should reference the parameter that has an object being passed to it. For example, 'my_function(param1=a, param2=b)' and not 'my_function(a, b)'. Doing so ensure that the values are passed to the correct parameter."
             ]
         }
     ]

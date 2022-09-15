@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        const debug = false;
+        const debug = true;
 
         let generalCriteria = {
     "academicScholarship":{
@@ -290,59 +290,102 @@
                 "no statement about what the function returns",
                 "no internal checks (i.e. 'if not isinstance' statements)",
                 "not setting optional objects passed to a default value of 'None'",
-                "when using 'if-elif-else' statements, the main part of the function should be nested under the else statement",
-                "setting optional variable to a default value of 'None'"
+                "when using 'if-elif-else' statements, the main part of the function should be nested under the else statement"
             ]
         }
     ]
     },
-            callingFunction: {
-                title: "Calling a Function",
-                additionalNotes: true,
-                positive: [],
-                negative: [
-                    {
-                        mainPoint: "",
-                        subPoints: ["When calling a function, including your user-defined functions, one should reference the parameter that a value is being passed to. For example, 'my_function(param1=a, param2=b)' and not 'my_function(a, b)'. Doing so ensure that the values are passed to the corect parameter."]
-                    }
-                ]
-            },
-            plotting: {
-                title: "Plotting (Pandas or Matplotlib)",
-                additionalNotes: true,
-                positive: [
-                    {
-                        mainPoint: "The plots were good regarding",
-                        subPoints: [
-                            "axis labels",
-                            "units",
-                            "line style",
-                            "line thickness",
-                            "point style",
-                            "point size",
-                            "title",
-                            "legend",
-                            "font size"
-                        ]
-                    },
-                ],
-                negative: [
-                    {
-                        mainPoint: "The following would have improved the plots",
-                        subPoints: [
-                            "axis labels",
-                            "units",
-                            "line style",
-                            "line thickness",
-                            "point style",
-                            "point size",
-                            "title",
-                            "legend",
-                            "font size"
-                        ]
-                    }
-                ]
-            },
+    "callingFunction":{
+        "title":"Calling a Function",
+        "additionalNotes":true,
+        "positive":[
+         
+      ],
+        "negative":[
+        {
+            "mainPoint":"",
+            "subPoints":[
+                "When calling a function, including your user-defined functions, one should reference the parameter that has an object being passed to it. For example, 'my_function(param1=a, param2=b)' and not 'my_function(a, b)'. Doing so ensure that the values are passed to the correct parameter."
+            ]
+        }
+    ]
+    },
+    "plotting":{
+        "title":"Plotting (using Pandas or Matplotlib)",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall plot feedback",
+            "subPoints":[
+                "The choices behind the plot creation were well done, resulting in clear and informative data presentation."
+            ]
+        },
+        {
+            "mainPoint":"The plot details were good regarding",
+            "subPoints":[
+                "axis labels",
+                "units",
+                "line style",
+                "line thickness",
+                "point style",
+                "point size",
+                "title",
+                "legend",
+                "font size"
+            ]
+        }
+    ],
+    "neutral":[
+        {
+            "mainPoint":"Overall plot feedback",
+            "subPoints":[
+                "The choices behind the plot creation were generally good, but there is some room for improvement."
+            ]
+        },
+        {
+            "mainPoint":"Too many plots were done",
+            "subPoints":[
+                "It would have been good to plot the data together into a single (or a few) plots, thus allowing one to more easily compare the data."
+            ]
+        },
+        {
+            "mainPoint":"Too complicated of a plot was done",
+            "subPoints":[
+                "The amount of data presented in a single plot was too much. It would have been better to separate the data into more plots, allowing one to clearly observe the data.",
+                "The way that the data was presented was too complicated. Making the plot simpler would enable help the viewer understand that data easier."
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"Overall plot feedback",
+            "subPoints":[
+                "The type of plot was poorly choosen. It would have been more appropriate to plot the data as:"
+            ]
+        },
+        {
+            "mainPoint":"Adding the following things would have improved the plots",
+            "subPoints":[
+                "axis labels",
+                "units",
+                "title",
+                "legend",
+            ]
+        },
+        {
+            "mainPoint":"The choice in the following plot elements could have been done better",
+            "subPoints":[
+                "axis labels",
+                "units",
+                "line style",
+                "line thickness",
+                "point style",
+                "point size",
+                "font size"
+            ]
+        }
+    ]
+    },
             numpy: {
                 title: "Numpy Library",
                 additionalNotes: true,

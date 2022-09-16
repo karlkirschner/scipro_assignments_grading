@@ -20,7 +20,7 @@ This repository contains the HTML and JSON documents needed for grading the cour
 **Modifying**: The following information is for those who want to use this as a template in their own courses. You will need to modify the links link in the following files to reflect your own repository and `criteria` json files:
  - the `references.json` file contains multiple links to this GitHub repository
  - the `grading_template_json.html` file contains one link to this GitHub repository
- - the folder `criteria` contains the feedback a) suitable for all assignments (`general.json`) and specific library/assignments (*.json)
+ - the folder `criteria` contains the feedback a) suitable for all assignments (`general.json`) and b) specific library/assignments (*.json)
 
 **Browsers Tested**: Mozilla Firefox and Chrome
 

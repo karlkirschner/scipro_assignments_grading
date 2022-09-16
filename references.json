@@ -20,7 +20,7 @@
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy.json"
         },
         {
-            "id": 3,
+            "id": 4,
             "title":"SciPy",
             "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/scipy.json"

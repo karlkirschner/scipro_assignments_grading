@@ -11,7 +11,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
         const debug = false;
-        let generalCriteria = {
+        var generalCriteria = {
     //Local testing:
     //    change `const debug = true` above
     //    copy-paste desire code to check locally below and reload HTML document
@@ -93,7 +93,6 @@
 
         if (!debug) {
             var specificCriteria = []
-
             $.ajax({
                 dataType: "json",
                 url: "https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/references.json",
@@ -101,6 +100,10 @@
                     $.ajax({
                         dataType: "json",
                         url: data.generalCriteria,
+                        error: function(data){
+                            alert("An error occured. Check the console logs.")
+                            console.log("Error retrieving or parsing general criterias. Try checking for invalid parsing/formats/trailing commas using: https://jsonformatter.curiousconcept.com/#")
+                        },
                         success: function (data) {
                             generalCriteria = data;
                         },

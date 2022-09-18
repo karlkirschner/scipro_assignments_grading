@@ -116,6 +116,7 @@
                             }
                             Promise.all(promises).then(function () {
                                 specificCriteria.sort((a, b) => { return a.id - b.id });
+                                generateBody();
                                 //generateTemplate(generalCriteria, specificCriteria);
                             }).catch(err => console.log(err));
                         }
@@ -192,7 +193,7 @@
             background-color: rgb(79, 212, 79);
         }
 
-        .button-box {
+        .button-container {
             display: table;
             margin: 0 auto;
         }
@@ -270,19 +271,14 @@
             margin-left: 1.2rem;
             margin-bottom: 1rem;
             display: block;
-
         }
 
-        .textarea-container {
+        #evaluation-textbox {
             margin-left: 5rem;
             margin-right: 5rem;
             margin-bottom: 5rem;
-            height: 600px;
-        }
-
-        #textarea-evaluation {
             width: 100%;
-            height: 100%;
+            height: 600px;
             padding: 12px 20px;
             box-sizing: border-box;
             border: 2px solid #ccc;
@@ -373,17 +369,21 @@
     </div>
 
     <script>
-        generateBody();
+        if(debug){
+            generateBody();
+        }
 
         function generateBody(){
             document.body.appendChild(generateButton("Reset", console.log("Test"), ["button", "reset-button"]));
             document.body.appendChild(generateTemplate(generalCriteria));
 
-            const buttonBox = document.createElement("div");
-            buttonBox.classList.add("button-box");
-            buttonBox.appendChild(generateButton("Generate", console.log("Test"), ["button", "generate-button"]));
+            const buttonBox = generateContainer("button-box", ["button-container"]);
+            const evaluationTextBox = generateTextArea("evaluation-textbox", ["evaluation-textbox"]);
+
+            buttonBox.appendChild(generateButton("Generate", () => displayEvaluationText(), ["button", "generate-button"]));
             buttonBox.appendChild(generateButton("⠀ Save ⠀", console.log("Test"), ["button", "save-button"]));
             document.body.appendChild(buttonBox);
+            document.body.appendChild(evaluationTextBox);
         }
 
         function generateTemplate(data){
@@ -391,7 +391,7 @@
 
             for (const category in data){
                 const categoryContainer = generateContainer(category + "-category-container", ["category-container"])
-                categoryContainer.appendChild(generateTitle(category, ["category-title"]));
+                categoryContainer.appendChild(generateTitle(data[category]["title"], ["category-title"]));
 
                 for (const criteria of ["positive", "neutral", "negative"]){
                     if(Object.keys(data[category]).includes(criteria)){
@@ -407,7 +407,7 @@
                             bulletPointContainer.appendChild(subPointList);
 
                             for (const subPoint of bulletPointObject["subPoints"]){
-                                const subPointElement = generateSubPointElement(category + "-" + criteria + "-" + bulletPointObject["mainPoint"] + "-" + subPoint, subPoint)
+                                const subPointElement = generateSubPointElement(category + "-" + criteria + "-" + bulletPointObject["mainPoint"] + "-" + subPoint, subPoint, category, criteria, bulletPointObject["mainPoint"])
 
                                 subPointList.appendChild(subPointElement);
                             }
@@ -460,10 +460,13 @@
             return container;
         }
 
-        function generateSubPointElement(id, label){
+        function generateSubPointElement(id, label, category, criteria, mainPoint){
             const subPointElement = document.createElement("li");
             const checkBox = document.createElement("input");
             checkBox.type = "checkbox";
+            checkBox.setAttribute("category", category);
+            checkBox.setAttribute("criteria", criteria);
+            checkBox.setAttribute("mainPoint", mainPoint);
             checkBox.value = label;
             checkBox.id = id;
 
@@ -477,7 +480,6 @@
             if (label.endsWith(":") || label.endsWith(": ")){
                 subPointElement.appendChild(generateTextArea(id + "-textarea", ["subpoint-textbox"]))
             }
-
             return subPointElement;
         }
 
@@ -487,6 +489,75 @@
             textArea.type = "text";
             textArea.classList.add(...classList);
             return textArea;
+        }
+
+        function maskAttribute(attributes, searchValues){
+            let mask = 'input[type="checkbox"]:checked';
+            for (const index in attributes){
+                mask += '[' + attributes[index] + '="' + searchValues[index] + '"]';
+            }
+            return mask;
+        }
+
+        function multiLineIndent(text, indentation) {
+            let newText = "";
+            for (const line of text.split("\n")) {
+                newText += indentation + line + "\n";
+            }
+            return newText;
+        }
+
+        function generateEvaluationText(data, previousText = ""){
+            let text = previousText;
+            
+            for (const category in data){
+                const filterByCategory = document.querySelectorAll(maskAttribute(["category"], [category]));
+                if (filterByCategory.length > 0){
+                    text += "\n\n" + data[category]["title"] + ":\n";
+
+                    for (criteria of ["positive", "neutral", "negative"]){
+                        if (Object.keys(data[category]).includes(criteria)){
+                        const filterByCriteria = document.querySelectorAll(maskAttribute(["category", "criteria"], [category, criteria]));
+                        if (filterByCriteria.length > 0){
+                            text += "\n" + criteria[0].toUpperCase() + criteria.slice(1) + ":\n";
+
+                            for (const bulletPointObject of data[category][criteria]){
+                                const filterByMainPoint = document.querySelectorAll(maskAttribute(["category", "criteria", "mainpoint"], [category, criteria, bulletPointObject["mainPoint"]]))
+                                if (filterByMainPoint.length > 0 ){
+                                    if(bulletPointObject["mainPoint"].length > 0){
+                                        text += "  " + bulletPointObject["mainPoint"] + ":\n";
+                                    }
+
+                                    for (const subPoint of filterByMainPoint){
+                                        text += "      - " + subPoint.value + "\n";
+                                        if (subPoint.value.endsWith(":") || subPoint.value.endsWith(": ")){
+                                            const subPointComment = document.getElementById(category + "-" + criteria + "-" + bulletPointObject["mainPoint"] + "-" + subPoint.value + "-textarea");
+                                            if (subPointComment.value.length > 0){
+                                                text += multiLineIndent(subPointComment.value, "      ");
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    }
+                }
+                const categoryNoteArea = document.getElementById(category + "-textarea");
+                if (categoryNoteArea.value.length > 0){
+                    text += "\nAdditional Notes: \n";
+                    text += multiLineIndent(categoryNoteArea.value, "  ");
+                }
+
+            }
+            return text;
+        }
+
+        function displayEvaluationText(){
+            const evaluationTextField = document.getElementById("evaluation-textbox");
+            const generalCriteriaEvaluation = generateEvaluationText(generalCriteria, "General Feedback");
+
+            evaluationTextField.value = generalCriteriaEvaluation;
         }
        
 

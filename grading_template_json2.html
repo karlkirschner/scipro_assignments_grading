@@ -11,6 +11,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
         const debug = false;
+        var assignmentSpecificCriterias = [];
         var generalCriteria = {
     //Local testing:
     //    change `const debug = true` above
@@ -84,7 +85,6 @@
 }
 
         if (!debug) {
-            var specificCriteria = []
             $.ajax({
                 dataType: "json",
                 url: "https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/references.json",
@@ -108,16 +108,15 @@
                                         url: assignment.url,
                                         success: function (data) {
                                             assignment.content = data;
-                                            specificCriteria.push(assignment);
+                                            assignmentSpecificCriterias.push(assignment);
                                         }
                                     });
                                     promises.push(request);
                                 }
                             }
                             Promise.all(promises).then(function () {
-                                specificCriteria.sort((a, b) => { return a.id - b.id });
+                                assignmentSpecificCriterias.sort((a, b) => { return a.id - b.id });
                                 generateBody();
-                                //generateTemplate(generalCriteria, specificCriteria);
                             }).catch(err => console.log(err));
                         }
                     });
@@ -293,13 +292,13 @@
             margin-left: 5rem;
         }
 
-        .tabs {
+        .tab-container {
             overflow: hidden;
             border: 1px solid #ccc;
             background-color: #f1f1f1;
         }
 
-        .tabs button {
+        .tab-container button {
             background-color: inherit;
             float: left;
             border: none;
@@ -310,11 +309,11 @@
             font-size: 17px;
         }
 
-        .tabs button:hover {
+        .tab button:hover {
             background-color: #ddd;
         }
 
-        .tabs button.active {
+        .tab button.active {
             background-color: #ccc;
         }
 
@@ -378,12 +377,49 @@
             document.body.appendChild(generateTemplate(generalCriteria));
 
             const buttonBox = generateContainer("button-box", ["button-container"]);
+            generateTabs();
+
             const evaluationTextBox = generateTextArea("evaluation-textbox", ["evaluation-textbox"]);
 
             buttonBox.appendChild(generateButton("Generate", () => displayEvaluationText(), ["button", "generate-button"]));
             buttonBox.appendChild(generateButton("⠀ Save ⠀", console.log("Test"), ["button", "save-button"]));
             document.body.appendChild(buttonBox);
             document.body.appendChild(evaluationTextBox);
+        }
+
+        function generateTabs(){
+            const assignmentSpecificCriteriasContainer = document.createElement("div");
+            const tabsButtonContainer = generateContainer("", ["tab-container"]);
+            const tabsContent = generateContainer("");
+
+            function toogleTab(id) {
+                selectedTabContent = document.getElementById(id);
+                selectedButton = document.getElementById(id);
+
+                buttons = document.querySelectorAll(".tab");
+                tabContents = document.querySelectorAll(".tab-content");
+
+                for (const tabContent of tabContents) {
+                    tabContent.style.display = "none";
+                    tabContent.classList.remove("active");
+                }
+
+                for (const button of buttons) {
+                    button.classList.remove("active");
+                }
+
+                if (!selectedButton.classList.contains("active")) {
+                    selectedTabContent.style.display = "block";
+                    selectedButton.classList.add("active");
+                }
+            }
+            for (const assignmentSpecificObject of assignmentSpecificCriterias){
+                const id = "assignmentSpecificCriteria" + assignmentSpecificObject["id"];
+                const assignmentTabButton = generateButton(assignmentSpecificObject["title"], () =>  toogleTab(id), ["tab"], id);
+                tabsButtonContainer.appendChild(assignmentTabButton);
+                document.body.appendChild(tabsButtonContainer);
+            }
+            
         }
 
         function generateTemplate(data){
@@ -436,7 +472,7 @@
          * @param {string[]} classList - A list of strings containing the class names
          * @return {button} button - A button.
          */
-         function generateButton(label, clickFunction, classList=[]) {
+         function generateButton(label, clickFunction, classList=[], id="") {
             const button = document.createElement("button");
             button.innerText = label;
             button.onclick = clickFunction;
@@ -548,7 +584,6 @@
                     text += "\nAdditional Notes: \n";
                     text += multiLineIndent(categoryNoteArea.value, "  ");
                 }
-
             }
             return text;
         }

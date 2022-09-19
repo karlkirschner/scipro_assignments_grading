@@ -11,88 +11,80 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
         const debug = false;
+        var assignmentSpecificCriterias = [];
         var generalCriteria = {
-    // Local testing:
-    //    - change `const debug = true` above
-    //    - copy-paste desired code below, save and reload HTML document 
-    "topic1":{
-        "title":"Topic 1",
-        "additionalNotes":true,
-        "positive":[
-            {
-                "mainPoint":"1st positive feedback for topic 1",
-                "subPoints":[
-                    "Subpoint 1",
-                    "Subpoint 2",
-                    "Subpoint 3"
+            //Local testing:
+            //    change `const debug = true` above
+            //    copy-paste desire code to check locally below and reload HTML document
+            "topic1": {
+                "title": "Topic 1",
+                "additionalNotes": true,
+                "positive": [
+                    {
+                        "mainPoint": "1st positive feedback for topic 1",
+                        "subPoints": [
+                            "Subpoint 1",
+                            "Subpoint 2",
+                            "Subpoint 3"
+                        ]
+                    },
+                    {
+                        "mainPoint": "2nd positive feedback for topic 1",
+                        "subPoints": [
+                            "Point 1"
+                        ]
+                    }
+                ],
+                "negative": [
+                    {
+                        "mainPoint": "1st negative feedback for topic 1",
+                        "subPoints": [
+                            "Subpoint 1",
+                            "Subpoint 2 with comment box:"
+                        ]
+                    }
                 ]
             },
-            {
-                "mainPoint":"2nd positive feedback for topic 1",
-                "subPoints":[
-                    "Point 1"
+            "topic2": {
+                "title": "Topic 2",
+                "additionalNotes": true,
+                "positive": [
+                    {
+                        "mainPoint": "1st positive feedback for topic 2",
+                        "subPoints": [
+                            "Subpoint 1",
+                            "Subpoint 2",
+                            "Subpoint 3"
+                        ]
+                    },
+                    {
+                        "mainPoint": "2nd positive feedback for topic 2",
+                        "subPoints": [
+                            "Point 1"
+                        ]
+                    }
+                ],
+                "neutral": [
+                    {
+                        "mainPoint": "1st netural feedback for topic 2",
+                        "subPoints": [
+                            "Subpoint 1"
+                        ]
+                    },
+                ],
+                "negative": [
+                    {
+                        "mainPoint": "1st negative feedback for topic 2",
+                        "subPoints": [
+                            "Subpoint 1",
+                            "Subpoint 2 with comment box:"
+                        ]
+                    }
                 ]
             }
-        ],
-        "neutral":[
-            {
-                "mainPoint":"1st netural feedback for topic 1",
-                "subPoints":[
-                    "Subpoint 1"
-                ]
-            }
-        ],
-        "negative":[
-            {
-                "mainPoint":"1st negative feedback for topic 1",
-                "subPoints":[
-                    "Subpoint 1",
-                    "Subpoint 2 with comment box:"
-                ]
-            }
-        ]
-    },
-    "topic2":{
-        "title":"Topic 2",
-        "additionalNotes":true,
-        "positive":[
-            {
-                "mainPoint":"1st positive feedback for topic 2",
-                "subPoints":[
-                    "Subpoint 1",
-                    "Subpoint 2",
-                    "Subpoint 3"
-                ]
-            },
-            {
-                "mainPoint":"2nd positive feedback for topic 2",
-                "subPoints":[
-                    "Point 1"
-                ]
-            }
-        ],
-        "neutral":[
-            {
-                "mainPoint":"1st netural feedback for topic 2",
-                "subPoints":[
-                    "Subpoint 1"
-                ]
-            }
-        ],
-        "negative":[
-            {
-                "mainPoint":"1st negative feedback for topic 2",
-                "subPoints":[
-                    "Subpoint 1",
-                    "Subpoint 2 with comment box:"
-                ]
-            }
-        ]
-    }
-}
+        }
 
         if (!debug) {
-            var specificCriteria = []
             $.ajax({
                 dataType: "json",
                 url: "https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/references.json",
@@ -100,7 +92,7 @@
                     $.ajax({
                         dataType: "json",
                         url: data.generalCriteria,
-                        error: function(data){
+                        error: function (data) {
                             alert("An error occured. Check the console logs.")
                             console.log("Error retrieving or parsing general criterias. Try checking for invalid parsing/formats/trailing commas using: https://jsonformatter.curiousconcept.com/#")
                         },
@@ -116,15 +108,15 @@
                                         url: assignment.url,
                                         success: function (data) {
                                             assignment.content = data;
-                                            specificCriteria.push(assignment);
+                                            assignmentSpecificCriterias.push(assignment);
                                         }
                                     });
                                     promises.push(request);
                                 }
                             }
                             Promise.all(promises).then(function () {
-                                specificCriteria.sort((a, b) => { return a.id - b.id });
-                                generateTemplate(generalCriteria, specificCriteria);
+                                assignmentSpecificCriterias.sort((a, b) => { return a.id - b.id });
+                                generateBody();
                             }).catch(err => console.log(err));
                         }
                     });
@@ -148,16 +140,56 @@
             font-family: 'Roboto', sans-serif;
         }
 
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 350px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 0.5rem;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 20%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -125px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
         .side {
             border-radius: 5px;
             width: 300px;
             border: 1px solid;
-            background-color: #ADD8E6;
+            background-color: #fafafa;
             min-height: 200px;
             position: fixed;
             padding: 5px;
             right: 55px;
-            top: 200px;
+            top: 260px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
         ul {
@@ -168,10 +200,15 @@
             opacity: 1
         }
 
-        table,
-        th,
         td {
-            border: 1px solid black;
+            border: 1px solid rgba(0, 0, 0, 0.35);
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        td input{
+            border-radius: 5px;
+            width: 3.5rem;
         }
 
         .button {
@@ -200,7 +237,7 @@
             background-color: rgb(79, 212, 79);
         }
 
-        .button-box {
+        .button-container {
             display: table;
             margin: 0 auto;
         }
@@ -221,7 +258,7 @@
             margin-bottom: 2rem;
         }
 
-        .mainpoint-label {
+        .mainPoint-title {
             font-size: 1rem;
             font-weight: bolder;
             margin-top: 1rem;
@@ -229,7 +266,15 @@
             margin-left: 2rem;
         }
 
-        .category {
+        .additional-text-title {
+            font-size: 1rem;
+            font-weight: bolder;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            margin-left: 2rem;
+        }
+
+        .category-container {
             margin-top: 3rem;
             margin-left: 3rem;
             margin-right: 3rem;
@@ -243,14 +288,14 @@
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
-        .positive {
+        .positive-title {
             color: blue;
             font-size: 1.3rem;
             font-weight: bolder;
             margin-bottom: 0px;
         }
 
-        .neutral {
+        .neutral-title {
             margin-top: 1.3rem;
             color: green;
             font-size: 1.3rem;
@@ -258,7 +303,7 @@
             margin-bottom: 0px;
         }
 
-        .negative {
+        .negative-title {
             margin-top: 1.3rem;
             color: red;
             font-size: 1.3rem;
@@ -270,19 +315,14 @@
             margin-left: 1.2rem;
             margin-bottom: 1rem;
             display: block;
-
         }
 
-        .textarea-container {
+        .evaluation-textbox {
             margin-left: 5rem;
             margin-right: 5rem;
             margin-bottom: 5rem;
+            width: 90%;
             height: 600px;
-        }
-
-        #textarea-evaluation {
-            width: 100%;
-            height: 100%;
             padding: 12px 20px;
             box-sizing: border-box;
             border: 2px solid #ccc;
@@ -297,13 +337,13 @@
             margin-left: 5rem;
         }
 
-        .tabs {
+        .tab-container {
             overflow: hidden;
             border: 1px solid #ccc;
             background-color: #f1f1f1;
         }
 
-        .tabs button {
+        .tab-container button {
             background-color: inherit;
             float: left;
             border: none;
@@ -314,11 +354,11 @@
             font-size: 17px;
         }
 
-        .tabs button:hover {
+        .tab button:hover {
             background-color: #ddd;
         }
 
-        .tabs button.active {
+        .tab button.active {
             background-color: #ccc;
         }
 
@@ -334,524 +374,230 @@
 
 <body>
     <header>
-        <center>
+        <div style="text-align: center;">
             <h1>Scientific Programming for Python</h1>
             <h2>Grading Template</h2>
             <p>The goal of this form is 1) enable faster grading and 2) unifies the feedback given to the students due
                 to multiple graders.</p>
-            <center />
+            </div>
     </header>
 
     <div class="side">
         <b>Grading</b>
         <table style="width:100%">
             <tr>
-                <td>Code quality & design</td>
-                <td><input type="number" value="6" min="0.0" max="6.0" step="0.5"></td>
+                <td>
+                    <div class="tooltip">Code quality & design
+                        <span class="tooltiptext">
+                            6 pts: Solution/goal is well thought out<br>
+                            3 pts: Solution/goal is partially planned<br>
+                            0 pts: Solution/goal is unrefined<br>
+                            ---------------------<br>
+                            Weighting Factor: 4.0
+                        </span>
+                    </div>
+                </td>
+                <td><input id="codequality-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.getAttribute('factor'), 'codequality-percentage')"></td>
+                <td><p id="codequality-percentage">24%</p></td>
             </tr>
 
             <tr>
-                <td>Code excution & results</td>
-                <td><input type="number" value="6" min="0.0" max="6.0" step="0.5"></td>
+                <td>
+                    <div class="tooltip">Code execution & results
+                        <span class="tooltiptext">
+                            6 pts: Code runs correctly in its entirety<br>
+                            3 pts: Code runs, but only partially correct<br>
+                            0 pts: Code doesn’t run, or doesn’t give proper output<br>
+                            ---------------------<br>
+                            Weighting Factor: 4.0
+                        </span>
+                    </div>
+                </td>
+                <td><input id="codeexecution-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.getAttribute('factor'), 'codeexecution-percentage')"></td>
+                <td><p id="codeexecution-percentage">24%</p></td>
             </tr>
 
             <tr>
-                <td>Assignment requirements</td>
-                <td><input type="number" value="6" min="0.0" max="6.0" step="0.5"></td>
+                <td>
+                    <div class="tooltip">Assignment requirements
+                        <span class="tooltiptext">
+                            6 pts: All of the requirements were fulfilled<br>
+                            3 pts: Half of the requirements were met<br>
+                            0 pts: Very little or none of the requirements were met<br>
+                            ---------------------<br>
+                            Weighting Factor: 4.0
+                        </span>
+                    </div>
+                </td>
+                <td><input id="assignmentrequirements-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.getAttribute('factor'), 'assignmentrequirements-percentage')"></td>
+                <td><p id="assignmentrequirements-percentage">24%</p></td>
             </tr>
 
             <tr>
-                <td>Scientific programming</td>
-                <td><input type="number" value="6" min="0.0" max="6.0" step="0.5"></td>
+                <td>
+                    <div class="tooltip">Scientific programming
+                        <span class="tooltiptext">
+                            6 pts: Code completely follows scientific programming concepts<br>
+                            3 pts: Code somewhat follows scientific programming concepts<br>
+                            0 pts: Code does not conform to scientific programming concepts<br>
+                            ---------------------<br>
+                            Weighting Factor: 4.0
+                        </span>
+                    </div>
+                </td>
+                <td><input id="scientific-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.getAttribute('factor'), 'scientific-percentage')"></td>
+                <td><p id="scientific-percentage">24%</p></td>
             </tr>
 
             <tr>
-                <td>Creativity</td>
-                <td><input type="number" value="4" min="0.0" max="4.0" step="0.5"></td>
+                <td>
+                    <div class="tooltip">Creativity
+                        <span class="tooltiptext">
+                            4 pts: Code shows significant problem solving skills, creativity, or robustness<br>
+                            2 pts: Code shows an average approach to problem solving, creativity, or robustness<br>
+                            0 pts: Code does not show notable problem solving skills, creativity, or robustness<br>
+                            ---------------------<br>
+                            Weighting Factor: 1.0
+                        </span>
+                    </div>
+                </td>
+                <td ><input id="creativity-value" class="point" factor="1" type="number" value="4" min="0.0" max="4.0" step="0.5" onchange="updatePercentage(this.value, this.getAttribute('factor'), 'creativity-percentage')"></td>
+                <td><p style="width: 40px;" id="creativity-percentage">4%</p></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip">Grade
+                        <span class="tooltiptext">
+                            <table class="GeneratedTable">
+                                <thead>
+                                  <tr>
+                                    <th>Grade</th>
+                                    <th>Description</th>
+                                    <th>Upper point level</th>
+                                    <th>Lower point level</th>
+                                    <th>American Equivalent</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>1.0</td>
+                                    <td>excellent</td>
+                                    <td>100</td>
+                                    <td>95</td>
+                                    <td>A+</td>
+                                  </tr>
+                                  <tr>
+                                    <td>1.3</td>
+                                    <td>very good</td>
+                                    <td>94</td>
+                                    <td>90</td>
+                                    <td>A</td>
+                                  </tr>
+                                  <tr>
+                                    <td>1.7</td>
+                                    <td>very good</td>
+                                    <td>89</td>
+                                    <td>85</td>
+                                    <td>A-</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2.0</td>
+                                    <td>good</td>
+                                    <td>84</td>
+                                    <td>80</td>
+                                    <td>B+</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2.3</td>
+                                    <td>good</td>
+                                    <td>79</td>
+                                    <td>75</td>
+                                    <td>B</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2.7</td>
+                                    <td>good</td>
+                                    <td>74</td>
+                                    <td>70</td>
+                                    <td>B-</td>
+                                  </tr>
+                                  <tr>
+                                    <td>3.0</td>
+                                    <td>above average</td>
+                                    <td>69</td>
+                                    <td>65</td>
+                                    <td>C+</td>
+                                  </tr>
+                                  <tr>
+                                    <td>3.3</td>
+                                    <td>average</td>
+                                    <td>64</td>
+                                    <td>60</td>
+                                    <td>C</td>
+                                  </tr>
+                                  <tr>
+                                    <td>3.7</td>
+                                    <td>below average</td>
+                                    <td>59</td>
+                                    <td>55</td>
+                                    <td>C-</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4.0</td>
+                                    <td>sufficient</td>
+                                    <td>54</td>
+                                    <td>50</td>
+                                    <td>D</td>
+                                  </tr>
+                                  <tr>
+                                    <td>5.0</td>
+                                    <td>insufficient</td>
+                                    <td>50</td>
+                                    <td>0</td>
+                                    <td>F</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </span>
+                    </div>
+                </td>
+                <td><p id="grade-percentage">100%</p></td>
+                <td><p id="grade">1.0 (A+)</p></td>
+                
             </tr>
         </table>
     </div>
 
     <script>
-        // ================ Object descriptions ==================
-
-        /** === assignmentSpecificCriteria {assignmentObject[]} ===
-         * An array containing multiple assignment objects.
-         */
-
-        /** === assignmentObject {object} ===
-         * @attribute {number} id - The id representing the order of the assignment.
-         * @attribute {string} title - The title of the assignment.
-         * @attribute {boolean} enabled - Whether the assignment template should be available to the grader.
-         * @attribute {string} url - The url to the raw format of the assignment.json (The assignment.json are of type generalCriteria)
-         * @attribute {generalCriteria} content - This will be automatically added via the code. Content is a generalCriteria objects related to the assignment.
-
-        /** === generalCriteria {object} ===
-        * An object which contains multiple categories {category}
-        */
-
-        /** === category {object} ===
-        * @attribute {string} title - The title of the category.
-        * @attribute {boolean} additionalNotes - Whether the category should have a textarea at the bottom of the category for additional notes.
-        * @attribute {mainPoint[]} positive - A list of positive mainPoint objects.
-        * @attribute {mainPoint[]} neutral - A list of neutral mainPoint objects.
-        * @attribute {mainPoint[]} negative - A list of negative mainPoint objects.
-        */
-
-        /** === mainPoint {object} ===
-        * @attribute {string} mainPoint - The label of the mainPoint.
-        * @attribute {string[]} subPoints - A list of the subPoints in relation to the mainPoint. (If a subPoint ends with a ":" an additional textfield will be generated.)
-        */
-
-        // =======================================================================
-
-        // This id is used for indexing the subPoints for easier storage and loading.
-        var idCount = 0;
-
-
-        // This method will load the generalCriteria object defined in this JavaScript code.
         if (debug) {
-            generateTemplate(generalCriteria);
+            generateBody();
         }
 
-        /**
-         * Generates the template for the grading form. Main entry to create the forms.
-         * @param {object} generalCriteria - The general criteria for the assignment. A form dictionary/object.
-         * @param {object} specificCriteria - An array of objects containing a form dictionary/object with it's metadata for each assignment.
-         */
+        function generateBody() {
+            document.body.appendChild(generateButton("Reset", () => reset(), ["button", "reset-button"]));
+            document.body.appendChild(generateTemplate(generalCriteria));
+            document.body.appendChild(generateTabs());
 
-        function generateTemplate(generalCriteria, assignmentSpecificCriteria = []) {
-
-            // Generates "Reset" button
-            document.body.appendChild(generateButton("Reset", reset, ["button", "reset-button"]));
-
-            // Generates categories 
-            for (const category in generalCriteria) {
-                const container = generateCategory(generalCriteria[category], category);
-                document.body.appendChild(container);
-            }
-
-            // Generates library/assignment specific forms if available
-            if (assignmentSpecificCriteria.length > 0) {
-                const sectionTitle = document.createElement("h1");
-                sectionTitle.innerText = "Library and Assignment Specific Feedback";
-                sectionTitle.classList.add("assignment-section-title")
-                document.body.appendChild(sectionTitle);
-                generateTabs(assignmentSpecificCriteria);
-            }
-
-            // Generates the "Generate" and "Save" buttons
-            const buttonBox = document.createElement("div");
-            buttonBox.classList.add("button-box");
-            buttonBox.appendChild(generateButton("Generate", evaluate, ["button", "generate-button"]));
-            buttonBox.appendChild(generateButton("⠀ Save ⠀", save, ["button", "save-button"]));
+            const buttonBox = generateContainer("button-box", ["button-container"]);
+            buttonBox.appendChild(generateButton("Generate", () => displayEvaluationText(), ["button", "generate-button"]));
+            buttonBox.appendChild(generateButton("⠀ Save ⠀", () => save(), ["button", "save-button"]));
             document.body.appendChild(buttonBox);
 
-            // Generates the textarea containing all checked points for the evaluation.
-            const textAreaContainer = document.createElement("div");
-            textAreaContainer.classList.add("textarea-container");
-            const textArea = document.createElement("textarea");
-            textArea.classList.add("textarea-evaluation")
-            textArea.id = "textarea-evaluation";
-            textAreaContainer.appendChild(textArea);
-            document.body.appendChild(textAreaContainer);
+            const evaluationTextBox = generateTextArea("evaluation-textbox", ["evaluation-textbox"]);
+            document.body.appendChild(evaluationTextBox);
 
-            // Loads data which are stored in the LocalStorage
-            loadLocalStorage(generalCriteria, assignmentSpecificCriteria);
+            load();
         }
 
-        /**
-         * Generates button given a label, a function and classes.
-         * @param {string} label - The text to be displayed on the button
-         * @param {function} clickFunction - The function to be executed after clicked.
-         * @param {string[]} classList - A list of strings containing the class names
-         * @return {button} button - A button.
-         */
-        function generateButton(label, clickFunction, classList) {
-            const button = document.createElement("button");
-            button.innerText = label;
-            button.onclick = clickFunction;
-
-            for (const classLabel of classList) {
-                button.classList.add(classLabel);
-            }
-            return button;
-        }
-
-        /**
-         * Generates a category, using a category object and the title of the category for the additional field creation.
-         * @param {category} data - An category object.
-         * @param {string} category - The title of the category.
-         * @return {div} container - A container containing the category.
-         */
-        function generateCategory(data, category) {
-            // Generate category container
-            const container = document.createElement("div");
-            container.classList.add("category")
-
-            // Add title to category container
-            const title = document.createElement("p");
-            title.innerText = data["title"];
-            title.classList.add("category-title")
-            container.appendChild(title);
-
-            // Generate container containing positive, neutral and negative mainPoints.
-            const criteriaContainer = document.createElement("div");
-            criteriaContainer.classList.add("criteria");
-            container.append(criteriaContainer);
-
-            // Generates the mainPoints with it's subPoints for each criteria.
-            for (const criteria of ["positive", "neutral", "negative"]) {
-                if (Object.keys(data).includes(criteria)) {
-                    generateCriteria(criteriaContainer, data, criteria);
-                }
-            }
-            
-            // Generates the textarea of the corresponding category
-            if (data["additionalNotes"]) {
-                const title = document.createElement("p");
-                title.innerText = "Additional Notes:";
-                title.classList.add("mainpoint-label");
-                container.appendChild(title);
-                container.appendChild(generateAdditionalNotesArea(category));
-            }
-            return container;
-        }
-
-        /**
-         * Generate the mainPoints.
-         * @param {div} container - The container which the mainPoints will be added to.
-         * @param {mainPoint[]} data - A list containing mainPoint objects.
-         * @param {string} criteria - The criteria positive or neutral or negative, which are also keys of the corresponding category object.
-         */
-        function generateCriteria(container, data, criteria) {
-            // Generate criteria container
-            const title = document.createElement("p");
-            title.classList.add(criteria)
-            title.innerText = criteria[0].toUpperCase() + criteria.slice(1) + ":";
-            container.appendChild(title);
-
-            for (element of data[criteria]) {
-                generateMainPoint(container, element, criteria);
-            }
-
-        };
-
-        /**
-         * Generate the mainPoint.
-         * @param {div} container - The container which the mainPoint will be added to.
-         * @param {mainPoint} data - An mainPoint object
-         * @param {string} criteria - The criteria positive or neutral or negative, which are also keys of the corresponding category object.
-         */
-        function generateMainPoint(container, element, criteria) {
-            // Generate mainPoint
-            const label = document.createElement("p");
-            label.innerText = element["mainPoint"];
-            label.classList.add("mainpoint-label")
-            container.appendChild(label);
-
-            // Generate subPoints
-            const subPoints = generateSubPoints(container, element["subPoints"], criteria)
-            container.appendChild(subPoints);
-        };
-
-        /**
-         * Generate the subPoints.
-         * @param {div} container - The container which the subPoints will be added to.
-         * @param {string[]} subPoints - An list of strings representing the subPoints.
-         * @param {string} criteria - The criteria positive or neutral or negative, which are also keys of the corresponding category object.
-         * @return {div} subPointContainer - A div containing the subPoints.
-         */
-        function generateSubPoints(container, subPoints, criteria) {
-            // Generate subPoint container
-            const subPointContainer = document.createElement("div");
-            subPointContainer.id = "subPoint-" + criteria + "-" + idCount;
-            idCount++;
-
-            // Generate subPoints
-            const unorderedList = document.createElement("ul");
-            for (const subPoint of subPoints) {
-                const listElement = document.createElement("li");
-                const checkBox = document.createElement("input");
-                checkBox.type = "checkbox";
-                checkBox.value = subPoint;
-                checkBox.id = idCount;
-
-                const label = document.createElement("label");
-                label.htmlFor = idCount++;
-                label.innerText = subPoint;
-
-                listElement.appendChild(checkBox);
-                listElement.appendChild(label);
-
-                // Add textbox if subPoint ends with ":" or ": "
-                if (subPoint.endsWith(":") || subPoint.endsWith(": ")) {
-                    const textBox = generateSubPointTextBox(subPoint);
-                    listElement.appendChild(textBox);
-                }
-
-                unorderedList.appendChild(listElement);
-            }
-            subPointContainer.appendChild(unorderedList);
-            return subPointContainer;
-        }
-
-        /**
-         * Generate a text field for a subPoint.
-         * @param {string} subPoint - A string representing the subPoint.
-         * @return {textArea} textBox - A textArea corresponding to the given subPoint.
-         */
-        function generateSubPointTextBox(subPoint) {
-            const textBox = document.createElement("textarea");
-            textBox.classList.add("subpoint-textbox");
-            textBox.type = "text";
-            textBox.id = subPoint;
-            return textBox;
-        }
-
-        /**
-         * Generate a text field for a subPoint.
-         * @param {string} subPoint - A string representing the subPoint.
-         * @return {textArea} textArea - A textArea corresponding to the given category.
-         */
-        function generateAdditionalNotesArea(category) {
-            const textArea = document.createElement("textarea");
-            textArea.id = category;
-            textArea.classList.add("textarea-notes");
-            return textArea;
-        }
-
-        /**
-         * Cleares the local storage and saves the data in the forms to the local storage
-         */
-        function save() {
-            window.localStorage.clear();
-
-            // Save values of the checkboxes
-            const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
-            for (const input of allInputs) {
-                localStorage.setItem(input.id, "checked");
-            }
-
-            // Save values of the category textareas.
-            const allTextNotes = document.querySelectorAll(".textarea-notes");
-            for (const textNote of allTextNotes) {
-                if (textNote.value.length > 0)
-                    localStorage.setItem(textNote.id, textNote.value);
-            }
-
-            // Save values of the subPoint textboxes.
-            const allSubPoinTextBox = document.querySelectorAll(".subpoint-textbox");
-            for (const textBox of allSubPoinTextBox) {
-                if (textBox.value.length > 0)
-                    localStorage.setItem(textBox.id, textBox.value);
-            }
-
-            // Save the textarea containing all checked checkboxes (Filled after "Generate")
-            const textArea = document.getElementById("textarea-evaluation");
-            if (textArea.value.length > 0) {
-                localStorage.setItem("textarea-evaluation", textArea.value);
-            }
-
-            alert("Saved!")
-        }
-
-        /**
-         * Loads the local storage. If debug mode is given the local storage will be cleared instead.
-         * @param {generalCriteria} generalCriteria - An generalCriteria object.
-         * @param {assignmentObject[]} - An array containing multiple assignment objects
-         */
-        function loadLocalStorage(generalCriteria, assignmentSpecificCriteria) {
-            if (debug) {
-                localStorage.clear();
-            }
-
-            // Load checkboxes from local storage
-            for (const key in localStorage) {
-                if (key.match("^[0-9]*$")) {
-                    const checkBox = document.getElementById(key);
-                    checkBox.checked = true;
-                }
-            }
-
-            // Load evaluation textbox from local storage
-            const textAreaStorageValue = localStorage.getItem("textarea-evaluation")
-            if (textAreaStorageValue !== undefined) {
-                document.getElementById("textarea-evaluation").value = textAreaStorageValue;
-            }
-
-            // Load textareas from the categories of the generalCriteria object
-            for (const key of Object.keys(generalCriteria)) {
-                const textAreaNoteValue = localStorage.getItem(key);
-                document.getElementById(key).value = textAreaNoteValue;
-            }
-
-            // Load textareas from the list of assignmentObjects
-            for (const assignment of assignmentSpecificCriteria) {
-                for (const key of Object.keys(assignment.content)) {
-                    const storageValue = localStorage.getItem(key);
-                    const textArea = document.getElementById(key);
-                    
-                    if(textArea){
-                        textArea.value = storageValue;
-                    }
-                }
-            }
-
-            // Load textareas from subPoints
-            for (const key in localStorage) {
-                if (key.endsWith(":") || key.endsWith(": ")) {
-                    const subPointTextBoxValue = localStorage.getItem(key);
-                    document.getElementById(key).value = subPointTextBoxValue;
-                }
-            }
-        }
-
-
-        /**
-         * Clears local storage and remove all inputs
-         */
-        function reset() {
-            const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
-            const allTextAreaNotes = document.querySelectorAll(".textarea-notes")
-            const allSubPoinTextBox = document.querySelectorAll(".subpoint-textbox");
-
-            window.localStorage.clear();
-            document.getElementById("textarea-evaluation").value = "";
-
-            for (const input of allInputs) {
-                input.checked = false;
-            }
-
-            for (const textNotes of allTextAreaNotes) {
-                textNotes.value = "";
-            }
-
-            for (const subPointTextBox of allSubPoinTextBox) {
-                subPointTextBox.value = "";
-            }
-
-        }
-
-        /**
-         * If a string contains multiple lines. Add indentation to all of those lines.
-         * @param {string} text - A multi-line text to be indented.
-        */
-        function multiLineIndent(text) {
-            let newText = "";
-            for (const line of text.split("\n")) {
-                newText += "          " + line + "\n";
-            }
-            return newText;
-        }
-
-        /**
-         * Entrypoint to the evaluation text of the template.
-        */
-        function evaluate() {
-            const firstEvaluation = generateEvaluation(generalCriteria, "GENERAL NOTES\n\n");
-
-            const activeTab = document.querySelector(".active.tab");
-            for (const assignment of specificCriteria) {
-                if (activeTab && assignment.title === activeTab.id) {
-                    generateEvaluation(assignment.content, firstEvaluation + "\nASSIGNMENT SPECIFIC NOTES\n\n");
-                }
-            }
-        }
-
-        /**
-         * Given a generalCriteria object create a text containing all checked checkboxes with it's notes.
-         * @param {generalCriteria} data - An general criteria object.
-         * @param {string} previousEvaluation - A string, that will be prepended to the generated text.
-         */
-        function generateEvaluation(data, previousEvaluation = "") {
-            const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
-            const values = []
-            for (const input of allInputs) {
-                values.push(input.value);
-            }
-
-            evaluationText = previousEvaluation;
-
-            for (const category in data) {
-                // Flags to determine whether the text contains these information.
-                let alreadyAddedCategory = false;
-                let alreadyAddedPositive = false;
-                let alreadyAddedNeutral = false;
-                let alreadyAddedNegative = false;
-
-                for (const criteria of ["positive", "neutral", "negative"]) {
-                    let alreadyAddedMainPoint = false;
-
-                    if (Object.keys(data[category]).includes(criteria)) {
-                        for (const element of data[category][criteria]) {
-                            for (const subPoint of element["subPoints"]) {
-
-                                if (values.includes(subPoint)) {
-                                    if (!alreadyAddedCategory) {
-                                        evaluationText += data[category]["title"] + "\n";
-                                        alreadyAddedCategory = true;
-                                    }
-                                    if (criteria === "positive" && !alreadyAddedPositive) {
-                                        evaluationText += "\nPositive:\n";
-                                        alreadyAddedPositive = true;
-                                    }
-                                    if (criteria === "neutral" && !alreadyAddedNeutral) {
-                                        evaluationText += "\nNeutral:\n";
-                                        alreadyAddedNeutral += true;
-                                    }
-                                    if (criteria === "negative" && !alreadyAddedNegative) {
-                                        evaluationText += "\nNegative:\n";
-                                        alreadyAddedNegative += true;
-                                    }
-                                    if (!alreadyAddedMainPoint && element["mainPoint"].length > 0) {
-                                        evaluationText += "  - " + element["mainPoint"] + ":\n";
-                                        alreadyAddedMainPoint += true;
-                                    }
-                                    evaluationText += "      - " + subPoint + "\n";
-                                    if (subPoint.endsWith(":") || subPoint.endsWith(": ")) {
-                                        textBoxValue = multiLineIndent(document.getElementById(subPoint).value);
-                                        evaluationText += textBoxValue;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                const textNotes = document.getElementById(category)
-
-                if (textNotes && textNotes.value.length > 0) {
-                    if (!alreadyAddedCategory) {
-                        evaluationText += data[category]["title"] + "\n";
-                        alreadyAddedCategory = true;
-                    }
-
-                    evaluationText += "\nAdditional Notes:\n";
-                    evaluationText += textNotes.value + "\n";
-                }
-
-                if (alreadyAddedCategory) {
-                    evaluationText += "\n\n";
-                }
-            }
-            document.getElementById("textarea-evaluation").value = evaluationText;
-            return evaluationText;
-        }
-
-        /**
-         * Generate the assignment tabs. With it's content.
-         * @param {assignmentObject[]} assignmentSpecificCriteria - An array containing assignment objects.
-         */
-        function generateTabs(assignmentSpecificCriteria) {
-            // Generate the main tabs container
-            const tabs = document.createElement("div");
-            tabs.classList.add("tab-container");
-            const tabContentRoot = document.createElement("div");
-            tabs.classList.add("tabs");
+        function generateTabs() {
+            const assignmentSpecificContainer = document.createElement("div");
+            const assignmentSpecificCriteriasContainer = document.createElement("div");
+            const tabsButtonContainer = generateContainer("", ["tab-container"]);
+            const tabsContent = generateContainer("");
 
             function toogleTab(id) {
-                selectedTabContent = document.getElementById(id + " - content");
+                selectedTabContent = document.getElementById(id + "-content");
                 selectedButton = document.getElementById(id);
 
                 buttons = document.querySelectorAll(".tab");
@@ -872,42 +618,346 @@
                 }
             }
 
-            // Generate the assignment content.
-            for (const key in Object.keys(assignmentSpecificCriteria)) {
-                const assignment = assignmentSpecificCriteria[key];
+            for (const assignmentSpecificObject of assignmentSpecificCriterias) {
+                // Generate tab buttons to switch context
+                const id = "assignmentSpecificCriteria" + assignmentSpecificObject["id"];
+                const assignmentTabButton = generateButton(assignmentSpecificObject["title"], () => toogleTab(id), ["tab"], id);
+                tabsButtonContainer.appendChild(assignmentTabButton);
+                assignmentSpecificContainer.appendChild(tabsButtonContainer);
 
-                // Generate the assignment content container
-                const tabContentContainer = document.createElement("div");
-                tabContentContainer.id = assignment["title"] + " - content";
-                tabContentContainer.style.display = "none";
-                const title = document.createElement("h2");
-                title.classList.add("assignment-specific-title");
-                title.innerText = assignment["title"];
-                tabContentContainer.appendChild(title);
-                tabContentContainer.classList.add("tab-content");
-                for (const category in assignment["content"]) {
-                    const container = generateCategory(assignment["content"][category], category);
-                    tabContentContainer.appendChild(container);
-                }
-
-                // Generate the tab corresponding to the assignment content.
-                const tab = document.createElement("button");
-                tab.innerHTML = assignment["title"];
-                tab.id = assignment["title"];
-                tab.classList.add("tab");
-                tab.addEventListener("click", () => {
-                    toogleTab(tab.id);
-                });
-
-
-                tabs.appendChild(tab);
-                tabContentRoot.appendChild(tabContentContainer);
+                // Generate grading template for each assignment specific task
+                const assignmentSpecificContent = generateTemplate(assignmentSpecificObject["content"]);
+                assignmentSpecificContent.id = id + "-content";
+                assignmentSpecificContent.classList.add("tab-content");
+                assignmentSpecificContent.style.display = "none";
+                assignmentSpecificCriteriasContainer.appendChild(assignmentSpecificContent);
             }
-            document.body.appendChild(tabs);
-            document.body.appendChild(tabContentRoot);
+            assignmentSpecificContainer.appendChild(assignmentSpecificCriteriasContainer);
+
+            return assignmentSpecificContainer;
         }
 
+        function generateTemplate(data) {
+            const gradingTemplate = document.createElement("div");
 
+            for (const category in data) {
+                const categoryContainer = generateContainer(category + "-category-container", ["category-container"])
+                categoryContainer.appendChild(generateTitle(data[category]["title"], ["category-title"]));
+
+                for (const criteria of ["positive", "neutral", "negative"]) {
+                    if (Object.keys(data[category]).includes(criteria)) {
+                        const criteriaContainer = generateContainer(category + "-" + criteria + "-container")
+                        const criteriaTitle = criteria[0].toUpperCase() + criteria.slice(1) + ":"
+                        criteriaContainer.appendChild(generateTitle(criteriaTitle, [criteria + "-title"]));
+
+                        for (const bulletPointObject of data[category][criteria]) {
+                            const bulletPointContainer = generateContainer(category + "-" + criteria + "-" + bulletPointObject["mainPoint"])
+                            bulletPointContainer.appendChild(generateTitle(bulletPointObject["mainPoint"], ["mainPoint-title"]));
+
+                            const subPointList = document.createElement("ul");
+                            bulletPointContainer.appendChild(subPointList);
+
+                            for (const subPoint of bulletPointObject["subPoints"]) {
+                                const subPointElement = generateSubPointElement(category + "-" + criteria + "-" + bulletPointObject["mainPoint"] + "-" + subPoint, subPoint, category, criteria, bulletPointObject["mainPoint"])
+
+                                subPointList.appendChild(subPointElement);
+                            }
+
+                            criteriaContainer.appendChild(bulletPointContainer);
+                        }
+
+                        categoryContainer.appendChild(criteriaContainer);
+                    }
+                }
+
+                if (data[category]["additionalNotes"]) {
+                    categoryContainer.appendChild(generateTitle("Additional Notes:", ["additional-text-title"]))
+                    categoryContainer.appendChild(generateTextArea(category + "-textarea", ["textarea-notes"]))
+                }
+
+                gradingTemplate.appendChild(categoryContainer);
+            }
+            return gradingTemplate;
+        }
+
+        /**
+         * Generates button given a label, a function and classes.
+         * @param {string} label - The text to be displayed on the button
+         * @param {function} clickFunction - The function to be executed after clicked.
+         * @param {string[]} classList - A list of strings containing the class names
+         * @return {button} button - A button.
+         */
+        function generateButton(label, clickFunction, classList = [], id = "") {
+            const button = document.createElement("button");
+            button.id = id;
+            button.innerText = label;
+            button.onclick = clickFunction;
+
+            button.classList.add(...classList);
+
+            return button;
+        }
+
+        function generateTitle(title, classList = []) {
+            const titleElement = document.createElement("p");
+            titleElement.innerText = title;
+            titleElement.classList.add(...classList)
+            return titleElement;
+        }
+
+        function generateContainer(id, classList = []) {
+            const container = document.createElement("div");
+            container.id = id
+            container.classList.add(...classList);
+            return container;
+        }
+
+        function generateSubPointElement(id, label, category, criteria, mainPoint) {
+            const subPointElement = document.createElement("li");
+            const checkBox = document.createElement("input");
+            checkBox.type = "checkbox";
+            checkBox.setAttribute("category", category);
+            checkBox.setAttribute("criteria", criteria);
+            checkBox.setAttribute("mainPoint", mainPoint);
+            checkBox.value = label;
+            checkBox.id = id;
+
+            const checkBoxLabel = document.createElement("label");
+            checkBoxLabel.htmlFor = id;
+            checkBoxLabel.innerText = label;
+
+            subPointElement.appendChild(checkBoxLabel);
+            subPointElement.appendChild(checkBox);
+
+            if (label.endsWith(":") || label.endsWith(": ")) {
+                subPointElement.appendChild(generateTextArea(id + "-textarea", ["subpoint-textbox"]))
+            }
+            return subPointElement;
+        }
+
+        function generateTextArea(id, classList = []) {
+            const textArea = document.createElement("textarea");
+            textArea.id = id;
+            textArea.type = "text";
+            textArea.classList.add(...classList);
+            return textArea;
+        }
+
+        function maskAttribute(attributes, searchValues) {
+            let mask = 'input[type="checkbox"]:checked';
+            for (const index in attributes) {
+                mask += '[' + attributes[index] + '="' + searchValues[index] + '"]';
+            }
+            return mask;
+        }
+
+        function multiLineIndent(text, indentation) {
+            let newText = "";
+            for (const line of text.split("\n")) {
+                newText += indentation + line + "\n";
+            }
+            return newText;
+        }
+
+        function generateEvaluationText(data, previousText = "") {
+            let text = previousText;
+
+            for (const category in data) {
+                const filterByCategory = document.querySelectorAll(maskAttribute(["category"], [category]));
+                if (filterByCategory.length > 0) {
+                    text += "\n\n" + data[category]["title"] + ":\n";
+
+                    for (criteria of ["positive", "neutral", "negative"]) {
+                        if (Object.keys(data[category]).includes(criteria)) {
+                            const filterByCriteria = document.querySelectorAll(maskAttribute(["category", "criteria"], [category, criteria]));
+                            if (filterByCriteria.length > 0) {
+                                text += "\n" + criteria[0].toUpperCase() + criteria.slice(1) + ":\n";
+
+                                for (const bulletPointObject of data[category][criteria]) {
+                                    const filterByMainPoint = document.querySelectorAll(maskAttribute(["category", "criteria", "mainpoint"], [category, criteria, bulletPointObject["mainPoint"]]))
+                                    if (filterByMainPoint.length > 0) {
+                                        if (bulletPointObject["mainPoint"].length > 0) {
+                                            text += "•  " + bulletPointObject["mainPoint"] + ":\n";
+                                        }
+
+                                        for (const subPoint of filterByMainPoint) {
+                                            text += "      - " + subPoint.value + "\n";
+                                            if (subPoint.value.endsWith(":") || subPoint.value.endsWith(": ")) {
+                                                const subPointComment = document.getElementById(category + "-" + criteria + "-" + bulletPointObject["mainPoint"] + "-" + subPoint.value + "-textarea");
+                                                if (subPointComment.value.length > 0) {
+                                                    text += multiLineIndent(subPointComment.value, "          ");
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                const categoryNoteArea = document.getElementById(category + "-textarea");
+                if (categoryNoteArea.value.length > 0) {
+                    text += "\nAdditional Notes: \n";
+                    text += multiLineIndent(categoryNoteArea.value, "  ");
+                }
+            }
+            return text;
+        }
+
+        function displayEvaluationText() {
+            const evaluationTextField = document.getElementById("evaluation-textbox");
+            let generalCriteriaEvaluation = generateEvaluationText(generalCriteria);
+            if (generalCriteriaEvaluation.length > 0) {
+                generalCriteriaEvaluation = "=== General Feedback ===\n" + generalCriteriaEvaluation;
+            }
+
+            let assignmentSpecificEvaluation = "";
+
+            for (const assignment of assignmentSpecificCriterias) {
+                assignmentSpecificEvaluation += generateEvaluationText(assignment["content"]);
+            }
+
+            if (generalCriteriaEvaluation.length > 0 && assignmentSpecificEvaluation.length > 0) {
+                assignmentSpecificEvaluation = "\n\n=== Assignment Specific Feedback ===\n" + assignmentSpecificEvaluation;
+            } else if (assignmentSpecificEvaluation.length > 0) {
+                assignmentSpecificEvaluation = "=== Assignment Specific Feedback ===\n" + assignmentSpecificEvaluation;
+            }
+
+            evaluationTextField.value = generalCriteriaEvaluation + assignmentSpecificEvaluation;
+        }
+
+        function save() {
+            window.localStorage.clear();
+
+            // Save grading table
+            const points = document.getElementsByClassName("point");
+                for(const point of points){
+                    if (point.value < parseFloat(point.getAttribute("max"))){
+                        localStorage.setItem(point.id, point.value);
+                    }
+                    
+                }
+
+            // Save checkboxes
+            const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
+            for (const input of allInputs) {
+                localStorage.setItem(input.id, "checked");
+            }
+
+            // Save textfields
+            const allTextNotes = document.getElementsByTagName("textarea");
+            for (const textNote of allTextNotes) {
+                if (textNote.value.length > 0)
+                    localStorage.setItem(textNote.id, textNote.value);
+            }
+
+            alert("Saved successfully");
+        }
+
+        function load() {
+            // Reset grading table before applying saved changes
+            const points = document.getElementsByClassName("point");
+                for(const point of points){
+                    point.value = parseFloat(point.getAttribute("max"))
+                }
+
+            try {
+                for (var i = 0, len = localStorage.length; i < len; ++i) {
+                    const key = localStorage.key(i);
+                    const element = document.getElementById(key);
+                    if (element.type === "checkbox") {
+                        element.checked = true;
+                    } else {
+                        element.value = localStorage.getItem(key);
+                    }
+
+                }
+            } catch (error) {
+                alert("An error occured while loading from save. The template have been probably updated during the meantime. To fix click on the Reset button");
+            }
+        }
+
+        function reset() {
+            localStorage.clear();
+
+            // Reset grading table
+            const points = document.getElementsByClassName("point");
+                for(const point of points){
+                    const max = parseFloat(point.getAttribute("max"));
+                    point.value = max;
+                }
+
+            // Reset checkbox
+            const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
+
+            for (const input of allInputs) {
+                input.checked = false;
+            }
+
+            // Reset textboxes
+            const allTextNotes = document.getElementsByTagName("textarea");
+
+            for (const textNote of allTextNotes) {
+                textNote.value = "";
+            }
+        }
+
+        function updatePercentage(value, factor, id){
+            const element = document.getElementById(id);
+
+            const gradePercentage = document.getElementById("grade-percentage");
+            const grade = document.getElementById("grade");
+            element.innerText = value * parseFloat(factor) + "%";
+
+            const points = document.getElementsByClassName("point");
+            let sum = 0;
+            
+            for(const point of points){
+                sum += parseFloat(point.getAttribute("factor"))*parseFloat(point.value);
+            }
+
+            gradePercentage.innerText = sum + "%";
+            let gradeValue = "";
+
+            switch(true){
+                case (sum <= 100 && sum >= 95):
+                    gradeValue = "1.0 (A+)";
+                    break;
+                case (sum < 95 && sum >= 90):
+                    gradeValue = "1.3 (A)";
+                    break;
+                case (sum < 90 && sum >= 85):
+                    gradeValue = "1.7 (A-)";
+                    break;
+                case (sum < 85 && sum >= 80):
+                    gradeValue = "2.0 (B+)";
+                    break;
+                case (sum < 80 && sum >= 75):
+                    gradeValue = "2.3 (B)";
+                    break;
+                case (sum < 75 && sum >= 70):
+                    gradeValue = "2.7 (B-)";
+                    break;
+                case (sum < 70 && sum >= 65):
+                    gradeValue = "3.0 (C+)";
+                    break;
+                case (sum < 65 && sum >= 60):
+                    gradeValue = "3.3 (C)";
+                    break;
+                case (sum < 60 && sum >= 55):
+                    gradeValue = "3.7 (C-)";
+                    break;
+                case (sum < 55 && sum >= 50):
+                    gradeValue = "4.0 (D)";
+                    break;
+                case (sum < 50 && sum >= 0):
+                    gradeValue = "5.0 (F)";
+                    break;
+                default: 
+                    gradeValue = "N/A";
+            }
+            grade.innerText = gradeValue;
+        }
     </script>
 
 </body>

@@ -7,14 +7,14 @@
             "mainPoint":"Good scholarship that includes the following",
             "subPoints":[
                "citing source of information and knowledge",
-               "excellent job on citations of important libraries and sources of knowledge",
+               "citations of important libraries and sources of knowledge",
                "consistent formatting of references"
             ]
          },
          {
             "mainPoint":"Good writing and communication that includes the following",
             "subPoints":[
-               "complete sentences used when appropriate (e.g. within Markdown cells)",
+               "complete sentences used when appropriate (e.g. within Markdown cells, docstrings)",
                "correct English spelling",
                "consistent usage of the English language (i.e. not mixing in non-English words)",
                "clean, concise and understandable sentences"
@@ -51,7 +51,7 @@
             "mainPoint":"Poorly citing information, which includes the following",
             "subPoints":[
                "not citing Python3 libraries that were used:",
-               "not citing sources for information used (e.g. equations, datasets):"
+               "not citing sources for existing knowledge and data used (e.g. equations, datasets):"
             ]
          },
          {
@@ -66,7 +66,7 @@
                "no context given for what problem was being solved",
                "no presentation of thoughts or ideas concerning the workflow (or solution)",
                "lots of incomplete sentences when full sentences would have been appropriate ((e.g. within Markdown cells)",
-               "several misspelled English words",
+               "many misspelled English words",
                "significant mixing of English and German words",
                "sentences were not concisely written, or not easily understood"
             ]
@@ -117,6 +117,13 @@
             "mainPoint":"Markdown Cells",
             "subPoints":[
                "Please provided more context through markdown cells that state the problem being investigated; your ideas and thoughts; or the methodological workflow."
+            ]
+         },
+         {
+            "mainPoint":"Code Cells",
+            "subPoints":[
+               "Separating your code into different code cells that isolate a general idea or concept would improve the ease of understanding, readability, and transferability to future projects.",
+               "Writing your entire, lengthy solution into 1 code cell is not idea, and does not make good use of a Jupyter-notebook's capability."
             ]
          }
       ]
@@ -197,7 +204,7 @@
       ],
       "neutral":[
          {
-            "mainPoint":"The following data structures issues could have been used, which might have made your code a bit better",
+            "mainPoint":"The following data structure issues could have been used, which might have made your code a bit better",
             "subPoints":[
                "list comprehensions",
                "the use of a dictionary instead of a list",
@@ -208,11 +215,11 @@
       ],
       "negative":[
          {
-            "mainPoint":"The following data structures issues would have improved your code",
+            "mainPoint":"The following data structure issues would have improved your code",
             "subPoints":[
                "simplifying the list comprehension, or replacing with an 'if-elif-else' statements (i.e. to improve readability)",
                "the use of a dictionary instead of a list would have been logical",
-               "the use of a tuple instead of a mutable list",
+               "the use of a tuple instead of a mutable list would have been logical",
                "the use of 'zip' to loop over two lists of equal length"
             ]
          },
@@ -234,9 +241,9 @@
             "mainPoint":"Good use of the following",
             "subPoints":[
                "including type hinting",
-               "providing context via block comments",
+               "providing context via docstrings",
                "stating what the function does",
-               "stating what the input objects are (i.e. defined)",
+               "stating what the input objects are (i.e. they are defined)",
                "stating what the function returns",
                "proving internal checks using 'if not isinstance' and a 'raise' statement",
                "setting an optional variable to a default value of 'None'",
@@ -248,13 +255,13 @@
          {
             "mainPoint":"The use of 'assert' over 'raise' statements",
             "subPoints":[
-               "It is better to use a 'raise' statement because 'assert' statements can be bypassed. Note that for development work, the use of 'assert' is okay."
+               "It is better to use a 'raise' statement since 'assert' statements can be bypassed. Note that for development work, the use of 'assert' is okay."
             ]
          },
          {
             "mainPoint":"Too complex of a user-defined functions employed",
             "subPoints":[
-               "While it is good to have used a user-defined functions, the function itself does too much. It is better to isolate concepts into different functions, and to make the functions as general-purpose as possible."
+               "While it is good to have created a user-defined functions, the function itself does too much. It is better to isolate concepts into different functions, and to make the functions as general-purpose as possible."
             ]
          }
       ],
@@ -263,6 +270,12 @@
             "mainPoint":"No user-defined functions employed",
             "subPoints":[
                "Your solution did not include user-defined functions. Defining your own function helps to isolate concepts, improves reusability, transferability and debugging. These are a major part of scientific programming."
+            ]
+         },
+         {
+            "mainPoint":"Your user-defined functions is trivial",
+            "subPoints":[
+               "Your user-defined function does very little, and arguably does not warrant being a function."
             ]
          },
          {
@@ -312,7 +325,7 @@
                
             ],
             "subPoints":[
-               "Your code does not run because of bad stuff:",
+               "Your code does not run because the following problem(s):",
                "You used the following libraries that were not allowed in the assignment:",
                "You imported libraries that were unused -- this is confusing and cluters the code."
             ]

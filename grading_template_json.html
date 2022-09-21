@@ -369,6 +369,7 @@
         .assignment-section-title {
             margin-left: 5rem;
         }
+
     </style>
 </head>
 
@@ -397,7 +398,7 @@
                         </span>
                     </div>
                 </td>
-                <td><input id="codequality-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.getAttribute('factor'), 'codequality-percentage')"></td>
+                <td><input id="codequality-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codequality-percentage')"></td>
                 <td><p id="codequality-percentage">24%</p></td>
             </tr>
 
@@ -413,7 +414,7 @@
                         </span>
                     </div>
                 </td>
-                <td><input id="codeexecution-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.getAttribute('factor'), 'codeexecution-percentage')"></td>
+                <td><input id="codeexecution-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codeexecution-percentage')"></td>
                 <td><p id="codeexecution-percentage">24%</p></td>
             </tr>
 
@@ -429,7 +430,7 @@
                         </span>
                     </div>
                 </td>
-                <td><input id="assignmentrequirements-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.getAttribute('factor'), 'assignmentrequirements-percentage')"></td>
+                <td><input id="assignmentrequirements-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'assignmentrequirements-percentage')"></td>
                 <td><p id="assignmentrequirements-percentage">24%</p></td>
             </tr>
 
@@ -445,7 +446,7 @@
                         </span>
                     </div>
                 </td>
-                <td><input id="scientific-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.getAttribute('factor'), 'scientific-percentage')"></td>
+                <td><input id="scientific-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'scientific-percentage')"></td>
                 <td><p id="scientific-percentage">24%</p></td>
             </tr>
 
@@ -461,8 +462,8 @@
                         </span>
                     </div>
                 </td>
-                <td ><input id="creativity-value" class="point" factor="1" type="number" value="4" min="0.0" max="4.0" step="0.5" onchange="updatePercentage(this.value, this.getAttribute('factor'), 'creativity-percentage')"></td>
-                <td><p style="width: 40px;" id="creativity-percentage">4%</p></td>
+                <td ><input id="creativity-value" class="point" factor="1" type="number" value="4" min="0.0" max="4.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'creativity-percentage')"></td>
+                <td><p style="width: 60px;" id="creativity-percentage">4%</p></td>
             </tr>
 
             <tr>
@@ -714,6 +715,11 @@
 
         function generateSubPointElement(id, label, category, criteria, mainPoint) {
             const subPointElement = document.createElement("li");
+
+            const checkBoxLabel = document.createElement("label");
+            checkBoxLabel.htmlFor = id;
+            checkBoxLabel.innerText = label;
+
             const checkBox = document.createElement("input");
             checkBox.type = "checkbox";
             checkBox.setAttribute("category", category);
@@ -722,12 +728,8 @@
             checkBox.value = label;
             checkBox.id = id;
 
-            const checkBoxLabel = document.createElement("label");
-            checkBoxLabel.htmlFor = id;
-            checkBoxLabel.innerText = label;
-
-            subPointElement.appendChild(checkBoxLabel);
             subPointElement.appendChild(checkBox);
+            subPointElement.appendChild(checkBoxLabel);
 
             if (label.endsWith(":") || label.endsWith(": ")) {
                 subPointElement.appendChild(generateTextArea(id + "-textarea", ["subpoint-textbox"]))
@@ -902,14 +904,27 @@
             }
         }
 
-        function updatePercentage(value, factor, id){
-            const element = document.getElementById(id);
+        function updatePercentage(value, id, factor, percentageId){
+            const input = document.getElementById(id)
+            const max = parseFloat(input.getAttribute("max"));
+            const min = parseFloat(input.getAttribute("min"));
+            if(parseFloat(value) > max){
+                    value = max
+                }
+
+            if(parseFloat(value) < min){
+                value = min;
+            }
+
+            input.value = value;
+
+            const element = document.getElementById(percentageId);
+            element.innerText = value * parseFloat(factor) + "%";
 
             const gradePercentage = document.getElementById("grade-percentage");
             const grade = document.getElementById("grade");
-            element.innerText = value * parseFloat(factor) + "%";
-
             const points = document.getElementsByClassName("point");
+
             let sum = 0;
             
             for(const point of points){
@@ -956,6 +971,7 @@
                 default: 
                     gradeValue = "N/A";
             }
+
             grade.innerText = gradeValue;
         }
     </script>

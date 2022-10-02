@@ -1,4 +1,18 @@
 {
+   "followingInstructions":{
+      "title":"Following Instructions",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"You did not follow the assignment's instructions, which includes",
+            "subPoints":[
+               "not putting your name at the top of the assignment",
+               "using the following libraries that were disallowed:",
+               "not turning in the solution as a Jupyter-notebook"
+            ]
+         }
+      ]
+   },
    "academicScholarship":{
       "title":"Academic Scholarship (Citations and Writing)",
       "additionalNotes":true,
@@ -326,7 +340,6 @@
             ],
             "subPoints":[
                "Your code does not run because the following problem(s):",
-               "You used the following libraries that were not allowed in the assignment:",
                "You imported libraries that were unused -- this is confusing and cluters the code."
             ]
          }

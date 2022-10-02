@@ -810,7 +810,7 @@
             const evaluationTextField = document.getElementById("evaluation-textbox");
             let generalCriteriaEvaluation = generateEvaluationText(generalCriteria);
             if (generalCriteriaEvaluation.length > 0) {
-                generalCriteriaEvaluation = "=== General Feedback ===\n" + generalCriteriaEvaluation;
+                generalCriteriaEvaluation = " General Feedback \n" + generalCriteriaEvaluation;
             }
 
             let assignmentSpecificEvaluation = "";
@@ -820,9 +820,9 @@
             }
 
             if (generalCriteriaEvaluation.length > 0 && assignmentSpecificEvaluation.length > 0) {
-                assignmentSpecificEvaluation = "\n\n=== Assignment Specific Feedback ===\n" + assignmentSpecificEvaluation;
+                assignmentSpecificEvaluation = "\n\n Assignment Specific Feedback \n" + assignmentSpecificEvaluation;
             } else if (assignmentSpecificEvaluation.length > 0) {
-                assignmentSpecificEvaluation = "=== Assignment Specific Feedback ===\n" + assignmentSpecificEvaluation;
+                assignmentSpecificEvaluation = " Assignment Specific Feedback \n" + assignmentSpecificEvaluation;
             }
 
             evaluationTextField.value = generalCriteriaEvaluation + assignmentSpecificEvaluation;

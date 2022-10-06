@@ -15,7 +15,7 @@
         var generalCriteria = {
             //Local testing:
             //    change `const debug = true` above
-            //    copy-paste desire code to check locally below and reload HTML document
+            //    copy-paste desired code to check locally below and reload HTML document
             "topic1": {
                 "title": "Topic 1",
                 "additionalNotes": true,
@@ -398,8 +398,8 @@
                         </span>
                     </div>
                 </td>
-                <td><input id="codequality-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codequality-percentage')"></td>
-                <td><p id="codequality-percentage">24%</p></td>
+                <td><input id="codequality-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codequality-percentage')"></td>
+                <td><p id="codequality-grading-percentage">24%</p></td>
             </tr>
 
             <tr>
@@ -414,8 +414,8 @@
                         </span>
                     </div>
                 </td>
-                <td><input id="codeexecution-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codeexecution-percentage')"></td>
-                <td><p id="codeexecution-percentage">24%</p></td>
+                <td><input id="codeexecution-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codeexecution-percentage')"></td>
+                <td><p id="codeexecution-grading-percentage">24%</p></td>
             </tr>
 
             <tr>
@@ -430,8 +430,8 @@
                         </span>
                     </div>
                 </td>
-                <td><input id="assignmentrequirements-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'assignmentrequirements-percentage')"></td>
-                <td><p id="assignmentrequirements-percentage">24%</p></td>
+                <td><input id="assignmentrequirements-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'assignmentrequirements-percentage')"></td>
+                <td><p id="assignmentrequirements-grading-percentage">24%</p></td>
             </tr>
 
             <tr>
@@ -446,8 +446,8 @@
                         </span>
                     </div>
                 </td>
-                <td><input id="scientific-value" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'scientific-percentage')"></td>
-                <td><p id="scientific-percentage">24%</p></td>
+                <td><input id="scientific-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'scientific-percentage')"></td>
+                <td><p id="scientific-grading-percentage">24%</p></td>
             </tr>
 
             <tr>
@@ -462,8 +462,8 @@
                         </span>
                     </div>
                 </td>
-                <td ><input id="creativity-value" class="point" factor="1" type="number" value="4" min="0.0" max="4.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'creativity-percentage')"></td>
-                <td><p style="width: 60px;" id="creativity-percentage">4%</p></td>
+                <td ><input id="creativity-grading" class="point" factor="1" type="number" value="4" min="0.0" max="4.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'creativity-percentage')"></td>
+                <td><p style="width: 60px;" id="creativity-grading-percentage">4%</p></td>
             </tr>
 
             <tr>
@@ -886,7 +886,7 @@
             const points = document.getElementsByClassName("point");
                 for(const point of points){
                     const max = parseFloat(point.getAttribute("max"));
-                    point.value = max;
+                    updatePercentage(max, point.id);
                 }
 
             // Reset checkbox
@@ -904,10 +904,12 @@
             }
         }
 
-        function updatePercentage(value, id, factor, percentageId){
+        function updatePercentage(value, id){
+            const percentageId = id + "-percentage";
             const input = document.getElementById(id)
             const max = parseFloat(input.getAttribute("max"));
             const min = parseFloat(input.getAttribute("min"));
+            const factor = parseFloat(input.getAttribute("factor"))
             if(parseFloat(value) > max){
                     value = max
                 }
@@ -919,7 +921,7 @@
             input.value = value;
 
             const element = document.getElementById(percentageId);
-            element.innerText = value * parseFloat(factor) + "%";
+            element.innerText = value * factor + "%";
 
             const gradePercentage = document.getElementById("grade-percentage");
             const grade = document.getElementById("grade");

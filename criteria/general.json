@@ -137,7 +137,7 @@
             "mainPoint":"Code Cells",
             "subPoints":[
                "Separating your code into different code cells that isolate a general idea or concept would improve the ease of understanding, readability, and transferability to future projects.",
-               "Writing your entire, lengthy solution into 1 code cell is not idea, and does not make good use of a Jupyter-notebook's capability."
+               "Writing your entire, lengthy solution into 1 code cell is not ideal, and does not make good use of a Jupyter-notebook's capability."
             ]
          }
       ]

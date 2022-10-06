@@ -22,7 +22,8 @@
             "subPoints":[
                "citing source of information and knowledge",
                "citations of important libraries and sources of knowledge",
-               "consistent formatting of references"
+               "consistent formatting of references",
+               "providing units for your numeric answers"
             ]
          },
          {
@@ -83,6 +84,12 @@
                "many misspelled English words",
                "significant mixing of English and German words",
                "sentences were not concisely written, or not easily understood"
+            ]
+         },
+         {
+            "mainPoint":"Units for numeric answers",
+            "subPoints":[
+               "No units (e.g. N, kJ, m/s, Hz) were given with your numeric values."
             ]
          }
       ]

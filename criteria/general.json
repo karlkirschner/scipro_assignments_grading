@@ -32,7 +32,7 @@
                "complete sentences used when appropriate (e.g. within Markdown cells, docstrings)",
                "correct English spelling",
                "consistent usage of the English language (i.e. not mixing in non-English words)",
-               "clean, concise and understandable sentences"
+               "C^3 - clean, concise and clear sentences"
             ]
          }
       ],
@@ -167,6 +167,7 @@
                "appropriate amount of block commenting done (i.e. # comment on its own line)",
                "appropriate amount of inline commenting done (i.e. # at the end of a code line)",
                "appropriate amount of docstrings done (i.e. using triple quotes)",
+               "C^3 - clean, concise and clear code writing",
                "following PEP8 guidelines"
             ]
          }
@@ -211,6 +212,7 @@
          {
             "mainPoint":"Good use of the following coding concepts",
             "subPoints":[
+               "concise coding that reduces redundancy (i.e. repetition)",
                "list comprehension",
                "looping over a dictionary",
                "looping over a set",
@@ -219,6 +221,7 @@
                "looping over two lists (with the same length) using the built-in function 'zip'",
                "the built-in function 'enumerate'",
                "the built-in function 'reversed'",
+               "the built-in function 'range'",
                "the built-in function 'sorted'"
             ]
          }
@@ -238,6 +241,7 @@
          {
             "mainPoint":"The following data structure issues would have improved your code",
             "subPoints":[
+               "making your coding more concise, which reduces redundancy (i.e. repetition) and the chances of introducing errors",
                "simplifying the list comprehension, or replacing with an 'if-elif-else' statements (i.e. to improve readability)",
                "the use of a dictionary instead of a list would have been logical",
                "the use of a tuple instead of a mutable list would have been logical",

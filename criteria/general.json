@@ -66,7 +66,8 @@
             "mainPoint":"Poorly citing information, which includes the following",
             "subPoints":[
                "not citing Python3 libraries that were used:",
-               "not citing sources for existing knowledge and data used (e.g. equations, datasets):"
+               "not citing sources for existing knowledge and data used (e.g. equations, datasets):",
+               "citing sources out-of-order (your first citation is to reference 3, not reference 1)"
             ]
          },
          {

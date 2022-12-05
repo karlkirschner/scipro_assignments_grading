@@ -34,8 +34,9 @@
             ]
         },
         {
-            "mainPoint":"The resulting data from the encoded equation was incorrect - the following mean value should have been computed:",
+            "mainPoint":"The resulting data from the encoded equation was incorrect",
             "subPoints":[
+                "the following mean value should have been computed:",
                 "the computed results of your list function was incorrect, giving a mean value of:",
                 "the computed results of your Numpy function was incorrect, giving a mean value of:"
             ]

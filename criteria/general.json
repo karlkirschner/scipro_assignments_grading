@@ -22,6 +22,7 @@
             "subPoints":[
                "citing source of information and knowledge",
                "citations of important libraries and sources of knowledge",
+               "providing references (but not including citing - see below)",
                "consistent formatting of references",
                "providing units for your numeric answers"
             ]
@@ -67,7 +68,10 @@
             "subPoints":[
                "not citing Python3 libraries that were used:",
                "not citing sources for existing knowledge and data used (e.g. equations, datasets):",
-               "citing sources out-of-order (your first citation is to reference 3, not reference 1)"
+               "the references cited are predominately websites - missed opportunities to cite better sources",
+               "the references are missing important components (e.g. a year, author, accessed date, title, etc.)",
+               "citing sources out-of-order (e.g. the first citation is not to reference 1)",
+               "not including actual citation (e.g. [1, 2]) within your text - need to show how you used the references' knowledge"
             ]
          },
          {
@@ -84,7 +88,8 @@
                "lots of incomplete sentences when full sentences would have been appropriate ((e.g. within Markdown cells)",
                "many misspelled English words",
                "significant mixing of English and German words",
-               "sentences were not concisely written, or not easily understood"
+               "sentences were not concisely written, or not easily understood",
+               "an image of the homework assignment is not good enough and suggests a lack of effort"
             ]
          },
          {

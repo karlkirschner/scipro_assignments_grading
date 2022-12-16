@@ -48,7 +48,14 @@
                 "you missed the opportunity to use Numpy's built-in math functions (e.g. np.add)",
                 "for your Numpy function, you did not use ndarrays. Instead you passed the following data type to the function:",
                 "for your list (built-in) function, you did not use a list of floats. Instead you passed the following data type to the function:",
-                "iterating over the ndarray is not needed since it is vectorized, and results in a loss of performance"            ]
+                "iterating over the ndarray is not needed since it is vectorized, and results in a loss of performance"
+            ]
+        },
+        {
+            "mainPoint":"Encoded Metric",
+            "subPoints":[
+                "your function computes the evaluation metrics and returns the sum of them. This one doesn’t make much sense. Doing so mean the resulting evaluation (i.e. the final quantitative value) is dependent upon the length of the data given. What is important is how the pairwise data (e.g. within each row) performs, which is best statistically evaluated by a mean (e.g. via a returned list/ndarray), not a sum."
+            ]
         }
     ]
     }

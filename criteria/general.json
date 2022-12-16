@@ -309,6 +309,12 @@
                "Your user-defined function does very little, and arguably does not warrant being a function."
             ]
          },
+        {
+            "mainPoint":"Your user-defined functions is not general",
+            "subPoints":[
+               "Your user-defined function is very specific to this assignment. A more generalized one could have been created, and thus could be transfered to another problem."
+            ]
+         },
          {
             "mainPoint":"Your user-defined functions had the following problems",
             "subPoints":[

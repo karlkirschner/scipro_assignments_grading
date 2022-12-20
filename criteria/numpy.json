@@ -19,6 +19,7 @@
             "subPoints":[
                 "the experimental value was passed as a float to your Numpy function, when converting to an ndarray object might have been better",
                 "converting the Pandas' dataframe outside of your function(s) might have improved their performance -- remember to have a function that optimally does a single task",
+                "you missed the opportunity to specify Numpy's built-in math functions (e.g. np.add), which can help with being clear and consistent. Never-the-less, that for some of the simple mathematical operations, the Numpy versus the built-in are equivalent.",
                 "please follow the standard practice within the community by importing Numpy as 'np'"
             ]
         }
@@ -45,7 +46,6 @@
             "mainPoint":"The following points need improvements",
             "subPoints":[
                 "your Numpy function's performance is not maximized",
-                "you missed the opportunity to use Numpy's built-in math functions (e.g. np.add)",
                 "for your Numpy function, you did not use ndarrays. Instead you passed the following data type to the function:",
                 "for your list (built-in) function, you did not use a list of floats. Instead you passed the following data type to the function:",
                 "iterating over the ndarray is not needed since it is vectorized, and results in a loss of performance"

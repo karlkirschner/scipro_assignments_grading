@@ -312,7 +312,7 @@
         {
             "mainPoint":"Your user-defined functions is not general",
             "subPoints":[
-               "Your user-defined function is very specific to this assignment. A more generalized one could have been created, and thus could be transfered to another problem."
+               "Your user-defined function is very specific to this assignment. A more generalized one could have been created, and thus could be transferred to another problem."
             ]
          },
          {

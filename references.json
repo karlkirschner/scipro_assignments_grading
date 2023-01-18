@@ -24,6 +24,12 @@
             "title":"SciPy",
             "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/scipy.json"
+        },
+        {
+            "id": 5,
+            "title":"SciPy Mountains",
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/scipy_mountains.json"
         }
     ]
 }

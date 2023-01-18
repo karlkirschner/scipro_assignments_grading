@@ -1,6 +1,6 @@
 {
     "SciPy":{
-        "title":"SciPy Mountains",
+        "title":"SciPy - Mountains",
         "additionalNotes":true,
         "positive":[
         {
@@ -8,7 +8,8 @@
             "subPoints":[
                 "Good job on getting the correct number of significant figures for the RMSE.",
                 "Good job on adding additional context that is meaningful.",
-                "Good job at consolidating similar ideas into individual code cells."
+                "Good job at consolidating similar ideas into individual code cells.",
+                "Good job on unifying the naming convention (i.e. CamelCase or Pot_Hole)."
             ]
         }
     ],
@@ -34,7 +35,8 @@
         {
             "mainPoint":"Plots",
             "subPoints":[
-                "Okay to just plot the data as points, but would have been better to have a line with points."
+                "Okay to just plot the data as points, but would have been better to have a line with points.",
+                "Since you did not remove rows with missing data, your plots show gaps."
             ]
         }
     ],
@@ -46,23 +48,25 @@
                 "Citation and reference to SciPy and Odland's original paper are missing.",
                 "The citations are not sequentially given - i.e the first citation is [3], not [1].",
                 "The references needed to be separated onto their own line for readability.",
-                "The object/variable naming should have been unified to follow one convention (i.e. CamelCase or Pot_Hole)"
+                "The object/variable naming should have been unified to follow one convention (i.e. CamelCase or Pot_Hole)",
+                "You have redundant citations being listed at the top and bottom of the notebook.",
+                "Including both data and df in an object's name (e.g. sc_testing_data_df) is not concise since they indicated the same thing. Should have been redone.",
+                "No user-defined functions were created, and there were several opportunities to do so."
             ]
         },
                 {
             "mainPoint":"Libraries",
             "subPoints":[
                 "The imports for Numpy and scipy.optimze should have been removed since they were not used.",
-                ""
+                "The libraries should have been placed into a single code cell."
             ]
         },
         {
             "mainPoint":"Plots",
             "subPoints":[
                 "A user-defined plotting function was an obvious thing that could have been created due to how many similar plots were asked for.",
-                "The data needed to be ordered based on the northing column. This results in an ordered plotting of the data, unlike what was in the original solution.",
+                "The data needed to be ordered based on the northing column after being read in by Pandas. This results in an ordered plotting of the data, unlike what was in the original solution.",
                 "Plotting the mountain and the timberline elevations together in a single plot would have allowed you to compare the data directly."
-
             ]
         },
         {

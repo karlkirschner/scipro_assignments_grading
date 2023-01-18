@@ -9,7 +9,8 @@
                 "Good job on getting the correct number of significant figures for the RMSE.",
                 "Good job on adding additional context that is meaningful.",
                 "Good job at consolidating similar ideas into individual code cells.",
-                "Good job on unifying the naming convention (i.e. CamelCase or Pot_Hole)."
+                "Good job on unifying the naming convention (i.e. CamelCase or Pot_Hole).",
+                "Good job on plotting both the mountain and timberline elevations into the same graph."
             ]
         }
     ],
@@ -29,7 +30,7 @@
         {
             "mainPoint":"Equation 1",
             "subPoints":[
-                "It might have been better to create a function for the equation, but okay."
+                "It might have been better to create a function for the Odland equation (i.e. Eq. 1), but okay."
             ]
         },
         {
@@ -72,6 +73,7 @@
         {
             "mainPoint":"RMSE",
             "subPoints":[
+                "A user-defined RMSE function was an obvious to create here.",
                 "The values are incorrect - should be 85.2 and 70.2 meters",
                 "Missing the unit for the value - should be meters",
                 "The values have the incorrect number of significant figures, based on the raw input (e.g. 250.), the number of significant figures is 3. (Pandas incorrectly adds zeros.)"

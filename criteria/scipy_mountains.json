@@ -10,7 +10,8 @@
                 "Good job on adding additional context that is meaningful.",
                 "Good job at consolidating similar ideas into individual code cells.",
                 "Good job on unifying the naming convention (i.e. CamelCase or Pot_Hole).",
-                "Good job on plotting both the mountain and timberline elevations into the same graph."
+                "Good job on plotting both the mountain and timberline elevations into the same graph.",
+                "Good job on cleaning up the input data."
             ]
         }
     ],

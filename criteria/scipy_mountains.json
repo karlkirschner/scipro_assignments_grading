@@ -37,7 +37,8 @@
             "mainPoint":"Plots",
             "subPoints":[
                 "Okay to just plot the data as points, but would have been better to have a line with points.",
-                "Since you did not remove rows with missing data, your plots show gaps."
+                "Since you did not remove rows with missing data, your plots show gaps.",
+                "Should have ordered the data for the plots, which would have removed the jaggedness of the lines for Task 2."
             ]
         }
     ],

@@ -78,30 +78,46 @@ td input{
 }
 
 .button {
-    border: none;
-    color: white;
-    padding: 15px 32px;
+    font-family: 'Arial Black', sans-serif;
+    color: #fdfcfc;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 20px 35px;
     text-align: center;
+    border: none;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
     margin-left: 3rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
 }
 
 .reset-button {
-    background-color: #f44336;
+    background: linear-gradient(to bottom, rgb(255, 0, 0), rgb(255, 192, 203));
 }
 
 .generate-button {
-    background-color: rgb(88, 184, 243);
+    background: linear-gradient(to bottom, rgb(0, 128, 0), rgb(0, 255, 255));
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
     margin-bottom: 5rem;
     margin-top: 5rem;
 }
 
 .save-button {
-    background-color: rgb(79, 212, 79);
+    background: linear-gradient(to bottom, rgb(128, 128, 128), rgb(0, 0, 255));
 }
+
+.url-button {
+    background: linear-gradient(to bottom, rgb(128, 0, 128), rgb(255, 192, 203));
+}
+
+.txt-button{
+    background: linear-gradient(to bottom, rgb(211, 97, 20), rgb(255, 165, 0));
+}
+
 
 .button-container {
     display: table;
@@ -234,4 +250,165 @@ ul {
 
 .assignment-section-title {
     margin-left: 5rem;
+}
+
+
+/* File upload form */
+
+form#upload {
+    width: 380px;
+
+    margin: 50px auto 0;
+    text-align: left;
+
+}
+
+fieldset {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+legend {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+label[for="fileselect"] {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+input[type="file"] {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 70%;
+}
+
+#filedrag {
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px dotted #555;
+    border: 6px dotted #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+#filedrag.dragover {
+    border-color: #000;
+    color: #000;
+}
+
+#submitbutton {
+    text-align: right;
+    margin-top: 20px;
+}
+
+
+
+button[type="submit"], button.delete-file {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px
+}
+
+#messages {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #eee;
+    text-align: center;
+}
+
+#clearButton {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px
+}
+
+#clearButton:hover {
+    background-color: #444;
+}
+
+/*   Name input  */
+
+.name-input {
+    width: 200px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+fieldset {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+legend {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form-group {
+    margin-top: 20px;
+    text-align: left;
+}
+
+label[for="name"] {
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+input[type="text"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 70%;
+}
+
+#submit-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#submit-button:hover {
+    background-color: #444;
+}
+
+
+#output {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #eee;
+    text-align: center;
 }

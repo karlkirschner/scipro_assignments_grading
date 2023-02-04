@@ -9,21 +9,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="/functions/header.js"></script>
+    <script src="functions/header.js"></script>
     <title>Scientific Python - Grading template</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
-    <header>
-        <div style="text-align: center;">
-            <h1>Scientific Programming for Python</h1>
-            <h2>Grading Template</h2>
-            <p>The goal of this form is 1) enable faster grading and 2) unifies the feedback given to the students due
-                to multiple graders.</p>
-            </div>
-    </header>
+<body id="drop-zone">
+<header>
+    <div style="text-align: center; padding: 50px;">
+        <h1 style="font-size: 40px; font-weight: bold;">Scientific Programming for Python</h1>
+        <h2 style="font-size: 30px; font-weight: normal;">Grading Template</h2>
+        <p style="font-size: 16px; margin-top: 20px;">The goal of this form is 1) enable faster grading and 2) unifies the feedback given to the students due
+            to multiple graders.</p>
+    </div>
+</header>
 
+    <section class="json-upload">
+        <form id="upload" action="" method="POST" enctype="multipart/form-data">
+            <fieldset>
+                <legend>JSON File Upload</legend>
+                <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+                <div>
+                    <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+                    <div id="filedrag">or drop files here</div>
+                </div>
+                <div id="submitbutton">
+                    <button type="submit" onclick="processJSONFile(event)">Upload Files</button>
+                </div>
+                <div>
+                    <button type="button" id="clearButton" onclick="clearSelectedFile()">Clear File</button>
+                </div>
+            </fieldset>
+            <div id="messages"><p>File selected </p>
+            </div>
+            <form>
+                <fieldset>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="place name here" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="submit-button" onclick="readName()">Submit</button>
+                    </div>
+                </fieldset>
+                <div id="output"> Student selected</div>
+            </form>
+        </form>
+    </section>
+
+    <section class="side-table">
     <div class="side">
         <b>Grading</b>
         <table style="width:100%">
@@ -203,13 +237,24 @@
                 <td><p id="grade">1.0 (A+)</p></td>
             </tr>
         </table>
+
     </div>
     </section>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/pako@1.0.10/dist/pako.min.js"></script>
     <script src="/functions/table.js"></script>
+    <script src="/functions/helper.js"></script>
+    <script src="/functions/json.js"></script>
     <script src="/functions/generate.js"></script>
     <script src="/functions/session.js"></script>
-    <script>if (debug) {generateBody();}</script>
+    <script>
+        if (debug) {generateBody();}
+        window.addEventListener("load", function() {
+            processJSONFile();
+        });
+
+    </script>
 
 </body>
 

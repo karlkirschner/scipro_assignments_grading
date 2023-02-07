@@ -84,7 +84,7 @@ function getTableData(){
 	let creativity = parseFloat(data["creativity-grading"]);
 
 	let sumPoints =  codeQuality + codeExecution + assignmentRequirements + scientific + creativity;
-	let weightedSum = (codeQuality * 4.0) + (codeExecution * 4.0) + (assignmentRequirements * 4.0) +	(scientific * 4.0) +
+	let weightedSum = (codeQuality * 4.0) + (codeExecution * 4.0) + (assignmentRequirements * 4.0) + (scientific * 4.0) +
 		(creativity);
 
 	let codeQualityPct = updatePct(codeQuality, 4.0);
@@ -95,17 +95,14 @@ function getTableData(){
 	let sumPointsPct = codeQualityPct + codeExecutionPct + assignmentRequirementsPct + scientificPct + creativityPct;
 
 	let tableData;
-	tableData = [    ['Criteria', 'Points Awarded', 'Weighting Factor', 'Percentage Awarded' ],
-		['1. Code quality & design', codeQuality, 4, codeQualityPct + " %"],
-		['2. Code execution & results', codeExecution, 4, codeExecutionPct + " %"],
-		['3. Assignment requirements', assignmentRequirements, 4, assignmentRequirementsPct + " %"],
-		['4. Scientific programming', scientific, 4,scientificPct + " %" ],
-		['5. Creativity', creativity, 1,creativityPct + " %" ],
-		['Total Points Awarded ',sumPoints , 13, sumPointsPct + " %"],
-		['Final Note (Mark) ', '-','-', finalGrade(weightedSum)],
+	tableData = [ ['Criteria', 'Points Awarded', 'Weighting Factor', 'Percentage Awarded' ],
+		['1. Code quality & design', codeQuality.toFixed(1), 4, codeQualityPct.toFixed(1) + " %"],
+		['2. Code execution & results', codeExecution.toFixed(1), 4, codeExecutionPct.toFixed(1) + " %"],
+		['3. Assignment requirements', assignmentRequirements.toFixed(1), 4, assignmentRequirementsPct.toFixed(1) + " %"],
+		['4. Scientific programming', scientific.toFixed(1), 4, scientificPct.toFixed(1) + " %" ],
+		['5. Creativity', creativity.toFixed(1), 1, creativityPct.toFixed(1) + " %" ],
+		['Total Percentage Awarded', '-', '-', sumPointsPct + " %"],
+		['Final Note (Mark)', '-', '-', finalGrade(weightedSum)],
 	];
 	return tableData;
 }
-
-
-

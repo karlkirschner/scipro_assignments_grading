@@ -75,7 +75,7 @@ function reset() {
 	}
 }
 
-function saveLink() {
+function saveToJson() {
 	const data = {};
 
 	// Save grading table
@@ -121,7 +121,7 @@ function saveLink() {
 	// alert(`Saved successfully. URL: \n\n${link}`);
 }
 
-function loadLink() {
+function loadJson() {
 	const points = document.getElementsByClassName("point");
 	for (const point of points) {
 		point.value = parseFloat(point.getAttribute("max"));
@@ -177,15 +177,19 @@ function toTxt(){
 
 	txt += "Evaluation: " + evaluationTextField
 	txt += "\nGrading table: \n\n" + formatTable(tableData)
-	const fileInput = document.getElementById("fileselect");
-
+	let nameTextfiel = readName()
 	let fileN = getFileName()
+	let fileName = "data";
 
-	const fileName = fileN ? fileN:  "data.txt";  //fileInput.files[0] ? fileInput.files[0].name :
+	if (fileN) {fileName = fileN}
+	if (nameTextfiel) {fileName = nameTextfiel}
+	//  const fileInput = document.getElementById("fileselect");
+	//  const fileName = fileN ? fileN:  "data.txt";  //fileInput.files[0] ? fileInput.files[0].name :
+
 	// Check if the file has a .json extension
 	const hasJsonExtension = fileName.endsWith(".json");
 	// Change the file name to the name of the JSON file if it has a .json extension
-	const txtFileName = hasJsonExtension ? fileName.replace(".json", ".txt") : fileName;
+	const txtFileName = hasJsonExtension ? fileName.replace(".json", ".txt") : fileName +".txt";
 
 	// Create a download link and trigger a download
 	const downloadLink = document.createElement("a");

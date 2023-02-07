@@ -1,6 +1,6 @@
 **Scientific Programming with Python: Assignment Grading Template**
 
-**Minh Truong, Abanoub Abdelmalak and Karl N. Kirschner, Ph.D.**
+**Minh Truong, Erik Autenrieth, Abanoub Abdelmalak and Karl N. Kirschner, Ph.D.**
 
 Department of Computer Science<br>
 University of Applied Sciences Bonn-Rhein-Sieg<br>
@@ -30,3 +30,4 @@ This repository contains the HTML and JSON documents needed for grading the cour
 1. Karl N. Kirschner - template conceptualization, feedback content and maintenance
 2. Abanoub Abdelmalak - template conceptualization and HTML prototyping
 3. Minh Truong - conceptualization and coding JSON components
+4. Erik Autenrieth - conceptualization and coding JSON components

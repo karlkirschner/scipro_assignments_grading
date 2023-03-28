@@ -67,6 +67,42 @@ function updatePercentage(value, id){
 		default:
 			gradeValue = "N/A";
 	}
-
 	grade.innerText = gradeValue;
+}
+
+
+function getTableData(){
+	const data = {};
+	// Save grading table
+	const p = document.getElementsByClassName("point");
+	for (const point of p) {data[point.id] = point.value;}
+
+	let codeQuality = parseFloat(data["codequality-grading"]);
+	let codeExecution = parseFloat(data["codeexecution-grading"]);
+	let assignmentRequirements = parseFloat(data["assignmentrequirements-grading"]);
+	let scientific = parseFloat(data["scientific-grading"]);
+	let creativity = parseFloat(data["creativity-grading"]);
+
+	let sumPoints =  codeQuality + codeExecution + assignmentRequirements + scientific + creativity;
+	let weightedSum = (codeQuality * 4.0) + (codeExecution * 4.0) + (assignmentRequirements * 4.0) + (scientific * 4.0) +
+		(creativity);
+
+	let codeQualityPct = updatePct(codeQuality, 4.0);
+	let codeExecutionPct = updatePct(codeExecution, 4.0);
+	let assignmentRequirementsPct = updatePct(assignmentRequirements, 4.0);
+	let scientificPct = updatePct(scientific, 4.0);
+	let creativityPct = updatePct(creativity, 1.0);
+	let sumPointsPct = codeQualityPct + codeExecutionPct + assignmentRequirementsPct + scientificPct + creativityPct;
+
+	let tableData;
+	tableData = [ ['Criteria', 'Points Awarded', 'Weighting Factor', 'Percentage Awarded' ],
+		['1. Code quality & design', codeQuality.toFixed(1), 4, codeQualityPct.toFixed(1) + " %"],
+		['2. Code execution & results', codeExecution.toFixed(1), 4, codeExecutionPct.toFixed(1) + " %"],
+		['3. Assignment requirements', assignmentRequirements.toFixed(1), 4, assignmentRequirementsPct.toFixed(1) + " %"],
+		['4. Scientific programming', scientific.toFixed(1), 4, scientificPct.toFixed(1) + " %" ],
+		['5. Creativity', creativity.toFixed(1), 1, creativityPct.toFixed(1) + " %" ],
+		['Total Percentage Awarded', '-', '-', sumPointsPct + " %"],
+		['Final Note (Mark)', '-', '-', finalGrade(weightedSum)],
+	];
+	return tableData;
 }

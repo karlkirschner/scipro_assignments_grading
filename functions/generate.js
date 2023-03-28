@@ -5,12 +5,15 @@ function generateBody() {
 
 	const buttonBox = generateContainer("button-box", ["button-container"]);
 	buttonBox.appendChild(generateButton("Generate", () => displayEvaluationText(), ["button", "generate-button"]));
-	buttonBox.appendChild(generateButton("⠀ Save ⠀", () => save(), ["button", "save-button"]));
+	buttonBox.appendChild(generateButton("Save Session", () => save(), ["button", "save-button"]));
+	buttonBox.appendChild(generateButton("Download JSON File", () => saveToJson(), ["button", "url-button"]));
+	buttonBox.appendChild(generateButton("Download TEXT File", () => toTxt(), ["button", "txt-button"]));
 	document.body.appendChild(buttonBox);
 
 	const evaluationTextBox = generateTextArea("evaluation-textbox", ["evaluation-textbox"]);
 	document.body.appendChild(evaluationTextBox);
 
+    loadJson();
 	load();
 }
 
@@ -98,12 +101,10 @@ function generateTemplate(data) {
 			categoryContainer.appendChild(generateTitle("Additional Notes:", ["additional-text-title"]))
 			categoryContainer.appendChild(generateTextArea(category + "-textarea", ["textarea-notes"]))
 		}
-
 		gradingTemplate.appendChild(categoryContainer);
 	}
 	return gradingTemplate;
 }
-
 
 function generateButton(label, clickFunction, classList = [], id = "") {
 	/**
@@ -117,7 +118,6 @@ function generateButton(label, clickFunction, classList = [], id = "") {
 	button.id = id;
 	button.innerText = label;
 	button.onclick = clickFunction;
-
 	button.classList.add(...classList);
 
 	return button;
@@ -205,7 +205,6 @@ function generateEvaluationText(data, previousText = "") {
 								if (bulletPointObject["mainPoint"].length > 0) {
 									text += "•  " + bulletPointObject["mainPoint"] + ":\n";
 								}
-
 								for (const subPoint of filterByMainPoint) {
 									text += "      - " + subPoint.value + "\n";
 									if (subPoint.value.endsWith(":") || subPoint.value.endsWith(": ")) {
@@ -230,7 +229,6 @@ function generateEvaluationText(data, previousText = "") {
 	return text;
 }
 
-
 function displayEvaluationText() {
 	const evaluationTextField = document.getElementById("evaluation-textbox");
 	let generalCriteriaEvaluation = generateEvaluationText(generalCriteria);
@@ -251,4 +249,6 @@ function displayEvaluationText() {
 	}
 
 	evaluationTextField.value = generalCriteriaEvaluation + assignmentSpecificEvaluation;
+
+	return evaluationTextField.value;
 }

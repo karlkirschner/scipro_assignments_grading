@@ -1,0 +1,137 @@
+Evaluation:  General Feedback 
+
+
+Following Instructions:
+
+Negative:
+•  You did not follow the assignment's instructions, which includes:
+      - not putting your name at the top of the assignment
+
+
+Academic Scholarship (Citations and Writing):
+
+Neutral:
+•  Generally good citing of information, but with a few issues that include:
+      - being careful when citing websites - when possible cite peer-reviewed papers or academic books
+
+Negative:
+•  Poorly citing information, which includes the following:
+      - not citing Python3 libraries that were used:
+          Numpy
+
+Additional Notes: 
+  You need to improve your academic scholarship.
+
+
+Jupyter Notebooks:
+
+Positive:
+•  Overall Notebook Structure:
+      - Good use of cells structure to separate ideas (e.g. thoughts, tasks/subtasks, user-defined functions).
+
+
+Code Formatting:
+
+Positive:
+•  Very good code formatting that includes:
+      - all libraries used were alphabetized
+      - proper f-string statements
+
+Negative:
+•  The following formatting issues were present in your code:
+      - too many blank lines were used
+      - inconsistent or poor indentation (i.e. 4 spaces)
+
+
+Coding Concept:
+
+Positive:
+•  Good use of data structures that includes:
+      - lists (e.g. my_list = [item_1, item_2, item_3])
+
+
+User-defined Functions:
+
+Positive:
+•  Good use of the following:
+      - including type hinting
+      - stating what the function does
+      - stating what the input objects are (i.e. they are defined)
+
+Neutral:
+•  The use of 'assert' over 'raise' statements:
+      - It is better to use a 'raise' statement since 'assert' statements can be bypassed. Note that for development work, the use of 'assert' is okay.
+
+Negative:
+•  Your user-defined functions had the following problems:
+      - a lack of type hinting
+
+
+General Feedback:
+
+Positive:
+      - Excellent job on this assignment!
+
+
+ Assignment Specific Feedback 
+
+
+Significant Figures:
+
+Positive:
+      - Your numbers are reported with the correct significant figures.
+
+
+Plotting (Pandas or Matplotlib):
+
+Positive:
+•  Overall plot feedback:
+      - The choices behind the plot creation were well done, resulting in clear and informative data presentation.
+
+Neutral:
+•  Overall plot feedback:
+      - The choices behind the plot creation were generally good, but there is some room for improvement.
+
+Negative:
+•  The choice in the following plot elements could have been done better:
+      - axis labels
+
+Additional Notes: 
+  Nice plots overall.
+
+
+Numpy Library:
+
+Positive:
+•  The following points were well done:
+      - good job on using ndarrays for your Numpy-based function
+
+
+SciPy Library:
+
+Negative:
+      - You needed to use SciPy's optimize function to find the optimal value of the variable.
+
+
+SciPy - Mountains:
+
+Neutral:
+•  Pandas:
+      - Should have dropped duplicate data values and any rows that had missing data.
+
+Negative:
+•  RMSE:
+      - A user-defined RMSE function was an obvious to create here.
+
+Grading table: 
+
+                     Criteria |   Points Awarded |   Weighting Factor |   Percentage Awarded
+--------------------------------------------------------------------------------------------
+     1. Code quality & design |              5.0 |                  4 |               20.0 %
+  2. Code execution & results |              5.5 |                  4 |               22.0 %
+   3. Assignment requirements |              6.0 |                  4 |               24.0 %
+    4. Scientific programming |              4.0 |                  4 |               16.0 %
+                5. Creativity |              3.0 |                  1 |                3.0 %
+--------------------------------------------------------------------------------------------
+     Total Percentage Awarded |                - |                  - |                 85 %
+            Final Note (Mark) |                - |                  - |             1.7 (A-)

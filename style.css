@@ -257,10 +257,8 @@ ul {
 
 form#upload {
     width: 380px;
-
     margin: 50px auto 0;
     text-align: left;
-
 }
 
 fieldset {
@@ -307,10 +305,10 @@ input[type="file"] {
 }
 
 #submitbutton {
-    text-align: right;
+    text-align: left;
     margin-top: 20px;
-}
 
+}
 
 
 button[type="submit"], button.delete-file {
@@ -402,7 +400,6 @@ input[type="text"] {
     background-color: #444;
 }
 
-
 #output {
     font-size: 16px;
     font-weight: bold;
@@ -411,4 +408,24 @@ input[type="text"] {
     border-radius: 10px;
     background-color: #eee;
     text-align: center;
+}
+
+.json-upload {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Hinzugefügt */
+    max-width: 800px; /* Hinzugefügt */
+}
+
+
+.workflow-container {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.workflow-description {
+    margin-bottom: 10px;
 }

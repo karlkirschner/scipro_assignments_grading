@@ -15,16 +15,41 @@
 </head>
 
 <body id="drop-zone">
+
 <header>
     <div style="text-align: center; padding: 50px;">
         <h1 style="font-size: 40px; font-weight: bold;">Scientific Programming for Python</h1>
         <h2 style="font-size: 30px; font-weight: normal;">Grading Template</h2>
         <p style="font-size: 16px; margin-top: 20px;">The goal of this form is 1) enable faster grading and 2) unifies the feedback given to the students due
             to multiple graders.</p>
+        <br>
+        <div class="workflow-container">
+            <p class="workflow-description"><strong>Workflow Graders:</strong> Input Student Name -> Grade -> (optional) Save Session -> (optional) Generate -> Download JSON File -> Reset -> Start new Grading</p>
+            <p class="workflow-description"><strong>Workflow Instructor:</strong> Upload JSON File -> (optional) Adjust Gradings -> (optional) Save Session -> (optional) Generate -> Download Txt File -> (optional) Reset -> Start new Review</p>
+        </div>
+
     </div>
 </header>
 
-    <section class="json-upload">
+<section class="json-upload">
+    <div class="form-container">
+        <form>
+            <fieldset>
+                <legend>Student Name</legend>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="place name here" required>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="submit-button" onclick="readName()">Submit</button>
+                </div>
+            </fieldset>
+            <div id="output">
+                Student selected
+            </div>
+        </form>
+    </div>
+    <div class="form-container">
         <form id="upload" action="" method="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend>JSON File Upload</legend>
@@ -35,27 +60,15 @@
                 </div>
                 <div id="submitbutton">
                     <button type="submit" onclick="processJSONFile(event)">Upload Files</button>
-                </div>
-                <div>
                     <button type="button" id="clearButton" onclick="clearSelectedFile()">Clear File</button>
                 </div>
             </fieldset>
-            <div id="messages"><p>File selected </p>
+            <div id="messages">
+                <p>File selected</p>
             </div>
-            <form>
-                <fieldset>
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" placeholder="place name here" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="button" id="submit-button" onclick="readName()">Submit</button>
-                    </div>
-                </fieldset>
-                <div id="output"> Student selected</div>
-            </form>
         </form>
-    </section>
+    </div>
+</section>
 
     <section class="side-table">
     <div class="side">
@@ -240,8 +253,6 @@
 
     </div>
     </section>
-
-
 
     <script src="./functions/table.js"></script>
     <script src="./functions/helper.js"></script>

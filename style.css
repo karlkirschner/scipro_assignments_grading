@@ -353,12 +353,6 @@ button[type="submit"], button.delete-file {
     text-align: left;
 }
 
-fieldset {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
 legend {
     font-size: 16px;
@@ -416,10 +410,9 @@ input[type="text"] {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    margin: 0 auto; /* Hinzugefügt */
-    max-width: 800px; /* Hinzugefügt */
+    margin: 0 auto;
+    max-width: 800px;
 }
-
 
 .workflow-container {
     font-size: 18px;

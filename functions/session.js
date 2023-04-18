@@ -75,6 +75,31 @@ function reset() {
 	}
 }
 
+function resetJson() {
+	localStorage.clear();
+	// Delete Name
+	clearForm()
+	// Reset grading table
+	const points = document.getElementsByClassName("point");
+	for(const point of points){
+		const max = parseFloat(point.getAttribute("max"));
+		updatePercentage(max, point.id);
+	}
+
+	// Reset checkbox
+	const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
+
+	for (const input of allInputs) {
+		input.checked = false;
+	}
+
+	// Reset textboxes
+	const allTextNotes = document.getElementsByTagName("textarea");
+
+	for (const textNote of allTextNotes) {
+		textNote.value = "";
+	}
+}
 function saveToJson() {
 	const data = {};
 

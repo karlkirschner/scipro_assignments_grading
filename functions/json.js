@@ -48,7 +48,7 @@ function processJSONFile() {
 				alert("Error processing the file.");
 			}
 		};
-		reset()
+		resetJson()
 
 		reader.readAsText(file);
 	}

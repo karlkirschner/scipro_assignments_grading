@@ -22,9 +22,7 @@
             "subPoints":[
                "citing - source of information and knowledge",
                "citing - libraries",
-               "citing - proper ordering (e.g., ...[1-2]...[3] and not ...[3-4]...[1]...)",
-               "references - consistent formatting",
-               "references - complete information provided",
+               "citing - proper ordering within the written text (e.g., ...[1-2]...[3] and not ...[3-4]...[1]...)",
                "units - input and output numbers have units (e.g. N, kJ, m/s, Hz)"
             ]
          },
@@ -320,28 +318,29 @@
       "additionalNotes":true,
       "positive":[
          {
-            "mainPoint":"",
+            "mainPoint":"Overall, your work done on this assignment was",
             "subPoints":[
-               "Excellent job on this assignment!",
-               "Very good job on this assignment!",
-               "Good job on this assignment."
+               "excellent",
+               "very good",
+               "good"
             ]
          }
       ],
       "neutral":[
          {
-            "mainPoint":"",
+            "mainPoint":"Overall, your work done on this assignment was",
             "subPoints":[
-               "overall solution - while generally okay, there is still significant room for improvement",
-               "name - please provide your name in a markdown cell at the notebook's top"
+               "okay  - there is notable room for improvement"
             ]
          }
       ],
       "negative":[
          {
-            "mainPoint":"",
+            "mainPoint":"The following were problems with your solutions",
             "subPoints":[
-               "execution - code does not run because of the following problem(s):"
+               "execution - code does not run because of the following problem(s):",
+               "name - please provide your name in a markdown cell at the notebook's top",
+               "final interpretation - there was no attempt to interpret or provide context for the final result"
             ]
          }
       ]

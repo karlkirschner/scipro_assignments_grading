@@ -27,11 +27,10 @@ function save() {
 function load() {
 	// Reset grading table before applying saved changes
 	const points = document.getElementsByClassName("point");
-
 	for(const point of points){
-		console.log(point.value)
 		point.value = parseFloat(point.getAttribute("max"))
 	}
+
 	try {
 		for (var i = 0, len = localStorage.length; i < len; ++i) {
 			const key = localStorage.key(i);
@@ -42,6 +41,8 @@ function load() {
 				element.value = localStorage.getItem(key);
 			}
 		}
+
+
 	} catch (error) {
 		alert("An error occured while loading from save. The template have been probably updated during the meantime. To fix click on the Reset button");
 	}
@@ -153,7 +154,6 @@ function loadJson() {
 	}
 	const urlParams = new URLSearchParams(window.location.search);
 	const encodedData = urlParams.get("data");
-	console.log("encoded load", encodedData);
 	if (!encodedData) {
 		// No encoded data in URL, trying to load from local storage
 		try {
@@ -166,6 +166,7 @@ function loadJson() {
 					element.value = localStorage.getItem(key);
 				}
 			}
+
 		} catch (error) {
 			alert("An error occured while loading from save. The template have been probably updated during the meantime. To fix click on the Reset button");
 		}

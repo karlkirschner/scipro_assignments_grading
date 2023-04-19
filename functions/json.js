@@ -44,6 +44,12 @@ function processJSONFile() {
 						element.value = value;
 					}
 				}
+
+				for (const point of points){
+					if (parsedData[point.id] != null){
+						updatePercentage(parsedData[point.id], point.id);
+					}
+				}
 			} catch (error) {
 				alert("Error processing the file.");
 			}

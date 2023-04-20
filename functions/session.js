@@ -42,6 +42,12 @@ function load() {
 			}
 		}
 
+		for (const point of points){
+			if (localStorage.getItem(point.id) != null){
+				updatePercentage(localStorage.getItem(point.id), point.id);
+			}
+		}
+
 
 	} catch (error) {
 		alert("An error occured while loading from save. The template have been probably updated during the meantime. To fix click on the Reset button");

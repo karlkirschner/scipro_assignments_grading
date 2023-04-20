@@ -27,7 +27,6 @@
             <p class="workflow-description"><strong>Workflow Graders:</strong> Input Student Name -> Grade -> (optional) Save Session -> (optional) Generate -> Download JSON File -> Reset -> Start new Grading</p>
             <p class="workflow-description"><strong>Workflow Instructor:</strong> Upload JSON File -> (optional) Adjust Gradings -> (optional) Save Session -> (optional) Generate -> Download Txt File -> (optional) Reset -> Start new Review</p>
         </div>
-
     </div>
 </header>
 
@@ -38,7 +37,7 @@
                 <legend>Student Name</legend>
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="place name here" required>
+                    <input type="text" id="name" name="name" placeholder="Place name here" required>
                 </div>
                 <div class="form-group">
                     <button type="button" id="submit-button" onclick="readName()">Submit</button>
@@ -56,216 +55,216 @@
                 <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
                 <div>
                     <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
-                    <div id="filedrag">or drop files here</div>
+                    <div id="filedrag">Drop files here</div>
                 </div>
                 <div id="submitbutton">
-                    <button type="submit" onclick="processJSONFile(event)">Upload Files</button>
-                    <button type="button" id="clearButton" onclick="clearSelectedFile()">Clear File</button>
-                </div>
-            </fieldset>
-            <div id="messages">
-                <p>File selected</p>
-            </div>
-        </form>
-    </div>
+                    <button type="submit" onclick="processJSONFile(event)">Upload File</button>
+                    <!-- <button type="button" id="clearButton" onclick="clearSelectedFile()">Clear File</button> -->
+			   </div>
+		   </fieldset>
+		   <div id="messages">
+			   <p>File selected</p>
+		   </div>
+	   </form>
+   </div>
 </section>
 
-    <section class="side-table">
-    <div class="side">
-        <b>Grading</b>
-        <table style="width:100%">
-            <tr>
-                <td>
-                    <div class="tooltip">Code quality & design
-                        <span class="tooltiptext">
-                            6 pts: Solution/goal is well thought out<br>
-                            3 pts: Solution/goal is partially planned<br>
-                            0 pts: Solution/goal is unrefined<br>
-                            ---------------------<br>
-                            Weighting Factor: 4.0
-                        </span>
-                    </div>
-                </td>
-                <td><input id="codequality-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codequality-percentage')"></td>
-                <td><p id="codequality-grading-percentage">24%</p></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="tooltip">Code execution & results
-                        <span class="tooltiptext">
-                            6 pts: Code runs correctly in its entirety<br>
-                            3 pts: Code runs, but only partially correct<br>
-                            0 pts: Code doesn’t run, or doesn’t give proper output<br>
-                            ---------------------<br>
-                            Weighting Factor: 4.0
-                        </span>
-                    </div>
-                </td>
-                <td><input id="codeexecution-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codeexecution-percentage')"></td>
-                <td><p id="codeexecution-grading-percentage">24%</p></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="tooltip">Assignment requirements
-                        <span class="tooltiptext">
-                            6 pts: All of the requirements were fulfilled<br>
-                            3 pts: Half of the requirements were met<br>
-                            0 pts: Very little or none of the requirements were met<br>
-                            ---------------------<br>
-                            Weighting Factor: 4.0
-                        </span>
-                    </div>
-                </td>
-                <td><input id="assignmentrequirements-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'assignmentrequirements-percentage')"></td>
-                <td><p id="assignmentrequirements-grading-percentage">24%</p></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="tooltip">Scientific programming
-                        <span class="tooltiptext">
-                            6 pts: Code completely follows scientific programming concepts<br>
-                            3 pts: Code somewhat follows scientific programming concepts<br>
-                            0 pts: Code does not conform to scientific programming concepts<br>
-                            ---------------------<br>
-                            Weighting Factor: 4.0
-                        </span>
-                    </div>
-                </td>
-                <td><input id="scientific-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'scientific-percentage')"></td>
-                <td><p id="scientific-grading-percentage">24%</p></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="tooltip">Creativity
-                        <span class="tooltiptext">
-                            4 pts: Code shows significant problem solving skills, creativity, or robustness<br>
-                            2 pts: Code shows an average approach to problem solving, creativity, or robustness<br>
-                            0 pts: Code does not show notable problem solving skills, creativity, or robustness<br>
-                            ---------------------<br>
-                            Weighting Factor: 1.0
-                        </span>
-                    </div>
-                </td>
-                <td ><input id="creativity-grading" class="point" factor="1" type="number" value="4" min="0.0" max="4.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'creativity-percentage')"></td>
-                <td><p style="width: 60px;" id="creativity-grading-percentage">4%</p></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="tooltip">Grade
-                        <span class="tooltiptext">
-                            <table class="GeneratedTable">
-                                <thead>
-                                  <tr>
-                                    <th>Grade</th>
-                                    <th>Description</th>
-                                    <th>Upper point level</th>
-                                    <th>Lower point level</th>
-                                    <th>American Equivalent</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>1.0</td>
-                                    <td>excellent</td>
-                                    <td>100</td>
-                                    <td>95</td>
-                                    <td>A+</td>
-                                  </tr>
-                                  <tr>
-                                    <td>1.3</td>
-                                    <td>very good</td>
-                                    <td>94</td>
-                                    <td>90</td>
-                                    <td>A</td>
-                                  </tr>
-                                  <tr>
-                                    <td>1.7</td>
-                                    <td>very good</td>
-                                    <td>89</td>
-                                    <td>85</td>
-                                    <td>A-</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2.0</td>
-                                    <td>good</td>
-                                    <td>84</td>
-                                    <td>80</td>
-                                    <td>B+</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2.3</td>
-                                    <td>good</td>
-                                    <td>79</td>
-                                    <td>75</td>
-                                    <td>B</td>
-                                  </tr>
-                                  <tr>
-                                    <td>2.7</td>
-                                    <td>good</td>
-                                    <td>74</td>
-                                    <td>70</td>
-                                    <td>B-</td>
-                                  </tr>
-                                  <tr>
-                                    <td>3.0</td>
-                                    <td>above average</td>
-                                    <td>69</td>
-                                    <td>65</td>
-                                    <td>C+</td>
-                                  </tr>
-                                  <tr>
-                                    <td>3.3</td>
-                                    <td>average</td>
-                                    <td>64</td>
-                                    <td>60</td>
-                                    <td>C</td>
-                                  </tr>
-                                  <tr>
-                                    <td>3.7</td>
-                                    <td>below average</td>
-                                    <td>59</td>
-                                    <td>55</td>
-                                    <td>C-</td>
-                                  </tr>
-                                  <tr>
-                                    <td>4.0</td>
-                                    <td>sufficient</td>
-                                    <td>54</td>
-                                    <td>50</td>
-                                    <td>D</td>
-                                  </tr>
-                                  <tr>
-                                    <td>5.0</td>
-                                    <td>insufficient</td>
-                                    <td>50</td>
-                                    <td>0</td>
-                                    <td>F</td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                        </span>
-                    </div>
-                </td>
-                <td><p id="grade-percentage">100%</p></td>
-                <td><p id="grade">1.0 (A+)</p></td>
-            </tr>
-        </table>
+   <section class="side-table">
+   <div class="side">
+	   <b>Grading</b>
+	   <table style="width:100%">
+		   <tr>
+			   <td>
+				   <div class="tooltip">Code quality & design
+					   <span class="tooltiptext">
+						   6 pts: Solution/goal is well thought out<br>
+						   3 pts: Solution/goal is partially planned<br>
+						   0 pts: Solution/goal is unrefined<br>
+						   ---------------------<br>
+						   Weighting Factor: 4.0
+					   </span>
+				   </div>
+			   </td>
+			   <td><input id="codequality-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codequality-percentage')"></td>
+			   <td><p id="codequality-grading-percentage">24%</p></td>
+		   </tr>
+		   <tr>
+			   <td>
+				   <div class="tooltip">Code execution & results
+					   <span class="tooltiptext">
+						   6 pts: Code runs correctly in its entirety<br>
+						   3 pts: Code runs, but only partially correct<br>
+						   0 pts: Code doesn’t run, or doesn’t give proper output<br>
+						   ---------------------<br>
+						   Weighting Factor: 4.0
+					   </span>
+				   </div>
+			   </td>
+			   <td><input id="codeexecution-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codeexecution-percentage')"></td>
+			   <td><p id="codeexecution-grading-percentage">24%</p></td>
+		   </tr>
+		   <tr>
+			   <td>
+				   <div class="tooltip">Assignment requirements
+					   <span class="tooltiptext">
+						   6 pts: All of the requirements were fulfilled<br>
+						   3 pts: Half of the requirements were met<br>
+						   0 pts: Very little or none of the requirements were met<br>
+						   ---------------------<br>
+						   Weighting Factor: 4.0
+					   </span>
+				   </div>
+			   </td>
+			   <td><input id="assignmentrequirements-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'assignmentrequirements-percentage')"></td>
+			   <td><p id="assignmentrequirements-grading-percentage">24%</p></td>
+		   </tr>
+		   <tr>
+			   <td>
+				   <div class="tooltip">Scientific programming
+					   <span class="tooltiptext">
+						   6 pts: Code completely follows scientific programming concepts<br>
+						   3 pts: Code somewhat follows scientific programming concepts<br>
+						   0 pts: Code does not conform to scientific programming concepts<br>
+						   ---------------------<br>
+						   Weighting Factor: 4.0
+					   </span>
+				   </div>
+			   </td>
+			   <td><input id="scientific-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'scientific-percentage')"></td>
+			   <td><p id="scientific-grading-percentage">24%</p></td>
+		   </tr>
+		   <tr>
+			   <td>
+				   <div class="tooltip">Creativity
+					   <span class="tooltiptext">
+						   4 pts: Code shows significant problem solving skills, creativity, or robustness<br>
+						   2 pts: Code shows an average approach to problem solving, creativity, or robustness<br>
+						   0 pts: Code does not show notable problem solving skills, creativity, or robustness<br>
+						   ---------------------<br>
+						   Weighting Factor: 1.0
+					   </span>
+				   </div>
+			   </td>
+			   <td ><input id="creativity-grading" class="point" factor="1" type="number" value="4" min="0.0" max="4.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'creativity-percentage')"></td>
+			   <td><p style="width: 60px;" id="creativity-grading-percentage">4%</p></td>
+		   </tr>
+		   <tr>
+			   <td>
+				   <div class="tooltip">Grade
+					   <span class="tooltiptext">
+						   <table class="GeneratedTable">
+							   <thead>
+								 <tr>
+								   <th>Grade</th>
+								   <th>Description</th>
+								   <th>Upper point level</th>
+								   <th>Lower point level</th>
+								   <th>American Equivalent</th>
+								 </tr>
+							   </thead>
+							   <tbody>
+								 <tr>
+								   <td>1.0</td>
+								   <td>excellent</td>
+								   <td>100</td>
+								   <td>95</td>
+								   <td>A+</td>
+								 </tr>
+								 <tr>
+								   <td>1.3</td>
+								   <td>very good</td>
+								   <td>94</td>
+								   <td>90</td>
+								   <td>A</td>
+								 </tr>
+								 <tr>
+								   <td>1.7</td>
+								   <td>very good</td>
+								   <td>89</td>
+								   <td>85</td>
+								   <td>A-</td>
+								 </tr>
+								 <tr>
+								   <td>2.0</td>
+								   <td>good</td>
+								   <td>84</td>
+								   <td>80</td>
+								   <td>B+</td>
+								 </tr>
+								 <tr>
+								   <td>2.3</td>
+								   <td>good</td>
+								   <td>79</td>
+								   <td>75</td>
+								   <td>B</td>
+								 </tr>
+								 <tr>
+								   <td>2.7</td>
+								   <td>good</td>
+								   <td>74</td>
+								   <td>70</td>
+								   <td>B-</td>
+								 </tr>
+								 <tr>
+								   <td>3.0</td>
+								   <td>above average</td>
+								   <td>69</td>
+								   <td>65</td>
+								   <td>C+</td>
+								 </tr>
+								 <tr>
+								   <td>3.3</td>
+								   <td>average</td>
+								   <td>64</td>
+								   <td>60</td>
+								   <td>C</td>
+								 </tr>
+								 <tr>
+								   <td>3.7</td>
+								   <td>below average</td>
+								   <td>59</td>
+								   <td>55</td>
+								   <td>C-</td>
+								 </tr>
+								 <tr>
+								   <td>4.0</td>
+								   <td>sufficient</td>
+								   <td>54</td>
+								   <td>50</td>
+								   <td>D</td>
+								 </tr>
+								 <tr>
+								   <td>5.0</td>
+								   <td>insufficient</td>
+								   <td>50</td>
+								   <td>0</td>
+								   <td>F</td>
+								 </tr>
+							   </tbody>
+							 </table>
+					   </span>
+				   </div>
+			   </td>
+			   <td><p id="grade-percentage">100%</p></td>
+			   <td><p id="grade">1.0 (A+)</p></td>
+		   </tr>
+	   </table>
 
-    </div>
-    </section>
+   </div>
+   </section>
 
-    <script src="./functions/table.js"></script>
-    <script src="./functions/helper.js"></script>
-    <script src="./functions/json.js"></script>
-    <script src="./functions/generate.js"></script>
-    <script src="./functions/session.js"></script>
-    <script>
-        if (debug) {generateBody();}
-        window.addEventListener("load", function() {
-            processJSONFile();
-        });
+   <script src="./functions/table.js"></script>
+   <script src="./functions/helper.js"></script>
+   <script src="./functions/json.js"></script>
+   <script src="./functions/generate.js"></script>
+   <script src="./functions/session.js"></script>
+   <script>
+	   if (debug) {generateBody();}
+	   window.addEventListener("load", function() {
+		   processJSONFile();
+	   });
 
-    </script>
+   </script>
 
 </body>
 

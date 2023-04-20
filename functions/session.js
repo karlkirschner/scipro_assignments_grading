@@ -73,6 +73,10 @@ function reset() {
 	for (const textNote of allTextNotes) {
 		textNote.value = "";
 	}
+
+	// Reset Browsed JSON file
+	clearSelectedFile();
+
 }
 
 function resetJson() {

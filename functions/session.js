@@ -103,7 +103,9 @@ function resetJson() {
 	for (const textNote of allTextNotes) {
 		textNote.value = "";
 	}
+
 }
+
 function saveToJson() {
 	const data = {};
 

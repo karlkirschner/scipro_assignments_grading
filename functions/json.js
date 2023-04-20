@@ -16,6 +16,7 @@ function processJSONFile() {
 	});
 
 	filedrag.addEventListener("drop", function(event) {
+
 		event.preventDefault();
 		fileName = event.dataTransfer.files[0].name;
 		processFile(event.dataTransfer.files[0]);
@@ -23,10 +24,11 @@ function processJSONFile() {
 
 	function processFile(file) {
 		if (!file) {
-			alert("No file selected.");
+			alert("No File selected.");
 			return;
 		}
-		updateStatusMessage("Current file: " + file.name);
+
+		updateStatusMessage("Current File: " + file.name);
 		const reader = new FileReader();
 		reader.onload = function() {
 			try {
@@ -48,8 +50,8 @@ function processJSONFile() {
 				alert("Error processing the file.");
 			}
 		};
+		clearSelectedFile();
 		resetJson()
-
 		reader.readAsText(file);
 	}
 }

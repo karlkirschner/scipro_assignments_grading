@@ -4,19 +4,31 @@
         "additionalNotes":true,
         "positive":[
         {
-            "mainPoint":"",
+            "mainPoint":"The significant figures for your final numeric value(s) was",
             "subPoints":[
-                "Your numbers are reported with the correct significant figures."
+                "correct - good job!"
             ]
         }
     ],
         "negative":[
         {
-            "mainPoint":"",
+            "mainPoint":"The significant figures for your final numeric value(s) was",
             "subPoints":[
-                "Your numbers have incorrect significant figures."
+                "incorrect"
+            ]
+        },
+        {
+            "mainPoint":"The number of significant figures should have been",
+            "subPoints":[
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
             ]
         }
-    ]
+        ]
     }
 }

@@ -62,6 +62,15 @@
             ]
          },
          {
+            "mainPoint":"Plagiarism",
+            "subPoints":[
+               "Your solution was very similar to another student's solution, with minor differences. Consequently, I was unable to identify whose work it actually was. Points remove:",
+               "Your solution was similar to another student's solution. Consider this a warning - you need to submit a solution that reflects your own ideas and communication thereof.",
+               "You solution contains code that is similar to that found on the internet. Points remove:",
+               "You solution contains code that is similar to that found on the internet. Consider this a warning - you need to submit a solution that reflects your own abilities."
+            ]
+         },
+         {
             "mainPoint":"Scholarship done poorly, which includes the following",
             "subPoints":[
                "citing - done out-of-order (e.g., the first citation in your text is not to reference 1)",

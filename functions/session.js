@@ -27,11 +27,10 @@ function save() {
 function load() {
 	// Reset grading table before applying saved changes
 	const points = document.getElementsByClassName("point");
-
 	for(const point of points){
-		console.log(point.value)
 		point.value = parseFloat(point.getAttribute("max"))
 	}
+
 	try {
 		for (var i = 0, len = localStorage.length; i < len; ++i) {
 			const key = localStorage.key(i);
@@ -42,6 +41,14 @@ function load() {
 				element.value = localStorage.getItem(key);
 			}
 		}
+
+		for (const point of points){
+			if (localStorage.getItem(point.id) != null){
+				updatePercentage(localStorage.getItem(point.id), point.id);
+			}
+		}
+
+
 	} catch (error) {
 		alert("An error occured while loading from save. The template have been probably updated during the meantime. To fix click on the Reset button");
 	}
@@ -73,6 +80,10 @@ function reset() {
 	for (const textNote of allTextNotes) {
 		textNote.value = "";
 	}
+
+	// Reset Browsed JSON file
+	clearSelectedFile();
+
 }
 
 function resetJson() {
@@ -99,7 +110,9 @@ function resetJson() {
 	for (const textNote of allTextNotes) {
 		textNote.value = "";
 	}
+
 }
+
 function saveToJson() {
 	const data = {};
 
@@ -153,7 +166,6 @@ function loadJson() {
 	}
 	const urlParams = new URLSearchParams(window.location.search);
 	const encodedData = urlParams.get("data");
-	console.log("encoded load", encodedData);
 	if (!encodedData) {
 		// No encoded data in URL, trying to load from local storage
 		try {
@@ -166,6 +178,7 @@ function loadJson() {
 					element.value = localStorage.getItem(key);
 				}
 			}
+
 		} catch (error) {
 			alert("An error occured while loading from save. The template have been probably updated during the meantime. To fix click on the Reset button");
 		}

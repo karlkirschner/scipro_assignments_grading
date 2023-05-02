@@ -304,6 +304,7 @@
                "docstring - no statement about what the function does",
                "docstring - no statement about what the input variables are",
                "docstring - no statement about what the function returns",
+               "global variables - use local variable in your function (e.g., improves transferability)",
                "internal checks - none provided (e.g., 'if not isinstance')",
                "main code - should be nested under the 'else' statement of the internal checking",
                "trivial - function does very little, and arguably does not warrant being a function",
@@ -314,13 +315,13 @@
       ]
    },
    "callingFunction":{
-      "title":"Function/Method Calling",
+      "title":"Function (and Method) Calling",
       "additionalNotes":true,
       "negative":[
          {
             "mainPoint":"",
             "subPoints":[
-               "Include the parameters that are being passed to a function or method (e.g., 'my_function(param1=a, param2=b)'. Doing so ensure that the values are passed correctly."
+               "keyword arguments calls - include the parameter that are being assigned the argument to (e.g., 'my_function(param1=arg1, param2=arg2)'. Doing so ensure that the arguments are passed correctly."
             ]
          }
       ]

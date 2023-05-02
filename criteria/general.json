@@ -49,6 +49,7 @@
                "markdown -- formatting needs improvement",
                "sentences - incomplete (e.g., capitalization, punctuation, etc.)",
                "sentences - unclear",
+               "words - incorrect case (i.e., capitalized vs. lower-cased words",
                "words - misspelled",
                "words - mixed English and German"
             ]
@@ -62,12 +63,17 @@
             ]
          },
          {
-            "mainPoint":"Plagiarism",
+            "mainPoint":"Plagiarism - classmate",
             "subPoints":[
                "Your solution was very similar to another student's solution, with minor differences. Consequently, I was unable to identify whose work it actually was. Points remove:",
-               "Your solution was similar to another student's solution. Consider this a warning - you need to submit a solution that reflects your own ideas and communication thereof.",
-               "You solution contains code that is similar to that found on the internet. Points remove:",
-               "You solution contains code that is similar to that found on the internet. Consider this a warning - you need to submit a solution that reflects your own abilities."
+               "Your solution was similar to another student's solution. Consider this a warning - you need to submit a solution that reflects your own ideas and communication thereof."
+            ]
+         },
+         {
+            "mainPoint":"Plagiarism- internet",
+            "subPoints":[
+               "You solution contains code that is similar to code on the internet (without a citation). Points remove:",
+               "You solution contains code that is similar to code on the internet (without a citation). Consider this a warning."
             ]
          },
          {
@@ -75,7 +81,7 @@
             "subPoints":[
                "citing - done out-of-order (e.g., the first citation in your text is not to reference 1)",
                "citing - missing references for knowledge (e.g., datasets, equations, libraries)",
-               "citing - missing reference numbers (e.g. [1, 2]) within your writing",
+               "citing - missing reference numbers (e.g., [1, 2]) within your writing",
                "references - missing important information (e.g., year, author, journal, title, accessed date)",
                "units - were not provided when needed"
             ]
@@ -169,7 +175,7 @@
                "imports - libraries were imported, but not used",
                "indentation - improperly done (i.e., 4 spaces)",
                "inline commenting - usage was unnecessary (i.e., comments given at the end of a code line)",
-               "f-string - not used",
+               "f-string - not used (e.g., print statements)",
                "f-string - please ensure that proper grammar and syntax are maintained in the print statements",
                "line length - too long (i.e., requiring scrolling)",
                "naming - object/variable is not descriptive (i.e., human readable)",
@@ -187,34 +193,36 @@
          {
             "mainPoint":"Data structures done well, which includes the following",
             "subPoints":[
-               "dictionary - e.g., my_dictionary = {key_1: value_1, key_2: value_2}",
-               "set - e.g., my_set = {item_1, item_2, item_3}",
-               "tuple - e.g., my_tuple = (item_1, item_2, item_3)",
-               "list - e.g., my_list = [item_1, item_2, item_3]"
+               "dictionary",
+               "list",
+               "set ",
+               "tuple"
             ]
          },
          {
             "mainPoint":"Coding concepts done well, which includes the following ",
             "subPoints":[
-               "concise coding  - reduced redundancy (i.e., repetition)",
-               "list comprehension",
-               "looping - over a dictionary",
-               "looping - 'zip' usage to iterate over two lists",
                "built-in function - 'enumerate'",
                "built-in function - 'range'",
                "built-in function - 'reversed'",
+               "built-in function - 'round'",
                "built-in function - 'sorted'",
-               "built-in function(s):"
+               "built-in function(s):",
+               "concise coding  - reduced redundancy (i.e., repetition)",
+               "list comprehension",
+               "looping - over a dictionary",
+               "looping - 'zip' usage to iterate over two lists"
             ]
          }
       ],
       "neutral":[
          {
-            "mainPoint":"Data structures could improve the solution slightly, which includes the following",
+            "mainPoint":"Better data structures could improve the solution slightly, which includes the following",
             "subPoints":[
-               "dictionary - 'key:value' combination",
-               "set - unique elements",
-               "tuple - immutable elements"
+               "looping - over a dictionary",
+               "looping - 'zip' to iterate over two lists",
+               "using 'set' - unique elements",
+               "using 'tuple' - immutable elements"
             ]
          },
          {
@@ -226,20 +234,25 @@
       ],
       "negative":[
          {
-            "mainPoint":"Data structures done poorly done, which includes the following",
+            "mainPoint":"Better data structures would have improved the solution, which includes the following",
             "subPoints":[
-               "making your coding more concise, which reduces redundancy (i.e., repetition) and the chances of introducing errors",
-               "dictionary - 'key:value' combination",
-               "set - unique elements",
-               "tuple - immutable elements",
-               "zip - built-in function to loop over two lists of equal length"
+               "looping - over a dictionary",
+               "looping - 'zip' to loop over two lists of equal length",
+               "using 'set' - unique elements",
+               "using 'tuple' - immutable elements"
             ]
          },
          {
             "mainPoint":"Coding concepts that were poorly done, which includes the following",
             "subPoints":[
-               "if-elif-else - it is better to use 'if-elif-else' statements, rather than 'if-if-...' due to readability and speed",
-               "copy-and-pasting - doing this increases the chances of errors and may introduced confusion"
+               "built-in function - 'enumerate'",
+               "built-in function - 'range'",
+               "built-in function - 'round'",
+               "built-in function - 'sorted'",
+               "built-in function(s):",
+               "concise coding  - make your coding more concise, which reduces redundancy (i.e., repetition) and the chances of introducing errors",
+               "copy-and-pasting - doing this increases the chances of errors and may introduced confusion",
+               "if-elif-else - it is better to use 'if-elif-else' statements, rather than 'if-if-...' due to readability and speed"
             ]
          }
       ]
@@ -263,7 +276,7 @@
       ],
       "neutral":[
          {
-            "mainPoint":"Okay user-defined functions, but the following could be improved",
+            "mainPoint":"Okay user-defined function(s), but the following could be improved",
             "subPoints":[
                "assert vs. raise - it is better to use 'raise' since 'assert' can be bypassed",
                "complex - a bit too many ideas placed into a single function"
@@ -275,6 +288,12 @@
             "mainPoint":"No user-defined functions employed",
             "subPoints":[
                "Your solution did not include user-defined functions to isolate concepts, improves reusability, transferability and debugging"
+            ]
+         },
+         {
+            "mainPoint":"Missed opportunity",
+            "subPoints":[
+               "You missed an obvious situation to crete a user-defined function that would have made your code more concise."
             ]
          },
          {

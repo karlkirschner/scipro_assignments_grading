@@ -6,8 +6,12 @@
         {
             "mainPoint":"The following points were well done",
             "subPoints":[
-                "NumPy function: using ndarrays for your NumPy-based function",
-                "NumPy function: using some of its built-in math functions (e.g., np.mean, etc)"
+                "List function: using a list for the simulated values",
+                "NumPy function: using ndarrays for the simulated values",
+                "NumPy function: using some of its built-in math functions (e.g., np.mean, etc)",
+                "Both functions: RMSE correctly done",
+                "List function: RMSE correctly done",
+                "NumPy function: RMSE correctly done"
             ]
         }
     ],

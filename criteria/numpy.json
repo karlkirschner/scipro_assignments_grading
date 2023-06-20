@@ -1,60 +1,69 @@
 {
     "numpy":{
-        "title":"Numpy Library",
+        "title":"NumPy Library",
         "additionalNotes":true,
         "positive":[
         {
             "mainPoint":"The following points were well done",
             "subPoints":[
-                "good job on using ndarrays for your Numpy-based function",
-                "good job on using lists for your list-based function",
-                "good job on using Numpy's built-in math functions (e.g. np.add, etc)",
-                "your Numpy function is indeed faster than your function using regular Python lists"
+                "NumPy function: using ndarrays for your NumPy-based function",
+                "NumPy function: using some of its built-in math functions (e.g., np.mean, etc)"
             ]
         }
     ],
         "neutral":[
         {
-            "mainPoint":"The following points would improve the Numpy solution slightly",
+            "mainPoint":"The following points would improve your NumPy solution slightly",
             "subPoints":[
-                "the experimental value was passed as a float to your Numpy function, when converting to an ndarray object might have been better",
-                "converting the Pandas' dataframe outside of your function(s) might have improved their performance -- remember to have a function that optimally does a single task",
-                "you missed the opportunity to specify Numpy's built-in math functions (e.g. np.add), which can help with being clear and consistent. Never-the-less, that for some of the simple mathematical operations, the Numpy versus the built-in are equivalent.",
-                "please follow the standard practice within the community by importing Numpy as 'np'"
+                "NumPy: use the community abbreviation of 'np'",
+                "NumPy function: converting the experimental float value to an ndarray",
+                "Pandas: converting the DataFrame outside of your function(s) - remember to have a function that optimally does one task"
             ]
         }
     ],
         "negative":[
         {
-            "mainPoint":"Performance Problems",
+            "mainPoint":"The computed RMSE value was incorrect",
             "subPoints":[
-                "your function that uses Python lists has a time performance of:",
-                "your Numpy function has a time performance of:",
-                "your Numpy function should not be performing slower than your function that uses regular Python lists"
-
+                "List function: incorrect",
+                "NumPy function: incorrect",
+                "The following mean value should have been computed:"
             ]
         },
         {
-            "mainPoint":"The resulting data from the encoded equation was incorrect",
+            "mainPoint":"Performance problems",
             "subPoints":[
-                "the following mean value should have been computed:",
-                "the computed results of your list function was incorrect, giving a mean value of:",
-                "the computed results of your Numpy function was incorrect, giving a mean value of:"
+                "List function: has a time performance of:",
+                "NumPy function: has a time performance of:",
+                "NumPy function: iterating over the ndarray is not needed, resulting in a loss of performance",
+                "NumPy function: runs slower than the list function"
             ]
         },
         {
-            "mainPoint":"The following points need improvements",
+            "mainPoint":"Your NumPy function does not make use of:",
             "subPoints":[
-                "your Numpy function's performance is not maximized",
-                "for your Numpy function, you did not use ndarrays. Instead you passed the following data type to the function:",
-                "for your list (built-in) function, you did not use a list of floats. Instead you passed the following data type to the function:",
-                "iterating over the ndarray is not needed since it is vectorized, and results in a loss of performance"
+                "np.mean:",
+                "np.sqrt",
+                "np.square",
+                "np.subtract"
             ]
         },
         {
-            "mainPoint":"Encoded Metric",
+            "mainPoint":"Your NumPy function incorrectly used the following data types",
             "subPoints":[
-                "your function computes the evaluation metrics and returns the sum of them. This one doesn’t make much sense. Doing so mean the resulting evaluation (i.e. the final quantitative value) is dependent upon the length of the data given. What is important is how the pairwise data (e.g. within each row) performs, which is best statistically evaluated by a mean (e.g. via a returned list/ndarray), not a sum."
+                "Data type:",
+                "Floats",
+                "Lists",
+                "Panda DataFrames"
+            ]
+        },
+        {
+            "mainPoint":"Your List function incorrectly used the following data types",
+            "subPoints":[
+                "Data type:",
+                "Individual float values (i.e., not a list of floats)",
+                "NumPy ndarray",
+                "Panda DataFrames"
             ]
         }
     ]

@@ -11,7 +11,10 @@
                 "NumPy function: using some of its built-in math functions (e.g., np.mean, etc)",
                 "Both functions: RMSE correctly done",
                 "List function: RMSE correctly done",
-                "NumPy function: RMSE correctly done"
+                "NumPy function: RMSE correctly done",
+                "Both functions: good performance",
+                "List function: good performance",
+                "NumPy function: good performance"
             ]
         }
     ],

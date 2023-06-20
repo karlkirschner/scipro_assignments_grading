@@ -31,10 +31,11 @@
             ]
         },
         {
-            "mainPoint":"Performance problems",
+            "mainPoint":"Performance problems (as computed on the grader's machine)",
             "subPoints":[
-                "List function: has a time performance of:",
-                "NumPy function: has a time performance of:",
+                "Good performance for the List and NumPy function should be, respectively:",
+                "List function: your solution has a performance of:",
+                "NumPy function: your solution has a performance of:",
                 "NumPy function: iterating over the ndarray is not needed, resulting in a loss of performance",
                 "NumPy function: runs slower than the list function"
             ]
@@ -42,7 +43,7 @@
         {
             "mainPoint":"Your NumPy function does not make use of:",
             "subPoints":[
-                "np.mean:",
+                "np.mean",
                 "np.sqrt",
                 "np.square",
                 "np.subtract"
@@ -51,19 +52,19 @@
         {
             "mainPoint":"Your NumPy function incorrectly used the following data types",
             "subPoints":[
-                "Data type:",
                 "Floats",
                 "Lists",
-                "Panda DataFrames"
+                "Pandas DataFrames",
+                "Data type:"
             ]
         },
         {
             "mainPoint":"Your List function incorrectly used the following data types",
             "subPoints":[
-                "Data type:",
                 "Individual float values (i.e., not a list of floats)",
                 "NumPy ndarray",
-                "Panda DataFrames"
+                "Pandas DataFrames",
+                "Data type:"
             ]
         }
     ]

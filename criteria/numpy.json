@@ -27,7 +27,7 @@
             "subPoints":[
                 "List function: incorrect",
                 "NumPy function: incorrect",
-                "The following mean value should have been computed:"
+                "The following value should have been computed:"
             ]
         },
         {

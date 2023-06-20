@@ -33,7 +33,7 @@
         {
             "mainPoint":"Performance problems (as computed on the grader's machine)",
             "subPoints":[
-                "Good performance for the List and NumPy function should be, respectively:",
+                "Good performance for the List and NumPy function should be (in seconds):",
                 "List function: your solution has a performance of:",
                 "NumPy function: your solution has a performance of:",
                 "NumPy function: iterating over the ndarray is not needed, resulting in a loss of performance",

@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./functions/headerscript.js"></script>
-    <title>Scientific Python - Grading template</title>
+    <title>Scientific Python - Peer Review</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -19,12 +19,18 @@
 <header>
     <div style="text-align: center; padding: 50px;">
         <h1 style="font-size: 40px; font-weight: bold;">Scientific Programming with Python</h1>
-        <h2 style="font-size: 30px; font-weight: normal;">Grading Template</h2>
-        <p style="font-size: 16px; margin-top: 20px;">This form's goal is to 1) enable faster grading and 2) unify the feedback given to the students.</p>
+        <h2 style="font-size: 30px; font-weight: normal;">Peer Review</h2>
+        <p style="font-size: 16px; margin-top: 20px;">This form's goal is to unify the feedback given to students, while allowing customized comments.</p>
         <br>
         <div class="workflow-container">
-            <p class="workflow-description"><strong>Workflow Graders:</strong> Input Student Name -> Perform Grading -> Generate (optional) -> Save Session (optional) -> Download JSON File -> Reset -> Start New Grading</p>
-            <p class="workflow-description"><strong>Workflow Instructor:</strong> Upload JSON File -> Adjust Gradings (optional) -> Generate (optional) -> Save Session (optional) -> Download JSON & Text Files -> Reset (optional) -> Upload Next JSON File</p>
+            <p class="workflow-description"><h3><strong><u>Workflow:</h3></strong></u>1) <font color="#4287f5">Input Student's SciPro_ID</font> ->
+                <br> 2) <font color="#4287f5">Perform Peer Review</font> ->
+                <br> 3) Generate (optional) -> Save Session (optional) ->
+                <br> 4) <font color="#4287f5">Download JSON and Text Files</font> ->
+                <br> 5) Reset -> Start New Grading</p>
+
+<!--             <p class="workflow-description"><strong>Workflow Graders:</strong> Input Student Name -> Perform Grading -> Generate (optional) -> Save Session (optional) -> Download JSON File -> Reset -> Start New Grading</p>
+            <p class="workflow-description"><strong>Workflow Instructor:</strong> Upload JSON File -> Adjust Gradings (optional) -> Generate (optional) -> Save Session (optional) -> Download JSON & Text Files -> Reset (optional) -> Upload Next JSON File</p> -->
         </div>
     </div>
 </header>
@@ -33,10 +39,12 @@
     <div class="form-container">
         <form>
             <fieldset>
-                <legend>Student Name</legend>
+                <legend>Student's SciPro_ID</legend>
+                (The ID of the student whose work that you are peer reviewing.)
+
                 <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Place name here" required>
+                    <label for="name">SciPro_ID:</label>
+                    <input type="text" id="name" name="name" placeholder="Place SciPro_ID here" required>
                 </div>
                 <div class="form-group">
                     <button type="button" id="submit-button" onclick="readName()">Submit</button>
@@ -51,6 +59,8 @@
         <form id="upload" action="" method="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend>JSON File Upload</legend>
+                (To upload & continue a saved form.)
+
                 <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
                 <div>
                     <input type="file" id="fileselect" name="fileselect[]" multiple="multiple"/>
@@ -68,7 +78,7 @@
    </div>
 </section>
 
-   <section class="side-table">
+<!--    <section class="side-table">
    <div class="side">
 	   <b>Grading</b>
 	   <table style="width:100%">
@@ -250,9 +260,9 @@
 	   </table>
 
    </div>
-   </section>
+   </section> -->
 
-   <script src="./functions/table.js"></script>
+   <!-- <script src="./functions/table.js"></script> -->
    <script src="./functions/helper.js"></script>
    <script src="./functions/json.js"></script>
    <script src="./functions/generate.js"></script>

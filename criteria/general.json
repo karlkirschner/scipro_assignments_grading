@@ -20,8 +20,7 @@
          {
             "mainPoint":"Scholarship done well, which includes",
             "subPoints":[
-               "citing - source of information and knowledge",
-               "citing - libraries",
+               "citing - source of information and knowledge (e.g., software, equations, data)",
                "citing - proper ordering within the written text (e.g., ...[1-2]...[3] and not ...[3-4]...[1]...)",
                "units - input and output numbers have units (e.g. N, kJ, m/s, Hz)"
             ]
@@ -36,20 +35,19 @@
       ],
       "neutral":[
          {
-            "mainPoint":"Scholarship done okay, but with a few occurrences in the following",
+            "mainPoint":"Scholarship done okay, but with a few issues in the following",
             "subPoints":[
-               "citing - websites should include the date visited",
+               "citing - websites should include the date visited (e.g., Wikipedia)",
                "citing - when possible cite peer-reviewed papers or academic books, not websites",
                "references - inconsistent formatting"
             ]
          },
          {
-            "mainPoint":"Writing and communication done okay, but with a few occurrences in the following",
+            "mainPoint":"Writing and communication done okay, but with a few issues in the following",
             "subPoints":[
-               "markdown -- formatting needs improvement",
                "sentences - incomplete (e.g., capitalization, punctuation, etc.)",
                "sentences - unclear",
-               "words - incorrect case (i.e., capitalized vs. lower-cased words",
+               "words - incorrect case (i.e., capitalized vs. lower-cased words)",
                "words - misspelled",
                "words - mixed English and German"
             ]
@@ -65,21 +63,21 @@
          {
             "mainPoint":"Plagiarism - classmate",
             "subPoints":[
-               "Your solution was very similar to another student's solution, with minor differences. Consequently, I was unable to identify whose work it actually was. Points remove:",
+               // "Your solution was very similar to another student's solution, with minor differences. Consequently, I was unable to identify whose work it actually was. Points remove:",
                "Your solution was similar to another student's solution. Consider this a warning - you need to submit a solution that reflects your own ideas and communication thereof."
             ]
          },
          {
             "mainPoint":"Plagiarism - internet",
             "subPoints":[
-               "You solution contains code that is similar to code on the internet (without a citation). Points remove:",
-               "You solution contains code that is similar to code on the internet (without a citation). Consider this a warning."
+               // "You solution contains code that is similar to code on the internet (without a citation). Points remove:",
+               "You solution contains code that is similar to code found on the internet (and without a citation). Consider this a warning."
             ]
          },
          {
             "mainPoint":"Scholarship done poorly, which includes the following",
             "subPoints":[
-               "citing - done out-of-order (e.g., the first citation in your text is not to reference 1)",
+               "citing - done out-of-order (e.g., the first citation in your text is not to Reference 1)",
                "citing - missing references for knowledge (e.g., datasets, equations, libraries)",
                "citing - missing reference numbers (e.g., [1, 2]) within your writing",
                "references - missing important information (e.g., year, author, journal, title, accessed date)",
@@ -89,13 +87,13 @@
          {
             "mainPoint":"Writing and communication done poorly, which includes the following",
             "subPoints":[
-               "communication - create your own context description within (e.g., do not copy it from the assignment)",
+               "communication - create your own context description (e.g., do not copy it from the assignment)",
                "communication - no or very little presentation of thoughts or ideas (e.g., context, solution meaning, decisions made)",
                "context - poorly provided (e.g., background info, the problem)",
-               "image - an image from the assignment is not good enough, suggesting a lack of effort",
+               "image - an image of the assignment is not good enough to provide context, suggesting a lack of effort",
                "sentences - not clean, concise and/or clear (C^3)",
-               "sentences - incomplete sentences (e.g., capitalization, punctuation, subject, verb) when appropriate (including in f-strings) ",
-               "words - several misspelled",
+               "sentences - incomplete sentences when needed (e.g., capitalization, punctuation, subject, verb), including in print statements",
+               "words - several misspelled words",
                "words - several mixed English and German words"
             ]
          }
@@ -120,7 +118,7 @@
             "mainPoint":"Notebook could be slightly improved, which includes the following",
             "subPoints":[
                "cell structure - some additional separation of ideas (both code and markdown cells)",
-               "code cells - some additional encoded ideas into separate cells would have been logical",
+               "code cells - separating some encoded ideas into different cells would have been logical",
                "markdown cells - some additional communication would have been more informative"
             ]
          }
@@ -129,11 +127,11 @@
          {
             "mainPoint":"Notebook was poorly done,  which includes the following",
             "subPoints":[
-               "cell structure - significant work is needed to better separate the tasks, subtasks, or thoughts/ideas",
-               "cell structure -  providing your solution in one code cell is not ideal, and does not make good use of a Jupyter-notebook's capability",
+               "cell structure - significant work is needed to better separate the ideas, tasks, subtasks, or thoughts",
+               "cell structure -  providing your solution in one code cell was not good, and does not make use of a Jupyter-notebook's capability",
                "code cells - more separation of encoded ideas was required",
-               "markdown cells - a significant lack of good, informative communication is seen in your solution",
-               "markdown cells - not used"
+               "markdown cells - a significant lack of good, informative communication was seen in your solution"
+               // "markdown cells - not used"
             ]
          }
       ]
@@ -146,186 +144,186 @@
             "mainPoint":"Formatting done well, which includes",
             "subPoints":[
                "blank lines - consistent and good usage",
-               "block commenting - appropriate amount (i.e., comments given on their own code line)",
-               "docstring commenting - appropriate amount (i.e. comments withing triple quotes)",
+               // "block commenting - appropriate amount (i.e., comments given on their own code line)",
+               // "docstring commenting - appropriate amount (i.e. comments withing triple quotes)",
                "f-string - properly used",
                "imports - libraries were alphabetized",
                "imports - libraries were listed at the notebook's top",
                "indentation - consistent and with 4 spaces",
-               "inline commenting - appropriate amount (i.e., comments given at the end of a code line)",
-               "line length - properly done (e.g., no scrolling is needed)",
-               "naming - descriptive objects/variables (i.e., human readable)",
-               "PEP8 guidelines- followed",
+               // "inline commenting - appropriate amount (i.e., comments given at the end of a code line)",
+               "line length - properly done (i.e., not longer than 110 characters)",
+               "naming - descriptive, human readable objects/variables naming",
+               // "PEP8 guidelines- followed",
                "spacing - consistent and correct usage",
-               "writing - clean, concise and clearly written code"
+               "writing - clean, concise and clearly (C^3) written code"
             ]
          }
       ],
       "negative":[
          {
-            "mainPoint":"The following formatting issues were present in your code",
+            "mainPoint":"The following format issues were present in your code",
             "subPoints":[
                "blank lines - not enough used (e.g., separating ideas and improving readability)",
                "blank lines - too many used (i.e., not concise)",
-               "block commenting - inappropriately done and/or unnecessary (i.e., comments given on their own code line)",
+               // "block commenting - inappropriately done and/or unnecessary (i.e., comments given on their own code line)",
                "commenting - excessive amounts done (e.g., for obvious points), or not relevant (i.e. significantly distracts from the solution's main focus)",
-               "docstrings - inappropriately done (e.g., use a markdown cell)",
+               // "docstrings - inappropriately done (e.g., use a markdown cell)",
                "imports - not alphabetized",
                "imports - not listed together at the notebook's top",
-               "imports - libraries were imported, but not used",
+               "imports - libraries were imported, but not used (increases overhead)",
                "indentation - improperly done (i.e., 4 spaces)",
-               "inline commenting - usage was unnecessary (i.e., comments given at the end of a code line)",
+               // "inline commenting - usage was unnecessary (i.e., comments given at the end of a code line)",
                "f-string - not used (e.g., print statements)",
                "f-string - please ensure that proper grammar and syntax are maintained in the print statements",
-               "line length - too long (i.e., requiring scrolling)",
-               "naming - object/variable is not descriptive (i.e., human readable)",
+               "line length - too long (i.e., longer than 110 characters)",
+               "naming - object/variable is not descriptive or human readable (e.g., using 'x' or 'i')",
                "naming - object/variable is too long (i.e., not concise while remaining informative)",
-               "spacing - inconsistent and/or improperly used",
-               "PEP8 - not well followed"
+               "spacing - inconsistent and/or improperly used"
+               // "PEP8 - not well followed"
             ]
          }
       ]
    },
-   "codingConcept":{
-      "title":"Coding Concept",
-      "additionalNotes":true,
-      "positive":[
-         {
-            "mainPoint":"Data structures done well, which includes the following",
-            "subPoints":[
-               "dictionary",
-               "list",
-               "set ",
-               "tuple"
-            ]
-         },
-         {
-            "mainPoint":"Coding concepts done well, which includes the following ",
-            "subPoints":[
-               "built-in function - 'enumerate'",
-               "built-in function - 'range'",
-               "built-in function - 'reversed'",
-               "built-in function - 'round'",
-               "built-in function - 'sorted'",
-               "built-in function(s):",
-               "concise coding  - reduced redundancy (i.e., repetition)",
-               "list comprehension",
-               "looping - over a dictionary",
-               "looping - 'zip' usage to iterate over two lists"
-            ]
-         }
-      ],
-      "neutral":[
-         {
-            "mainPoint":"Better data structures could improve the solution slightly, which includes the following",
-            "subPoints":[
-               "looping - over a dictionary",
-               "looping - 'zip' to iterate over two lists",
-               "using 'set' - unique elements",
-               "using 'tuple' - immutable elements"
-            ]
-         },
-         {
-            "mainPoint":"Coding concepts that could improve the solution slightly, which includes the following",
-            "subPoints":[
-               "list comprehension - replacing simple 'if-elif-else' statements (i.e., to improve readability)"
-            ]
-         }
-      ],
-      "negative":[
-         {
-            "mainPoint":"Better data structures would have improved the solution, which includes the following",
-            "subPoints":[
-               "looping - over a dictionary",
-               "looping - 'zip' to loop over two lists of equal length",
-               "using 'set' - unique elements",
-               "using 'tuple' - immutable elements"
-            ]
-         },
-         {
-            "mainPoint":"Coding concepts that were poorly done, which includes the following",
-            "subPoints":[
-               "built-in function - 'enumerate'",
-               "built-in function - 'range'",
-               "built-in function - 'round'",
-               "built-in function - 'sorted'",
-               "built-in function(s):",
-               "concise coding  - make your coding more concise, which reduces redundancy (i.e., repetition) and the chances of introducing errors",
-               "copy-and-pasting - doing this increases the chances of errors and may introduced confusion",
-               "if-elif-else - it is better to use 'if-elif-else' statements, rather than 'if-if-...' due to readability and speed"
-            ]
-         }
-      ]
-   },
-   "userDefinedFunctions":{
-      "title":"User-defined Functions",
-      "additionalNotes":true,
-      "positive":[
-         {
-            "mainPoint":"Good use of the following",
-            "subPoints":[
-               "docstring - providing context; stating what the function does",
-               "docstring - defining input objects",
-               "docstring - defining returned object(s)",
-               "internal check - for example, 'if not isinstance', 'raise' statement, etc.",
-               "isolating ideas to user-defined functions",
-               "optional parameters - nice idea to include them",
-               "type hinting"
-            ]
-         }
-      ],
-      "neutral":[
-         {
-            "mainPoint":"Okay user-defined function(s), but the following could be improved",
-            "subPoints":[
-               "assert vs. raise - it is better to use 'raise' since 'assert' can be bypassed",
-               "complex - a bit too many ideas placed into a single function"
-            ]
-         }
-      ],
-      "negative":[
-         {
-            "mainPoint":"No user-defined functions employed",
-            "subPoints":[
-               "Your solution did not include user-defined functions to isolate concepts, improves reusability, transferability and debugging"
-            ]
-         },
-         {
-            "mainPoint":"Missed opportunity",
-            "subPoints":[
-               "You missed an obvious situation to crete a user-defined function that would have made your code more concise."
-            ]
-         },
-         {
-            "mainPoint":"Your user-defined functions had the following problems",
-            "subPoints":[
-               "complex - too many ideas place in a single function, which limits reusability, transferability and debugging",
-               "docstring - none provided for specifying context and usage",
-               "docstring - no statement about what the function does",
-               "docstring - no statement about what the input variables are",
-               "docstring - no statement about what the function returns",
-               "global variables - use local variable in your function (e.g., improves transferability)",
-               "internal checks - none provided (e.g., 'if not isinstance')",
-               "main code - should be nested under the 'else' statement of the internal checking",
-               "trivial - function does very little, and arguably does not warrant being a function",
-               "type hinting - none provided",
-               "type hinting - incorrect type(s)"
-            ]
-         }
-      ]
-   },
-   "callingFunction":{
-      "title":"Function (and Method) Calling",
-      "additionalNotes":true,
-      "negative":[
-         {
-            "mainPoint":"",
-            "subPoints":[
-               "keyword arguments calls - include the parameter that are being assigned the argument to (e.g., 'my_function(param1=arg1, param2=arg2)'. Doing so ensure that the arguments are passed correctly."
-            ]
-         }
-      ]
-   },
+   // "codingConcept":{
+   //    "title":"Coding Concept",
+   //    "additionalNotes":true,
+   //    "positive":[
+   //       {
+   //          "mainPoint":"Data structures done well, which includes the following",
+   //          "subPoints":[
+   //             "dictionary",
+   //             "list",
+   //             "set ",
+   //             "tuple"
+   //          ]
+   //       },
+   //       {
+   //          "mainPoint":"Coding concepts done well, which includes the following ",
+   //          "subPoints":[
+   //             "built-in function - 'enumerate'",
+   //             "built-in function - 'range'",
+   //             "built-in function - 'reversed'",
+   //             "built-in function - 'round'",
+   //             "built-in function - 'sorted'",
+   //             "built-in function(s):",
+   //             "concise coding  - reduced redundancy (i.e., repetition)",
+   //             "list comprehension",
+   //             "looping - over a dictionary",
+   //             "looping - 'zip' usage to iterate over two lists"
+   //          ]
+   //       }
+   //    ],
+   //    "neutral":[
+   //       {
+   //          "mainPoint":"Better data structures could improve the solution slightly, which includes the following",
+   //          "subPoints":[
+   //             "looping - over a dictionary",
+   //             "looping - 'zip' to iterate over two lists",
+   //             "using 'set' - unique elements",
+   //             "using 'tuple' - immutable elements"
+   //          ]
+   //       },
+   //       {
+   //          "mainPoint":"Coding concepts that could improve the solution slightly, which includes the following",
+   //          "subPoints":[
+   //             "list comprehension - replacing simple 'if-elif-else' statements (i.e., to improve readability)"
+   //          ]
+   //       }
+   //    ],
+   //    "negative":[
+   //       {
+   //          "mainPoint":"Better data structures would have improved the solution, which includes the following",
+   //          "subPoints":[
+   //             "looping - over a dictionary",
+   //             "looping - 'zip' to loop over two lists of equal length",
+   //             "using 'set' - unique elements",
+   //             "using 'tuple' - immutable elements"
+   //          ]
+   //       },
+   //       {
+   //          "mainPoint":"Coding concepts that were poorly done, which includes the following",
+   //          "subPoints":[
+   //             "built-in function - 'enumerate'",
+   //             "built-in function - 'range'",
+   //             "built-in function - 'round'",
+   //             "built-in function - 'sorted'",
+   //             "built-in function(s):",
+   //             "concise coding  - make your coding more concise, which reduces redundancy (i.e., repetition) and the chances of introducing errors",
+   //             "copy-and-pasting - doing this increases the chances of errors and may introduced confusion",
+   //             "if-elif-else - it is better to use 'if-elif-else' statements, rather than 'if-if-...' due to readability and speed"
+   //          ]
+   //       }
+   //    ]
+   // },
+   // "userDefinedFunctions":{
+   //    "title":"User-defined Functions",
+   //    "additionalNotes":true,
+   //    "positive":[
+   //       {
+   //          "mainPoint":"Good use of the following",
+   //          "subPoints":[
+   //             "docstring - providing context; stating what the function does",
+   //             "docstring - defining input objects",
+   //             "docstring - defining returned object(s)",
+   //             "internal check - for example, 'if not isinstance', 'raise' statement, etc.",
+   //             "isolating ideas to user-defined functions",
+   //             "optional parameters - nice idea to include them",
+   //             "type hinting"
+   //          ]
+   //       }
+   //    ],
+   //    "neutral":[
+   //       {
+   //          "mainPoint":"Okay user-defined function(s), but the following could be improved",
+   //          "subPoints":[
+   //             "assert vs. raise - it is better to use 'raise' since 'assert' can be bypassed",
+   //             "complex - a bit too many ideas placed into a single function"
+   //          ]
+   //       }
+   //    ],
+   //    "negative":[
+   //       {
+   //          "mainPoint":"No user-defined functions employed",
+   //          "subPoints":[
+   //             "Your solution did not include user-defined functions to isolate concepts, improves reusability, transferability and debugging"
+   //          ]
+   //       },
+   //       {
+   //          "mainPoint":"Missed opportunity",
+   //          "subPoints":[
+   //             "You missed an obvious situation to crete a user-defined function that would have made your code more concise."
+   //          ]
+   //       },
+   //       {
+   //          "mainPoint":"Your user-defined functions had the following problems",
+   //          "subPoints":[
+   //             "complex - too many ideas place in a single function, which limits reusability, transferability and debugging",
+   //             "docstring - none provided for specifying context and usage",
+   //             "docstring - no statement about what the function does",
+   //             "docstring - no statement about what the input variables are",
+   //             "docstring - no statement about what the function returns",
+   //             "global variables - use local variable in your function (e.g., improves transferability)",
+   //             "internal checks - none provided (e.g., 'if not isinstance')",
+   //             "main code - should be nested under the 'else' statement of the internal checking",
+   //             "trivial - function does very little, and arguably does not warrant being a function",
+   //             "type hinting - none provided",
+   //             "type hinting - incorrect type(s)"
+   //          ]
+   //       }
+   //    ]
+   // },
+   // "callingFunction":{
+   //    "title":"Function (and Method) Calling",
+   //    "additionalNotes":true,
+   //    "negative":[
+   //       {
+   //          "mainPoint":"",
+   //          "subPoints":[
+   //             "keyword arguments calls - include the parameter that are being assigned the argument to (e.g., 'my_function(param1=arg1, param2=arg2)'. Doing so ensure that the arguments are passed correctly."
+   //          ]
+   //       }
+   //    ]
+   // },
    "general":{
       "title":"General Feedback",
       "additionalNotes":true,

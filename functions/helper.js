@@ -1,3 +1,16 @@
+function setBranch(branch){
+	localStorage.setItem("branch", branch);
+	return "Branch set to " + branch;
+}
+
+function getBranch(){
+	if (localStorage.getItem("branch") !== null){
+		return localStorage.getItem("branch");  
+	}else{
+		return "master";
+	}
+}
+
 function formatTable(data) {
 	const colWidths = Array(data[0].length).fill(0);
 	for (const row of data) {

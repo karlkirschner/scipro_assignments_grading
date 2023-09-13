@@ -73,13 +73,20 @@ var generalCriteria = {
 }
 
 if (!debug) {
+	var branch;
+	if (localStorage.getItem("branch") !== null){
+		branch = localStorage.getItem("branch");
+	}else{
+		branch = "master";
+	}
+
 	$.ajax({
 		dataType: "json",
-		url: "https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/references.json",
+		url: "https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/references.json".replace("master", branch),
 		success: function (data) {
 			$.ajax({
 				dataType: "json",
-				url: data.generalCriteria,
+				url: data.generalCriteria.replace("master", branch),
 				error: function (data) {
 					alert("An error occured. Check the console logs.")
 					console.log("Error retrieving or parsing general criterias. Try checking for invalid parsing/formats/trailing commas using: https://jsonformatter.curiousconcept.com/#")
@@ -93,11 +100,11 @@ if (!debug) {
 						if (assignment.enabled) {
 							const request = $.ajax({
 								dataType: "json",
-								url: assignment.url,
+								url: assignment.url.replace("master", branch),
 								success: function (data) {
 									assignment.content = data;
 									assignmentSpecificCriterias.push(assignment);
-								}
+								},
 							});
 							promises.push(request);
 						}

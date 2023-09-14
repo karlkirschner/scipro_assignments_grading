@@ -72,24 +72,71 @@ var generalCriteria = {
 	}
 }
 
+function setMode(mode){
+	if (["student", "grader"].includes(mode)){
+		localStorage.setItem("mode", mode);
+		location.reload();
+	}else{
+		console.log("Invalid mode");
+	}
+}
+
+function setBranch(branch){
+	if (typeof branch !== "string"){
+		var selectElement = document.getElementById("branch-selector");
+		branch = selectElement.value;
+	}
+	if (confirm("You are about to switch branches, any saves you did will be reset are you sure?")) {
+		reset();
+		resetJson();
+		txt = "Form has been cleared";
+	  } else {
+		txt = "You pressed Cancel!";
+	  }
+	localStorage.setItem("branch", branch);
+	location.reload();
+}
+
+function handleError(){
+	alert("An error occured. Check the console logs.")
+	console.log("Error retrieving or parsing general criterias. Try checking for invalid parsing/formats/trailing commas using: https://jsonformatter.curiousconcept.com/#")
+	if (confirm("Reset to master branch?")) {
+		txt = "Branche set to master";
+		setBranch("master");
+	  } else {
+		txt = "You pressed Cancel!";
+	  }
+}
+
 if (!debug) {
+	var mode;
 	var branch;
-	if (localStorage.getItem("branch") !== null){
+	if (localStorage.getItem("mode") !== null){
+		mode = localStorage.getItem("mode");
+	}else{
+		localStorage.setItem("mode", "student");
+		mode = "student";
+	}
+
+	if (mode === "grader" && localStorage.getItem("branch") !== null){
 		branch = localStorage.getItem("branch");
 	}else{
-		branch = "master";
+		localStorage.setItem("branch", "master"); //default student branch
+		branch = localStorage.getItem("branch"); 
 	}
 
 	$.ajax({
 		dataType: "json",
 		url: "https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/references.json".replace("master", branch),
+		error: function(error){
+			handleError();
+		},
 		success: function (data) {
 			$.ajax({
 				dataType: "json",
 				url: data.generalCriteria.replace("master", branch),
 				error: function (data) {
-					alert("An error occured. Check the console logs.")
-					console.log("Error retrieving or parsing general criterias. Try checking for invalid parsing/formats/trailing commas using: https://jsonformatter.curiousconcept.com/#")
+					handleError();
 				},
 				success: function (data) {
 					generalCriteria = data;
@@ -118,4 +165,5 @@ if (!debug) {
 		},
 	});
 }
+
 

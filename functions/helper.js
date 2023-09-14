@@ -1,3 +1,15 @@
+function getBranch(){
+	if (localStorage.getItem("branch") !== null){
+		return localStorage.getItem("branch");  
+	}else{
+		return "master";
+	}
+}
+
+function getMode(){
+	return localStorage.getItem("mode");
+}
+
 function formatTable(data) {
 	const colWidths = Array(data[0].length).fill(0);
 	for (const row of data) {
@@ -81,3 +93,33 @@ function base64Encode(str) {
 	return result;
 }
 
+async function getBranches(){
+	var response = await fetch("https://api.github.com/repos/karlkirschner/scipro_assignments_grading/branches")
+	var json = await response.json();
+	const branches = [];
+	for (branch of json){
+		branches.push(branch["name"]);
+	}
+	return branches;
+}
+
+function generateSelector(items){
+	var container = document.createElement("div");
+	items.then((data) => {
+		var select = document.createElement("select");
+		select.id="branch-selector";
+		select.onchange = setBranch;
+		for (const item of data){
+			var option = document.createElement("option");
+			option.value = item;
+			option.innerText = item;
+			if (getBranch() === item){
+				option.selected = true;
+			}
+			select.appendChild(option);
+			
+		}
+		container.appendChild(select);
+	})
+	return container;
+}

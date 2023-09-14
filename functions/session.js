@@ -1,4 +1,6 @@
 function save() {
+	let branch = localStorage.getItem("branch");
+	let mode = localStorage.getItem("mode");
 	window.localStorage.clear();
 
 	// Save grading table
@@ -21,6 +23,14 @@ function save() {
 		if (textNote.value.length > 0)
 			localStorage.setItem(textNote.id, textNote.value);
 	}
+
+	if (branch !== null) {
+		localStorage.setItem("branch", branch);
+	}
+
+	if (mode !== null){
+		localStorage.setItem("mode", mode);
+	}
 	alert("Saved successfully");
 }
 
@@ -34,13 +44,16 @@ function load() {
 	try {
 		for (var i = 0, len = localStorage.length; i < len; ++i) {
 			const key = localStorage.key(i);
+			if(["mode", "branch"].includes(key)){
+				continue;
+			}
 			const element = document.getElementById(key);
 			if (element.type === "checkbox") {
 				element.checked = true;
 			} else {
 				element.value = localStorage.getItem(key);
 			}
-		}
+	}
 
 		for (const point of points){
 			if (localStorage.getItem(point.id) != null){
@@ -48,13 +61,14 @@ function load() {
 			}
 		}
 
-
 	} catch (error) {
 		alert("An error occured while loading from save. The template have been probably updated during the meantime. To fix click on the Reset button");
 	}
 }
 
 function reset() {
+	let branch = localStorage.getItem("branch");
+	let mode = localStorage.getItem("mode");
 	localStorage.clear();
 	// Delete json file
 	updateStatusMessage("No file loaded");
@@ -84,9 +98,19 @@ function reset() {
 	// Reset Browsed JSON file
 	clearSelectedFile();
 
+	if (branch !== null) {
+		localStorage.setItem("branch", branch);
+	}
+
+	if (mode !== null){
+		localStorage.setItem("mode", mode);
+	}
+
 }
 
 function resetJson() {
+	let branch = localStorage.getItem("branch");
+	let mode = localStorage.getItem("mode");
 	localStorage.clear();
 	// Delete Name
 	clearForm()
@@ -109,6 +133,14 @@ function resetJson() {
 
 	for (const textNote of allTextNotes) {
 		textNote.value = "";
+	}
+
+	if (branch !== null) {
+		localStorage.setItem("branch", branch);
+	}
+
+	if (mode !== null){
+		localStorage.setItem("mode", mode);
 	}
 
 }
@@ -171,6 +203,9 @@ function loadJson() {
 		try {
 			for (let i = 0, len = localStorage.length; i < len; ++i) {
 				const key = localStorage.key(i);
+				if(["branch", "mode"].includes(key)){
+					continue;
+				}
 				const element = document.getElementById(key);
 				if (element.type === "checkbox") {
 					element.checked = true;

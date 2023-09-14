@@ -121,7 +121,7 @@ if (!debug) {
 	if (mode === "grader" && localStorage.getItem("branch") !== null){
 		branch = localStorage.getItem("branch");
 	}else{
-		localStorage.setItem("branch", "master"); //default student branch
+		localStorage.setItem("branch", "peer_review"); //default student branch
 		branch = localStorage.getItem("branch"); 
 	}
 

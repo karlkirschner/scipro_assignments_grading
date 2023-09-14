@@ -1,7 +1,6 @@
 {
     "generalCriteria":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/general.json",
     "assignmentSpecificCriteria":[
-
         {
             "id": 1,
             "title":"Leannd-Jones Equation 1",

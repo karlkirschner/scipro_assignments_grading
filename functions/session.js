@@ -44,7 +44,7 @@ function load() {
 	try {
 		for (var i = 0, len = localStorage.length; i < len; ++i) {
 			const key = localStorage.key(i);
-			if(["mode", "branch"].includes(key)){
+			if(["mode", "branch", "debug"].includes(key)){
 				continue;
 			}
 			const element = document.getElementById(key);
@@ -203,7 +203,7 @@ function loadJson() {
 		try {
 			for (let i = 0, len = localStorage.length; i < len; ++i) {
 				const key = localStorage.key(i);
-				if(["branch", "mode"].includes(key)){
+				if(["branch", "mode", "debug"].includes(key)){
 					continue;
 				}
 				const element = document.getElementById(key);

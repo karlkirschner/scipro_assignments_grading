@@ -252,7 +252,6 @@ function toTxt(){
 	if(mode === "grader"){
 		txt += "\nGrading table: \n\n" + formatTable(tableData)
 	}
-
 	let nameTextfiel = readName()
 	let fileN = getFileName()
 	let fileName = "data";

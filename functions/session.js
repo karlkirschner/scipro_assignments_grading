@@ -249,7 +249,9 @@ function toTxt(){
 	let txt = "";
 
 	txt += "Evaluation: " + evaluationTextField
-	//txt += "\nGrading table: \n\n" + formatTable(tableData)
+	if(mode === "grader"){
+		txt += "\nGrading table: \n\n" + formatTable(tableData)
+	}
 	let nameTextfiel = readName()
 	let fileN = getFileName()
 	let fileName = "data";

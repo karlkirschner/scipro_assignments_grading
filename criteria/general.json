@@ -29,7 +29,7 @@
             "mainPoint":"Writing and communication done well, which includes",
             "subPoints":[
                "sentences - clean, concise and clear (C^3)",
-               "sentences - complete written when appropriate (e.g., within Markdown cells, docstrings, f-string)"
+               "sentences - completely written when appropriate (e.g., within Markdown cells, docstrings, f-string)"
             ]
          }
       ],
@@ -106,7 +106,7 @@
             "subPoints":[
                "cell structure - good usage to separate ideas (e.g., thoughts, tasks/subtasks, user-defined functions)",
                "cell structure - logical ordering and mixture of markdown and code cells",
-               "code cells - good separation of encode ideas",
+               "code cells - good separation of encoded ideas",
                "markdown cells - good usage to communicate ideas, thoughts or workflow"
             ]
          }
@@ -181,7 +181,7 @@
             "mainPoint":"Good use of the following",
             "subPoints":[
                "docstring - providing context; stating what the function does",
-               "docstring - defining input objects",
+               "docstring - defining input object(s)",
                "docstring - defining returned object(s)",
                "internal check - for example, 'if not isinstance', 'raise' statement",
                "isolating ideas to user-defined functions",
@@ -203,13 +203,13 @@
          {
             "mainPoint":"No user-defined functions employed",
             "subPoints":[
-               "Your solution did not include user-defined functions to isolate concepts, improves reusability, transferability and debugging"
+               "Your solution did not include user-defined functions to isolate concepts, improve reusability, transferability and debugging"
             ]
          },
          {
             "mainPoint":"Missed opportunity",
             "subPoints":[
-               "You missed an obvious situation to crete a user-defined function that would have made your code more concise."
+               "You missed an obvious situation to create a user-defined function that would have made your code more concise."
             ]
          },
          {
@@ -220,7 +220,7 @@
                "docstring - no statement about what the function does",
                "docstring - no statement about what the input variables are",
                "docstring - no statement about what the function returns",
-               "global variables - use local variable in your function (e.g., improves transferability)",
+               "global variables - use local variables in your function (e.g., improves transferability)",
                "internal checks - none provided (e.g., 'if not isinstance')",
                "main code - should be nested under the 'else' statement of the internal checking",
                "trivial - function does very little, and arguably does not warrant being a function",
@@ -237,7 +237,7 @@
          {
             "mainPoint":"",
             "subPoints":[
-               "keyword arguments calls - include the parameter that are being assigned the argument to (e.g., 'my_function(param1=arg1, param2=arg2)'. Doing so ensure that the arguments are passed correctly."
+               "keyword argument calls - include the parameters that are being assigned the argument to (e.g., 'my_function(param1=arg1, param2=arg2)'. Doing so ensures that the arguments are passed correctly."
             ]
          }
       ]

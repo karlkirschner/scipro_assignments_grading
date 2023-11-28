@@ -18,9 +18,10 @@
             "subPoints":[
                 "Delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
                 "Header (i.e., `header`) - incorrectly specified the header line",
-                "Incorrectly read in the data",
-                "Renaming the input data file is very poor practice",
+                "Input data - incorrectly read in the data",
+                "Input file - renaming the input data file is very poor practice",
                 "Input file path - hard coding your local folder structure for the input file path results in problems, requiring the user to edit your notebook."
+
             ]
         },
         {

@@ -138,6 +138,7 @@
                "cell structure - significant work is needed to better separate the ideas, tasks, subtasks, or thoughts",
                "cell structure -  providing your solution in one code cell was not good, and does not make use of a Jupyter-notebook's capability",
                "code cells - more separation of encoded ideas was required",
+               "markdown cells - there are significant issue concerning the formatting of markdown cells (e.g., header, tables, font)",
                "markdown cells - a significant lack of good, informative communication was seen in your solution"
             ]
          }

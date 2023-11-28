@@ -42,6 +42,7 @@
             "mainPoint":"Data conversion",
             "subPoints":[
                 "Converting the data units was incorrectly done.",
+                "A user-defined function to covert the units would have been logical to do, as demonstrated in a previous solution key.",
                 "One should use as many decimal in the conversion factor as possible (e.g., 2625.4996394799), rather than rounding to a few decimal places."
             ]
         },

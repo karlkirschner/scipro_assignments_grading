@@ -125,6 +125,7 @@
                "cell structure - some additional separation of ideas (both code and markdown cells)",
                "code cells - separating some encoded ideas into different cells would have been logical",
                "markdown cells - some additional communication would have been more informative",
+               "markdown cells - there are some formatting issues (e.g., header, tables, font)",
                "markdown cells - there are some issue with the Latex markup being shown properly"
             ]
          }

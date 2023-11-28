@@ -6,9 +6,9 @@
         {
             "mainPoint":"Overall Pandas feedback",
             "subPoints":[
-                "Good use of Pandas",
-                "Plotting - good, concise coding for the plot generation",
-                "Plotting - well formatted plots (e.g. axis labels, fontsize, color)"
+                "Good use of Pandas.",
+                "plotting - good, concise coding for the plot generation",
+                "plotting - well formatted plots (e.g. axis labels, fontsize, color)"
             ]
         }
     ],
@@ -16,11 +16,11 @@
         {
             "mainPoint":"Reading data into Pandas",
             "subPoints":[
-                "Delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
-                "Header (i.e., `header`) - incorrectly specified the header line",
-                "Input data - incorrectly read in the data",
-                "Input file - renaming the input data file is very poor practice",
-                "Input file path - hard coding your local folder structure for the input file path results in problems, requiring the user to edit your notebook."
+                "delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
+                "header (i.e., `header`) - incorrectly specified the header line",
+                "input data - incorrectly read in the data",
+                "input file - renaming the input data file is very poor practice",
+                "input file path - hard coding your local folder structure for the input file path results in problems, requiring the user to edit your notebook."
 
             ]
         },
@@ -60,8 +60,8 @@
         {
             "mainPoint":"Saving data",
             "subPoints":[
-                "Not saved - none of the final data was not saved",
-                "Not saved - some required data was not saved"
+                "not saved - none of the final data was not saved",
+                "not saved - some required data was not saved"
             ]
         }
       ]
@@ -71,12 +71,12 @@
       "additionalNotes":true,
       "negative":[
          {
-            "mainPoint":"",
+            "mainPoint":"The following was wrong with the equations",
             "subPoints":[
-               "The Lennard-Jones equation was incorrectly encoded",
-               "The Lennard-Jones equation's parameters were incorrectly specified",
-               "The exponential equation was incorrectly encoded",
-               "The exponential equation's parameters were incorrectly specified"
+               "the Lennard-Jones equation was incorrectly encoded",
+               "the Lennard-Jones equation's parameters were incorrectly specified",
+               "the exponential equation was incorrectly encoded",
+               "the exponential equation's parameters were incorrectly specified"
             ]
          }
       ]

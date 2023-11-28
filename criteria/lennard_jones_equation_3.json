@@ -1,0 +1,115 @@
+{
+   "Pandas":{
+        "title":"Pandas",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall Pandas feedback",
+            "subPoints":[
+                "Good use of Pandas",
+                "Plotting - good, concise coding for the plot generation",
+                "Plotting - well formatted plots (e.g. axis labels, fontsize, color)"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"Reading Data Into Pandas",
+            "subPoints":[
+                "Delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
+                "Header (i.e., `header`) - incorrectly specified the header line",
+                "Incorrectly read in the data"
+            ]
+        },
+        {
+            "mainPoint":"Cleaning Data",
+            "subPoints":[
+                "you did not clean the data properly (e.g., `drop_duplicates`,  `dropna` or `drop`",
+                "you did not save the cleaned results (e.g., using `inplace` or assigning it to a new object)"
+            ]
+        },
+        {
+            "mainPoint":"Pandas Plotting",
+            "subPoints":[
+                "The data was not plotted using the Pandas' library only",
+                "The data should plotted should have all the same units (i.e. kJ/mol)",
+                "The plots do not have proper axes labels",
+                "The axes labels do not include units",
+                "The plot does not include a legend",
+                "The fontsize in the plot could have been better"
+            ]
+        },
+        {
+            "mainPoint":"Saving Data",
+            "subPoints":[
+                "Not saved - the final data was not saved",
+                "Some of the required data was not saved"
+            ]
+        }
+      ]
+   },
+   "codingConcept":{
+      "title":"Coding Concept",
+      "additionalNotes":true,
+      "positive":[
+         {
+            "mainPoint":"Data structures done well, which includes the following",
+            "subPoints":[
+               "dictionary",
+               "list",
+               "tuple"
+            ]
+         },
+         {
+            "mainPoint":"Coding concepts done well, which includes the following",
+            "subPoints":[
+               "built-in function - 'min'",
+               "built-in function - 'zip'",
+               "built-in function - 'index' for lists",
+               "built-in function - others:",
+               "concise coding  - reduced redundancy (i.e., repetition)",
+               "list comprehension"
+            ]
+         }
+      ],
+      "negative":[
+         {
+            "mainPoint":"Coding concepts that were poorly done, which includes the following",
+            "subPoints":[
+               "built-in function - 'min'",
+               "built-in function - 'index' for lists",
+               "use of an iterable container (e.g., list, tuple) to store data (e.g., energies, distances)"
+            ]
+         }
+      ]
+   },
+   "wrongInput":{
+      "title":"Incorrect Equations or Inputs",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "The Lennard-Jones equation was incorrectly encoded",
+               "The Lennard-Jones equation's parameters were incorrectly specified",
+               "The exponential equation was incorrectly encoded",
+               "The exponential equation's parameters were incorrectly specified"
+            ]
+         }
+      ]
+   },
+   "wrongResults":{
+      "title":"Incorrect Results",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "The numerical solutions were wrong.",
+               "The solutions were not given with the correct units.",
+               "The lowest energy value was incorrectly identified. It should have been -1.6e-21 at a distance of 3.8 Å."
+            ]
+         }
+      ]
+   }
+}

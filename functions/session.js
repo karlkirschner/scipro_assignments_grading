@@ -50,7 +50,7 @@ function load() {
 
 
 	} catch (error) {
-		alert("An error occured while loading from save. The template have been probably updated during the meantime. To fix click on the Reset button");
+		alert("An error occurred while loading from save. The template have been probably updated during the meantime. To fix click on the Reset button");
 	}
 }
 
@@ -180,7 +180,7 @@ function loadJson() {
 			}
 
 		} catch (error) {
-			alert("An error occured while loading from save. The template have been probably updated during the meantime. To fix click on the Reset button");
+			alert("An error occurred while loading from save. The template have been probably updated during the meantime. To fix click on the Reset button");
 		}
 		return;
 	}
@@ -203,7 +203,7 @@ function loadJson() {
 			}
 		}
 	} catch (error) {
-		alert("An error occured while loading from URL. The template have been probably updated during the meantime. To fix click on the Reset button");
+		alert("An error occurred while loading from URL. The template have been probably updated during the meantime. To fix click on the Reset button");
 	}
 }
 

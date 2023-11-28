@@ -33,7 +33,7 @@
         {
             "mainPoint":"Cleaning Data",
             "subPoints":[
-                "`drop`- you did not save the results (e.g., using `inplace` or assigning it to a new object)",
+                "`drop`- you did not save the cleaned results (e.g., using `inplace` or assigning it to a new object)",
                 "`drop_duplicates` - you did not save the results (e.g., using `inplace` or assigning it to a new object)",
                 "`dropna` - you did not save the results (e.g., using `inplace` or assigning it to a new object)"
             ]

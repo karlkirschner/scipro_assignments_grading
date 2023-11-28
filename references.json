@@ -3,14 +3,14 @@
     "assignmentSpecificCriteria":[
         {
             "id": 1,
-            "title":"Lennard-Jones Equation 2",
+            "title":"Lennard-Jones Equation 3",
             "enabled": true,
-            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/lennard_jones_equation_2.json"
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/lennard_jones_equation_3.json"
         },
         {
             "id": 2,
             "title":"SigFigs",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/significant_figures.json"
         }
     ]

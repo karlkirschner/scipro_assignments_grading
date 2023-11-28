@@ -51,6 +51,13 @@
                "words - misspelled",
                "words - mixed English and German"
             ]
+         },
+         {
+            "mainPoint":"Interpretation of results and data",
+            "subPoints":[
+               "One should attempt to interpret the data (e.g., results, plots) that are generated. Please do this next time.",
+               "A bit more interpretation of the results would have been good."
+            ]
          }
       ],
       "negative":[
@@ -78,7 +85,7 @@
                "citing - done out-of-order (e.g., the first citation in your text is not to Reference 1)",
                "citing - missing references for knowledge (e.g., datasets, equations, libraries)",
                "citing - missing reference numbers (e.g., [1, 2]) within your writing",
-               "references - missing important information (e.g., year, author, journal, title, accessed date)",
+               "references - missing important information - for example, this might include title, year, author(s), publication source, accessed date",
                "units - were not provided when needed"
             ]
          },
@@ -117,7 +124,8 @@
             "subPoints":[
                "cell structure - some additional separation of ideas (both code and markdown cells)",
                "code cells - separating some encoded ideas into different cells would have been logical",
-               "markdown cells - some additional communication would have been more informative"
+               "markdown cells - some additional communication would have been more informative",
+               "markdown cells - there are some issue with the Latex markup being shown properly"
             ]
          }
       ],
@@ -125,6 +133,7 @@
          {
             "mainPoint":"Notebook was poorly done,  which includes the following",
             "subPoints":[
+               "cells - there are empty cells present in the notebook, which is not concise work",
                "cell structure - significant work is needed to better separate the ideas, tasks, subtasks, or thoughts",
                "cell structure -  providing your solution in one code cell was not good, and does not make use of a Jupyter-notebook's capability",
                "code cells - more separation of encoded ideas was required",
@@ -168,6 +177,7 @@
                "line length - too long (i.e., longer than 110 characters)",
                "naming - object/variable is not descriptive or human readable (e.g., using 'x' or 'i')",
                "naming - object/variable is too long (i.e., not concise while remaining informative)",
+               "naming - object/variable did not follow pothole_case_naming convention",
                "spacing - inconsistent and/or improperly used"
             ]
          }

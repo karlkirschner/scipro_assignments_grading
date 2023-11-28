@@ -175,10 +175,13 @@
                "f-string - not used (e.g., print statements)",
                "f-string - please ensure that proper grammar and syntax are maintained in the print statements",
                "line length - too long (i.e., longer than 110 characters)",
+               "math - in multiple line math equations, the operators are not aligned on left-hand-side ",
+               "math - the math equations could have been formatted better to improve readability",
                "naming - object/variable is not descriptive or human readable (e.g., using 'x' or 'i')",
                "naming - object/variable is too long (i.e., not concise while remaining informative)",
                "naming - object/variable did not follow pothole_case_naming convention",
-               "spacing - inconsistent and/or improperly used"
+               "spacing - inconsistent and/or improperly used",
+               "writing - code includes excess writing that was not needed or informative - could have been more concisely done"
             ]
          }
       ]

@@ -28,7 +28,7 @@
         {
             "mainPoint":"Data cleaning",
             "subPoints":[
-                "cleaning - the data was not cleaned properly (e.g., `drop_duplicates`,  `dropna` or `drop`",
+                "cleaning - the data was not cleaned properly (e.g., `drop_duplicates`,  `dropna` or `drop`)",
                 "saving - the cleaned data was not saved (e.g., using `inplace` or assigning it to a new object)"
             ]
         },

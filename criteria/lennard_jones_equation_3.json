@@ -51,7 +51,7 @@
             "mainPoint":"Plotting",
             "subPoints":[
                 "axis labels - the plots do not have proper axes labels",
-                "axis labels - units were not included in the axis label(s) (e.g., kJ/mol, Angstrom",
+                "axis labels - units were not included in the axis label(s) (e.g., kJ/mol, Angstrom)",
                 "data - the data plotted should have all the same units (e.g., kJ/mol)",
                 "fontsize - the choice of fontsize(s) could have been better",
                 "legend - the plot does not include a legend",

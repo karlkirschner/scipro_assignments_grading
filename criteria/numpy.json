@@ -76,7 +76,6 @@
         {
             "mainPoint":"Your List function incorrectly used the following data types",
             "subPoints":[
-                "Individual float values (i.e., not a list of floats)",
                 "NumPy ndarray",
                 "Pandas DataFrames",
                 "Pandas Series",

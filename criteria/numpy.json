@@ -8,7 +8,7 @@
             "subPoints":[
                 "List function: using a list for the simulated values",
                 "NumPy function: using ndarrays for the simulated values",
-                "NumPy function: using some of its built-in math functions (e.g., np.add, np.subtract, np.mean)",
+                "NumPy function: using its built-in math functions (e.g., np.add, np.subtract, etc.)",
                 "Both functions: correctly done",
                 "List function: correctly done",
                 "NumPy function: correctly done",
@@ -23,7 +23,6 @@
             "mainPoint":"The following points would improve your NumPy solution slightly",
             "subPoints":[
                 "NumPy: use the community abbreviation of 'np'",
-                "NumPy function: converting the experimental float value to an ndarray",
                 "Pandas: cleaning data (i.e., remove empty cells and duplicated data) is generally a good idea",
                 "Pandas: converting the DataFrame/Series outside of your function(s) - remember to have a function that optimally does one task"
             ]
@@ -47,7 +46,8 @@
         {
             "mainPoint":"Performance problems (as computed on the reviewer's machine)",
             "subPoints":[
-                "Good performance for the List and NumPy function should be (in seconds):",
+                "Good performance for the list function should be (in seconds):",
+                "Good performance for the NumPy function should be (in seconds):",
                 "List function: your solution has a performance of:",
                 "NumPy function: your solution has a performance of:",
                 "NumPy function: iterating over the ndarray is not needed, resulting in a loss of performance",
@@ -69,6 +69,7 @@
                 "Floats",
                 "Lists",
                 "Pandas DataFrames",
+                "Pandas Series",
                 "Data type:"
             ]
         },
@@ -78,6 +79,7 @@
                 "Individual float values (i.e., not a list of floats)",
                 "NumPy ndarray",
                 "Pandas DataFrames",
+                "Pandas Series",
                 "Data type:"
             ]
         }

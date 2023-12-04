@@ -24,11 +24,18 @@
             "subPoints":[
                 "NumPy: use the community abbreviation of 'np'",
                 "NumPy function: converting the experimental float value to an ndarray",
+                "Pandas: cleaning data (i.e., remove empty cells and duplicated data) is generally a good idea",
                 "Pandas: converting the DataFrame/Series outside of your function(s) - remember to have a function that optimally does one task"
             ]
         }
     ],
         "negative":[
+        {
+            "mainPoint":"Reading in the data",
+            "subPoints":[
+                "Pandas was not used"
+            ]
+        },
         {
             "mainPoint":"The computed loss function value was incorrect",
             "subPoints":[

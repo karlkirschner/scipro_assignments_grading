@@ -8,10 +8,10 @@
             "subPoints":[
                 "List function: using a list for the simulated values",
                 "NumPy function: using ndarrays for the simulated values",
-                "NumPy function: using some of its built-in math functions (e.g., np.mean, etc)",
-                "Both functions: RMSE correctly done",
-                "List function: RMSE correctly done",
-                "NumPy function: RMSE correctly done",
+                "NumPy function: using some of its built-in math functions (e.g., np.add, np.subtract, np.mean)",
+                "Both functions: correctly done",
+                "List function: correctly done",
+                "NumPy function: correctly done",
                 "Both functions: good performance",
                 "List function: good performance",
                 "NumPy function: good performance"
@@ -24,13 +24,13 @@
             "subPoints":[
                 "NumPy: use the community abbreviation of 'np'",
                 "NumPy function: converting the experimental float value to an ndarray",
-                "Pandas: converting the DataFrame outside of your function(s) - remember to have a function that optimally does one task"
+                "Pandas: converting the DataFrame/Series outside of your function(s) - remember to have a function that optimally does one task"
             ]
         }
     ],
         "negative":[
         {
-            "mainPoint":"The computed RMSE value was incorrect",
+            "mainPoint":"The computed loss function value was incorrect",
             "subPoints":[
                 "List function: incorrect",
                 "NumPy function: incorrect",
@@ -38,7 +38,7 @@
             ]
         },
         {
-            "mainPoint":"Performance problems (as computed on the grader's machine)",
+            "mainPoint":"Performance problems (as computed on the reviewer's machine)",
             "subPoints":[
                 "Good performance for the List and NumPy function should be (in seconds):",
                 "List function: your solution has a performance of:",
@@ -50,10 +50,10 @@
         {
             "mainPoint":"Your NumPy function does not make use of:",
             "subPoints":[
-                "np.mean",
-                "np.sqrt",
-                "np.square",
-                "np.subtract"
+                "np.absolute",
+                "np.add",
+                "np.subtract",
+                "np.multiply"
             ]
         },
         {

@@ -8,6 +8,12 @@
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/lennard_jones_equation_3.json"
         },
         {
+            "id": 1,
+            "title":"Numpy",
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy.json"
+        },
+        {
             "id": 2,
             "title":"SigFigs",
             "enabled": false,

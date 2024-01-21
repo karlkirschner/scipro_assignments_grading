@@ -1,0 +1,95 @@
+{
+   "Pandas":{
+        "title":"Pandas",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall Pandas feedback",
+            "subPoints":[
+                "Good use of Pandas.",
+                "cleaning data - good use; performed at the appropriate point (e.g., in Task 4)",
+                "rolling average - well done",
+                "reading in the data - done concisely"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"Reading data into Pandas",
+            "subPoints":[
+                "delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
+                "header (i.e., `header`) - incorrectly specified the header line",
+                "input data - incorrectly read in the data",
+                "input data - could have been done in a more concise manner (e.g., loops or user-defined function)",
+                "input file - renaming the input data file is very poor practice",
+                "input file path - hard coding your local folder structure for the input file path results in problems, requiring the user to edit your notebook"
+            ]
+        },
+        {
+            "mainPoint":"Input and Computed Data",
+            "subPoints":[
+                "datetime -  the data conversion to was incorrectly done (e.g., using `to_datetime`)",
+                "rolling average - did not use Panda's function `rolling`",
+                "rolling average - did not use the computed hourly means as input",
+                "rolling average - done incorrectly`"
+            ]
+        },
+        {
+            "mainPoint":"Data cleaning",
+            "subPoints":[
+                "cleaning - done to early and removed usable data; Task2: `Using as much hourly data as available across all stations...`",
+                "cleaning - the data was not cleaned properly (i.e., `drop`)"
+            ]
+        },
+        {
+            "mainPoint":"Displaying a dataframe as a table",
+            "subPoints":[
+                "A dataframe in a Jupyter-notebook should be displayed by either using the dataframe's name by itself, or using `display`.",
+                "Printing a dataframe does not make use Jupyter-notebook's capability of displaying an easily readable table."
+            ]
+        }
+      ]
+   },
+   "plotting":{
+      "title":"matplotlib",
+      "additionalNotes":true,
+      "neutral":[
+         {
+            "mainPoint":"The following could have been done better",
+            "subPoints":[
+               "color - color scheme",
+               "emphasis - altering the visual emphasis placed on the data (e.g., smaller scatter data points, larger rolling average or polynomial line)"
+            ]
+         }
+      ],
+      "negative":[
+         {
+            "mainPoint":"The following problems exist concerning your data plotting",
+            "subPoints":[
+               "library usage - did not use matplotlib as requested in the assignment"
+            ]
+         }
+      ]
+   },
+   "wrongResults":{
+      "title":"Incorrect Results",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"The following was wrong with the equations",
+            "subPoints":[
+               "the RMSE equation was incorrectly encoded",
+               "the RMSE equation's parameters were incorrectly specified"
+            ]
+         },
+                 {
+            "mainPoint":"",
+            "subPoints":[
+               "O2 and/or NO2 hourly means - not computed correctly",
+               "The generated numeric data were wrong.",
+               "The solutions were not given with the correct units."
+            ]
+         }
+      ]
+   }
+}

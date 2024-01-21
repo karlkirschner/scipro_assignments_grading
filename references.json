@@ -3,21 +3,27 @@
     "assignmentSpecificCriteria":[
         {
             "id": 1,
-            "title":"Lennard-Jones Equation 3",
+            "title":"Air Quality",
             "enabled": true,
-            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/lennard_jones_equation_3.json"
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/air_quality_1.json"
         },
         {
             "id": 2,
-            "title":"Numpy",
-            "enabled": true,
-            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy.json"
+            "title": "Pandas",
+            "enabled": false,
+            "url": "https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas.json"
         },
         {
             "id": 3,
-            "title":"SigFigs",
+            "title":"Plotting",
             "enabled": false,
-            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/significant_figures.json"
-        }
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/plotting_data.json"
+        },
+        {
+            "id": 4,
+             "title":"Numpy",
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy.json"
+       }
     ]
 }

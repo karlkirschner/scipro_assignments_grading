@@ -28,6 +28,7 @@
         {
             "mainPoint":"Input and Computed Data",
             "subPoints":[
+                "dataframes - creating multiple dataframes for this solution was not necessary, and only complicates the work",
                 "datetime -  the data conversion to was incorrectly done (e.g., using `to_datetime`)",
                 "rolling average - did not use Panda's function `rolling`",
                 "rolling average - did not use the computed hourly means as input",

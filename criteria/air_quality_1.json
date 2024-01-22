@@ -77,18 +77,24 @@
       "additionalNotes":true,
       "negative":[
          {
+            "mainPoint":"The follow data was incorrectly computed",
+            "subPoints":[
+               "mean(s)",
+               "rolling mean(s)",
+               "RMSE value(s)"
+            ]
+         },
+         {
             "mainPoint":"The following was wrong with the equations",
             "subPoints":[
                "the RMSE equation was incorrectly encoded",
                "the RMSE equation's parameters were incorrectly specified"
             ]
          },
-                 {
-            "mainPoint":"",
+         {
+            "mainPoint":"The polynomial equation was incorrect",
             "subPoints":[
-               "O2 and/or NO2 hourly means - not computed correctly",
-               "The generated numeric data were wrong.",
-               "The solutions were not given with the correct units."
+               "the equation should have been 0.008312 x^2 - 1.179 x + 37"
             ]
          }
       ]

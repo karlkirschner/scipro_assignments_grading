@@ -172,9 +172,7 @@ function saveToJson() {
 
 	// Encode data as a URL
 	const jsonData = JSON.stringify(data);
-
-	// Get name from readName function
-	const name = readName() || "default";
+	const name = readName() || getFileName().replace(".json", "") || "default";
 
 	// To JSON File
 	const downloadLink = document.createElement("a");
@@ -244,31 +242,17 @@ function loadJson() {
 
 function toTxt(){
 	let tableData = getTableData();
-	// Save Textfield
 	const evaluationTextField = displayEvaluationText()
-	let txt = "";
+	let txt = "Evaluation: " + evaluationTextField
 
-	txt += "Evaluation: " + evaluationTextField
 	if(mode === "grader"){
 		txt += "\nGrading table: \n\n" + formatTable(tableData)
 	}
-	let nameTextfiel = readName()
-	let fileN = getFileName()
-	let fileName = "data";
 
-	if (fileN) {fileName = fileN}
-	if (nameTextfiel) {fileName = nameTextfiel}
-	//  const fileInput = document.getElementById("fileselect");
-	//  const fileName = fileN ? fileN:  "data.txt";  //fileInput.files[0] ? fileInput.files[0].name :
+	const name = readName() || getFileName().replace(".json", "") || "default";
 
-	// Check if the file has a .json extension
-	const hasJsonExtension = fileName.endsWith(".json");
-	// Change the file name to the name of the JSON file if it has a .json extension
-	const txtFileName = hasJsonExtension ? fileName.replace(".json", ".txt") : fileName +".txt";
-
-	// Create a download link and trigger a download
 	const downloadLink = document.createElement("a");
 	downloadLink.href = "data:text/txt;charset=utf-8," + encodeURIComponent(txt);
-	downloadLink.download = txtFileName;
+	downloadLink.download = `${name}.txt`;
 	downloadLink.click();
 }

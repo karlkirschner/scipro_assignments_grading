@@ -1,5 +1,5 @@
 {
-   "Pandas":{
+  "Pandas":{
         "title":"Pandas",
         "additionalNotes":true,
         "positive":[
@@ -7,7 +7,7 @@
             "mainPoint":"Overall Pandas feedback",
             "subPoints":[
                 "Good use of Pandas.",
-                "cleaning data - good use; performed at the appropriate point (e.g., in Task 4)",
+                "hourly means - well done",
                 "rolling average - well done",
                 "reading in the data - done concisely"
             ]
@@ -19,8 +19,9 @@
             "subPoints":[
                 "delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
                 "header (i.e., `header`) - incorrectly specified the header line",
+                "input data - incorrectly combined the data - combining the data to give 7200 rows (e.g., via `concat`) results in the eventual need for writing more code, and it is difficult to visually compare the the stations' results in a table",
                 "input data - incorrectly read in the data",
-                "input data - could have been done in a more concise manner (e.g., loops or user-defined function)",
+                "input data - could have been done more concisely (e.g., loops or user-defined function)",
                 "input file - renaming the input data file is very poor practice",
                 "input file path - hard coding your local folder structure for the input file path results in problems, requiring the user to edit your notebook"
             ]
@@ -51,18 +52,9 @@
         }
       ]
    },
-   "plotting":{
+  "plotting":{
       "title":"matplotlib",
       "additionalNotes":true,
-      "neutral":[
-         {
-            "mainPoint":"The following could have been done better",
-            "subPoints":[
-               "color - color scheme",
-               "emphasis - altering the visual emphasis placed on the data (e.g., smaller scatter data points, larger rolling average or polynomial line)"
-            ]
-         }
-      ],
       "negative":[
          {
             "mainPoint":"The following problems exist concerning your data plotting",
@@ -72,7 +64,50 @@
          }
       ]
    },
-   "wrongResults":{
+  "unit test":{
+      "title":"Unit Test",
+      "additionalNotes":true,
+      "positive":[
+        {
+            "mainPoint":"",
+            "subPoints":[
+                "Good job on creating a unit test."
+            ]
+        }
+    ],
+      "neutral":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+              "Creating a unit test would have been logical and good practice (e.g., for the RMSE user-defined function)."
+            ]
+         }
+      ]
+   },
+  "user-defined function":{
+      "title":"user-defined function",
+      "additionalNotes":true,
+      "positive":[
+        {
+            "mainPoint":"The following was good about your RMSE function",
+            "subPoints":[
+                "NumPy functions - good job on maximizing the use of NumPy's function for the mathematics",
+                "type hinting - correct `np.float64` output type specified"
+            ]
+        }
+    ],      "negative":[
+         {
+            "mainPoint":"The following problems exist concerning your RMSE function",
+            "subPoints":[
+              "mixed existing functions - mixed the usage of NumPy and Pandas functions (e.g. `DataFrame.mean()` instead of `np.mean()`",
+              "NumPy functions - did not optimize the usage of NumPy's functions to perform the mathematics",
+              "type hinting - incorrect input types specified",
+              "type hinting - incorrect output type specified (e.g., `np.float64`)"
+            ]
+         }
+      ]
+   },
+  "wrongResults":{
       "title":"Incorrect Results",
       "additionalNotes":true,
       "negative":[

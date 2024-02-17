@@ -1,37 +1,63 @@
+function collectFormData() {
+	const data = {};
+
+	document.querySelectorAll(".point").forEach(point => {
+		const pointValue = parseFloat(point.value);
+		const maxValue = parseFloat(point.getAttribute("max"));
+		if (pointValue < maxValue) {
+			data[point.id] = pointValue.toString();
+		}
+	});
+
+	document.querySelectorAll('input[type="checkbox"]:checked').forEach(input => {
+		data[input.id] = "checked";
+	});
+
+	document.querySelectorAll("textarea").forEach(textNote => {
+		if (textNote.value.length > 0) {
+			data[textNote.id] = textNote.value;
+		}
+	});
+
+	return data;
+}
+
 function save() {
+	const data = collectFormData();
+	window.localStorage.clear();
 	let branch = localStorage.getItem("branch");
 	let mode = localStorage.getItem("mode");
-	window.localStorage.clear();
 
-	// Save grading table
-	const points = document.getElementsByClassName("point");
-	for(const point of points){
-		if (point.value < parseFloat(point.getAttribute("max"))){
-			localStorage.setItem(point.id, point.value);
-		}
-	}
+	if (branch !== null) {localStorage.setItem("branch", branch);}
+	if (mode !== null){localStorage.setItem("mode", mode);}
 
-	// Save checkboxes
-	const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
-	for (const input of allInputs) {
-		localStorage.setItem(input.id, "checked");
-	}
-
-	// Save textfields
-	const allTextNotes = document.getElementsByTagName("textarea");
-	for (const textNote of allTextNotes) {
-		if (textNote.value.length > 0)
-			localStorage.setItem(textNote.id, textNote.value);
-	}
-
-	if (branch !== null) {
-		localStorage.setItem("branch", branch);
-	}
-
-	if (mode !== null){
-		localStorage.setItem("mode", mode);
-	}
 	alert("Saved successfully");
+}
+
+function saveToJson() {
+	const data = collectFormData();
+	const jsonData = JSON.stringify(data);
+	const name = readName() || "default";
+	const downloadLink = document.createElement("a");
+	downloadLink.href = "data:json/txt;charset=utf-8," + encodeURIComponent(jsonData)  ;
+	downloadLink.download = `${name}.json`;
+	downloadLink.click();
+}
+
+function saveToTxt(){
+	let tableData = getTableData();
+	const evaluationTextField = displayEvaluationText()
+	let txt = "Evaluation: " + evaluationTextField
+	if(mode === "grader"){
+		txt += "\nGrading table: \n\n" + formatTable(tableData)
+	}
+	let fileName = readName() || getFileName() || "default";
+	const hasJsonExtension = fileName.endsWith(".json");
+	const txtFileName = hasJsonExtension ? fileName.replace(".json", ".txt") : fileName +".txt";
+	const downloadLink = document.createElement("a");
+	downloadLink.href = "data:text/txt;charset=utf-8," + encodeURIComponent(txt);
+	downloadLink.download = txtFileName;
+	downloadLink.click();
 }
 
 function load() {
@@ -66,131 +92,6 @@ function load() {
 	}
 }
 
-function reset() {
-	let branch = localStorage.getItem("branch");
-	let mode = localStorage.getItem("mode");
-	localStorage.clear();
-	// Delete json file
-	updateStatusMessage("No file loaded");
-	// Delete Name
-	clearForm()
-	// Reset grading table
-	const points = document.getElementsByClassName("point");
-	for(const point of points){
-		const max = parseFloat(point.getAttribute("max"));
-		updatePercentage(max, point.id);
-	}
-
-	// Reset checkbox
-	const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
-
-	for (const input of allInputs) {
-		input.checked = false;
-	}
-
-	// Reset textboxes
-	const allTextNotes = document.getElementsByTagName("textarea");
-
-	for (const textNote of allTextNotes) {
-		textNote.value = "";
-	}
-
-	// Reset Browsed JSON file
-	clearSelectedFile();
-
-	if (branch !== null) {
-		localStorage.setItem("branch", branch);
-	}
-
-	if (mode !== null){
-		localStorage.setItem("mode", mode);
-	}
-
-}
-
-function resetJson() {
-	let branch = localStorage.getItem("branch");
-	let mode = localStorage.getItem("mode");
-	localStorage.clear();
-	// Delete Name
-	clearForm()
-	// Reset grading table
-	const points = document.getElementsByClassName("point");
-	for(const point of points){
-		const max = parseFloat(point.getAttribute("max"));
-		updatePercentage(max, point.id);
-	}
-
-	// Reset checkbox
-	const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
-
-	for (const input of allInputs) {
-		input.checked = false;
-	}
-
-	// Reset textboxes
-	const allTextNotes = document.getElementsByTagName("textarea");
-
-	for (const textNote of allTextNotes) {
-		textNote.value = "";
-	}
-
-	if (branch !== null) {
-		localStorage.setItem("branch", branch);
-	}
-
-	if (mode !== null){
-		localStorage.setItem("mode", mode);
-	}
-
-}
-
-function saveToJson() {
-	const data = {};
-
-	// Save grading table
-	const points = document.getElementsByClassName("point");
-	for (const point of points) {
-		if (point.value < parseFloat(point.getAttribute("max"))) {
-			data[point.id] = point.value;
-		}
-	}
-
-	// Save checkboxes
-	const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
-	for (const input of allInputs) {
-		data[input.id] = "checked";
-	}
-
-	// // Save textfields
-	const allTextNotes = document.getElementsByTagName("textarea");
-	for (const textNote of allTextNotes) {
-		if (textNote.value.length > 0) {
-			data[textNote.id] = textNote.value;
-		}
-	}
-
-	// Encode data as a URL
-	const jsonData = JSON.stringify(data);
-
-	// Get name from readName function
-	const name = readName() || "default";
-
-	// To JSON File
-	const downloadLink = document.createElement("a");
-	downloadLink.href = "data:json/txt;charset=utf-8," + encodeURIComponent(jsonData)  ;
-	downloadLink.download = `${name}.json`;
-	downloadLink.click();
-
-	// URL
-	// const encodedData = btoa(jsonData); //encodeURIComponent
-	// // const compressedData = pako.deflate(jsonData, { to: 'string' });
-	// //const encodedData = base64Encode(jsonData);
-	// const link = `${location.origin}${location.pathname}?data=${encodedData}`;
-	// // Show link to user
-	// alert(`Saved successfully. URL: \n\n${link}`);
-}
-
 function loadJson() {
 	const points = document.getElementsByClassName("point");
 	for (const point of points) {
@@ -199,7 +100,6 @@ function loadJson() {
 	const urlParams = new URLSearchParams(window.location.search);
 	const encodedData = urlParams.get("data");
 	if (!encodedData) {
-		// No encoded data in URL, trying to load from local storage
 		try {
 			for (let i = 0, len = localStorage.length; i < len; ++i) {
 				const key = localStorage.key(i);
@@ -222,12 +122,8 @@ function loadJson() {
 
 	try {
 		const decodedData = atob(encodedData); //decodeURIComponent
-		console.log("decoded load", decodedData)
-
-		//const decompressedData = pako.inflate(decodedData, {to: 'string'});
 		const parsedData = JSON.parse(decodedData);
 
-		//console.log("parsed load", parsedData)
 		for (const key in parsedData) {
 			const element = document.getElementById(key);
 			const value = parsedData[key];
@@ -242,33 +138,70 @@ function loadJson() {
 	}
 }
 
-function toTxt(){
-	let tableData = getTableData();
-	// Save Textfield
-	const evaluationTextField = displayEvaluationText()
-	let txt = "";
+function reset() {
+	let branch = localStorage.getItem("branch");
+	let mode = localStorage.getItem("mode");
+	localStorage.clear();
+	updateStatusMessage("No file loaded");
+	clearForm()
 
-	txt += "Evaluation: " + evaluationTextField
-	if(mode === "grader"){
-		txt += "\nGrading table: \n\n" + formatTable(tableData)
+	// Reset grading table
+	const points = document.getElementsByClassName("point");
+	for(const point of points){
+		const max = parseFloat(point.getAttribute("max"));
+		updatePercentage(max, point.id);
 	}
-	let nameTextfiel = readName()
-	let fileN = getFileName()
-	let fileName = "data";
 
-	if (fileN) {fileName = fileN}
-	if (nameTextfiel) {fileName = nameTextfiel}
-	//  const fileInput = document.getElementById("fileselect");
-	//  const fileName = fileN ? fileN:  "data.txt";  //fileInput.files[0] ? fileInput.files[0].name :
+	// Reset checkbox
+	const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
 
-	// Check if the file has a .json extension
-	const hasJsonExtension = fileName.endsWith(".json");
-	// Change the file name to the name of the JSON file if it has a .json extension
-	const txtFileName = hasJsonExtension ? fileName.replace(".json", ".txt") : fileName +".txt";
+	for (const input of allInputs) {
+		input.checked = false;
+	}
 
-	// Create a download link and trigger a download
-	const downloadLink = document.createElement("a");
-	downloadLink.href = "data:text/txt;charset=utf-8," + encodeURIComponent(txt);
-	downloadLink.download = txtFileName;
-	downloadLink.click();
+	// Reset textboxes
+	const allTextNotes = document.getElementsByTagName("textarea");
+
+	for (const textNote of allTextNotes) {textNote.value = "";}
+
+	// Reset Browsed JSON file
+	clearSelectedFile();
+
+	if (branch !== null) {localStorage.setItem("branch", branch);}
+	if (mode !== null){localStorage.setItem("mode", mode);}
+}
+
+function resetJson() {
+	let branch = localStorage.getItem("branch");
+	let mode = localStorage.getItem("mode");
+	localStorage.clear();
+	clearForm()
+	const points = document.getElementsByClassName("point");
+	for(const point of points){
+		const max = parseFloat(point.getAttribute("max"));
+		updatePercentage(max, point.id);
+	}
+
+	// Reset checkbox
+	const allInputs = document.querySelectorAll('input[type="checkbox"]:checked');
+
+	for (const input of allInputs) {
+		input.checked = false;
+	}
+
+	// Reset textboxes
+	const allTextNotes = document.getElementsByTagName("textarea");
+
+	for (const textNote of allTextNotes) {
+		textNote.value = "";
+	}
+
+	if (branch !== null) {
+		localStorage.setItem("branch", branch);
+	}
+
+	if (mode !== null){
+		localStorage.setItem("mode", mode);
+	}
+
 }

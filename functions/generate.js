@@ -12,7 +12,7 @@ function generateBody() {
 	buttonBox.appendChild(generateButton("Generate", () => displayEvaluationText(), ["button", "generate-button"]));
 	buttonBox.appendChild(generateButton("Save Session", () => save(), ["button", "save-button"]));
 	buttonBox.appendChild(generateButton("Download JSON File", () => saveToJson(), ["button", "url-button"]));
-	buttonBox.appendChild(generateButton("Download TEXT File", () => toTxt(), ["button", "txt-button"]));
+	buttonBox.appendChild(generateButton("Download TEXT File", () => saveToTxt(), ["button", "txt-button"]));
 	document.body.appendChild(buttonBox);
 
 	const evaluationTextBox = generateTextArea("evaluation-textbox", ["evaluation-textbox"]);

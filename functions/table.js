@@ -73,7 +73,6 @@ function updatePercentage(value, id){
 
 function getTableData(){
 	const data = {};
-	// Save grading table
 	const p = document.getElementsByClassName("point");
 	for (const point of p) {data[point.id] = point.value;}
 

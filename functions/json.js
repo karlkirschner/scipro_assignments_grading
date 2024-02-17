@@ -1,5 +1,6 @@
 let fileName;
 
+
 function processJSONFile() {
 	const fileInput = document.getElementById("fileselect");
 	const submitButton = document.getElementById("submitbutton");
@@ -29,6 +30,8 @@ function processJSONFile() {
 		}
 
 		updateStatusMessage("Current File: " + file.name);
+
+
 		const reader = new FileReader();
 		reader.onload = function() {
 			try {
@@ -75,7 +78,7 @@ function updateStatusMessage(text) {
 function readName() {
 	event.preventDefault();
 	var name = document.getElementById("name").value;
-	document.getElementById("output").innerHTML = "\nEvaluation for: " + name;
+	document.getElementById("output").innerHTML = 'Evaluation for: <span style="color: green;">' + name + '</span>';
 	return name;
 }
 

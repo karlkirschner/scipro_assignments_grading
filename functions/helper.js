@@ -65,34 +65,6 @@ function finalGrade(sum){
 	}
 }
 
-function base64Encode(str) {
-	let result = '';
-	let char1, char2, char3;
-	let enc1, enc2, enc3, enc4;
-	let i = 0;
-	str = encodeURIComponent(str);
-	while (i < str.length) {
-		char1 = str.charCodeAt(i++);
-		char2 = str.charCodeAt(i++);
-		char3 = str.charCodeAt(i++);
-		enc1 = char1 >> 2;
-		enc2 = ((char1 & 3) << 4) | (char2 >> 4);
-		enc3 = ((char2 & 15) << 2) | (char3 >> 6);
-		enc4 = char3 & 63;
-		if (isNaN(char2)) {
-			enc3 = enc4 = 64;
-		} else if (isNaN(char3)) {
-			enc4 = 64;
-		}
-		result +=
-			'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'.charAt(enc1) +
-			'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'.charAt(enc2) +
-			'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'.charAt(enc3) +
-			'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'.charAt(enc4);
-	}
-	return result;
-}
-
 async function getBranches(){
 	var response = await fetch("https://api.github.com/repos/karlkirschner/scipro_assignments_grading/branches")
 	var json = await response.json();

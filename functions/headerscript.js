@@ -88,7 +88,6 @@ function setBranch(branch){
 	}
 	if (confirm("You are about to switch branches, any saves you did will be reset are you sure?")) {
 		reset();
-		resetJson();
 		txt = "Form has been cleared";
 	  } else {
 		txt = "You pressed Cancel!";

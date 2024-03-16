@@ -60,7 +60,7 @@ function processJSONFile() {
 			}
 		};
 		clearSelectedFile();
-		resetJson()
+		reset()
 		reader.readAsText(file);
 	}
 }

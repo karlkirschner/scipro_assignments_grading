@@ -64,7 +64,6 @@
                 </div>
                 <div id="submitbutton">
                     <button type="submit" onclick="processJSONFile(event)">Upload File</button>
-                    <!-- <button type="button" id="clearButton" onclick="clearSelectedFile()">Clear File</button> -->
 			   </div>
 		   </fieldset>
 		   <div id="messages">
@@ -73,7 +72,6 @@
 	   </form>
    </div>
 </section>
-
    <section class="side-table" id="side-table" style="display:none">
    <div class="side">
 	   <b>Grading</b>
@@ -90,7 +88,8 @@
 					   </span>
 				   </div>
 			   </td>
-			   <td><input id="codequality-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codequality-percentage')"></td>
+			   <td><input id="codequality-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5"
+						  onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codequality-percentage')"></td>
 			   <td><p id="codequality-grading-percentage">24%</p></td>
 		   </tr>
 		   <tr>
@@ -105,7 +104,8 @@
 					   </span>
 				   </div>
 			   </td>
-			   <td><input id="codeexecution-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codeexecution-percentage')"></td>
+			   <td><input id="codeexecution-grading" class="point" factor="4" type="number" value="6" min="0.0"
+						  max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'codeexecution-percentage')"></td>
 			   <td><p id="codeexecution-grading-percentage">24%</p></td>
 		   </tr>
 		   <tr>
@@ -120,7 +120,8 @@
 					   </span>
 				   </div>
 			   </td>
-			   <td><input id="assignmentrequirements-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'assignmentrequirements-percentage')"></td>
+			   <td><input id="assignmentrequirements-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0"
+						  step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'assignmentrequirements-percentage')"></td>
 			   <td><p id="assignmentrequirements-grading-percentage">24%</p></td>
 		   </tr>
 		   <tr>
@@ -135,7 +136,8 @@
 					   </span>
 				   </div>
 			   </td>
-			   <td><input id="scientific-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'scientific-percentage')"></td>
+			   <td><input id="scientific-grading" class="point" factor="4" type="number" value="6" min="0.0" max="6.0"
+						  step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'scientific-percentage')"></td>
 			   <td><p id="scientific-grading-percentage">24%</p></td>
 		   </tr>
 		   <tr>
@@ -150,7 +152,8 @@
 					   </span>
 				   </div>
 			   </td>
-			   <td ><input id="creativity-grading" class="point" factor="1" type="number" value="4" min="0.0" max="4.0" step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'creativity-percentage')"></td>
+			   <td ><input id="creativity-grading" class="point" factor="1" type="number" value="4" min="0.0" max="4.0"
+						   step="0.5" onchange="updatePercentage(this.value, this.id, this.getAttribute('factor'), 'creativity-percentage')"></td>
 			   <td><p style="width: 60px;" id="creativity-grading-percentage">4%</p></td>
 		   </tr>
 		   <tr>
@@ -254,7 +257,6 @@
 			   <td><p id="grade">1.0 (A+)</p></td>
 		   </tr>
 	   </table>
-
    </div>
    </section>
 
@@ -270,7 +272,5 @@
 	   });
 
    </script>
-
 </body>
-
 </html>

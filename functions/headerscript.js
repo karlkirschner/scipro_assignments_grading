@@ -108,32 +108,24 @@ function handleError(){
 }
 
 if (!debug) {
-	var mode;
-	var branch;
-	if (localStorage.getItem("mode") !== null){
-		mode = localStorage.getItem("mode");
-	}else{
-		localStorage.setItem("mode", "student");
-		mode = "student";
-	}
 
-	if (mode === "grader" && localStorage.getItem("branch") !== null){
-		branch = localStorage.getItem("branch");
-	}else{
-		localStorage.setItem("branch", "peer_review"); //default student branch
-		branch = localStorage.getItem("branch"); 
+	var mode = localStorage.getItem("mode") || "student";
+	var template = mode === "grader" ? "GraderTemplate" : "StudentTemplate";
+
+	if (!localStorage.getItem("mode")) {
+		localStorage.setItem("mode", "student");
 	}
 
 	$.ajax({
 		dataType: "json",
-		url: "https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/references.json".replace("master", branch),
+		url: "data/StudentTemplate/references.json".replace("StudentTemplate", template),
 		error: function(error){
 			handleError();
 		},
 		success: function (data) {
 			$.ajax({
 				dataType: "json",
-				url: data.generalCriteria.replace("master", branch),
+				url: data.generalCriteria,
 				error: function (data) {
 					handleError();
 				},
@@ -146,7 +138,7 @@ if (!debug) {
 						if (assignment.enabled) {
 							const request = $.ajax({
 								dataType: "json",
-								url: assignment.url.replace("master", branch),
+								url: assignment.url,
 								success: function (data) {
 									assignment.content = data;
 									assignmentSpecificCriterias.push(assignment);

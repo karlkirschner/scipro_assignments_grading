@@ -1,9 +1,8 @@
 function generateBody() {
-	if (mode === "grader"){
-		document.getElementById("side-table").style.display = "block";
-		document.body.appendChild(generateSelector(getBranches()));
-	}
-
+	// if (mode === "grader"){
+	// 	document.getElementById("side-table").style.display = "block";
+	// 	document.body.appendChild(generateSelector(getBranches()));
+	// }
 	document.body.appendChild(generateButton("Reset", () => reset(), ["button", "reset-button"]));
 	document.body.appendChild(generateTemplate(generalCriteria));
 	document.body.appendChild(generateTabs());
@@ -65,7 +64,6 @@ function generateTabs() {
 		assignmentSpecificCriteriasContainer.appendChild(assignmentSpecificContent);
 	}
 	assignmentSpecificContainer.appendChild(assignmentSpecificCriteriasContainer);
-
 	return assignmentSpecificContainer;
 }
 

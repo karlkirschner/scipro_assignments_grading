@@ -1,0 +1,73 @@
+{
+    "Pandas":{
+        "title":"Pandas",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall Pandas feedback",
+            "subPoints":[
+                "Good use of Pandas",
+                "Good use of the Pandas functions:",
+                "Correlation analysis - well done",
+                "Plotting - good, concise coding for the plot generation"
+            ]
+        }
+    ],
+        "neutral":[
+        {
+            "mainPoint":"The following functions might have been good to use in your solution",
+            "subPoints":[
+                "`reset_index`"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"Reading Data Into Pandas",
+            "subPoints":[
+                "Delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
+                "Header (i.e., `header`) - incorrectly specified the header line",
+                "Incorrectly read in the data"
+            ]
+        },
+        {
+            "mainPoint":"Cleaning Data",
+            "subPoints":[
+                "`drop`- you did not save the cleaned results (e.g., using `inplace` or assigning it to a new object)",
+                "`drop_duplicates` - you did not save the results (e.g., using `inplace` or assigning it to a new object)",
+                "`dropna` - you did not save the results (e.g., using `inplace` or assigning it to a new object)"
+            ]
+        },
+        {
+            "mainPoint":"Pandas Plotting",
+            "subPoints":[
+                "The data was not plotted using the Pandas' library only"
+            ]
+        },
+        {
+            "mainPoint":"Correlation Analysis",
+            "subPoints":[
+                "Absolute value - one needed to take the absolute value of some of the data:",
+                "`corr` - did not use Pandas' built-in correlation function",
+                "Identification - incorrectly identified the features that are most correlated",
+                "Interpretation - there is a lack of interpreting what the correlation values mean",
+                "Interpretation - incorrectly interpreted the correlation results"
+            ]
+        },
+        {
+            "mainPoint":"Sorting",
+            "subPoints":[
+                "Incorrect sorting",
+                "Not saved - the sorted data result(s) was not saved (e.g., assigning it to a new object)",
+                "Unsorted - the data was not sorted"
+            ]
+        },
+        {
+            "mainPoint":"Saving Data",
+            "subPoints":[
+                "Not saved - the final data was not saved"
+            ]
+        }
+        ]
+    }
+}

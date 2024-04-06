@@ -1,0 +1,86 @@
+{
+    "SciPy - Mountains":{
+        "title":"SciPy - Mountains",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"The following points were well done",
+            "subPoints":[
+                "Good job on getting the correct number of significant figures for the RMSE.",
+                "Good job on adding additional context that is meaningful.",
+                "Good job at consolidating similar ideas into individual code cells.",
+                "Good job on unifying the naming convention (i.e. CamelCase or Pot_Hole).",
+                "Good job on plotting both the mountain and timberline elevations into the same graph.",
+                "Good job on cleaning up the input data."
+            ]
+        }
+    ],
+        "neutral":[
+        {
+            "mainPoint":"General",
+            "subPoints":[
+                "Some of the context that was added could have been improved upon."
+            ]
+        },
+        {
+            "mainPoint":"Pandas",
+            "subPoints":[
+                "Should have dropped duplicate data values and any rows that had missing data."
+            ]
+        },
+        {
+            "mainPoint":"Equation 1",
+            "subPoints":[
+                "It might have been better to create a function for the Odland equation (i.e. Eq. 1), but okay."
+            ]
+        },
+        {
+            "mainPoint":"Plots",
+            "subPoints":[
+                "Okay to just plot the data as points, but would have been better to have a line with points.",
+                "Since you did not remove rows with missing data, your plots show gaps.",
+                "Should have ordered the data for the plots, which would have removed the jaggedness of the lines for Task 2."
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"General",
+            "subPoints":[
+                "The context at the top of the original solution notebook was not reworked. A better assignment context could have been provided.",
+                "Citation and reference to SciPy and Odland's original paper are missing.",
+                "The citations are not sequentially given - i.e the first citation is [3], not [1].",
+                "The references needed to be separated onto their own line for readability.",
+                "The object/variable naming should have been unified to follow one convention (i.e. CamelCase or Pot_Hole)",
+                "You have redundant citations being listed at the top and bottom of the notebook.",
+                "Including both data and df in an object's name (e.g. sc_testing_data_df) is not concise since they indicated the same thing. Should have been redone.",
+                "No user-defined functions were created, and there were several opportunities to do so."
+            ]
+        },
+                {
+            "mainPoint":"Libraries",
+            "subPoints":[
+                "The imports for Numpy and scipy.optimze should have been removed since they were not used.",
+                "The libraries should have been placed into a single code cell."
+            ]
+        },
+        {
+            "mainPoint":"Plots",
+            "subPoints":[
+                "A user-defined plotting function was an obvious thing that could have been created due to how many similar plots were asked for.",
+                "The data needed to be ordered based on the northing column after being read in by Pandas. This results in an ordered plotting of the data, unlike what was in the original solution.",
+                "Plotting the mountain and the timberline elevations together in a single plot would have allowed you to compare the data directly."
+            ]
+        },
+        {
+            "mainPoint":"RMSE",
+            "subPoints":[
+                "A user-defined RMSE function was an obvious to create here.",
+                "The values are incorrect - should be 85.2 and 70.2 meters",
+                "Missing the unit for the value - should be meters",
+                "The values have the incorrect number of significant figures, based on the raw input (e.g. 250.), the number of significant figures is 3. (Pandas incorrectly adds zeros.)"
+            ]
+        }
+    ]
+    }
+}

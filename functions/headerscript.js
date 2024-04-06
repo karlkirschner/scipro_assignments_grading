@@ -1,5 +1,6 @@
 const debug = false;
 var assignmentSpecificCriterias = [];
+var master_template;
 var generalCriteria = {
 	//Local testing:
 	//    change `const debug = true` above
@@ -108,9 +109,10 @@ function handleError(){
 }
 
 if (!debug) {
-
+	master_template = localStorage.getItem("master_template");
 	var mode = localStorage.getItem("mode") || "student";
-	var template = mode === "grader" ? "GraderTemplate" : "StudentTemplate";
+	template = mode === "grader" ? "GraderTemplate" : "StudentTemplate";
+	console.log(master_template);
 
 	if (!localStorage.getItem("mode")) {
 		localStorage.setItem("mode", "student");
@@ -118,14 +120,14 @@ if (!debug) {
 
 	$.ajax({
 		dataType: "json",
-		url: "data/StudentTemplate/references.json".replace("StudentTemplate", template),
+		url: "data/StudentTemplate/references.json".replace("StudentTemplate", localStorage.getItem("master_template") || template),
 		error: function(error){
 			handleError();
 		},
 		success: function (data) {
 			$.ajax({
 				dataType: "json",
-				url: data.generalCriteria.replace("StudentTemplate", template),
+				url: data.generalCriteria.replace("StudentTemplate", localStorage.getItem("master_template") || template),
 				error: function (data) {
 					handleError();
 				},
@@ -138,7 +140,7 @@ if (!debug) {
 						if (assignment.enabled) {
 							const request = $.ajax({
 								dataType: "json",
-								url: assignment.url.replace("StudentTemplate", template),
+								url: assignment.url.replace("StudentTemplate", localStorage.getItem("master_template") || template),
 								success: function (data) {
 									assignment.content = data;
 									assignmentSpecificCriterias.push(assignment);

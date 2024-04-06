@@ -1,11 +1,4 @@
-function getBranch(){
-	if (localStorage.getItem("branch") !== null){
-		return localStorage.getItem("branch");  
-	}else{
-		return "master";
-	}
-}
-
+// Delete??
 function getMode(){
 	return localStorage.getItem("mode");
 }
@@ -67,18 +60,9 @@ function finalGrade(sum){
 
 
 
-async function getBranches(){
-	var response = await fetch("https://api.github.com/repos/karlkirschner/scipro_assignments_grading/branches")
-	var json = await response.json();
-	const branches = [];
-	for (branch of json){
-		branches.push(branch["name"]);
-	}
-	return branches;
-}
 function getSubfolderNamesFromGithub() {
 	return new Promise((resolve, reject) => {
-		// Change the address before merge to master
+		// Change the address before merge to master!!!!
 		fetch('https://api.github.com/repos/karlkirschner/scipro_assignments_grading/contents/data?ref=database_refactor')
 			.then(response => {
 				if (!response.ok) {
@@ -100,13 +84,15 @@ function generateSelector() {
 		var select = document.createElement("select");
 		select.id = "branch-selector";
 		select.onchange = function() {
-			localStorage.setItem("master_template", select.value);
+			setMasterTemplate(select.value);
 		};
-
 		for (const item of data) {
 			var option = document.createElement("option");
 			option.value = item;
 			option.innerText = item;
+			if (item === getMasterTemplate()) {
+				option.selected = true;
+			}
 			select.appendChild(option);
 		}
 		container.appendChild(select);
@@ -114,6 +100,7 @@ function generateSelector() {
 
 	return container;
 }
+
 
 
 // function generateSelector(items){
@@ -136,3 +123,23 @@ function generateSelector() {
 // 	})
 // 	return container;
 // }
+
+// async function getBranches(){
+// 	var response = await fetch("https://api.github.com/repos/karlkirschner/scipro_assignments_grading/branches")
+// 	var json = await response.json();
+// 	const branches = [];
+// 	for (branch of json){
+// 		branches.push(branch["name"]);
+// 	}
+// 	return branches;
+// }
+
+// function getBranch(){
+// 	if (localStorage.getItem("branch") !== null){
+// 		return localStorage.getItem("branch");
+// 	}else{
+// 		return "master";
+// 	}
+// }
+
+

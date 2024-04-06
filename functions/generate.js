@@ -1,7 +1,7 @@
 function generateBody() {
 	if (mode === "grader"){
 		document.getElementById("side-table").style.display = "block";
-		document.body.appendChild(generateSelector(getBranches()));
+		document.body.appendChild(generateSelector());
 	}
 	document.body.appendChild(generateButton("Reset", () => reset(), ["button", "reset-button"]));
 	document.body.appendChild(generateTemplate(generalCriteria));

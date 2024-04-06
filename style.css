@@ -460,15 +460,40 @@ input[type="text"] {
     margin-bottom: 10px;
 }
 
+/* Dropdown Menue */
+
 select {
-    color: white;
-    background-color: blueviolet;
-    border-radius: 30px;
-    width: 15rem;
-    height: 3rem;
-    font-size: 1.5rem;
-    margin-left: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
+    width: 240px;
+    height: 50px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    padding-left: 20px;
+    border-radius: 8px;
+    border: 2px solid #5D5C61;
+    background-color: #7395AE;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* SVG für den Pfeil */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 20px;
 }
+
+select::-ms-expand {
+    display: none;
+}
+
+select:hover {
+    background-color: #557A95;
+}
+
+select:focus {
+    border: 2px solid #B1A296;
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.4);
+}
+
 

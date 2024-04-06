@@ -84,20 +84,20 @@ function setMode(mode){
 	}
 }
 
-function setBranch(branch){
-	if (typeof branch !== "string"){
-		var selectElement = document.getElementById("branch-selector");
-		branch = selectElement.value;
-	}
-	if (confirm("You are about to switch branches, any saves you did will be reset are you sure?")) {
-		reset();
-		txt = "Form has been cleared";
-	  } else {
-		txt = "You pressed Cancel!";
-	  }
-	localStorage.setItem("branch", branch);
-	location.reload();
-}
+// function setBranch(branch){
+// 	if (typeof branch !== "string"){
+// 		var selectElement = document.getElementById("branch-selector");
+// 		branch = selectElement.value;
+// 	}
+// 	if (confirm("You are about to switch branches, any saves you did will be reset are you sure?")) {
+// 		reset();
+// 		txt = "Form has been cleared";
+// 	  } else {
+// 		txt = "You pressed Cancel!";
+// 	  }
+// 	localStorage.setItem("branch", branch);
+// 	location.reload();
+// }
 
 function getMasterTemplate(){
 	return localStorage.getItem("master_template");
@@ -111,28 +111,23 @@ function setMasterTemplate(template){
 
 function handleError(){
 	alert("An error occured. Check the console logs.")
-	console.log("Error retrieving or parsing general criterias. Try checking for invalid parsing/formats/trailing commas using: https://jsonformatter.curiousconcept.com/#")
-	if (confirm("Reset to master branch?")) {
-		txt = "Branche set to master";
-		setBranch("master");
-	  } else {
-		txt = "You pressed Cancel!";
-	  }
+	console.log("Error retrieving or parsing general criterias. " +
+		"Try checking for invalid parsing/formats/trailing commas using: https://jsonformatter.curiousconcept.com/#")
 }
+
+
 function loadDataBasedOnTemplate() {
 	if (!debug) {
-		master_template = localStorage.getItem("master_template");
 		mode = localStorage.getItem("mode") || "student";
 		template = mode === "grader" ? "GraderTemplate" : "StudentTemplate";
 
-		if (!localStorage.getItem("mode")) {localStorage.setItem("mode", "student");}
+		if (!localStorage.getItem("mode")) {
+			localStorage.setItem("mode", "student");}
 
 		$.ajax({
 			dataType: "json",
 			url: "data/StudentTemplate/references.json".replace("StudentTemplate", getMasterTemplate() || template),
-			error: function (error) {
-				handleError();
-			},
+			error: function (error) {handleError();},
 			success: function (data) {
 				$.ajax({
 					dataType: "json",
@@ -170,4 +165,7 @@ function loadDataBasedOnTemplate() {
 		});
 	}
 }
+
+
+
 loadDataBasedOnTemplate();

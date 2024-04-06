@@ -1,29 +1,29 @@
 {
-    "generalCriteria":"data/StudentTemplate/criteria/general.json",
+    "generalCriteria":"data/TestTemplate/criteria/general.json",
     "assignmentSpecificCriteria":[
         {
             "id": 1,
             "title":"Air Quality",
             "enabled": true,
-            "url":"data/StudentTemplate/criteria/air_quality_1.json"
+            "url":"data/TestTemplate/criteria/air_quality_1.json"
         },
         {
             "id": 2,
             "title": "Pandas",
             "enabled": false,
-            "url": "data/StudentTemplate/criteria/pandas.json"
+            "url": "data/TestTemplate/criteria/pandas.json"
         },
         {
             "id": 3,
             "title":"Plotting",
             "enabled": false,
-            "url":"data/StudentTemplate/criteria/plotting_data.json"
+            "url":"data/TestTemplate/criteria/plotting_data.json"
         },
         {
             "id": 4,
              "title":"Numpy",
             "enabled": false,
-            "url":"data/StudentTemplate/criteria/numpy.json"
+            "url":"data/TestTemplate/criteria/numpy.json"
        }
     ]
 }

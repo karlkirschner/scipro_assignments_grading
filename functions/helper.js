@@ -58,23 +58,19 @@ function finalGrade(sum){
 	}
 }
 
-
-
 function getSubfolderNamesFromGithub() {
 	return new Promise((resolve, reject) => {
 		// Change the address before merge to master!!!!
 		fetch('https://api.github.com/repos/karlkirschner/scipro_assignments_grading/contents/data?ref=database_refactor')
 			.then(response => {
-				if (!response.ok) {
-					throw new Error('Netzwerkantwort war nicht ok');
-				}
+				if (!response.ok) {throw new Error('Network response was not ok');}
 				return response.json();
 			})
 			.then(data => {
 				const directories = data.filter(item => item.type === 'dir').map(dir => dir.name);
 				resolve(directories);
 			})
-			.catch(error => reject('Fehler beim Abrufen der Daten: ' + error));
+			.catch(error => reject('Error when retrieving the data: ' + error));
 	});
 }
 

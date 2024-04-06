@@ -125,7 +125,7 @@ if (!debug) {
 		success: function (data) {
 			$.ajax({
 				dataType: "json",
-				url: data.generalCriteria,
+				url: data.generalCriteria.replace("StudentTemplate", template),
 				error: function (data) {
 					handleError();
 				},
@@ -138,7 +138,7 @@ if (!debug) {
 						if (assignment.enabled) {
 							const request = $.ajax({
 								dataType: "json",
-								url: assignment.url,
+								url: assignment.url.replace("StudentTemplate", template),
 								success: function (data) {
 									assignment.content = data;
 									assignmentSpecificCriterias.push(assignment);

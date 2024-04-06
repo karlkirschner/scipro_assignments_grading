@@ -38,7 +38,7 @@ function save() {
 function saveToJson() {
 	const data = collectFormData();
 	const jsonData = JSON.stringify(data);
-	const name = readName() || getFileName().replace(".json", "") || "default";
+	const name = readName() || getFileName()?.replace(".json", "") || "default";
 	const downloadLink = document.createElement("a");
 	downloadLink.href = "data:json/txt;charset=utf-8," + encodeURIComponent(jsonData)  ;
 	downloadLink.download = `${name}.json`;
@@ -50,7 +50,7 @@ function saveToTxt(){
 	const evaluationTextField = displayEvaluationText()
 	let txt = "Evaluation: " + evaluationTextField
 	if(mode === "grader"){txt += "\nGrading table: \n\n" + formatTable(tableData)}
-	const name = readName() || getFileName().replace(".json", "") || "default";
+	const name = readName() || getFileName()?.replace(".json", "") || "default";
 	const downloadLink = document.createElement("a");
 	downloadLink.href = "data:text/txt;charset=utf-8," + encodeURIComponent(txt);
 	downloadLink.download = `${name}.txt`;

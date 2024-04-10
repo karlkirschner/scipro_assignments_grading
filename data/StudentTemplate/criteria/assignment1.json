@@ -1,0 +1,34 @@
+{
+   "validValues":{
+      "title":"Valid values",
+      "additionalNotes":true,
+      "positive":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "Good job on checking whether the distance is negative."
+            ]
+         }
+      ],
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "You did not check for negative values for the distance."
+            ]
+         }
+      ]
+   },
+   "wrongNumbers":{
+      "title":"Wrong Numbers",
+      "additionalNotes":false,
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "The mass of the sun and/or the earth is wrong!"
+            ]
+         }
+      ]
+   }
+}

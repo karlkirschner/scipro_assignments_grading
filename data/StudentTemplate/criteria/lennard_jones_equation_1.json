@@ -1,0 +1,28 @@
+{
+   "wrongInput":{
+      "title":"Incorrect Inputs",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "The equation was incorrectly encoded",
+               "The equation's parameters were incorrectly specified"
+            ]
+         }
+      ]
+   },
+   "wrongResults":{
+      "title":"Incorrect Results",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "The numerical solution was wrong - it should have been:",
+               "The solution was not given with the correct units."
+            ]
+         }
+      ]
+   }
+}

@@ -1,0 +1,41 @@
+{
+   "wrongInput":{
+      "title":"Incorrect Inputs",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "The equation was incorrectly encoded",
+               "The equation's parameters values were incorrectly specified",
+               "The exact value of the speed of light was not given correctly"
+            ]
+         }
+      ]
+   },
+   "poorScholarship":{
+      "title":"Poor Scholarship",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "Copy-and-pasting the user-defined function from the lecture slides does not represent your own work."
+            ]
+         }
+      ]
+   },
+   "wrongResults":{
+      "title":"Incorrect Results",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "The numerical solution(s) was wrong - it should have been:",
+               "The solution was not provided with the correct units."
+            ]
+         }
+      ]
+   }
+}

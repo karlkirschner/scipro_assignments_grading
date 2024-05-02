@@ -22,7 +22,7 @@
             "subPoints":[
                "citing - source of information and knowledge (e.g., software, equations, data)",
                "citing - proper ordering within the written text (e.g., ...[1-2]...[3] and not ...[3-4]...[1]...)",
-               "units - input and output numbers have units (e.g. N, kJ, m/s, Hz)"
+               "units - input and output numbers have units (e.g., N, kJ, m/s, Hz)"
             ]
          },
          {
@@ -37,22 +37,20 @@
          {
             "mainPoint":"Scholarship done okay, but with a few issues in the following",
             "subPoints":[
-               "citing - websites should include the date visited (e.g., Wikipedia)",
                "citing - when possible cite peer-reviewed papers or academic books, not websites",
                "references - inconsistent formatting"
             ]
          },
          {
-            "mainPoint":"Writing and communication done okay, but with a few issues in the following",
+            "mainPoint":"Writing and communication was done okay, specifically in the following could be improved upon",
             "subPoints":[
                "sentences - incomplete (e.g., capitalization, punctuation, etc.)",
-               "sentences - unclear",
+               "sentences - somewhat unclear statements",
                "words - incorrect case (i.e., capitalized vs. lower-cased words)",
-               "words - misspelled",
-               "words - mixed English and German"
+               "words - a few misspellings were present",
+               "words - a minor amount of mixed English and German usage"
             ]
-         },
-         {
+         },         {
             "mainPoint":"Interpretation of results and data",
             "subPoints":[
                "One should attempt to interpret the data (e.g., results, plots) that are generated. Please do this next time.",
@@ -85,21 +83,24 @@
                "citing - done out-of-order (e.g., the first citation in your text is not to Reference 1)",
                "citing - missing references for knowledge (e.g., datasets, equations, libraries)",
                "citing - missing reference numbers (e.g., [1, 2]) within your writing",
-               "references - missing important information - for example, this might include title, year, author(s), publication source, accessed date",
+               "references - missing important information for books and paper - (e.g., author(s), title, source, year, volume, pages)",
+               "references - websites should include the date accessed (e.g., Wikipedia)",
+               "references - websites accessed dates predate the assignment/course - likely due to copy-and-paste from the assignment sheet",
                "units - were not provided when needed"
             ]
          },
          {
             "mainPoint":"Writing and communication done poorly, which includes the following",
             "subPoints":[
-               "communication - create your own context description (e.g., do not copy it from the assignment)",
                "communication - no or very little presentation of thoughts or ideas (e.g., context, solution meaning, decisions made)",
+               "communication - much of the writing was unclear",
+               "context - create your own context description (i.e., do not copy it from the assignment)",
                "context - poorly provided (e.g., background info, the problem)",
-               "image - an image of the assignment is not good enough to provide context, suggesting a lack of effort",
+               "image - an image of the assignment sheet is not good enough to provide context, suggesting a lack of effort",
                "sentences - not clean, concise and/or clear (C^3)",
                "sentences - incomplete sentences when needed (e.g., capitalization, punctuation, subject, verb), including in print statements",
                "words - several misspelled words",
-               "words - several mixed English and German words"
+               "words - significant mixed English and German usage"
             ]
          }
       ]

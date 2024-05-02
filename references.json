@@ -9,8 +9,8 @@
         },
         {
             "id": 2,
-            "title": "false",
-            "enabled": true,
+            "title": "Pandas",
+            "enabled": false,
             "url": "https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas.json"
         },
         {

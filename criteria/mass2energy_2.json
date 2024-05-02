@@ -7,8 +7,8 @@
             "mainPoint":"",
             "subPoints":[
                "The equation was incorrectly encoded",
-               "The equation's parameters values were incorrectly specified",
-               "The exact value of the speed of light was not given correctly"
+               "The equation's parameter(s) value was incorrectly specified",
+               "The exact (i.e., unrounded) value of the speed of light was not given correctly"
             ]
          }
       ]

@@ -17,7 +17,6 @@ function processJSONFile() {
 	});
 
 	filedrag.addEventListener("drop", function(event) {
-
 		event.preventDefault();
 		fileName = event.dataTransfer.files[0].name;
 		processFile(event.dataTransfer.files[0]);
@@ -62,6 +61,8 @@ function processJSONFile() {
 		clearSelectedFile();
 		reset()
 		reader.readAsText(file);
+		updateStatusMessage("Current File: " + file.name);
+		document.getElementById("output").innerHTML = 'Evaluation for: <span style="color: green;">' + file.name.replace('.json', '') + '</span>';
 	}
 }
 

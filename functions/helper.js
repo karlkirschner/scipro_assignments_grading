@@ -1,11 +1,4 @@
-function getBranch(){
-	if (localStorage.getItem("branch") !== null){
-		return localStorage.getItem("branch");  
-	}else{
-		return "master";
-	}
-}
-
+// Delete??
 function getMode(){
 	return localStorage.getItem("mode");
 }
@@ -65,33 +58,84 @@ function finalGrade(sum){
 	}
 }
 
-async function getBranches(){
-	var response = await fetch("https://api.github.com/repos/karlkirschner/scipro_assignments_grading/branches")
-	var json = await response.json();
-	const branches = [];
-	for (branch of json){
-		branches.push(branch["name"]);
-	}
-	return branches;
+function getSubfolderNamesFromGithub() {
+	return new Promise((resolve, reject) => {
+		// Change the address before merge to master!!!!
+		fetch('https://api.github.com/repos/karlkirschner/scipro_assignments_grading/contents/data?ref=database_refactor')
+			.then(response => {
+				if (!response.ok) {throw new Error('Network response was not ok');}
+				return response.json();
+			})
+			.then(data => {
+				const directories = data.filter(item => item.type === 'dir').map(dir => dir.name);
+				resolve(directories);
+			})
+			.catch(error => reject('Error when retrieving the data: ' + error));
+	});
 }
 
-function generateSelector(items){
+function generateSelector() {
 	var container = document.createElement("div");
-	items.then((data) => {
+	getSubfolderNamesFromGithub().then((data) => {
 		var select = document.createElement("select");
-		select.id="branch-selector";
-		select.onchange = setBranch;
-		for (const item of data){
+		select.id = "branch-selector";
+		select.onchange = function() {
+			setMasterTemplate(select.value);
+		};
+		for (const item of data) {
 			var option = document.createElement("option");
 			option.value = item;
 			option.innerText = item;
-			if (getBranch() === item){
+			if (item === getMasterTemplate()) {
 				option.selected = true;
 			}
 			select.appendChild(option);
-			
 		}
 		container.appendChild(select);
-	})
+	});
+
 	return container;
 }
+
+
+
+// function generateSelector(items){
+// 	var container = document.createElement("div");
+// 	items.then((data) => {
+// 		var select = document.createElement("select");
+// 		select.id="branch-selector";
+// 		select.onchange = setBranch;
+// 		for (const item of data){
+// 			var option = document.createElement("option");
+// 			option.value = item;
+// 			option.innerText = item;
+// 			if (getBranch() === item){
+// 				option.selected = true;
+// 			}
+// 			select.appendChild(option);
+//
+// 		}
+// 		container.appendChild(select);
+// 	})
+// 	return container;
+// }
+
+// async function getBranches(){
+// 	var response = await fetch("https://api.github.com/repos/karlkirschner/scipro_assignments_grading/branches")
+// 	var json = await response.json();
+// 	const branches = [];
+// 	for (branch of json){
+// 		branches.push(branch["name"]);
+// 	}
+// 	return branches;
+// }
+
+// function getBranch(){
+// 	if (localStorage.getItem("branch") !== null){
+// 		return localStorage.getItem("branch");
+// 	}else{
+// 		return "master";
+// 	}
+// }
+
+

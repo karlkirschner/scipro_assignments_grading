@@ -1,0 +1,99 @@
+{
+   "Pandas":{
+        "title":"Pandas",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall Pandas feedback",
+            "subPoints":[
+                "Good use of Pandas.",
+                "cleaning data - good use of Pandas functions to do this",
+                "plotting - good, concise coding for the plot generation",
+                "plotting - well formatted plots (e.g., axis labels, fontsize, color)"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"Reading data into Pandas",
+            "subPoints":[
+                "delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
+                "header (i.e., `header`) - incorrectly specified the header line",
+                "input data - incorrectly read in the data",
+                "input file - renaming the input data file is very poor practice",
+                "input file path - hard coding your local folder structure for the input file path results in problems, requiring the user to edit your notebook."
+
+            ]
+        },
+        {
+            "mainPoint":"Data cleaning",
+            "subPoints":[
+                "cleaning - the data was not cleaned properly (e.g., `drop_duplicates`,  `dropna` or `drop`)",
+                "saving - the cleaned data was not saved (e.g., using `inplace` or assigning it to a new object)"
+            ]
+        },
+        {
+            "mainPoint":"Displaying a dataframe as a table",
+            "subPoints":[
+                "A dataframe in a Jupyter-notebook should be displayed by either using the dataframe's name by itself, or using `display`.",
+                "Printing a dataframe does not make use Jupyter-notebook's capability of displaying an easily readable table."
+            ]
+        },
+        {
+            "mainPoint":"Data conversion",
+            "subPoints":[
+                "Converting the data units was incorrectly done.",
+                "A user-defined function to covert the units would have been logical to do, as demonstrated in a previous solution key.",
+                "One should use as many decimal in the conversion factor as possible (e.g., 2625.4996394799), rather than rounding to a few decimal places."
+            ]
+        },
+        {
+            "mainPoint":"Plotting",
+            "subPoints":[
+                "axis labels - the plots do not have proper axes labels",
+                "axis labels - units were not included in the axis label(s) (e.g., kJ/mol, Angstrom)",
+                "data - the data plotted should have all the same units (e.g., kJ/mol)",
+                "fontsize - the choice of fontsize(s) could have been better",
+                "legend - the plot does not include a legend",
+                "library - the plotting was not done using only the Pandas' library",
+                "plot(s) - the plots were not shown due to errors"
+            ]
+        },
+        {
+            "mainPoint":"Saving data",
+            "subPoints":[
+                "not saved - none of the final data was not saved",
+                "not saved - some required data was not saved"
+            ]
+        }
+      ]
+   },
+   "wrongInput":{
+      "title":"Incorrect Equations or Inputs",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"The following was wrong with the equations",
+            "subPoints":[
+               "the Lennard-Jones equation was incorrectly encoded",
+               "the Lennard-Jones equation's parameters were incorrectly specified",
+               "the exponential equation was incorrectly encoded",
+               "the exponential equation's parameters were incorrectly specified"
+            ]
+         }
+      ]
+   },
+   "wrongResults":{
+      "title":"Incorrect Results",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "The generated numeric data were wrong.",
+               "The solutions were not given with the correct units."
+            ]
+         }
+      ]
+   }
+}

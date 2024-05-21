@@ -1,0 +1,14 @@
+{
+   "codeFormatting":{
+      "title":"Invalid Value",
+      "additionalNotes":false,
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "Your value for the speed of light is incorrect!"
+            ]
+         }
+      ]
+   }
+}

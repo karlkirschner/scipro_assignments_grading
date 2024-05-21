@@ -1,0 +1,22 @@
+{
+    "SciPy":{
+        "title":"SciPy Library",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"",
+            "subPoints":[
+                "Good job on using SciPy optimize function"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"",
+            "subPoints":[
+                "You needed to use SciPy's optimize function to find the optimal value of the variable."
+            ]
+        }
+    ]
+    }
+}

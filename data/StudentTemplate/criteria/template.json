@@ -1,0 +1,76 @@
+{
+    "topic1":{
+        "title":"Topic 1",
+        "additionalNotes":true,
+        "positive":[
+            {
+                "mainPoint":"1st positive feedback for topic 1",
+                "subPoints":[
+                    "Subpoint 1",
+                    "Subpoint 2",
+                    "Subpoint 3"
+                ]
+            },
+            {
+                "mainPoint":"2nd positive feedback for topic 1",
+                "subPoints":[
+                    "Point 1"
+                ]
+            }
+        ],
+        "neutral":[
+            {
+                "mainPoint":"1st netural feedback for topic 1",
+                "subPoints":[
+                    "Subpoint 1"
+                ]
+            }
+        ],
+        "negative":[
+            {
+                "mainPoint":"1st negative feedback for topic 1",
+                "subPoints":[
+                    "Subpoint 1",
+                    "Subpoint 2 with comment box:"
+                ]
+            }
+        ]
+    },
+    "topic2":{
+        "title":"Topic 2",
+        "additionalNotes":true,
+        "positive":[
+            {
+                "mainPoint":"1st positive feedback for topic 2",
+                "subPoints":[
+                    "Subpoint 1",
+                    "Subpoint 2",
+                    "Subpoint 3"
+                ]
+            },
+            {
+                "mainPoint":"2nd positive feedback for topic 2",
+                "subPoints":[
+                    "Point 1"
+                ]
+            }
+        ],
+        "neutral":[
+            {
+                "mainPoint":"1st netural feedback for topic 2",
+                "subPoints":[
+                    "Subpoint 1"
+                ]
+            }
+        ],
+        "negative":[
+            {
+                "mainPoint":"1st negative feedback for topic 2",
+                "subPoints":[
+                    "Subpoint 1",
+                    "Subpoint 2 with comment box:"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "significantFigures":{
+        "title":"Significant Figures",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"The significant figures for your final numeric value(s) was",
+            "subPoints":[
+                "correct - good job!"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"The significant figures for your final numeric value(s) was",
+            "subPoints":[
+                "incorrect"
+            ]
+        },
+        {
+            "mainPoint":"The number of significant figures should have been",
+            "subPoints":[
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
+            ]
+        }
+        ]
+    }
+}

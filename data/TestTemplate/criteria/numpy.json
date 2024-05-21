@@ -1,0 +1,87 @@
+{
+    "numpy":{
+        "title":"NumPy Library",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"The following points were well done",
+            "subPoints":[
+                "List function: using a list for the simulated values",
+                "NumPy function: using ndarrays for the simulated values",
+                "NumPy function: using its built-in math functions (e.g., np.add, np.subtract, etc.)",
+                "Both functions: correctly done",
+                "List function: correctly done",
+                "NumPy function: correctly done",
+                "Both functions: good performance",
+                "List function: good performance",
+                "NumPy function: good performance"
+            ]
+        }
+    ],
+        "neutral":[
+        {
+            "mainPoint":"The following points would improve your NumPy solution slightly",
+            "subPoints":[
+                "NumPy: use the community abbreviation of 'np'",
+                "Pandas: cleaning data (i.e., remove empty cells and duplicated data) is generally a good idea",
+                "Pandas: converting the DataFrame/Series outside of your function(s) - remember to have a function that optimally does one task"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"Reading in the data",
+            "subPoints":[
+                "Pandas was not used"
+            ]
+        },
+        {
+            "mainPoint":"The computed loss function value was incorrect",
+            "subPoints":[
+                "List function: incorrect",
+                "NumPy function: incorrect",
+                "The following value should have been computed:"
+            ]
+        },
+        {
+            "mainPoint":"Performance problems (as computed on the reviewer's machine)",
+            "subPoints":[
+                "Good performance for the list function should be (in seconds):",
+                "Good performance for the NumPy function should be (in seconds):",
+                "List function: your solution has a performance of:",
+                "NumPy function: your solution has a performance of:",
+                "NumPy function: iterating over the ndarray is not needed, resulting in a loss of performance",
+                "NumPy function: runs slower than the list function"
+            ]
+        },
+        {
+            "mainPoint":"Your NumPy function does not make use of:",
+            "subPoints":[
+                "np.absolute",
+                "np.add",
+                "np.subtract",
+                "np.multiply"
+            ]
+        },
+        {
+            "mainPoint":"Your NumPy function incorrectly used the following data types",
+            "subPoints":[
+                "Floats",
+                "Lists",
+                "Pandas DataFrames",
+                "Pandas Series",
+                "Data type:"
+            ]
+        },
+        {
+            "mainPoint":"Your List function incorrectly used the following data types",
+            "subPoints":[
+                "NumPy ndarray",
+                "Pandas DataFrames",
+                "Pandas Series",
+                "Data type:"
+            ]
+        }
+    ]
+    }
+}

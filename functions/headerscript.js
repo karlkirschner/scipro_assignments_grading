@@ -1,5 +1,8 @@
 const debug = false;
 var assignmentSpecificCriterias = [];
+var master_template;
+var mode;
+
 var generalCriteria = {
 	//Local testing:
 	//    change `const debug = true` above
@@ -81,88 +84,88 @@ function setMode(mode){
 	}
 }
 
-function setBranch(branch){
-	if (typeof branch !== "string"){
-		var selectElement = document.getElementById("branch-selector");
-		branch = selectElement.value;
-	}
-	if (confirm("You are about to switch branches, any saves you did will be reset are you sure?")) {
-		reset();
-		txt = "Form has been cleared";
-	  } else {
-		txt = "You pressed Cancel!";
-	  }
-	localStorage.setItem("branch", branch);
+// function setBranch(branch){
+// 	if (typeof branch !== "string"){
+// 		var selectElement = document.getElementById("branch-selector");
+// 		branch = selectElement.value;
+// 	}
+// 	if (confirm("You are about to switch branches, any saves you did will be reset are you sure?")) {
+// 		reset();
+// 		txt = "Form has been cleared";
+// 	  } else {
+// 		txt = "You pressed Cancel!";
+// 	  }
+// 	localStorage.setItem("branch", branch);
+// 	location.reload();
+// }
+
+function getMasterTemplate(){
+	return localStorage.getItem("master_template");
+}
+
+function setMasterTemplate(template){
+	localStorage.setItem("master_template", template);
 	location.reload();
 }
 
+
 function handleError(){
 	alert("An error occured. Check the console logs.")
-	console.log("Error retrieving or parsing general criterias. Try checking for invalid parsing/formats/trailing commas using: https://jsonformatter.curiousconcept.com/#")
-	if (confirm("Reset to master branch?")) {
-		txt = "Branche set to master";
-		setBranch("master");
-	  } else {
-		txt = "You pressed Cancel!";
-	  }
+	console.log("Error retrieving or parsing general criterias. " +
+		"Try checking for invalid parsing/formats/trailing commas using: https://jsonformatter.curiousconcept.com/#")
 }
 
-if (!debug) {
-	var mode;
-	var branch;
-	if (localStorage.getItem("mode") !== null){
-		mode = localStorage.getItem("mode");
-	}else{
-		localStorage.setItem("mode", "student");
-		mode = "student";
-	}
 
-	if (mode === "grader" && localStorage.getItem("branch") !== null){
-		branch = localStorage.getItem("branch");
-	}else{
-		localStorage.setItem("branch", "peer_review"); //default student branch
-		branch = localStorage.getItem("branch"); 
-	}
+function loadDataBasedOnTemplate() {
+	if (!debug) {
+		mode = localStorage.getItem("mode") || "student";
+		template = mode === "grader" ? "GraderTemplate" : "StudentTemplate";
 
-	$.ajax({
-		dataType: "json",
-		url: "https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/references.json".replace("master", branch),
-		error: function(error){
-			handleError();
-		},
-		success: function (data) {
-			$.ajax({
-				dataType: "json",
-				url: data.generalCriteria.replace("master", branch),
-				error: function (data) {
-					handleError();
-				},
-				success: function (data) {
-					generalCriteria = data;
-				},
-				complete: function () {
-					var promises = [];
-					for (const assignment of data.assignmentSpecificCriteria) {
-						if (assignment.enabled) {
-							const request = $.ajax({
-								dataType: "json",
-								url: assignment.url.replace("master", branch),
-								success: function (data) {
-									assignment.content = data;
-									assignmentSpecificCriterias.push(assignment);
-								},
-							});
-							promises.push(request);
+		if (!localStorage.getItem("mode")) {
+			localStorage.setItem("mode", "student");}
+
+		$.ajax({
+			dataType: "json",
+			url: "data/StudentTemplate/references.json".replace("StudentTemplate", getMasterTemplate() || template),
+			error: function (error) {handleError();},
+			success: function (data) {
+				$.ajax({
+					dataType: "json",
+					url: data.generalCriteria.replace("StudentTemplate", getMasterTemplate() || template),
+					error: function (data) {
+						handleError();
+					},
+					success: function (data) {
+						generalCriteria = data;
+					},
+					complete: function () {
+						var promises = [];
+						for (const assignment of data.assignmentSpecificCriteria) {
+							if (assignment.enabled) {
+								const request = $.ajax({
+									dataType: "json",
+									url: assignment.url.replace("StudentTemplate", getMasterTemplate() || template),
+									success: function (data) {
+										assignment.content = data;
+										assignmentSpecificCriterias.push(assignment);
+									},
+								});
+								promises.push(request);
+							}
 						}
+						Promise.all(promises).then(function () {
+							assignmentSpecificCriterias.sort((a, b) => {
+								return a.id - b.id
+							});
+							generateBody();
+						}).catch(err => console.log(err));
 					}
-					Promise.all(promises).then(function () {
-						assignmentSpecificCriterias.sort((a, b) => { return a.id - b.id });
-						generateBody();
-					}).catch(err => console.log(err));
-				}
-			});
-		},
-	});
+				});
+			},
+		});
+	}
 }
 
 
+
+loadDataBasedOnTemplate();

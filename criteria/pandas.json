@@ -7,9 +7,7 @@
             "mainPoint":"Overall Pandas feedback",
             "subPoints":[
                 "Good use of Pandas",
-                "Good use of the Pandas functions:",
-                "Correlation analysis - well done",
-                "Plotting - good, concise coding for the plot generation"
+                "Good use of the Pandas' functions:"
             ]
         }
     ],
@@ -31,6 +29,19 @@
             ]
         },
         {
+            "mainPoint":"Cleaning Data",
+            "subPoints":[
+                "`drop`- you did not save the cleaned results (e.g., using `inplace` or assigning it to a new object)",
+                "`drop_duplicates` - you did not save the results (e.g., using `inplace` or assigning it to a new object)",
+                "`dropna` - you did not save the results (e.g., using `inplace` or assigning it to a new object)"
+            ]
+        },
+        {
+            "mainPoint":"Combining Data",
+            "subPoints":[
+                "Incorrectly combined the data - should have resulted in 6497 rows with "
+            ]
+        },        {
             "mainPoint":"Cleaning Data",
             "subPoints":[
                 "`drop`- you did not save the cleaned results (e.g., using `inplace` or assigning it to a new object)",

@@ -28,14 +28,20 @@
        {
             "id": 5,
             "title":"Mass to Energy",
-            "enabled": true,
+            "enabled": false, 
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/mass2energy_2.json"
        },
        {
             "id": 6,
             "title":"Significant Figures",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/significant_figures.json"
+       },
+              {
+            "id": 7,
+            "title":"Pandas Wine Quality",
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas_wine_quality.json"
        }
     ]
 }

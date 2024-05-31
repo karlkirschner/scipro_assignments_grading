@@ -1,0 +1,88 @@
+{
+  "Pandas":{
+        "title":"Pandas",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall Pandas feedback",
+            "subPoints":[
+                "Good use of Pandas",
+                "Good use of the Pandas' functions:",
+                "Correlation analysis - well done",
+                "Plotting - good, concise coding for the plot generation"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"Reading data into Pandas",
+            "subPoints":[
+                "delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
+                "header (i.e., `header`) - incorrectly specified the header line",
+                "input data - incorrectly combined the data - combining the data to give 6497 rows (e.g., via `concat` or `merge`)",
+                "input data - incorrectly read in the data",
+                "input file - renaming the input data file is not a good idea here",
+                "input file path - hard coding your local folder structure for the input file path results in problems, requiring the user to edit your notebook",
+                "new columns - incorrectly added the wine types to the dataframes"
+            ]
+        },
+        {
+            "mainPoint":"Data cleaning",
+            "subPoints":[
+                "cleaning - the data was not cleaned properly (i.e., `drop`)",
+                "`drop_duplicates` - you did not save the results (e.g., using `inplace` or assigning it to a new object)",
+                "`dropna` - you did not save the results (e.g., using `inplace` or assigning it to a new object)",
+                "final number of rows after `drop_duplicates` and `dropna` should be 5286"
+            ]
+        },
+        {
+            "mainPoint":"Displaying a dataframe as a table",
+            "subPoints":[
+                "A dataframe in a Jupyter-notebook should be displayed by either using the dataframe's name by itself, or using `display`.",
+                "Printing a dataframe does not make use Jupyter-notebook's capability of displaying an easily readable table."
+            ]
+        },
+        {
+            "mainPoint":"Correlation analysis",
+            "subPoints":[
+                "`corr` - did not use Pandas' built-in correlation function",
+                "correlation analysis - done incorrectly`",
+                "identification - the maximum negative correlation category was not identified`",
+                "identification - incorrectly identified the largest negative correlation category - should have been `density`",
+                "meaning of correlation - incorrectly stated",
+                "meaning of correlation - none given",
+                "meaning of correlation - poorly done"
+            ]
+        },
+        {
+            "mainPoint":"Plotting",
+            "subPoints":[
+                "library usage - imported additional libraries for plotting (e.g., imported matplotlib)",
+                "no plots given",
+                "plot colors - poorly chosen",
+                "plot type - a histogram was not plotted",
+                "plot title(s) - none given",
+                "fontsize - could have been done more appropriately (e.g., a size of 14 to 18)",
+                "axis labels - missing labels",
+                "axis labels - not well labeled",
+                "axis labels - units not provided"
+            ]
+        },
+        {
+            "mainPoint":"Sorting",
+            "subPoints":[
+                "data was not sorted",
+                "incorrect data sorting (e.g., by quality and alcohol)",
+                "not saved - the data sorting was not saved (e.g., assigning as a new object)"
+            ]
+        },
+        {
+            "mainPoint":"General",
+            "subPoints":[
+                "dataframes - creating multiple dataframes for this solution was not necessary - three would have been reasonable (e.g., red_wines, white_wines, combined_wines)",
+                "Not saved - the final data was not saved to a file"
+            ]
+        }
+        ]
+   }
+}

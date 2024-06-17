@@ -46,7 +46,7 @@
               {
             "id": 8,
             "title":"Numpy Work",
-            "enabled": True,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy_work.json"
        }
     ]

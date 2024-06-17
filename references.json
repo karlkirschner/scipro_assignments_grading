@@ -40,8 +40,14 @@
               {
             "id": 7,
             "title":"Pandas Wine Quality",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas_wine_quality.json"
+       },
+              {
+            "id": 8,
+            "title":"Numpy Work",
+            "enabled": True,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy_work.json"
        }
     ]
 }

@@ -1,0 +1,147 @@
+{
+    "numpy":{
+        "title":"NumPy vs List Performance Homework",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"The following points were well done",
+            "subPoints":[
+                "List function: using a list for the computed data",
+                "NumPy function: using ndarrays for the computed data",
+                "NumPy function: using its built-in math functions (e.g., np.multiply, np.cos, np.add, np.subtract, etc.)",
+                "Both functions: correctly done",
+                "List function: correctly done",
+                "NumPy function: correctly done",
+                "Both functions: good performance",
+                "List function: good performance",
+                "NumPy function: good performance",
+                "Pandas: good usage",
+                "Plotting: done well",
+                "Plotting: good, concise coding for the plot generation",
+                "Radians conversion: well done"
+            ]
+        }
+    ],
+        "neutral":[
+        {
+            "mainPoint":"The following points would improve your NumPy solution slightly",
+            "subPoints":[
+                "NumPy: use the community abbreviation of 'np'",
+                "Pandas: converting the DataFrame/Series outside of your function(s) - remember to have a function that optimally does one task"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"Reading in the data",
+            "subPoints":[
+                "Pandas was not used",
+                "cleaning: data was not cleaned properly (e.g., `dropna`, `drop_duplicates`)",
+                "delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
+                "`drop_duplicates`: you did not save the results (e.g., using `inplace` or assigning it to a new object)",
+                "`dropna`: you did not save the results (e.g., using `inplace` or assigning it to a new object)",
+                "`header`: incorrectly specified the header line",
+                "input data: incorrectly read in the data",
+                "input file: renaming the input data file is not a good idea here",
+                "input file path: hard coding your local folder structure for the input file path results in problems, requiring the user to edit your notebook"
+            ]
+        },
+        {
+            "mainPoint":"The computed loss function value was incorrect",
+            "subPoints":[
+                "List function: incorrect",
+                "NumPy function: incorrect",
+                "For example, 10 degrees yields a work of 1.04e+03 Joules",
+                "Radians: did not convert degrees to radians (see documentation for math.cos and np.cos)"
+            ]
+        },
+        {
+            "mainPoint":"Performance problems (as computed on the grader's machine)",
+            "subPoints":[
+                "Good performance for the list function should be (in seconds):",
+                "Good performance for the NumPy function should be (in seconds):",
+                "List function: your solution has a performance of:",
+                "NumPy function: your solution has a performance of:",
+                "NumPy function: iterating over the ndarray is not needed, resulting in a loss of performance",
+                "NumPy function: runs slower than the list function"
+            ]
+        },
+        {
+            "mainPoint":"Math approach does not make use of:",
+            "subPoints":[
+                "math.cos",
+                "math.radians"
+            ]
+        },
+        {
+            "mainPoint":"NumPy approach does not make use of:",
+            "subPoints":[
+                "np.absolute",
+                "np.add",
+                "np.cos",
+                "np.subtract",
+                "np.multiply",
+                "np.radians"
+            ]
+        },       
+        {
+            "mainPoint":"NumPy function incorrectly used the following data types",
+            "subPoints":[
+                "Floats",
+                "Lists",
+                "Pandas DataFrames",
+                "Pandas Series",
+                "Data type:"
+            ]
+        },
+        {
+            "mainPoint":"List function incorrectly used the following data types",
+            "subPoints":[
+                "NumPy ndarray",
+                "Pandas DataFrames",
+                "Pandas Series",
+                "Data type:"
+            ]
+        },
+        {
+            "mainPoint":"Displaying a dataframe as a table",
+            "subPoints":[
+                "A dataframe in a Jupyter-notebook should be displayed by either using the dataframe's name by itself or using `display`.",
+                "Printing a dataframe does not make use Jupyter-notebook's capability of displaying an easily readable table.",
+                "Significant figures: would have been good to display the table with proper significant figures, which would have made viewing easier."
+            ]
+        },
+        {
+            "mainPoint":"Plotting",
+            "subPoints":[
+                "No plots given",
+                "Axis labels: missing labels",
+                "Axis labels: not well labeled",
+                "Axis labels: units not provided",
+                "Colors: poorly chosen",
+                "Library usage: imported additional libraries for plotting (e.g., imported matplotlib)",
+                "Plot data: plotted the list data - should have been the NumPy data",
+                "Plot type: a line was not plotted",
+                "Fontsize: could have been done more appropriately (e.g., a size of 14 to 18)"
+            ]
+        },
+        {
+            "mainPoint":"The significant figures for your final numeric values were",
+            "subPoints":[
+                "incorrect: the correct number of sigfigs was 3"
+
+            ]
+        },
+        {
+            "mainPoint":"General",
+            "subPoints":[
+                "Interpretation: no interpretation of the data is done",
+                "Interpretation: very poor or wrong interpretation of the data",
+                "Not saved: the final data was not saved to a CSV- formatted file",
+                "Significant figures: data should have been saved with proper significant figures."
+
+            ]
+        }
+    ]
+    }
+}

@@ -18,6 +18,7 @@
                 "Pandas: good usage",
                 "Plotting: done well",
                 "Plotting: good, concise coding for the plot generation",
+                "Data interpretation: done well",
                 "Radians conversion: well done"
             ]
         }
@@ -60,8 +61,8 @@
             "subPoints":[
                 "Good performance for the list function should be (in seconds):",
                 "Good performance for the NumPy function should be (in seconds):",
-                "List function: your solution has a performance of:",
-                "NumPy function: your solution has a performance of:",
+                "List function: your solution has a performance of  (in seconds):",
+                "NumPy function: your solution has a performance of (in seconds):",
                 "NumPy function: iterating over the ndarray is not needed, resulting in a loss of performance",
                 "NumPy function: runs slower than the list function"
             ]
@@ -76,10 +77,6 @@
         {
             "mainPoint":"NumPy approach does not make use of:",
             "subPoints":[
-                "np.absolute",
-                "np.add",
-                "np.cos",
-                "np.subtract",
                 "np.multiply",
                 "np.radians"
             ]
@@ -138,6 +135,7 @@
                 "Interpretation: no interpretation of the data is done",
                 "Interpretation: very poor or wrong interpretation of the data",
                 "Not saved: the final data was not saved to a CSV- formatted file",
+                "Saved file: overwriting the original input data is a bad idea (i.e., angles_data.csv)",
                 "Significant figures: data should have been saved with proper significant figures."
 
             ]

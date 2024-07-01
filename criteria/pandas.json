@@ -41,15 +41,9 @@
             ]
         },
         {
-            "mainPoint":"Combining Data",
-            "subPoints":[
-                "Incorrectly combined the data - should have resulted in 6497 rows with "
-            ]
-        },
-        {
             "mainPoint":"Saving Data",
             "subPoints":[
-                "Not saved - the final data was not saved"
+                "Not saved - it would have been good to save the final data"
             ]
         }
         ]

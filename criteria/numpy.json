@@ -29,7 +29,7 @@
             ]
         },
         {
-            "mainPoint":"NumPy Polynomials}",
+            "mainPoint":"NumPy Polynomials",
             "subPoints":[
                 "The resulting polynomial seems to incorrectly describe the data.",
                 "The degree of the polynomial should be:"

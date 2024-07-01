@@ -10,19 +10,19 @@
         {
             "id": 2,
             "title": "Pandas",
-            "enabled": false,
+            "enabled": true,
             "url": "https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas.json"
         },
         {
             "id": 3,
-            "title":"Plotting",
-            "enabled": false,
+            "title":"Matplotlib",
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/plotting_data.json"
         },
         {
             "id": 4,
             "title":"Numpy",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy.json"
        },
        {
@@ -46,7 +46,7 @@
               {
             "id": 8,
             "title":"Numpy Work",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy_work.json"
        }
     ]

@@ -8,7 +8,9 @@
             "subPoints":[
                 "Using ndarrays for the data",
                 "Using its built-in math functions (e.g., np.add, np.subtract, etc.)",
-                "Using it polynomial ability and associated functions correctly"
+                "Using it polynomial ability and associated functions correctly",
+                "Generating the polynomial using NumPy",
+                "Optimizing the polynomial coefficients using NumPy"
             ]
         }
     ],

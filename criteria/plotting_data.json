@@ -6,7 +6,8 @@
         {
             "mainPoint":"Overall plot feedback",
             "subPoints":[
-                "The choices behind the plot creation were well done, resulting in clear and informative data presentation."
+                "The choices behind the plot creation were well done, resulting in clear and informative data presentation.",
+                "The color choice(s) was very well done."
             ]
         },
         {
@@ -49,7 +50,8 @@
         {
             "mainPoint":"Overall plot feedback",
             "subPoints":[
-                "The type of plot was poorly chosen. It would have been more appropriate to plot the data as:"
+                "The type of plot was poorly chosen. It would have been more appropriate to plot the data as:",
+                "The data could have been overlaid into a single plot, allowing for easier comparison"
             ]
         },
         {

@@ -1,0 +1,40 @@
+{
+    "SciPy - Function Minimization":{
+        "title":"SciPy - Function Minimization",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"The following points were well done",
+            "subPoints":[
+                "Encoding the alien equation",
+                "Encoding the RMSE equation",
+                "Using NumPy to encode the RMSE equation",
+                "Using SciPy optimize algorithms (e.g., fminbound, brute, basinhopping)"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"General",
+            "subPoints":[
+                "The RMSE equation was not correctly encoded.",
+                "The polynomial equation and its coefficients should have been developed using NumPy."
+            ]
+        },
+        {
+            "mainPoint":"RMSE",
+            "subPoints":[
+                "The RMSE equation was not correctly encoded.",
+                "The RMSE equation would have been better encoded using NumPy."
+            ]
+        },        {
+            "mainPoint":"SciPy",
+            "subPoints":[
+                "Using a global optimizer would have been better (e.g. fminbound, brute, basinhopping).",
+                "The initial guess was poorly chosen.",
+                "The computed RMSE value(s) were incorrect."
+            ]
+        }
+    ]
+    }
+}

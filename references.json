@@ -6,7 +6,8 @@
             "title":"User Function",
             "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/user_function.json"
-        },        {
+        },
+        {
             "id": 2,
             "title":"Significant Figures",
             "enabled": false,

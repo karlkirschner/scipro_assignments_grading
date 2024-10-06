@@ -1,0 +1,71 @@
+{
+  "userDefinedFunctions":{
+      "title":"User-defined Functions",
+      "additionalNotes":true,
+      "positive":[
+         {
+            "mainPoint":"Good use of the following",
+            "subPoints":[
+               "docstring - providing context; stating what the function does",
+               "docstring - defining input objects",
+               "docstring - defining returned object(s)",
+               "internal check - for example, 'if not isinstance', 'raise' statement, etc.",
+               "isolating ideas to user-defined functions",
+               "optional parameters - nice idea to include them",
+               "type hinting"
+            ]
+         }
+      ],
+      "neutral":[
+         {
+            "mainPoint":"Okay user-defined function(s), but the following could be improved",
+            "subPoints":[
+               "assert vs. raise - it is better to use 'raise' since 'assert' can be bypassed",
+               "complex - a bit too many ideas placed into a single function"
+            ]
+         }
+      ],
+      "negative":[
+         {
+            "mainPoint":"No user-defined functions employed",
+            "subPoints":[
+               "Your solution did not include user-defined functions to isolate concepts, improves reusability, transferability and debugging"
+            ]
+         },
+         {
+            "mainPoint":"Missed opportunity",
+            "subPoints":[
+               "You missed an obvious situation to crete a user-defined function that would have made your code more concise."
+            ]
+         },
+         {
+            "mainPoint":"Your user-defined functions had the following problems",
+            "subPoints":[
+               "complex - too many ideas place in a single function, which limits reusability, transferability and debugging",
+               "docstring - none provided for specifying context and usage",
+               "docstring - no statement about what the function does",
+               "docstring - no statement about what the input variables are",
+               "docstring - no statement about what the function returns",
+               "global variables - use local variable in your function (e.g., improves transferability)",
+               "internal checks - none provided (e.g., 'if not isinstance')",
+               "main code - should be nested under the 'else' statement of the internal checking",
+               "trivial - function does very little, and arguably does not warrant being a function",
+               "type hinting - none provided",
+               "type hinting - incorrect type(s)"
+            ]
+         }
+      ]
+   },
+   "callingFunction":{
+      "title":"Function (and Method) Calling",
+      "additionalNotes":true,
+      "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "keyword arguments calls - include the parameter that are being assigned the argument to (e.g., 'my_function(param1=arg1, param2=arg2)'. Doing so ensure that the arguments are passed correctly."
+            ]
+         }
+      ]
+   }
+}

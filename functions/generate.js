@@ -1,7 +1,10 @@
 function generateBody() {
+
+	// Wenn der Modus "grader" ist, wird die Tabelle angezeigt
 	if (mode === "grader"){
 		document.getElementById("side-table").style.display = "block";
-		document.body.appendChild(generateSelector(getBranches()));
+		// hier würden die Branches als Dropdown angezeigt werden
+		//document.body.appendChild(generateSelector(getBranches()));
 	}
 
 	document.body.appendChild(generateButton("Reset", () => reset(), ["button", "reset-button"]));

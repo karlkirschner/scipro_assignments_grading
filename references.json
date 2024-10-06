@@ -65,7 +65,7 @@
             "title":"SciPy",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/scipy_fun_min.json"
-        }
+        },
         {
             "id": 12,
             "title":"SciPy",

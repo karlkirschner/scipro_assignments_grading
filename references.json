@@ -57,31 +57,31 @@
         },
         {
             "id": 10,
-            "title":"Numpy",
+            "title":"NumPy",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy_work.json"
         },
         {
             "id": 11,
-            "title":"SciPy",
+            "title":"SciPy Function Min.",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/scipy_fun_min.json"
         },
         {
             "id": 12,
-            "title":"SciPy",
+            "title":"SciPy Mountains",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/scipy_mountains.json"
         },
         {
             "id": 13,
-            "title":"herd_immunity",
+            "title":"Herd Immunity",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/herd_immunity.json"
         },
         {
             "id": 14,
-            "title":"world_happiness",
+            "title":"World Happiness",
             "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/world_happiness_2.json"
         }

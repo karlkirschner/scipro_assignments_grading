@@ -9,10 +9,10 @@
                 "Good use of Pandas",
                 "Good use of the Pandas functions",
                 "Good use of typing library",
-                "Good analysis of the correlation results",
-                "Correlation analysis - well done",
+                "Correlation calculation - well done",
+                "Correlation analysis/interpretation - well done",
                 "Plotting - good, concise coding for the plot generation",
-                "Plotting - nicely made plots containing all key elements",
+                "Plotting - nicely done",
                 "Plotting - very nicely done!"
             ]
         }
@@ -23,8 +23,7 @@
             "subPoints":[
                 "`reset_index`",
                 "`loc` to easily operate over the columns",
-                "`sort_values` (Country name) would have been logical to after data cleaning, but fine"
-            ]
+                "`sort_values` (Country name) would have been logical to after data cleaning, but fine"            ]
         }
     ],
         "negative":[
@@ -39,7 +38,7 @@
         {
             "mainPoint":"Merging Data",
             "subPoints":[
-                "Not saved - the final data was not saved",
+                "Merging was not done correctly",
                 "Saving index - this really isn't needed since it doesn't add pertinent information to the resulting data"
             ]
         },
@@ -47,6 +46,7 @@
             "mainPoint":"Cleaning Data",
             "subPoints":[
                 "data cleaning not done - you did not drop duplicated rows and/or rows with empty cells",
+                "`drop`- you did not drop the columns labelled `year`, `Generosity`",
                 "`drop`- you did not save the results (e.g., using `inplace` or assigning it to a new object)",
                 "`drop_duplicates` - you did not save the results (e.g., using `inplace` or assigning it to a new object)",
                 "`dropna` - you did not save the results (e.g., using `inplace` or assigning it to a new object)"
@@ -60,27 +60,25 @@
             ]
         },
         {
+            "mainPoint":"User-defined Function for Plotting",
+            "subPoints":[
+                "Not created - a function was not created as requested in the assignment"
+            ]
+        },
+        {
             "mainPoint":"Pandas Plotting",
             "subPoints":[
-                "The data was not plotted using the Pandas' library - importing other libraries for plotting was not allowed"
+                "The data was not plotted using the Pandas' library - importing other libraries for plotting was not allowed",
+                "Graphs includes plotting Happiness with itself (see instructions)"
             ]
         },
         {
             "mainPoint":"Correlation Analysis",
             "subPoints":[
-                "Absolute value - one needed to take the absolute value of some of the data:",
                 "`corr` - did not use Pandas' built-in correlation function",
                 "Identification - incorrectly identified the features that are most correlated",
                 "Interpretation - there is a lack of interpreting what the correlation values mean",
                 "Interpretation - incorrectly interpreted the correlation results"
-            ]
-        },
-        {
-            "mainPoint":"Sorting",
-            "subPoints":[
-                "Incorrect sorting",
-                "Not saved - the sorted data result(s) was not saved (e.g., assigning it to a new object)",
-                "Unsorted - the data was not sorted"
             ]
         }
         ]

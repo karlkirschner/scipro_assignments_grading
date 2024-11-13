@@ -72,6 +72,18 @@
             "title":"SciPy",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/scipy_mountains.json"
+        },
+        {
+            "id": 13,
+            "title":"herd_immunity",
+            "enabled": false,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/herd_immunity.json"
+        },
+        {
+            "id": 14,
+            "title":"world_happiness",
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/world_happiness_2.json"
         }
     ]
 }

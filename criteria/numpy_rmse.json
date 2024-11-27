@@ -1,4 +1,34 @@
 {
+    "Pandas":{
+        "title":"Pandas",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall Pandas feedback",
+            "subPoints":[
+                "Good use of Pandas",
+                "Good use of the Pandas functions"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"Reading Data Into Pandas",
+            "subPoints":[
+                "Delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
+                "Header (i.e., `header`) - incorrectly specified the header line",
+                "Incorrectly read in the data"
+            ]
+        },
+        {
+            "mainPoint":"Cleaning Data",
+            "subPoints":[
+                "data cleaning not done - you did not drop duplicated rows and/or rows with empty cells",
+                "`dropna` - you did not save the results (e.g., using `inplace` or assigning it to a new object)"
+            ]
+        }
+        ]
+    },
     "numpy":{
         "title":"NumPy Library",
         "additionalNotes":true,
@@ -34,7 +64,7 @@
             "subPoints":[
                 "List function: incorrect",
                 "NumPy function: incorrect",
-                "The following value should have been computed:"
+                "The following value should have been computed - 0.02109 g/cm^3"
             ]
         },
         {

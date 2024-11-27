@@ -27,9 +27,9 @@
         },
         {
             "id": 5,
-            "title":"NumPy",
-            "enabled": false,
-            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy.json"
+            "title":"NumPy RMSE",
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy_rmse.json"
         },
         {
             "id": 6,
@@ -82,7 +82,7 @@
         {
             "id": 14,
             "title":"World Happiness",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/world_happiness_2.json"
         }
     ]

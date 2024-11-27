@@ -68,7 +68,7 @@
             ]
         },
         {
-            "mainPoint":"Performance problems (as computed on the grader's machine)",
+            "mainPoint":"Performance problems (as computed on the evaluator's machine)",
             "subPoints":[
                 "Good performance for the List and NumPy function should be (in seconds):",
                 "List function: your solution has a performance of:",
@@ -92,16 +92,16 @@
                 "Floats",
                 "Lists",
                 "Pandas DataFrames",
-                "Data type:"
+                "Other data type:"
             ]
         },
         {
             "mainPoint":"Your List function incorrectly used the following data types",
             "subPoints":[
-                "Individual float values (i.e., not a list of floats)",
+                "Individual float values for the theoretical/simulated data (i.e., not a list of floats)",
                 "NumPy ndarray",
                 "Pandas DataFrames",
-                "Data type:"
+                "Other data type:"
             ]
         }
     ]

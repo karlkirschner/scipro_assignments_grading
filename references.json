@@ -16,7 +16,7 @@
         {
             "id": 3,
             "title":"Pandas",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas.json"
         },
         {
@@ -28,7 +28,7 @@
         {
             "id": 5,
             "title":"NumPy RMSE",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy_rmse.json"
         },
         {
@@ -84,6 +84,12 @@
             "title":"World Happiness",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/world_happiness_2.json"
+        },
+        {
+            "id": 15,
+            "title":"matplotlib",
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/plotting_data_matplotlib.json"
         }
     ]
 }

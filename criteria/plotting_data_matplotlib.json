@@ -12,6 +12,7 @@
         {
             "mainPoint":"The plot details were good regarding",
             "subPoints":[
+                "subplots",
                 "axis labels",
                 "units",
                 "line style",
@@ -23,6 +24,14 @@
                 "font size",
                 "color"
             ]
+        },
+        {
+            "mainPoint":"Additional Points",
+            "subPoints":[
+                "Good exploration of the input data (e.g., statistics, correlation analysis, running averages, etc.)",
+                "Good use of a color palette",
+                "Good choice of a topic - very interesting"
+            ]
         }
     ],
     "neutral":[
@@ -31,19 +40,6 @@
             "subPoints":[
                 "The choices behind the plot creation were generally good, but there is some room for improvement."
             ]
-        },
-        {
-            "mainPoint":"Too many plots were done",
-            "subPoints":[
-                "It would have been good to plot the data together into a single (or a few) plots, thus allowing one to more easily compare the data."
-            ]
-        },
-        {
-            "mainPoint":"Too complicated of a plot was done",
-            "subPoints":[
-                "The amount of data presented in a single plot was too much. It would have been better to separate the data into more plots, allowing one to clearly observe the data.",
-                "The way that the data was presented was too complicated. Making the plot simpler would enable help the viewer understand that data easier."
-            ]
         }
     ],
         "negative":[
@@ -51,6 +47,19 @@
             "mainPoint":"Overall plot feedback",
             "subPoints":[
                 "The type of plot was poorly chosen. It would have been more appropriate to plot the data as:"
+            ]
+        },
+                 {
+            "mainPoint":"Too many plots were done",
+            "subPoints":[
+                "It would have been good to plot the data together into a single (or a few) plots, thus allowing one to more easily compare the data."
+            ]
+        },
+        {
+            "mainPoint":"Plots were too complicated",
+            "subPoints":[
+                "The amount of data presented in a single plot was too much. It would have been better to separate the data into more plots, allowing one to clearly observe the data.",
+                "The way that the data was presented was too complicated. Making the plot simpler would enable help the viewer understand that data easier."
             ]
         },
         {
@@ -74,7 +83,16 @@
                 "font size",
                 "color"
             ]
+        },
+        {
+            "mainPoint":"Additional Issues",
+            "subPoints":[
+                "Some tick-mark labels were missing, leaving gaps in conveying the information",
+                "related plots should have the same axis range for the values",
+                "additional data exploration could have been done",
+                ""
+            ]
         }
-    ]
+        ]
     }
 }

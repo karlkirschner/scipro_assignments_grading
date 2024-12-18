@@ -89,8 +89,7 @@
             "subPoints":[
                 "Some tick-mark labels were missing, leaving gaps in conveying the information",
                 "related plots should have the same axis range for the values",
-                "additional data exploration could have been done",
-                ""
+                "additional data exploration could have been done"
             ]
         }
         ]

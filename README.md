@@ -33,4 +33,4 @@ This repository contains the HTML and JSON documents needed for providing homewo
 1. Karl N. Kirschner - template conceptualization, feedback content and maintenance
 2. Abanoub Abdelmalak - template conceptualization and HTML prototyping
 3. Minh Truong - conceptualization and coding JSON components
-4. Erik Autenrieth - conceptualization and coding JSON components
+4. Erik Autenrieth - conceptualization, coding JSON components and maintenance

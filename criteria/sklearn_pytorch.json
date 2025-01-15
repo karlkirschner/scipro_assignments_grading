@@ -108,7 +108,9 @@
                 "Model - did not train using the training dataset from the split",
                 "Model - did not evaluate the trained model (i.e., visualizing and/or computing R^2)",
                 "Model - did not evaluate the trained model using the testing data set from the split",
-                "R^2 - did not compute using one of the sklearn's function"
+                "R^2 - did not compute using one of the sklearn's function",
+                "Results - incorrectly computed (should have an R^2 value of ca. 57)"
+
             ]
         }
         ]
@@ -213,11 +215,12 @@
             "mainPoint":"The following points were problems in your solution",
             "subPoints": [
                 "Activation functions (tanh and ReLU) - incorrectly used or defined",
-                "Backward propogation - improperly done or not done",
+                "Backward propagation - improperly done or not done",
                 "Class - not created or poorly done",
                 "dtype - incorrectly data types (e.g., float64 and not float32)",
                 "Epochs - incorrect number defined",
                 "Features - incorrect number defined (e.g., in the input, hidden and/or output layers)",
+                "Forward propagation - improperly done or not done",
                 "Input tensors - not properly generated",
                 "Loss function - incorrectly or not defined",
                 "Model - did not train using three features, or the correct features",
@@ -231,6 +234,38 @@
                 "R^2 - not computed",
                 "Step function - incorrectly or not used",
                 "Results - incorrectly computed (should have an R^2 value of ca. 97)"
+           ]
+         }
+      ]
+    },
+        "InterpretingCommenting":{
+        "title":"Interpreting and Commenting",
+        "additionalNotes":true,
+        "positive":[
+            {
+                "mainPoint":"Interpretation and comments",
+                "subPoints":[
+                    "Overall, nicely done and thought out"
+                ]
+            }
+        ],
+        "neutral":[
+            {
+                "mainPoint":"Interpretation and comments",
+                "subPoints":[
+                    "Could have been a bit more thoughtful"
+                ]
+            }
+        ],
+        "negative":[
+            {
+                "mainPoint":"Interpretation and comments",
+                "subPoints":[
+                    "Not done",
+                    "Interpreted incorrectly",
+                    "Interpreted incorrectly due to incorrect results",
+                    "Interpreted incorrectly due to lack of results",
+                    "Comments were too vague"
             ]
         }
         ]

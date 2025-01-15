@@ -1,0 +1,238 @@
+{
+    "Pandas":{
+        "title":"Pandas",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall Pandas feedback",
+            "subPoints":[
+                "Good use of Pandas",
+                "Good use of the Pandas functions",
+                "Good use of 'to_numpy()'",
+                "Good job on keeping a single DataFrame throughout the assignment"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"Reading Data Into Pandas",
+            "subPoints":[
+                "Would have been clear enough to use a single DataFrame throughout the assignment, reducing the number of objects that were used",
+                "Delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
+                "Header (i.e., `header`) - incorrectly specified the header line",
+                "Incorrectly read in the data"
+            ]
+        },
+        {
+            "mainPoint":"Cleaning Data",
+            "subPoints":[
+                "data cleaning not done - you did not drop duplicated rows and/or rows with empty cells",
+                "`drop_duplicates` - you did not save the results (e.g., using `inplace` or assigning it to a new object)",
+                "`dropna` - you did not save the results (e.g., using `inplace` or assigning it to a new object)",
+                "drop column - you did not drop the id column"
+            ]
+        }
+        ]
+    },
+    "numpy":{
+        "title":"NumPy Library",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"The following points were well done",
+            "subPoints":[
+                "NumPy function: using some of its built-in math functions",
+                "Good use of '.shape'",
+                "Good use of '.reshape'"
+            ]
+        }
+    ],
+        "neutral":[
+        {
+            "mainPoint":"The following points would improve your NumPy solution slightly",
+            "subPoints":[
+                "NumPy: use the community abbreviation of 'np'"
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"NumPy Usage",
+            "subPoints":[
+                "NumPy functions: incorrect used",
+                "NumPy library was loaded, but not used"
+            ]
+        },
+        {
+            "mainPoint":"Your NumPy function incorrectly used the following data types",
+            "subPoints":[
+                "Floats",
+                "Lists",
+                "Pandas DataFrames",
+                "Other data type:"
+            ]
+        }
+    ]
+    },
+    "sklearn":{
+        "title":"sklearn",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall sklearn feedback",
+            "subPoints":[
+                "Good use of sklearn",
+                "Good use of preprocessing.normalize",
+                "Good use of the sklearn functions"
+            ]
+        }
+        ],
+        "neutral":[
+            {
+                "mainPoint":"1st neutral feedback for topic 1",
+                "subPoints":[
+                    "Subpoint 1"
+                ]
+            }
+        ],
+        "negative":[
+        {
+            "mainPoint":"The following points were problems in your solution",
+            "subPoints":[
+                "Data normalization - not done or incorrectly done",
+                "Data normalization - not done using sklearn's 'preprocessing.normalize'",
+                "Data normalization - not done using 'max' parameter",
+                "Data splitting - not done use sklearn's 'train_test_split'",
+                "Data splitting - not done use 'random_state=1' keyword and parameter combination",
+                "Model - did not use sklearn's 'LinearRegression' function",
+                "Model - did not train using the training dataset from the split",
+                "Model - did not evaluate the trained model (i.e., visualizing and/or computing R^2)",
+                "Model - did not evaluate the trained model using the testing data set from the split",
+                "R^2 - did not compute using one of the sklearn's function"
+            ]
+        }
+        ]
+    },
+      "FunctionsCases":{
+      "title":"User-defined Functions, Cases and Methods",
+      "additionalNotes":true,
+      "positive":[
+         {
+            "mainPoint":"Good use of the following",
+            "subPoints":[
+               "docstring - providing context; stating what the cases, methods and/or functions do",
+               "docstring - defining input objects",
+               "docstring - defining returned object(s)",
+               "internal check - for example, 'if not isinstance'",
+               "isolating ideas to user-defined functions",
+               "optional parameters - nice idea to include them",
+               "type hinting"
+            ]
+         }
+      ],
+      "neutral":[
+         {
+            "mainPoint":"Okay user-defined function(s), but the following could be improved",
+            "subPoints":[
+               "complex - a bit too many ideas placed into a single function"
+            ]
+         }
+      ],
+      "negative":[
+         {
+            "mainPoint":"Cases/methods/user-defined functions",
+            "subPoints":[
+                "Did not include cases for PyTorch neural network generation",
+                "Did not include appropriate methods within the case(s) created",
+                "The case(s) generated was not necessary - remember to K.I.S.S.",
+                "Poor user-defined functions"
+            ]
+         },
+         {
+            "mainPoint":"Missed opportunity",
+            "subPoints":[
+               "You missed an obvious situation to crete a user-defined function that would have made your code more concise."
+            ]
+         },
+         {
+            "mainPoint":"Your cases/methods/user-defined functions had the following problems",
+            "subPoints":[
+               "complex - too many ideas place in a single function, which limits reusability, transferability and debugging",
+               "docstring - none provided for specifying context and usage",
+               "docstring - no statement about what the case/method/function does",
+               "docstring - no statement about what the input variables are",
+               "docstring - no statement about what is returned",
+               "global variables - use local variable in your case/function (e.g., improves transferability)",
+               "internal checks - none provided when necessary (e.g., 'if not isinstance')",
+               "main code - should be nested under the 'else' statement of the internal checking",
+               "trivial - case/method/function does very little, and arguably does not warrant being a function",
+               "type hinting - none provided",
+               "type hinting - incorrect type(s)"
+            ]
+         }
+      ]
+    },
+    "callingFunction":{
+       "title":"Function (and Method) Calling",
+       "additionalNotes":true,
+       "negative":[
+         {
+            "mainPoint":"",
+            "subPoints":[
+               "keyword arguments calls - include the parameter that are being assigned the argument to (e.g., 'my_function(param1=arg1, param2=arg2)'. Doing so ensure that the arguments are passed correctly."
+            ]
+         }
+      ]
+    },
+    "PyTorch":{
+        "title":"PyTorch",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall PyTorch feedback",
+            "subPoints":[
+                "Good use of PyTorch",
+                "Well defined neural network",
+                "Good use of the PyTorch functions",
+                "Good use of 'from_numpy()'",
+                "Good use of 'to(torch.float32)'",
+                "Good use of '.reshape()'"
+            ]
+        }
+        ],
+        "neutral":[
+            {
+                "mainPoint":"1st neutral feedback for topic 1",
+                "subPoints":[
+                    "Subpoint 1"
+                ]
+            }
+        ],
+        "negative":[
+        {
+            "mainPoint":"The following points were problems in your solution",
+            "subPoints": [
+                "Activation functions (tanh and ReLU) - incorrectly used or defined",
+                "Backward propogation - improperly done or not done",
+                "Class - not created or poorly done",
+                "dtype - incorrectly data types (e.g., float64 and not float32)",
+                "Epochs - incorrect number defined",
+                "Features - incorrect number defined (e.g., in the input, hidden and/or output layers)",
+                "Input tensors - not properly generated",
+                "Loss function - incorrectly or not defined",
+                "Model - did not train using three features, or the correct features",
+                "Model - did not train using the correct target feature",
+                "Model - did not train the model using the training dataset from the split",
+                "Model - did not evaluate the trained model using the testing data set from the split",
+                "Neural network - incorrectly sequences of layers and activation functions",
+                "Number of layers - incorrectly defined",
+                "Number of nodes per layers: incorrectly defined",
+                "Optimization function - incorrectly defined and/or used",
+                "R^2 - not computed",
+                "Step function - incorrectly or not used",
+                "Results - incorrectly computed (should have an R^2 value of ca. 97)"
+            ]
+        }
+        ]
+    }
+}

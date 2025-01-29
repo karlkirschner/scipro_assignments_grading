@@ -31,6 +31,12 @@
                 "`dropna` - you did not save the results (e.g., using `inplace` or assigning it to a new object)",
                 "drop column - you did not drop the id column"
             ]
+        },
+        {
+            "mainPoint":"Miscelaneous",
+            "subPoints":[
+                "Displaying Data: data is not displayed well (e.g., via a print statement) - should display data in a Pandas' table when possible."
+            ]
         }
         ]
     },
@@ -104,6 +110,7 @@
                 "Data normalization - not done using 'max' parameter",
                 "Data splitting - not done use sklearn's 'train_test_split'",
                 "Data splitting - not done use 'random_state=1' keyword and parameter combination",
+                "Data splitting object naming - (minor critique) would have been good for the names different than the sklearned example (e.g., not X_train etc.)",
                 "Model - did not use sklearn's 'LinearRegression' function",
                 "Model - did not train using the training dataset from the split",
                 "Model - did not evaluate the trained model (i.e., visualizing and/or computing R^2)",

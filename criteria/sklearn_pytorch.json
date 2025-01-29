@@ -209,14 +209,6 @@
             ]
         }
         ],
-        "neutral":[
-            {
-                "mainPoint":"1st neutral feedback for topic 1",
-                "subPoints":[
-                    "Subpoint 1"
-                ]
-            }
-        ],
         "negative":[
         {
             "mainPoint":"The following points were problems in your solution",

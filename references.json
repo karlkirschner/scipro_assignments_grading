@@ -92,7 +92,7 @@
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/plotting_data_matplotlib.json"
         },
         {
-            "id": 15,
+            "id": 16,
             "title":"sklearn_pytorch",
             "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/sklearn_pytorch.json"

@@ -50,6 +50,7 @@
         {
             "mainPoint":"Overall plot feedback",
             "subPoints":[
+                "Plotting data was not done.",
                 "The type of plot was poorly chosen. It would have been more appropriate to plot the data as:"
             ]
         },

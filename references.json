@@ -4,7 +4,7 @@
         {
             "id": 1,
             "title":"User Function",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/user_function.json"
         },
         {

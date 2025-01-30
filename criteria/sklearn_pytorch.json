@@ -47,35 +47,17 @@
         {
             "mainPoint":"The following points were well done",
             "subPoints":[
-                "NumPy function: using some of its built-in math functions",
-                "Good use of '.shape'",
-                "Good use of '.reshape'"
-            ]
+                "Good use of Numpy functions."
+             ]
         }
     ],
         "neutral":[
         {
             "mainPoint":"The following points would improve your NumPy solution slightly",
             "subPoints":[
-                "NumPy: use the community abbreviation of 'np'"
-            ]
-        }
-    ],
-        "negative":[
-        {
-            "mainPoint":"NumPy Usage",
-            "subPoints":[
-                "NumPy functions: incorrect used",
-                "NumPy library was loaded, but not used"
-            ]
-        },
-        {
-            "mainPoint":"Your NumPy function incorrectly used the following data types",
-            "subPoints":[
-                "Floats",
-                "Lists",
-                "Pandas DataFrames",
-                "Other data type:"
+                "NumPy: use the community abbreviation of 'np'",
+                "Good use of '.shape', however it might have been better to use Torch's function, and thus reducing dependency on NumPy",
+                "Good use of '.reshape', however it might have been better to use Torch's function, and thus reducing dependency on NumPy"
             ]
         }
     ]
@@ -92,14 +74,6 @@
                 "Good use of the sklearn functions"
             ]
         }
-        ],
-        "neutral":[
-            {
-                "mainPoint":"1st neutral feedback for topic 1",
-                "subPoints":[
-                    "Subpoint 1"
-                ]
-            }
         ],
         "negative":[
         {
@@ -133,7 +107,7 @@
                "docstring - defining input objects",
                "docstring - defining returned object(s)",
                "internal check - for example, 'if not isinstance'",
-               "isolating ideas to user-defined functions",
+               "isolating ideas to user-defined functions and/or cases",
                "optional parameters - nice idea to include them",
                "type hinting"
             ]
@@ -154,7 +128,7 @@
                 "Did not include cases for PyTorch neural network generation",
                 "Did not include appropriate methods within the case(s) created",
                 "The case(s) generated was not necessary - remember to K.I.S.S.",
-                "Poor user-defined functions"
+                "Poor user-defined/case functions"
             ]
          },
          {
@@ -206,6 +180,7 @@
                 "Good use of 'from_numpy()'",
                 "Good use of 'to(torch.float32)'",
                 "Good use of '.reshape()'"
+                "Good use of '.shape()'"
             ]
         }
         ],

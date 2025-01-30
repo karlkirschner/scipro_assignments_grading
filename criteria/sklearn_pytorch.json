@@ -179,7 +179,7 @@
                 "Good use of the PyTorch functions",
                 "Good use of 'from_numpy()'",
                 "Good use of 'to(torch.float32)'",
-                "Good use of '.reshape()'"
+                "Good use of '.reshape()'",
                 "Good use of '.shape()'"
             ]
         }

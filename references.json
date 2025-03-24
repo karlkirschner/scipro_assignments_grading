@@ -22,7 +22,7 @@
         {
             "id": 4,
             "title":"Plotting Data",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/plotting_data.json"
         },
         {
@@ -94,7 +94,7 @@
         {
             "id": 16,
             "title":"sklearn pytorch",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/sklearn_pytorch.json"
          }
     ]

@@ -22,7 +22,7 @@
         {
             "id": 4,
             "title":"Plotting Data",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/plotting_data.json"
         },
         {

@@ -28,7 +28,7 @@
         {
             "id": 5,
             "title":"NumPy RMSE",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy_rmse.json"
         },
         {

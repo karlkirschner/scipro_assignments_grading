@@ -59,7 +59,10 @@
                 "Correlation analysis was not done well or was incorrect.",
                 "Correlation was not computed using Pandas' built-in function.",
                 "Correlation was not computed using Pearson method.",
-                "Correlation table was not display the using seaborn."
+                "Correlation table was not display the using seaborn.",
+                "The color key bar should be from -1.0 to +1.0.",
+                "The color palette choice should have been a divergent color scheme.",
+                "(Minor) The choice of colors was not chosen well (e.g., positive correlation is normally blue, and negative is red)."
 
             ]
         }
@@ -114,7 +117,7 @@
                 "Model - did not evaluate the trained model using the testing data set from the split",
                 "Model - did not evaluate the trained model using Precision, Recall and F1-Score.",
                 "Results - incorrectly computed models.",
-                "Results - incorrect, poor, or no analysis done."
+                "Results - incorrect, poor (e.g., no discussion of which model performs best/worse), or no analysis done."
             ]
         }
         ]

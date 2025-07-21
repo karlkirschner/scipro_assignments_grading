@@ -1,0 +1,122 @@
+{
+    "Pandas":{
+        "title":"Pandas",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall Pandas feedback",
+            "subPoints":[
+                "Good use of Pandas.",
+                "Good use of the Pandas functions.",
+                "Good use of 'to_numpy()'.",
+                "Good job on keeping a single DataFrame throughout the assignment."
+            ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"Reading Data Into Pandas",
+            "subPoints":[
+                "Would have been clear enough to use a single DataFrame throughout the assignment, reducing the number of objects that were used.",
+                "Delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file.",
+                "Incorrectly read in the data."
+            ]
+        },
+        {
+            "mainPoint":"Cleaning Data",
+            "subPoints":[
+                "Data cleaning not done - you did not drop duplicated rows and/or rows with empty cells.",
+                "`drop_duplicates` - you did not save the results (e.g., using `inplace` or assigning it to a new object).",
+                "`dropna` - you did not save the results (e.g., using `inplace` or assigning it to a new object)."
+            ]
+        },
+        {
+            "mainPoint":"Miscellaneous",
+            "subPoints":[
+                "Displaying Data: data is not displayed well (e.g., via a print statement) - should display data in a Pandas' table when possible."
+            ]
+        }
+        ]
+    },
+    "Correlation":{
+        "title":"Correlations",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"The following points were well done",
+            "subPoints":[
+                "Correlation correctly computed.",
+                "Good job on the correlation analysis.",
+                "Good job on using Panda's built-in correlations function.",
+                "Good job on using seaborn to display the correlation table."
+             ]
+        }
+    ],
+        "negative":[
+        {
+            "mainPoint":"The following points would improve your correlation analysis",
+            "subPoints":[
+                "Correlation analysis was not done well or was incorrect.",
+                "Correlation was not computed using Pandas' built-in function.",
+                "Correlation was not computed using Pearson method.",
+                "Correlation table was not display the using seaborn."
+
+            ]
+        }
+    ]
+    },
+    "NumPy":{
+        "title":"NumPy Library",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"The following points were well done",
+            "subPoints":[
+                "Good use of Numpy functions."
+             ]
+        }
+    ],
+        "neutral":[
+        {
+            "mainPoint":"The following points would improve your NumPy solution slightly",
+            "subPoints":[
+                "NumPy: use the community abbreviation of 'np'."
+            ]
+        }
+    ]
+    },
+    "sklearn":{
+        "title":"sklearn",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall sklearn feedback",
+            "subPoints":[
+                "Good use of sklearn and its functions.",
+                "Good use of 'MinMaxScaler' function for normalizing the data.",
+                "Good job and separating the the target data from the other features.",
+                "Evaluation metrics done correctly.",
+                "Good job on recognizing that the metrics do not do well for 'K Neighbors Regressor'."
+            ]
+        }
+        ],
+        "negative":[
+        {
+            "mainPoint":"The following points were problems in your solution",
+            "subPoints":[
+                "Data normalization - not done or incorrectly done.",
+                "Data splitting - not done use sklearn's 'train_test_split'.",
+                "Data splitting - not done use 'random_state=1' keyword and parameter combination.",
+                "Data splitting object naming - (minor critique) would have been good for the names different than the sklearn'ed example (e.g., not X_train etc.).",
+                "Model - did not use sklearn's 'K Neighbors Regressor', 'Logistic Regression', 'Decision Tree Classifier', and/or 'Random Forest Classifier' functions.",
+                "Model - did not properly set the parameters for each model (e.g., 1 neighbor; Newton conjugate gradient solver; 100 trees; etc.).",
+                "Model - did not train using the training dataset from the split.",
+                "Model - did not evaluate the trained model using the testing data set from the split",
+                "Model - did not evaluate the trained model using Precision, Recall and F1-Score.",
+                "Results - incorrectly computed models.",
+                "Results - incorrect, poor, or no analysis done."
+            ]
+        }
+        ]
+    }
+}

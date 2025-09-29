@@ -1,155 +1,4 @@
 {
-   "followingInstructions":{
-      "title":"Following Instructions",
-      "additionalNotes":true,
-      "positive":[
-         {
-            "mainPoint": "All instructions were meticulously followed.",
-            "subPoints": [
-               "The solution adhered to all submission requirements.",
-               "Disallowed libraries were not used."]}   
-      ],
-      "negative":[
-         {
-            "mainPoint":"The following instructions were not followed",
-            "subPoints":[
-               "imports - using disallowed libraries",
-               "format - solution was not a Jupyter-notebook",
-               "name - not included at the top of the solution"
-            ]
-         }
-      ]
-   },
-   "academicScholarship":{
-      "title":"Academic Scholarship (Citations and Writing)",
-      "additionalNotes":true,
-      "positive":[
-         {
-            "mainPoint":"Scholarship done well, which includes",
-            "subPoints":[
-               "citing - source of information and knowledge",
-               "citing - libraries",
-               "citing - proper ordering within the written text (e.g., ...[1-2]...[3] and not ...[3-4]...[1]...)",
-               "units - input and output numbers have units (e.g., N, kJ, m/s, Hz)"
-            ]
-         },
-         {
-            "mainPoint":"Writing and communication done well, which includes",
-            "subPoints":[
-               "sentences - clean, concise and clear (C^3)",
-               "sentences - complete written when appropriate (e.g., within Markdown cells, docstrings, f-strings)"
-            ]
-         }
-      ],
-      "neutral":[
-         {
-            "mainPoint":"Scholarship was done okay, apart from the following issue(s)",
-            "subPoints":[
-               "citing - websites should include the date visited",
-               "citing - when possible cite peer-reviewed papers or academic books, not websites",
-               "references - inconsistent formatting"
-            ]
-         },
-         {
-            "mainPoint":"Writing and communication done okay, apart from the following issue(s)",
-            "subPoints":[
-               "sentences - ensure proper grammar and punctuation in docstrings and f-strings.",
-               "words - some incorrect cases (i.e., capitalized vs. lower-cased words)",
-               "words - a few misspelled",
-               "words - a few mixed English and German"
-            ]
-         }
-      ],
-      "negative":[
-         {
-            "mainPoint":"No citation of information sources",
-            "subPoints":[
-               "As a university student, you should be citing sources of knowledge. This is something that you will need to do for your thesis."
-            ]
-         },
-         {
-            "mainPoint":"Plagiarism - classmate",
-            "subPoints":[
-               "Your solution was very similar to another student's solution, with minor differences. Consequently, I was unable to identify whose work it actually was. Points remove:",
-               "Your solution was similar to another student's solution. Consider this a warning - you need to submit a solution that reflects your own ideas and communication thereof."
-            ]
-         },
-         {
-            "mainPoint":"Plagiarism - internet",
-            "subPoints":[
-               "Your solution contains code that is similar to code on the internet (without a citation). Points remove:",
-               "Your solution contains code that is similar to code on the internet (without a citation). Consider this a warning."
-            ]
-         },
-         {
-            "mainPoint":"Scholarship done poorly, which includes the following",
-            "subPoints":[
-               "citing - chosen citation format (e.g., numerical) was not correctly applied throughout the text",
-               "citing - done out-of-order (e.g., the first citation in your text is not to Reference 1)",
-               "citing - missing references for knowledge (e.g., datasets, equations, libraries)",
-               "citing - missing reference numbers (e.g., [1, 2]) within your writing",
-               "references - missing important information (e.g., year, author, journal, title, accessed date)",
-               "units - were not provided when needed"
-            ]
-         },
-         {
-            "mainPoint":"Writing and communication done poorly, which includes the following",
-            "subPoints":[
-               "communication - create your own context description within (e.g., do not copy it from the assignment)",
-               "communication - no or very little presentation of thoughts or ideas (e.g., context, solution meaning, decisions made)",
-               "context - poorly provided (e.g., background info, the problem)",
-               "image - an image from the assignment sheet is not good enough - suggests a lack of effort",
-               "interpretation - analysis only provides numbers and lacks context, comparison, or discussion of results",
-               "sentences - not clean, concise and/or clear (C^3)",
-               "presentation - unprofessional visual elements (e.g., icons, distracting emojis) were used in Markdown cells.",
-               "sentences - incomplete sentences (e.g., capitalization, punctuation, subject, verb) when appropriate (including in f-strings)",
-               "words - several misspelled",
-               "words - notably mixed English and German words in the solution"
-            ]
-         }
-      ]
-   },
-   "jupyterNotebooks":{
-      "title":"Jupyter Notebooks",
-      "additionalNotes":true,
-      "positive":[
-         {
-            "mainPoint":"Notebook is done well, which includes the following",
-            "subPoints":[
-               "cell structure - good usage to separate ideas (e.g., thoughts, tasks/subtasks, user-defined functions)",
-               "cell structure - logical ordering and mixture of markdown and code cells",
-               "code cells - good separation of encode ideas",
-               "markdown cells - good usage to communicate ideas, thoughts or workflow"
-            ]
-         }
-      ],
-      "neutral":[
-         {
-            "mainPoint":"Notebook could be slightly improved, which includes the following",
-            "subPoints":[
-               "cell structure - clearer separation needed for data handling steps (e.g., reading, cleaning, merging)",
-               "cell structure - some additional separation of ideas (both code and markdown cells)",
-               "cell type - cell(s) have wrong types (e.g., a cell meant for text was 'Code' cell)",
-               "code cells - some additional encoded ideas into separate cells would have been logical",
-               "markdown cells - some additional communication would have been more informative"
-            ]
-         }
-      ],
-      "negative":[
-         {
-            "mainPoint":"Notebook was poorly done,  which includes the following",
-            "subPoints":[
-               "cell structure - section headings (e.g., Markdown titles) are inconsistent, misleading, or do not reflect the assignment's structure",
-               "cell structure - significant work is needed to better separate the tasks, subtasks, or ideas",
-               "cell structure - single code cell solution is not ideal, and does not make good use of a Jupyter-notebook's capability",
-               "code cells - more separation of encoded ideas was required",
-               "environment - notebook contains direct command execution (e.g., '!pip install') which is bad practice for executing a notebook on a local computer. If done on Colab - comment them out.",
-               "markdown cells - a significant lack of good, informative communication is seen in your solution",
-               "markdown cells - are not used"
-            ]
-         }
-      ]
-   },
    "codeFormatting":{
       "title":"Code Formatting",
       "additionalNotes":true,
@@ -265,6 +114,157 @@
                "file handling - hardcoding file paths; relative paths should be used to promote notebook transferability",
                "if-elif-else - it is better to use 'if-elif-else' statements, rather than 'if-if-...' due to readability and speed",
                "imports - libraries were imported, but not used (not concise coding)"
+            ]
+         }
+      ]
+   },
+   "jupyterNotebooks":{
+      "title":"Jupyter Notebooks",
+      "additionalNotes":true,
+      "positive":[
+         {
+            "mainPoint":"Notebook is done well, which includes the following",
+            "subPoints":[
+               "cell structure - good usage to separate ideas (e.g., thoughts, tasks/subtasks, user-defined functions)",
+               "cell structure - logical ordering and mixture of markdown and code cells",
+               "code cells - good separation of encode ideas",
+               "markdown cells - good usage to communicate ideas, thoughts or workflow"
+            ]
+         }
+      ],
+      "neutral":[
+         {
+            "mainPoint":"Notebook could be slightly improved, which includes the following",
+            "subPoints":[
+               "cell structure - clearer separation needed for data handling steps (e.g., reading, cleaning, merging)",
+               "cell structure - some additional separation of ideas (both code and markdown cells)",
+               "cell type - cell(s) have wrong types (e.g., a cell meant for text was 'Code' cell)",
+               "code cells - some additional encoded ideas into separate cells would have been logical",
+               "markdown cells - some additional communication would have been more informative"
+            ]
+         }
+      ],
+      "negative":[
+         {
+            "mainPoint":"Notebook was poorly done,  which includes the following",
+            "subPoints":[
+               "cell structure - section headings (e.g., Markdown titles) are inconsistent, misleading, or do not reflect the assignment's structure",
+               "cell structure - significant work is needed to better separate the tasks, subtasks, or ideas",
+               "cell structure - single code cell solution is not ideal, and does not make good use of a Jupyter-notebook's capability",
+               "code cells - more separation of encoded ideas was required",
+               "environment - notebook contains direct command execution (e.g., '!pip install') which is bad practice for executing a notebook on a local computer. If done on Colab - comment them out.",
+               "markdown cells - a significant lack of good, informative communication is seen in your solution",
+               "markdown cells - are not used"
+            ]
+         }
+      ]
+   },
+   "academicScholarship":{
+      "title":"Academic Scholarship (Citations and Writing)",
+      "additionalNotes":true,
+      "positive":[
+         {
+            "mainPoint":"Scholarship done well, which includes",
+            "subPoints":[
+               "citing - source of information and knowledge",
+               "citing - libraries",
+               "citing - proper ordering within the written text (e.g., ...[1-2]...[3] and not ...[3-4]...[1]...)",
+               "units - input and output numbers have units (e.g., N, kJ, m/s, Hz)"
+            ]
+         },
+         {
+            "mainPoint":"Writing and communication done well, which includes",
+            "subPoints":[
+               "sentences - clean, concise and clear (C^3)",
+               "sentences - complete written when appropriate (e.g., within Markdown cells, docstrings, f-strings)"
+            ]
+         }
+      ],
+      "neutral":[
+         {
+            "mainPoint":"Scholarship was done okay, apart from the following issue(s)",
+            "subPoints":[
+               "citing - websites should include the date visited",
+               "citing - when possible cite peer-reviewed papers or academic books, not websites",
+               "references - inconsistent formatting"
+            ]
+         },
+         {
+            "mainPoint":"Writing and communication done okay, apart from the following issue(s)",
+            "subPoints":[
+               "sentences - ensure proper grammar and punctuation in docstrings and f-strings.",
+               "words - some incorrect cases (i.e., capitalized vs. lower-cased words)",
+               "words - a few misspelled",
+               "words - a few mixed English and German"
+            ]
+         }
+      ],
+      "negative":[
+         {
+            "mainPoint":"No citation of information sources",
+            "subPoints":[
+               "As a university student, you should be citing sources of knowledge. This is something that you will need to do for your thesis."
+            ]
+         },
+         {
+            "mainPoint":"Plagiarism - classmate",
+            "subPoints":[
+               "Your solution was very similar to another student's solution, with minor differences. Consequently, I was unable to identify whose work it actually was. Points remove:",
+               "Your solution was similar to another student's solution. Consider this a warning - you need to submit a solution that reflects your own ideas and communication thereof."
+            ]
+         },
+         {
+            "mainPoint":"Plagiarism - internet",
+            "subPoints":[
+               "Your solution contains code that is similar to code on the internet (without a citation). Points remove:",
+               "Your solution contains code that is similar to code on the internet (without a citation). Consider this a warning."
+            ]
+         },
+         {
+            "mainPoint":"Scholarship done poorly, which includes the following",
+            "subPoints":[
+               "citing - chosen citation format (e.g., numerical) was not correctly applied throughout the text",
+               "citing - done out-of-order (e.g., the first citation in your text is not to Reference 1)",
+               "citing - missing references for knowledge (e.g., datasets, equations, libraries)",
+               "citing - missing reference numbers (e.g., [1, 2]) within your writing",
+               "references - missing important information (e.g., year, author, journal, title, accessed date)",
+               "units - were not provided when needed"
+            ]
+         },
+         {
+            "mainPoint":"Writing and communication done poorly, which includes the following",
+            "subPoints":[
+               "communication - create your own context description within (e.g., do not copy it from the assignment)",
+               "communication - no or very little presentation of thoughts or ideas (e.g., context, solution meaning, decisions made)",
+               "context - poorly provided (e.g., background info, the problem)",
+               "image - an image from the assignment sheet is not good enough - suggests a lack of effort",
+               "interpretation - analysis only provides numbers and lacks context, comparison, or discussion of results",
+               "sentences - not clean, concise and/or clear (C^3)",
+               "presentation - unprofessional visual elements (e.g., icons, distracting emojis) were used in Markdown cells.",
+               "sentences - incomplete sentences (e.g., capitalization, punctuation, subject, verb) when appropriate (including in f-strings)",
+               "words - several misspelled",
+               "words - notably mixed English and German words in the solution"
+            ]
+         }
+      ]
+   },
+   "followingInstructions":{
+      "title":"Following Instructions",
+      "additionalNotes":true,
+      "positive":[
+         {
+            "mainPoint": "All instructions were meticulously followed.",
+            "subPoints": [
+               "The solution adhered to all submission requirements.",
+               "Disallowed libraries were not used."]}   
+      ],
+      "negative":[
+         {
+            "mainPoint":"The following instructions were not followed",
+            "subPoints":[
+               "imports - using disallowed libraries",
+               "format - solution was not a Jupyter-notebook",
+               "name - not included at the top of the solution"
             ]
          }
       ]

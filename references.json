@@ -4,7 +4,7 @@
         {
             "id": 1,
             "title":"User Function",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/user_function.json"
         },
         {
@@ -22,7 +22,7 @@
         {
             "id": 4,
             "title":"Plotting Data",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/plotting_data.json"
         },
         {
@@ -100,7 +100,7 @@
         {
             "id": 17,
             "title":"sklearn",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/sklearn_heart_disease.json"
         }
     ]

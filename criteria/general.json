@@ -2,9 +2,16 @@
    "followingInstructions":{
       "title":"Following Instructions",
       "additionalNotes":true,
+      "positive":[
+         {
+            "mainPoint": "All instructions were meticulously followed.",
+            "subPoints": [
+               "The solution adhered to all submission requirements.",
+               "Disallowed libraries were not used."]}   
+      ],
       "negative":[
          {
-            "mainPoint":"The instructions were not followed, which includes",
+            "mainPoint":"The following instructions were not followed",
             "subPoints":[
                "imports - using disallowed libraries",
                "format - solution was not a Jupyter-notebook",
@@ -23,20 +30,20 @@
                "citing - source of information and knowledge",
                "citing - libraries",
                "citing - proper ordering within the written text (e.g., ...[1-2]...[3] and not ...[3-4]...[1]...)",
-               "units - input and output numbers have units (e.g. N, kJ, m/s, Hz)"
+               "units - input and output numbers have units (e.g., N, kJ, m/s, Hz)"
             ]
          },
          {
             "mainPoint":"Writing and communication done well, which includes",
             "subPoints":[
                "sentences - clean, concise and clear (C^3)",
-               "sentences - complete written when appropriate (e.g., within Markdown cells, docstrings, f-string)"
+               "sentences - complete written when appropriate (e.g., within Markdown cells, docstrings, f-strings)"
             ]
          }
       ],
       "neutral":[
          {
-            "mainPoint":"Scholarship done okay, but with a few occurrences in the following",
+            "mainPoint":"Scholarship was done okay, apart from the following issue(s)",
             "subPoints":[
                "citing - websites should include the date visited",
                "citing - when possible cite peer-reviewed papers or academic books, not websites",
@@ -44,14 +51,12 @@
             ]
          },
          {
-            "mainPoint":"Writing and communication done okay, but with a few occurrences in the following",
+            "mainPoint":"Writing and communication done okay, apart from the following issue(s)",
             "subPoints":[
-               "markdown -- formatting needs improvement",
-               "sentences - incomplete (e.g., capitalization, punctuation, etc.)",
-               "sentences - unclear",
-               "words - incorrect case (i.e., capitalized vs. lower-cased words",
-               "words - misspelled",
-               "words - mixed English and German"
+               "sentences - ensure proper grammar and punctuation in docstrings and f-strings.",
+               "words - some incorrect cases (i.e., capitalized vs. lower-cased words)",
+               "words - a few misspelled",
+               "words - a few mixed English and German"
             ]
          }
       ],
@@ -72,14 +77,15 @@
          {
             "mainPoint":"Plagiarism - internet",
             "subPoints":[
-               "You solution contains code that is similar to code on the internet (without a citation). Points remove:",
-               "You solution contains code that is similar to code on the internet (without a citation). Consider this a warning."
+               "Your solution contains code that is similar to code on the internet (without a citation). Points remove:",
+               "Your solution contains code that is similar to code on the internet (without a citation). Consider this a warning."
             ]
          },
          {
             "mainPoint":"Scholarship done poorly, which includes the following",
             "subPoints":[
-               "citing - done out-of-order (e.g., the first citation in your text is not to reference 1)",
+               "citing - chosen citation format (e.g., numerical) was not correctly applied throughout the text",
+               "citing - done out-of-order (e.g., the first citation in your text is not to Reference 1)",
                "citing - missing references for knowledge (e.g., datasets, equations, libraries)",
                "citing - missing reference numbers (e.g., [1, 2]) within your writing",
                "references - missing important information (e.g., year, author, journal, title, accessed date)",
@@ -92,11 +98,13 @@
                "communication - create your own context description within (e.g., do not copy it from the assignment)",
                "communication - no or very little presentation of thoughts or ideas (e.g., context, solution meaning, decisions made)",
                "context - poorly provided (e.g., background info, the problem)",
-               "image - an image from the assignment is not good enough, suggesting a lack of effort",
+               "image - an image from the assignment sheet is not good enough - suggests a lack of effort",
+               "interpretation - analysis only provides numbers and lacks context, comparison, or discussion of results",
                "sentences - not clean, concise and/or clear (C^3)",
-               "sentences - incomplete sentences (e.g., capitalization, punctuation, subject, verb) when appropriate (including in f-strings) ",
+               "presentation - unprofessional visual elements (e.g., icons, distracting emojis) were used in Markdown cells.",
+               "sentences - incomplete sentences (e.g., capitalization, punctuation, subject, verb) when appropriate (including in f-strings)",
                "words - several misspelled",
-               "words - several mixed English and German words"
+               "words - notably mixed English and German words in the solution"
             ]
          }
       ]
@@ -119,7 +127,9 @@
          {
             "mainPoint":"Notebook could be slightly improved, which includes the following",
             "subPoints":[
+               "cell structure - clearer separation needed for data handling steps (e.g., reading, cleaning, merging)",
                "cell structure - some additional separation of ideas (both code and markdown cells)",
+               "cell type - cell(s) have wrong types (e.g., a cell meant for text was 'Code' cell)",
                "code cells - some additional encoded ideas into separate cells would have been logical",
                "markdown cells - some additional communication would have been more informative"
             ]
@@ -129,11 +139,13 @@
          {
             "mainPoint":"Notebook was poorly done,  which includes the following",
             "subPoints":[
-               "cell structure - significant work is needed to better separate the tasks, subtasks, or thoughts/ideas",
-               "cell structure -  providing your solution in one code cell is not ideal, and does not make good use of a Jupyter-notebook's capability",
+               "cell structure - section headings (e.g., Markdown titles) are inconsistent, misleading, or do not reflect the assignment's structure",
+               "cell structure - significant work is needed to better separate the tasks, subtasks, or ideas",
+               "cell structure - single code cell solution is not ideal, and does not make good use of a Jupyter-notebook's capability",
                "code cells - more separation of encoded ideas was required",
+               "environment - notebook contains direct command execution (e.g., '!pip install') which is bad practice for executing a notebook on a local computer. If done on Colab - comment them out.",
                "markdown cells - a significant lack of good, informative communication is seen in your solution",
-               "markdown cells - not used"
+               "markdown cells - are not used"
             ]
          }
       ]
@@ -143,16 +155,14 @@
       "additionalNotes":true,
       "positive":[
          {
-            "mainPoint":"Formatting done well, which includes",
+            "mainPoint":"Formatting is done well, which includes",
             "subPoints":[
                "blank lines - consistent and good usage",
-               "block commenting - appropriate amount (i.e., comments given on their own code line)",
-               "docstring commenting - appropriate amount (i.e. comments withing triple quotes)",
+               "commenting - appropriate amount provided (i.e., not excessive or insufficient)",
                "f-string - properly used",
                "imports - libraries were alphabetized",
                "imports - libraries were listed at the notebook's top",
                "indentation - consistent and with 4 spaces",
-               "inline commenting - appropriate amount (i.e., comments given at the end of a code line)",
                "line length - properly done (e.g., no scrolling is needed)",
                "naming - descriptive objects/variables (i.e., human readable)",
                "PEP8 guidelines- followed",
@@ -165,14 +175,13 @@
          {
             "mainPoint":"The following formatting issues were present in your code",
             "subPoints":[
+               "blank lines - missing the required two blank lines after imports and/or around user-defined functions (PEP8)",
                "blank lines - not enough used (e.g., separating ideas and improving readability)",
                "blank lines - too many used (i.e., not concise)",
                "block commenting - inappropriately done and/or unnecessary (i.e., comments given on their own code line)",
                "commenting - excessive amounts done (e.g., for obvious points), or not relevant (i.e. significantly distracts from the solution's main focus)",
-               "docstrings - inappropriately done (e.g., use a markdown cell)",
                "imports - not alphabetized",
                "imports - not listed together at the notebook's top",
-               "imports - libraries were imported, but not used",
                "indentation - improperly done (i.e., 4 spaces)",
                "inline commenting - usage was unnecessary (i.e., comments given at the end of a code line)",
                "f-string - not used (e.g., print statements)",
@@ -195,19 +204,19 @@
             "subPoints":[
                "dictionary",
                "list",
-               "set ",
+                  "set",
                "tuple"
             ]
          },
          {
             "mainPoint":"Coding concepts done well, which includes the following ",
             "subPoints":[
+               "built-in function(s):",
                "built-in function - 'enumerate'",
                "built-in function - 'range'",
                "built-in function - 'reversed'",
                "built-in function - 'round'",
                "built-in function - 'sorted'",
-               "built-in function(s):",
                "concise coding  - reduced redundancy (i.e., repetition)",
                "list comprehension",
                "looping - over a dictionary",
@@ -251,8 +260,11 @@
                "built-in function - 'sorted'",
                "built-in function(s):",
                "concise coding  - make your coding more concise, which reduces redundancy (i.e., repetition) and the chances of introducing errors",
-               "copy-and-pasting - doing this increases the chances of errors and may introduced confusion",
-               "if-elif-else - it is better to use 'if-elif-else' statements, rather than 'if-if-...' due to readability and speed"
+               "concise coding - unnecessary or redundant code (e.g., duplicate imports, redundant sorting, unnecessary variable assignment)",
+               "copy-and-pasting code - doing this increases the chances of errors and may introduced confusion",
+               "file handling - hardcoding file paths; relative paths should be used to promote notebook transferability",
+               "if-elif-else - it is better to use 'if-elif-else' statements, rather than 'if-if-...' due to readability and speed",
+               "imports - libraries were imported, but not used (not concise coding)"
             ]
          }
       ]
@@ -282,9 +294,8 @@
          {
             "mainPoint":"The following were problems with your solutions",
             "subPoints":[
-               "execution - code does not run because of the following problem(s):",
-               "name - please provide your name in a markdown cell at the notebook's top",
-               "final interpretation - there was no attempt to interpret or provide context for the final result"
+               "execution - the code does not run because of the following problem(s):",
+               "final interpretation - there was no attempt to interpret or provide context for the code's results"
             ]
          }
       ]

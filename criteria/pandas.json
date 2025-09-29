@@ -6,9 +6,7 @@
         {
             "mainPoint":"Overall Pandas feedback",
             "subPoints":[
-                "Good use of Pandas",
-                "Good use of the Pandas functions",
-                "Good use of typing library",
+                "Effectove use of Pandas and its built-in functions",
                 "Good analysis of the correlation results",
                 "Correlation analysis - well done",
                 "Plotting - good, concise coding for the plot generation",
@@ -53,6 +51,13 @@
             ]
         },
         {
+            "mainPoint":"Data Presentation and Formatting",
+            "subPoints":[
+                "presentation - data should have been formatted or presented in a clear Pandas table for readability"
+            ]
+        },
+         
+        {
             "mainPoint":"Saving Data",
             "subPoints":[
                 "Not saved - the final data was not saved",
@@ -72,7 +77,9 @@
                 "`corr` - did not use Pandas' built-in correlation function",
                 "Identification - incorrectly identified the features that are most correlated",
                 "Interpretation - there is a lack of interpreting what the correlation values mean",
-                "Interpretation - incorrectly interpreted the correlation results"
+                "Interpretation - incorrectly interpreted the correlation results",
+                "plotting - the color key bar range was incorrectly scaled (e.g., not from -1.0 to +1.0 for correlation)",
+                "plotting - an inappropriate color palette was chosen (e.g., not a divergent scheme)"
             ]
         },
         {

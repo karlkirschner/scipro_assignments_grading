@@ -95,11 +95,11 @@
         {
             "mainPoint":"Overall sklearn feedback",
             "subPoints":[
+                "analysis - strong domain knowledge shown by recognizing the limitations of a specific model (e.g., K Neighbors Regressor) for the given problem.",
+                "evaluation metrics - done correctly."
                 "Good use of sklearn and its functions.",
                 "Good use of 'MinMaxScaler' function for normalizing the data.",
-                "Good job and separating the the target data from the other features.",
-                "Evaluation metrics done correctly.",
-                "Good job on recognizing that the metrics do not do well for 'K Neighbors Regressor'."
+                "Good job and separating the the target data from the other features."
             ]
         }
         ],

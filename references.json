@@ -102,6 +102,12 @@
             "title":"sklearn",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/sklearn_heart_disease.json"
+        },
+        {
+            "id": 18,
+            "title":"example tab - specific assignment",
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/template.json"
         }
     ]
 }

@@ -16,7 +16,7 @@
                "line length - properly done (e.g., no scrolling is needed)",
                "naming - descriptive objects/variables (i.e., human readable)",
                "PEP8 guidelines- followed",
-               "spacing - consistent and correct usage",
+               "spacing - consistent and correct usage"
             ]
          }
       ],
@@ -154,7 +154,7 @@
          {
             "mainPoint":"Writing and communication done well, which includes",
             "subPoints":[
-               "sentences - clear, concise and provides good context (i.e., C³)"
+               "sentences - clear, concise and provides good context (i.e., C³)",
                "sentences - complete written when appropriate (e.g., within markdown cells, docstrings)"
             ]
          }

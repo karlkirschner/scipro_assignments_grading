@@ -7,16 +7,16 @@
             "mainPoint":"Formatting is done well, which includes",
             "subPoints":[
                "blank lines - consistent and good usage",
+               "concise, clean and clearly written code",
                "commenting - appropriate amount provided (i.e., not excessive or insufficient)",
                "f-string - properly used",
                "imports - libraries were alphabetized",
                "imports - libraries were listed at the notebook's top",
-               "indentation - consistent and with 4 spaces",
+               "indentation - consistent and done with 4 spaces",
                "line length - properly done (e.g., no scrolling is needed)",
                "naming - descriptive objects/variables (i.e., human readable)",
                "PEP8 guidelines- followed",
                "spacing - consistent and correct usage",
-               "writing - clean, concise and clearly written code"
             ]
          }
       ],
@@ -49,11 +49,11 @@
       "additionalNotes":true,
       "positive":[
          {
-            "mainPoint":"Data structures done well, which includes the following",
+            "mainPoint":"Data structures done well, which includes using the following",
             "subPoints":[
                "dictionary",
                "list",
-                  "set",
+               "set",
                "tuple"
             ]
          },
@@ -66,27 +66,9 @@
                "built-in function - 'reversed'",
                "built-in function - 'round'",
                "built-in function - 'sorted'",
-               "concise coding  - reduced redundancy (i.e., repetition)",
                "list comprehension",
                "looping - over a dictionary",
                "looping - 'zip' usage to iterate over two lists"
-            ]
-         }
-      ],
-      "neutral":[
-         {
-            "mainPoint":"Better data structures could improve the solution slightly, which includes the following",
-            "subPoints":[
-               "looping - over a dictionary",
-               "looping - 'zip' to iterate over two lists",
-               "using 'set' - unique elements",
-               "using 'tuple' - immutable elements"
-            ]
-         },
-         {
-            "mainPoint":"Coding concepts that could improve the solution slightly, which includes the following",
-            "subPoints":[
-               "list comprehension - replacing simple 'if-elif-else' statements (i.e., to improve readability)"
             ]
          }
       ],
@@ -95,7 +77,7 @@
             "mainPoint":"Better data structures would have improved the solution, which includes the following",
             "subPoints":[
                "looping - over a dictionary",
-               "looping - 'zip' to loop over two lists of equal length",
+               "looping - use 'zip' to loop over two lists of equal length",
                "using 'set' - unique elements",
                "using 'tuple' - immutable elements"
             ]
@@ -108,11 +90,11 @@
                "built-in function - 'round'",
                "built-in function - 'sorted'",
                "built-in function(s):",
-               "concise coding  - make your coding more concise, which reduces redundancy (i.e., repetition) and the chances of introducing errors",
+               "concise coding  - make your code more concise",
                "concise coding - unnecessary or redundant code (e.g., duplicate imports, redundant sorting, unnecessary variable assignment)",
                "copy-and-pasting code - doing this increases the chances of errors and may introduced confusion",
                "file handling - hardcoding file paths; relative paths should be used to promote notebook transferability",
-               "if-elif-else - it is better to use 'if-elif-else' statements, rather than 'if-if-...' due to readability and speed",
+               "if-elif-else (e.g. mutually exclusive invalid states) - better informs the reader of the code's intent versus 'if-if-...' (independent (nonexclusive invalid states)",
                "imports - libraries were imported, but not used (not concise coding)"
             ]
          }
@@ -126,7 +108,6 @@
             "mainPoint":"Notebook is done well, which includes the following",
             "subPoints":[
                "cell structure - good usage to separate ideas (e.g., thoughts, tasks/subtasks, user-defined functions)",
-               "cell structure - logical ordering and mixture of markdown and code cells",
                "code cells - good separation of encode ideas",
                "markdown cells - good usage to communicate ideas, thoughts or workflow"
             ]
@@ -149,12 +130,10 @@
             "mainPoint":"Notebook was poorly done,  which includes the following",
             "subPoints":[
                "cell structure - section headings (e.g., Markdown titles) are inconsistent, misleading, or do not reflect the assignment's structure",
-               "cell structure - significant work is needed to better separate the tasks, subtasks, or ideas",
-               "cell structure - single code cell solution is not ideal, and does not make good use of a Jupyter-notebook's capability",
-               "code cells - more separation of encoded ideas was required",
-               "environment - notebook contains direct command execution (e.g., '!pip install') which is bad practice for executing a notebook on a local computer. If done on Colab - comment them out.",
-               "markdown cells - a significant lack of good, informative communication is seen in your solution",
-               "markdown cells - are not used"
+               "cell structure - separatation of the tasks, subtasks, or ideas needs to be better",
+               "cell structure - single code cell solution is not acceptable - does not make good use of a Jupyter-notebook's capability",
+               "environment - notebook contains direct command execution (e.g., '!pip install') which is bad practice for executing a notebook on a local computer. If done in Colab - comment them out.",
+               "markdown cells - are not used, or there is a significant lack of good, informative communication"
             ]
          }
       ]
@@ -175,8 +154,8 @@
          {
             "mainPoint":"Writing and communication done well, which includes",
             "subPoints":[
-               "sentences - clean, concise and clear (C^3)",
-               "sentences - complete written when appropriate (e.g., within Markdown cells, docstrings, f-strings)"
+               "sentences - clear, concise and provides good context (i.e., C³)"
+               "sentences - complete written when appropriate (e.g., within markdown cells, docstrings)"
             ]
          }
       ],
@@ -239,7 +218,7 @@
                "context - poorly provided (e.g., background info, the problem)",
                "image - an image from the assignment sheet is not good enough - suggests a lack of effort",
                "interpretation - analysis only provides numbers and lacks context, comparison, or discussion of results",
-               "sentences - not clean, concise and/or clear (C^3)",
+               "sentences - not clean, concise and/or context provided (C³)",
                "presentation - unprofessional visual elements (e.g., icons, distracting emojis) were used in Markdown cells.",
                "sentences - incomplete sentences (e.g., capitalization, punctuation, subject, verb) when appropriate (including in f-strings)",
                "words - several misspelled",
@@ -264,7 +243,7 @@
             "subPoints":[
                "imports - using disallowed libraries",
                "format - solution was not a Jupyter-notebook",
-               "name - not included at the top of the solution"
+               "ID or name - not included at the top of the solution"
             ]
          }
       ]

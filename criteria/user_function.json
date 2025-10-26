@@ -44,8 +44,7 @@
             "subPoints":[
                "complex - too many ideas place in a single function, which limits reusability, transferability and debugging",
                "documentation - used comments instead of docstrings to provide context and usage for a function",
-               "docstring - none provided for specifying context and usage",
-               "docstring - no statement about what the function does",
+               "docstring - none provided for specifying context",
                "docstring - no statement about what the input variables are",
                "docstring - no statement about what the function returns",
                "docstring - units should be specified for the input and out put variables/objects",

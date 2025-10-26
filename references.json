@@ -4,13 +4,13 @@
         {
             "id": 1,
             "title":"example tab - specific assignment",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/template.json"
         },
         {
             "id": 2,
             "title":"User Function",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/user_function.json"
         },
         {

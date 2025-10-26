@@ -154,7 +154,7 @@
          {
             "mainPoint":"Writing and communication done well, which includes",
             "subPoints":[
-               "sentences - clear, concise and provides good context (i.e., C³)",
+               "sentences - clear, concise and provides good context (i.e., C^3)",
                "sentences - complete written when appropriate (e.g., within markdown cells, docstrings)"
             ]
          }
@@ -218,7 +218,7 @@
                "context - poorly provided (e.g., background info, the problem)",
                "image - an image from the assignment sheet is not good enough - suggests a lack of effort",
                "interpretation - analysis only provides numbers and lacks context, comparison, or discussion of results",
-               "sentences - not clean, concise and/or context provided (C³)",
+               "sentences - not clean, concise and/or context provided (C^3)",
                "presentation - unprofessional visual elements (e.g., icons, distracting emojis) were used in Markdown cells.",
                "sentences - incomplete sentences (e.g., capitalization, punctuation, subject, verb) when appropriate (including in f-strings)",
                "words - several misspelled",

@@ -8,10 +8,10 @@
             "subPoints":[
                 "Effectove use of Pandas and its built-in functions",
                 "Good analysis of the correlation results",
-                "Correlation analysis - well done",
-                "Plotting - good, concise coding for the plot generation",
-                "Plotting - nicely made plots containing all key elements",
-                "Plotting - very nicely done!"
+                "Correlation analysis - Well done",
+                "Plotting - Good, concise coding for the plot generation",
+                "Plotting - Nicely made plots containing all key elements",
+                "Plotting - Very nicely done!"
             ]
         }
     ],
@@ -21,75 +21,64 @@
             "subPoints":[
                 "`reset_index`",
                 "`loc` to easily operate over the columns",
-                "`sort_values` (Country name) would have been logical to after data cleaning, but fine"
+                "`sort_values` (Country name) would have been logical to after data cleaning, but fine.="
             ]
         }
     ],
         "negative":[
-        {
-            "mainPoint":"Reading Data Into Pandas",
-            "subPoints":[
-                "Delimiter (i.e., `sep`) - incorrectly specified the separator used within the CSV-formatted file",
-                "Header (i.e., `header`) - incorrectly specified the header line",
-                "Incorrectly read in the data"
-            ]
-        },
-        {
-            "mainPoint":"Merging Data",
-            "subPoints":[
-                "Not saved - the final data was not saved",
-                "Saving index - this really isn't needed since it doesn't add pertinent information to the resulting data"
-            ]
-        },
-        {
-            "mainPoint":"Cleaning Data",
-            "subPoints":[
-                "data cleaning not done - you did not drop duplicated rows and/or rows with empty cells",
-                "`drop`- you did not save the results (e.g., using `inplace` or assigning it to a new object)",
-                "`drop_duplicates` - you did not save the results (e.g., using `inplace` or assigning it to a new object)",
-                "`dropna` - you did not save the results (e.g., using `inplace` or assigning it to a new object)"
-            ]
-        },
-        {
-            "mainPoint":"Data Presentation and Formatting",
-            "subPoints":[
-                "presentation - data should have been formatted or presented in a clear Pandas table for readability"
-            ]
-        },
-         
-        {
-            "mainPoint":"Saving Data",
-            "subPoints":[
-                "Not saved - the final data was not saved",
-                "Saving index - this really isn't needed since it doesn't add pertinent information to the resulting data"
-            ]
-        },
-        {
-            "mainPoint":"Pandas Plotting",
-            "subPoints":[
-                "The data was not plotted using the Pandas' library - importing other libraries for plotting was not allowed"
-            ]
-        },
-        {
-            "mainPoint":"Correlation Analysis",
-            "subPoints":[
-                "Absolute value - one needed to take the absolute value of some of the data:",
-                "`corr` - did not use Pandas' built-in correlation function",
-                "Identification - incorrectly identified the features that are most correlated",
-                "Interpretation - there is a lack of interpreting what the correlation values mean",
-                "Interpretation - incorrectly interpreted the correlation results",
-                "plotting - the color key bar range was incorrectly scaled (e.g., not from -1.0 to +1.0 for correlation)",
-                "plotting - an inappropriate color palette was chosen (e.g., not a divergent scheme)"
-            ]
-        },
-        {
-            "mainPoint":"Sorting",
-            "subPoints":[
-                "Incorrect sorting",
-                "Not saved - the sorted data result(s) was not saved (e.g., assigning it to a new object)",
-                "Unsorted - the data was not sorted"
-            ]
-        }
+    {
+        "mainPoint":"Reading Data Into Pandas",
+        "subPoints":[
+            "Delimiter (`sep`) - Incorrectly specified the separator used within the CSV-formatted file.",
+            "Header (`header`) - Incorrectly specified the header line.",
+            "Incorrectly read in the data."
         ]
+    },
+    {
+        "mainPoint":"Data Modification & Assignment Issue",
+        "subPoints":[
+            "Assignment Failure: You called a modification method (`drop`, `dropna`, `reset_index`, etc.) but failed to save the result by assigning it back (`df = df.method(...)`) or using the `inplace=True` argument. The change was lost."
+        ]
+    },
+    {
+        "mainPoint":"Data Cleaning & Preparation",
+        "subPoints":[
+            "Cleaning not done - You failed to drop duplicated rows.",
+            "Cleaning not done - You failed to drop rows with empty/missing cells.",
+            "Missing Value Handling - Missing values were not handled (dropped or transformed) prior to analysis/correlation."
+        ]
+    },
+    {
+        "mainPoint":"Indexing, Slicing, and Merging",
+        "subPoints":[
+            "Merging - The merge operation used was incorrect.",
+            "Sorting - The data was not sorted, or the sorting was incorrect/not saved."
+        ]
+    },
+    {
+        "mainPoint":"Correlation Analysis",
+        "subPoints":[
+            "Identification - Incorrectly identified the features that are most correlated.",
+            "Interpretation - Lack of interpreting what the correlation values mean (context is missing).",
+            "Interpretation - Incorrectly interpreted the correlation results.",
+            "`corr` - Did not use Pandas' built-in correlation function when required.",
+            "Absolute value - You needed to take the absolute value of some correlation results for analysis."
+        ]
+    },
+    {
+        "mainPoint":"Output, Persistence, and Presentation",
+        "subPoints":[
+            "Not saved - The final processed data was not saved to a file.",
+            "Presentation - Data should have been formatted or presented in a clear Pandas table (e.g., using `to_string()` or styling) for better readability.",
+            "Saving index - Saving the default numerical index was unnecessary for the resulting data file."
+        ]
+    },
+    {
+        "mainPoint":"Pandas Plotting",
+        "subPoints":[
+            "The data was not plotted using the Pandas' built-in methods, which was a requirement for the assignment."
+        ]
+    }
+    ]
     }
 }

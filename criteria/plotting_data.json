@@ -6,8 +6,8 @@
         {
             "mainPoint":"Overall plot feedback",
             "subPoints":[
-                "general - choices behind the plot(s) were well done, resulting in clear and informative data presentation",
-                "color palette - well chosen"
+                "General - choices behind the plot(s) were well done, resulting in clear and informative data presentation",
+                "Color palette - well chosen"
             ]
         },
         {
@@ -38,37 +38,36 @@
         {
             "mainPoint":"Overall plot feedback",
             "subPoints":[
-                "plotting data - not done",
-                "plot type(s) - poorly chosen. It would have been more appropriate to plot the data as:",
-                "related plots/data - should have the same axis range, allowing for direct comparisons"
+                "Plotting data - data was not visualized/plotted.",
+                "Plot type(s) - poorly chosen. It would have been more appropriate to plot the data as:",
+                "Related plots/data - do not have the same axis range, preventing direct comparisons."
             ]
         },
         {
-            "mainPoint":"Too many plots were done",
-            "subPoints":[
-                "Combining the data into a single (or a reduced number) plots would have been a more concise data presentation and allow easier comparison."
+        "mainPoint":"Composition: Data Overload/Too Many Plots",
+        "subPoints":[
+            "Too Many Plots: Combining the data into a single (or a reduced number) plots would have been a more concise presentation and allowed easier comparison.",
+            "Data Overload: The amount of data presented in a single plot was excessive (too many series/variables), leading to clutter. Consider separating the data."
             ]
         },
         {
-            "mainPoint":"Plots were too complicated",
-            "subPoints":[
-                "The amount of data presented in a single plot was too much. It would have been better to separate the data into more plots, allowing one to clearly observe the data.",
-                "The way that the data was presented was too complicated. Making the plot simpler would enable help the viewer understand that data easier."
+        "mainPoint":"Missing Essential Plot Elements",
+        "subPoints":[
+            "Axis labels - missing or incomplete",
+            "Legend - missing when multiple data series are present",
+            "Units - missing on axis labels or title",
+            "Title - plot title is missing"
             ]
         },
         {
-            "mainPoint":"Missing imporant plot elements, and/or the choice concerning them could have been done better",
-            "subPoints":[
-                "axis labels",
-                "color",
-                "font size",
-                "legend",
-                "line style",
-                "line thickness",
-                "point style",
-                "point size",
-                "title",
-                "units"
+        "mainPoint":"Poor Choice or Execution of Elements",
+        "subPoints":[
+            "Axis labels - insufficient detail, misleading, or poorly positioned.",
+            "Color choice - poor contrast, non-intuitive mapping, or unsuitable for colorblind viewers.",
+            "Font size - too small/large, significantly impacting readability.",
+            "Line/point styles - confusingly similar or inappropriate for the data type.",
+            "Line styles - a different thickness would have been more appropriate.",
+            "Point styles - a different size would have been more appropriate."
             ]
         }
     ]

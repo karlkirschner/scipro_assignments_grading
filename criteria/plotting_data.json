@@ -6,7 +6,7 @@
         {
             "mainPoint":"Overall plot feedback",
             "subPoints":[
-                "General - choices behind the plot(s) were well done, resulting in clear and informative data presentation",
+                "General - Choices behind the plot(s) were well done, resulting in clear and informative data presentation",
                 "Color palette - well chosen"
             ]
         },
@@ -38,9 +38,9 @@
         {
             "mainPoint":"Overall plot feedback",
             "subPoints":[
-                "Plotting data - data was not visualized/plotted.",
-                "Plot type(s) - poorly chosen. It would have been more appropriate to plot the data as:",
-                "Related plots/data - do not have the same axis range, preventing direct comparisons."
+                "Plotting data - Data was not visualized/plotted.",
+                "Plot type(s) - Type was poorly chosen. It would have been more appropriate to plot the data as:",
+                "Related plots/data - Do not have the same axis range, preventing direct comparisons."
             ]
         },
         {
@@ -53,21 +53,21 @@
         {
         "mainPoint":"Missing Essential Plot Elements",
         "subPoints":[
-            "Axis labels - missing or incomplete",
-            "Legend - missing when multiple data series are present",
-            "Units - missing on axis labels or title",
-            "Title - plot title is missing"
+            "Axis labels - Missing or incomplete",
+            "Legend - Missing when multiple data series are present",
+            "Units - Missing on axis labels or title",
+            "Title - Plot title is missing"
             ]
         },
         {
         "mainPoint":"Poor Choice or Execution of Elements",
         "subPoints":[
-            "Axis labels - insufficient detail, misleading, or poorly positioned.",
-            "Color choice - poor contrast, non-intuitive mapping, or unsuitable for colorblind viewers.",
-            "Font size - too small/large, significantly impacting readability.",
-            "Line/point styles - confusingly similar or inappropriate for the data type.",
-            "Line styles - a different thickness would have been more appropriate.",
-            "Point styles - a different size would have been more appropriate."
+            "Axis labels - Insufficient detail, misleading, or without untis.",
+            "Color choice - Poor contrast or poor color mapping.",
+            "Font size - Too small/large, which significantly impacting readability.",
+            "Line/point styles - Confusingly similar or inappropriate for the data type.",
+            "Line styles - A different thickness would have been more appropriate.",
+            "Point styles - A different size would have been more appropriate."
             ]
         }
     ]

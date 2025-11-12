@@ -58,11 +58,11 @@
     {
         "mainPoint":"Correlation Analysis",
         "subPoints":[
+            "`corr` - Did not use Pandas' built-in correlation function when required.",
+            "Absolute value - You needed to take the absolute value of some correlation results for analysis.",
             "Identification - Incorrectly identified the features that are most correlated.",
             "Interpretation - Lack of interpreting what the correlation values mean (context is missing).",
-            "Interpretation - Incorrectly interpreted the correlation results.",
-            "`corr` - Did not use Pandas' built-in correlation function when required.",
-            "Absolute value - You needed to take the absolute value of some correlation results for analysis."
+            "Interpretation - Incorrectly interpreted the correlation results."
         ]
     },
     {

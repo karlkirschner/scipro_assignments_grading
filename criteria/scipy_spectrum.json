@@ -6,7 +6,7 @@
             {
                 "mainPoint": "Modeling & Optimization",
                 "subPoints": [
-                    "Excellent implementation of the double Gaussian model function.",
+                    "Good implementation of the double Gaussian model function.",
                     "Properly utilized scipy.optimize.curve_fit for parameter optimization.",
                     "Correctly identified and applied initial guesses for amplitudes and centers from the provided spectrum.",
                     "Very well done on implementing 'bound' constraints to ensure physically meaningful parameters."
@@ -28,7 +28,7 @@
             {
                 "mainPoint": "FWHM Analysis",
                 "subPoints": [
-                    "Accurate calculation of the Full Width at Half Maximum (FWHM) using root finding or the Gaussian relationship.",
+                    "Accurate calculation of the Full Width at Half Maximum (FWHM) using the roots function.",
                     "The FWHM value matches the expected result (ca. 0.469 cm-1)."
                 ]
             }

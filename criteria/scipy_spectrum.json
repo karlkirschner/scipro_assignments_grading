@@ -29,7 +29,7 @@
                 "mainPoint": "FWHM Analysis",
                 "subPoints": [
                     "Accurate calculation of the Full Width at Half Maximum (FWHM) using root finding or the Gaussian relationship.",
-                    "The FWHM value matches the expected result (ca. 0469 cm-1)."
+                    "The FWHM value matches the expected result (ca. 0.469 cm-1)."
                 ]
             }
         ],

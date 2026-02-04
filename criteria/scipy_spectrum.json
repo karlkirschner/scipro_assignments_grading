@@ -63,7 +63,7 @@
                 "mainPoint": "Task 3: FWHM Calculation",
                 "subPoints": [
                     "Incorrect FWHM: The calculated FWHM value is far from the expected 0.3519 cm-1.",
-                    "Logic Error: FWHM should be calculated using the optimized sigma for Peak 1 ($2\\sqrt{2\\ln 2}\\sigma$).",
+                    "Logic Error: FWHM should be calculated using the optimized sigma for Peak 1.",
                     "Root finding failed: The scipy.optimize.root function was not used.",
                     "Root finding failed: The scipy.optimize.root function did not find the half-maximum points correctly."
                  ]

@@ -9,8 +9,7 @@
                     "Excellent implementation of the double Gaussian model function.",
                     "Properly utilized scipy.optimize.curve_fit for parameter optimization.",
                     "Correctly identified and applied initial guesses for amplitudes and centers from the provided spectrum.",
-                    "Very well done on implementing 'bound' constraints to ensure physically meaningful parameters.",
-                    "Successfully determined the optimized standard deviation (sigma) for the peaks."
+                    "Very well done on implementing 'bound' constraints to ensure physically meaningful parameters."
                 ]
             },
             {
@@ -30,7 +29,7 @@
                 "mainPoint": "FWHM Analysis",
                 "subPoints": [
                     "Accurate calculation of the Full Width at Half Maximum (FWHM) using root finding or the Gaussian relationship.",
-                    "The FWHM value matches the expected result (ca. 0.352 cm-1)."
+                    "The FWHM value matches the expected result (ca. 0469 cm-1)."
                 ]
             }
         ],
@@ -56,14 +55,15 @@
                 "subPoints": [
                     "Missing Plot: No visualization was provided to verify the fit quality.",
                     "Plotting only data: You plotted the raw data but did not overlay the optimized model curve.",
-                    "Formatting: The plot lacks axis lables or units on the x-axis (cm-1)."
+                    "Formatting: The plot lacks axis lables or units on the x-axis (cm-1).",
+                    "To best match Figure 1 on the assignment sheet, the x-axis should be reversed (high to low wavenumber)."
                 ]
             },
             {
                 "mainPoint": "Task 3: FWHM Calculation",
                 "subPoints": [
-                    "Incorrect FWHM: The calculated FWHM value is far from the expected 0.3519 cm-1.",
-                    "Logic Error: FWHM should be calculated using the optimized sigma for Peak 1.",
+                    "Incorrect FWHM: The calculated FWHM value is far from the expected 0.469 cm-1.",
+                    "Logic Error: FWHM was determined for Peak 2, not Peak 1.",
                     "Root finding failed: The scipy.optimize.root function was not used.",
                     "Root finding failed: The scipy.optimize.root function did not find the half-maximum points correctly."
                  ]

@@ -30,8 +30,12 @@
         "mainPoint":"Reading Data Into Pandas",
         "subPoints":[
             "Delimiter (`sep`) - Incorrectly specified the separator used within the CSV-formatted file.",
+            "Function creation - Creating a function to read in the data is not necessary and adds unnecessary complexity to the code.",
             "Header (`header`) - Incorrectly specified the header line.",
-            "Incorrectly read in the data."
+            "Header (`header`) - Incorrectly specified the header line.",
+            "Incorrectly read in the data.",
+            "New Object - Creating a new object that is string of the input file is uneeded - not concise coding.",
+            "Renaming file - Renaming the source data file is generally not a good practice."
         ]
     },
     {

@@ -29,6 +29,7 @@
                "blank lines - too many used (i.e., not concise)",
                "block commenting - inappropriately done and/or unnecessary (i.e., comments given on their own code line)",
                "commenting - excessive amounts done (e.g., for obvious points), or not relevant (i.e. significantly distracts from the solution's main focus)",
+               "formatting - your code follow a formating style other than what is taught and demonstrated in this course.",
                "imports - not alphabetized",
                "imports - not listed together at the notebook's top",
                "indentation - improperly done (i.e., 4 spaces)",
@@ -36,7 +37,7 @@
                "f-string - not used (e.g., print statements)",
                "f-string - please ensure that proper grammar and syntax are maintained in the print statements",
                "line length - too long (i.e., requiring scrolling)",
-               "naming - object/variable is not descriptive (i.e., human readable)",
+               "naming - object/variable (e.g., df, data, x, y) is not descriptive enough",
                "naming - object/variable is too long (i.e., not concise while remaining informative)",
                "spacing - inconsistent and/or improperly used",
                "PEP8 - not well followed"
@@ -132,8 +133,11 @@
                "cell structure - section headings (e.g., Markdown titles) are inconsistent, misleading, or do not reflect the assignment's structure",
                "cell structure - separatation of the tasks, subtasks, or ideas needs to be better",
                "cell structure - single code cell solution is not acceptable - does not make good use of a Jupyter-notebook's capability",
-               "environment - notebook contains direct command execution (e.g., '!pip install') which is bad practice for executing a notebook on a local computer. If done in Colab - comment them out.",
-               "markdown cells - are not used, or there is a significant lack of good, informative communication"
+               "environment - code cells contains direct command execution (e.g., '!pip install') which is bad practice for executing a notebook on a local computer. If done in Colab - comment them out.",
+               "equations - not properly formatted for viewing in Jupyter notebook (e.g., equations were not displayed/formatted well in Markdown cells)",
+               "markdown cells - are not used, or there is a significant lack of good, informative communication",
+               "markdown cells - several comments within code cells that would be better in  Markdown cells, allowing better formatting and communication of ideas.",
+               "poor useage - poor use of the Jupyter notebook's capabilities.)"
             ]
          }
       ]
@@ -203,9 +207,12 @@
             "mainPoint":"Scholarship done poorly, which includes the following",
             "subPoints":[
                "citing - chosen citation format (e.g., numerical) was not correctly applied throughout the text",
+               "citing - citing only websites is poor scholarship",
                "citing - done out-of-order (e.g., the first citation in your text is not to Reference 1)",
                "citing - missing references for knowledge (e.g., datasets, equations, libraries)",
                "citing - missing reference numbers (e.g., [1, 2]) within your writing",
+               "citing - unclear citation (e.g., [cite: 35, 41]",
+               "citing - you do not demonstrate that you know how to cite sources of knowledge",
                "references - missing important information (e.g., year, author, journal, title, accessed date)",
                "units - were not provided when needed"
             ]
@@ -217,10 +224,9 @@
                "communication - no or very little presentation of thoughts or ideas (e.g., context, solution meaning, decisions made)",
                "context - poorly provided (e.g., background info, the problem)",
                "image - an image from the assignment sheet is not good enough - suggests a lack of effort",
-               "interpretation - analysis only provides numbers and lacks context, comparison, or discussion of results",
                "sentences - not clean, concise and/or context provided (C^3)",
-               "presentation - unprofessional visual elements (e.g., icons, distracting emojis) were used in Markdown cells.",
-               "sentences - incomplete sentences (e.g., capitalization, punctuation, subject, verb) when appropriate (including in f-strings)",
+               "punctuation - use punctuation when setences are formed, including in comments, docstrings and TypeError messages",
+               "sentences - incomplete sentences (e.g., capitalization, subject, verb) when needed (including in f-strings)",
                "words - several misspelled",
                "words - notably mixed English and German words in the solution"
             ]
@@ -274,7 +280,7 @@
             "mainPoint":"The following were problems with your solutions",
             "subPoints":[
                "execution - the code does not run because of the following problem(s):",
-               "final interpretation - there was no attempt to interpret or provide context for the code's results"
+               "interpretation - there was no or little attempt to interpret or discuss the code's results"
             ]
          }
       ]

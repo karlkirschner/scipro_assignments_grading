@@ -44,6 +44,7 @@
             "subPoints":[
                "complex - too many ideas place in a single function, which limits reusability, transferability and debugging",
                "documentation - used comments instead of docstrings to provide context and usage for a function",
+               "docstring - poorly formatted (e.g., bad indentations, separation of ideas, etc.)",
                "docstring - none provided for specifying context",
                "docstring - no statement about what the input variables are",
                "docstring - no statement about what the function returns",
@@ -51,10 +52,13 @@
                "global variables - use local variable in your function (e.g., improves transferability)",
                "internal checks - none provided (e.g., 'if not isinstance')",
                "internal checks - the check logic is overly complicated or too dense and should be separated for readability.",
+               "overall solution - creating a homework solution using primarily user-defined functions is not ideal, as it can make the code less concise and more difficult to follow",
+               "inconsistency - not all functions follow the same style (e.g., some have docstrings, some do not; some have internal checks, some do not)",
                "structure - main code logic should be nested under the internal checks (e.g., within an else statement) for proper flow control",
                "trivial function - does very little, and arguably does not warrant being a function",
+               "type hinting - incorrect type(s)",
                "type hinting - none provided",
-               "type hinting - incorrect type(s)"
+               "types redundancy - type hinting is enough, no need to also specify the types again in the docstring"
             ]
          }
       ]
@@ -66,6 +70,7 @@
          {
             "mainPoint":"",
             "subPoints":[
+               "formatting - placing each parameter being passed onto a new line is not necessary and makes the code less concise",
                "keyword arguments calls - include the parameter that are being assigned the argument to (e.g., 'my_function(param1=arg1, param2=arg2)'. Doing so ensure that the arguments are passed correctly."
             ]
          }

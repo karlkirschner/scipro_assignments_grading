@@ -22,6 +22,7 @@
             {
                 "mainPoint": "Visualization",
                 "subPoints": [
+                    "Axis inversion: Good job on inverting the x-axis (matching the assignment sheet).",
                     "Proper labeling of axes (Wavenumber cm-1 vs Absorbance) and legend usage."
                 ]
             },
@@ -53,20 +54,27 @@
             {
                 "mainPoint": "Task 3: Visualization Issues",
                 "subPoints": [
-                    "Missing Plot: No visualization was provided to verify the fit quality.",
-                    "Plotting only data: You plotted the raw data but did not overlay the optimized model curve.",
+                    "Color: The optimized model curve should be plotted in a different color to distinguish it from the raw data.",
                     "Formatting: The plot lacks axis lables or units on the x-axis (cm-1).",
+                    "Missing Plot: No visualization was provided to verify the fit quality.",
                     "To best match Figure 1 on the assignment sheet, the x-axis should be reversed (high to low wavenumber)."
                 ]
             },
             {
                 "mainPoint": "Task 3: FWHM Calculation",
                 "subPoints": [
+                    "Citation - where did you learn about the analytic solution for FWHM of a Gaussian function? Please provide a reference.",
                     "Incorrect FWHM: The calculated FWHM value is far from the expected 0.469 cm-1.",
                     "Logic Error: FWHM was determined for Peak 2, not Peak 1.",
                     "Root finding failed: The scipy.optimize.root function was not used.",
                     "Root finding failed: The scipy.optimize.root function did not find the half-maximum points correctly."
                  ]
+            },
+            {
+                "mainPoint": "Results",
+                "subPoints": [
+                    "Incorrect - Some or all of your results are wrong, which could be seen in the visualization (i.e. plots)."
+                ]
             }
         ]
     }

@@ -62,8 +62,11 @@
         {
         "mainPoint":"Poor Choice or Execution of Elements",
         "subPoints":[
+            "Axes and data - independent data should be on the x-axis and dependent data on the y-axis",
             "Axis labels - Insufficient detail, misleading, or without untis.",
-            "Color choice - Poor contrast or poor color mapping.",
+            "Color choice - Poor contrast or poor color mapping (i.e., dificult to distinquish).",
+            "Color choice - Different data series should be assigned different colors to distinguish them.",
+            "Font size - Too small/large, which significantly impacting readability.",
             "Font size - Too small/large, which significantly impacting readability.",
             "Line/point styles - Confusingly similar or inappropriate for the data type.",
             "Line styles - A different thickness would have been more appropriate.",

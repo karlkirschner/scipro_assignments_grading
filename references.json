@@ -10,13 +10,13 @@
         {
             "id": 2,
             "title":"User Function",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/user_function.json"
         },
         {
             "id": 3,
             "title":"Significant Figures",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/significant_figures.json"
         },
         {

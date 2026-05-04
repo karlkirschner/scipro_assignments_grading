@@ -12,8 +12,8 @@
                "internal check - proper use of 'if not isinstance', 'raise' statements, etc.",
                "isolating ideas to user-defined functions",
                "optional parameters - nice idea to include them",
-               "type hinting - applied well for input variables (and what for what is returned, if applicable)",
-               "type hinting - good use of typing library"
+               "type hinting - applied well for input variables (and for what is returned, if applicable)",
+               "type hinting - good use of the typing library"
             ]
          }
       ],
@@ -48,13 +48,13 @@
                "docstring - none provided for specifying context",
                "docstring - no statement about what the input variables are",
                "docstring - no statement about what the function returns",
-               "docstring - units should be specified for the input and out put variables/objects",
+               "docstring - units should be specified for the input and output variables/objects",
                "global variables - use local variable in your function (e.g., improves transferability)",
                "internal checks - none provided (e.g., 'if not isinstance')",
-               "internal checks - the check logic is overly complicated or too dense and should be separated for readability.",
-               "overall solution - creating a homework solution using primarily user-defined functions is not ideal, as it can make the code less concise and more difficult to follow",
+               "internal checks - the check logic is overly complicated or too dense, whose checks should be separated for readability.",
                "inconsistency - not all functions follow the same style (e.g., some have docstrings, some do not; some have internal checks, some do not)",
-               "structure - main code logic should be nested under the internal checks (e.g., within an else statement) for proper flow control",
+               "overall solution - creating a homework solution using primarily user-defined functions is not ideal, as it can make the code less concise and more difficult to follow",
+               "structure - main code logic should be nested under the internal checks (e.g., within an else statement) for clear flow control",
                "trivial function - does very little, and arguably does not warrant being a function",
                "type hinting - incorrect type(s)",
                "type hinting - none provided",

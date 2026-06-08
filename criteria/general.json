@@ -225,7 +225,7 @@
                "context - poorly provided (e.g., background info, the problem)",
                "image - an image from the assignment sheet is not good enough - suggests a lack of effort",
                "sentences - not clean, concise and/or context provided (C^3)",
-               "punctuation - use punctuation when setences are formed, including in comments, docstrings and TypeError messages",
+               "punctuation - use punctuation when sentences are formed, including in comments, docstrings and TypeError messages",
                "sentences - incomplete sentences (e.g., capitalization, subject, verb) when needed (including in f-strings)",
                "words - several misspelled",
                "words - notably mixed English and German words in the solution"

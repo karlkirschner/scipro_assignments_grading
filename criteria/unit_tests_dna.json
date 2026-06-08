@@ -1,0 +1,81 @@
+{
+  "UnitTest_DNA": {
+    "title": "Unit Test DNA Transcription",
+    "additionalNotes": true,
+    "positive": [
+      {
+        "mainPoint": "Additional user-defined function feedback",
+        "subPoints": [
+          "Nice idea to provide default value for some of the parameters.",
+          "Good approach converting input to uppercase and then replacing `T` with `U`.", 
+          "Good input validation: raising `TypeError` for non-string input.", 
+          "Good input validation: raising `ValueError` for invalid nucleotides.",
+          "Very good job on incorporating the unit test concepts into your user-defined function development."
+        ]
+      },
+      {
+        "mainPoint": "Exception testing done well",
+        "subPoints": [
+          "For `PyTest` - good use of `pytest.raises(ValueError)` to verify that invalid characters raise an error in the most concise manner.",
+          "For `unittest` - good use of `with self.assertRaises(ValueError)` to verify that invalid characters raise an error in the most concise manner.",
+          "Good job at developing an alternative approach (e.g., usig a boolean flag or unittest's `self.fail`)."
+        ]
+      },
+      {
+        "mainPoint": "Toy data generation",
+        "subPoints": [
+          "Good use of random module (e.g., `random.randint`, `random.choices`) to create randomized toy data.",
+          "Interesting use of the following random functions:",
+          "Very good validation of a length arguments (e.g., negative lengths, max and/or min lengths) for safe toy data generation."
+        ]
+      },
+      {
+        "mainPoint": "Overall unit test feedback",
+        "subPoints": [
+          "Good job on using the PyTest module/library.",
+          "Good job on using the unittest module/library.",
+          "You created a good transcription user-defined function.",
+          "Your unit tests correctly check your function.",
+          "Tests are readable and follow a logical naming scheme."
+        ]
+      }
+    ],
+    "neutral": [
+      {
+        "mainPoint": "General feedback",
+        "subPoints": [
+          "Toy data - consider including a validation for invalid ranges (e.g., negative sequence lengths).", 
+          "Consider including testing edge cases (e.g., `TTTT`, `CtGg`, `GAGA`)."
+        ]
+      }
+    ],
+    "negative": [
+      {
+        "mainPoint": "Transcription function requirements not met",
+        "subPoints": [
+          "Did not correctly implement the transcription rule DNA to RNA by replacing all `T`s with `U`s. You needed to use `str.replace().`",
+          "Did not handle case-insensitivity - failed to convert lowercase input to uppercase before validation/transcription). Please see Python's `str.upper()` function.",
+          "Allowed invalid characters without raising `ValueError`."
+        ]
+      },
+      {
+        "mainPoint": "Unit tests incomplete",
+        "subPoints": [
+          "Missing at least one required tests (i.e., standard transcription, case-insensitivity, and/or invalid-character `ValueError`).",
+          "Exception test doesn't work correctly (e.g., the call to `your_function(...)` not placed inside the `assertRaises` context).",
+          "Multiple tests are joined together, rather than having specific idea isolation localized to specific tests.",
+          "One or more of your developed tests are failing.",
+          "Tests rely on `print()` statements instead of assertions."
+       ]
+      },
+      {
+        "mainPoint": "Toy data generation issues",
+        "subPoints": [
+          "Generated sequences contain characters outside `{A, T, C, G}`.",
+          "Did not randomize sequence length (e.g., using `random.randint)`.",
+          "Did not randomize the sequence (e.g., using `random.choices()`)."
+        ]
+      }
+    ]
+  }
+}

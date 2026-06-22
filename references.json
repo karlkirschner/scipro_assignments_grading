@@ -22,7 +22,7 @@
         {
             "id": 4,
             "title":"Pandas",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas.json"
         },
         {
@@ -78,9 +78,15 @@
             "title":"SciPy Spectrum",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/scipy_spectrum.json"
-        },
+        },,
         {
             "id": 14,
+            "title":"NumPy"
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy_ai.json"
+        }
+        {
+            "id": 15,
             "title":"Unit Tests",
             "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/unit_tests_dna.json"

@@ -81,14 +81,14 @@
         },
         {
             "id": 14,
-            "title":"NumPy",
+            "title":"NumPy AI",
             "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy_ai.json"
         },
         {
             "id": 15,
             "title":"Unit Tests",
-            "enabled": true,
+            "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/unit_tests_dna.json"
         }
     ]

@@ -33,7 +33,7 @@
         "subPoints": [
           "Array Operations: Demonstrated array reshaping correctly.",
           "Array Operations: Demonstrated array slicing and/or filtering correctly.",
-          "Array Operations: Demonstrated concatenating dataframes correctly.",
+          "Array Operations: Demonstrated concatenating DataFrames correctly.",
           "Polynomials: Correctly utilized the 'numpy.polynomial.polynomial' module or 'Polynomial.fit'.",
           "Simulation Data: Excellent application of NumPy's random number generation to construct representative toy data.",
           "Simulation Data: Excellent inclusion of noise into your toy data."
@@ -98,7 +98,7 @@
         "mainPoint": "Underutilization of NumPy Built-ins",
         "subPoints": [
           "Used non-NumPy function or manually calculated math operations instead of using NumPy functions (e.g., np.mean, np.sqrt, np.square, np.subtract, etc.).",
-          "For polynoial equation usage: The solution failed to use 'numpy.polynomial.polynomial' or 'Polynomial.fit' for the polynomial task."
+          "For polynomial equation usage: The solution failed to use 'numpy.polynomial.polynomial' or 'Polynomial.fit' for the polynomial task."
         ]
       },
       {

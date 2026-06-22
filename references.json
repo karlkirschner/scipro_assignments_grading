@@ -78,10 +78,10 @@
             "title":"SciPy Spectrum",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/scipy_spectrum.json"
-        },,
+        },
         {
             "id": 14,
-            "title":"NumPy"
+            "title":"NumPy",
             "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy_ai.json"
         }

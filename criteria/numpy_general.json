@@ -62,7 +62,7 @@
         "subPoints": [
           "Used inefficient standard Python loops to generate random distributions instead of vectorized NumPy random functions.",
           "Polynomial equation usage: The solution failed to use NumPy's 'polynomial.polynomial' or 'Polynomial.fit'.",
-          "timeit - poor or improper usage of the timeit library"
+          "timeit: Poor or improper usage of the timeit library."
         ]
       }
     ]

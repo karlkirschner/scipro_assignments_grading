@@ -41,23 +41,23 @@
         {
         "mainPoint":"Composition: Data Overload/Too Many Plots",
         "subPoints":[
-            "Too Many Plots: Combining the data into a single (or a reduced number) plots would have been a more concise presentation and allowed easier comparison.",
-            "Data Overload: The data amount given in a the plot(s) was too much, leading to clutter. Consider separating the data better."
+            "Data Overload: The data amount given in a the plot(s) was too much, leading to clutter. Consider separating the data better.",
+            "Too Many Plots: Combining the data into a single (or a reduced number) plots would have been a more concise presentation and allowed easier comparison."
             ]
         },
         {
         "mainPoint":"Missing Essential Plot Elements",
         "subPoints":[
-            "Axis Labels: Missing or incomplete",
-            "Legend: Missing when multiple data series are present",
-            "Units: Missing on axis labels or title",
-            "Title: Plot title is missing"
+            "Axis Labels: One or two axis lables are missing or incomplete",
+            "Legend: A legend is missing, which is need when multiple data series are present.",
+            "Title: Plot title is missing.",
+            "Units: Missing on axis labels or title."
             ]
         },
         {
         "mainPoint":"Poor Choice or Execution of Elements",
         "subPoints":[
-            "Axes and Data: inDependent data should be on the x-axis and dependent data on the y-axis",
+            "Axes and Data: inDependent data should be on the x-axis and dependent data on the y-axis.",
             "Axis Labels: Insufficient detail, misleading, or without units.",
             "Color: Poor contrast or poor color mapping (i.e., difficult to distinguish).",
             "Color: Different data series should be assigned different colors to distinguish them.",

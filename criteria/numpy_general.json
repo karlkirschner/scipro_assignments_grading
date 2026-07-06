@@ -1,0 +1,70 @@
+{
+    "numpy":{
+        "title":"NumPy",
+        "additionalNotes":true,
+        "positive": [
+        {
+        "mainPoint": "Core Deliverables & Structure",
+        "subPoints": [
+          "Good use of NumPy for your homework assignment."
+        ]
+        },
+        {
+        "mainPoint": "NumPy Best Practices",
+        "subPoints": [
+          "Use of NumPy vectorization instead of loops (e.g., for loops).",
+          "Correct usage of the standard community abbreviation 'import numpy as np'.",
+          "Appropriate use of NumPy data types.",
+          "Good usage of NumPy functions (e.g., np.mean, np.sqrt, np.square, np.subtract, etc.)."
+        ]
+        },
+        {
+        "mainPoint": "Topic-Specific Applications (if applicable per assignment)",
+        "subPoints": [
+          "Array Operations: Array reshaping done correctly.",
+          "Array Operations: Array slicing and/or filtering done correctly.",
+          "Array Operations: Concatenating DataFrames done correctly.",
+          "Polynomials: Correctly utilized the 'numpy.polynomial.polynomial' module or 'Polynomial.fit'.",
+          "Random Number: Very nice application of NumPy's random number generation.",
+          "Toy Data: Excellent inclusion of noise into your toy data."
+        ]
+        }
+    ],
+        "neutral": [
+      {
+        "mainPoint": "Code Optimization & Style Adjustments",
+        "subPoints": [
+          "Style: Please use the standard community abbreviation 'import numpy as np'.",
+          "Separation of ideas: Consider handling data conversion (e.g., Pandas DataFrame or List to a NumPy array) outside of the core computing function.",
+          "Toy Data, Reproducibility: Consider setting a random seed (e.g., np.random.default_rng(seed)) to make your toy data reproducible.",
+          "Toy Data, Noise: Consider adding a 'noisy' component to your generated toy data for more realistic simulation."
+        ]
+        }
+    ],
+        "negative": [
+      {
+        "mainPoint": "Performance & Vectorization Issues",
+        "subPoints": [
+          "Iterating over the NumPy ndarray via a loop defeats the purpose of vectorization and hurts performance.",
+          "Performance - the NumPy solution ran slower than expected."
+        ]
+      },
+      {
+        "mainPoint": "NumPy Built-ins and Data Type Handling",
+        "subPoints": [
+          "Numpy function was passed/used an incorrect data type (e.g., Pandas DataFrame, List, etc.) instead of a NumPy array.",
+          "NumPy Function incorrectly returned (e.g., Floats / Lists / Pandas DataFrames / Other): ",
+          "Used non-NumPy function or manually calculated math operations instead of using NumPy functions (e.g., np.mean, np.sqrt, np.square, np.subtract, etc.)."
+        ]
+      },
+      {
+        "mainPoint": "Topic-Specific Applications (if applicable per assignment)",
+        "subPoints": [
+          "Used inefficient standard Python loops to generate random distributions instead of vectorized NumPy random functions.",
+          "Polynomial equation usage: The solution failed to use NumPy's 'polynomial.polynomial' or 'Polynomial.fit'.",
+          "timeit - poor or improper usage of the timeit library"
+        ]
+      }
+    ]
+    }
+}

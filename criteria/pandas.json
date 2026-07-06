@@ -6,9 +6,11 @@
         {
             "mainPoint":"Overall Pandas feedback",
             "subPoints":[
+                "Correlation analysis - Well done",
+                "Data Cleaning & Preparation: Very nicely done (e.g., dropping duplicates, handling missing values)!",
+                "DataFrame Display: Nicely displayed Pandas DataFrames for better readability",
                 "Effective use of Pandas and its built-in functions",
                 "Good analysis of the correlation results",
-                "Correlation analysis - Well done",
                 "Plotting - Good, concise coding for the plot generation",
                 "Plotting - Nicely made plots containing all key elements",
                 "Plotting - Very nicely done!"
@@ -21,7 +23,7 @@
             "subPoints":[
                 "`reset_index`",
                 "`loc` to easily operate over the columns",
-                "`sort_values` (Country name) would have been logical to after data cleaning, but fine.="
+                "`sort_values`  would have been logical to after data cleaning, but fine.="
             ]
         }
     ],

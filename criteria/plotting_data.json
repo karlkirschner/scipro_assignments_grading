@@ -48,7 +48,7 @@
         {
         "mainPoint":"Missing Essential Plot Elements",
         "subPoints":[
-            "Axis labels: Missing or incomplete",
+            "Axis Labels: Missing or incomplete",
             "Legend: Missing when multiple data series are present",
             "Units: Missing on axis labels or title",
             "Title: Plot title is missing"
@@ -57,15 +57,14 @@
         {
         "mainPoint":"Poor Choice or Execution of Elements",
         "subPoints":[
-            "Axes and data: independent data should be on the x-axis and dependent data on the y-axis",
-            "Axis labels: Insufficient detail, misleading, or without units.",
-            "Color choice: Poor contrast or poor color mapping (i.e., difficult to distinguish).",
-            "Color choice: Different data series should be assigned different colors to distinguish them.",
-            "Font size: Too small/large, which significantly impacts readability.",
-            "Font size: Too small/large, which significantly impacts readability.",
-            "Line/point styles: Confusingly similar or inappropriate for the data type.",
-            "Line styles: A different thickness would have been more appropriate.",
-            "Point styles: A different size would have been more appropriate."
+            "Axes and Data: inDependent data should be on the x-axis and dependent data on the y-axis",
+            "Axis Labels: Insufficient detail, misleading, or without units.",
+            "Color: Poor contrast or poor color mapping (i.e., difficult to distinguish).",
+            "Color: Different data series should be assigned different colors to distinguish them.",
+            "Font Size: Too small/large, which significantly impacts readability.",
+            "Line/Point Styles: Confusingly similar or inappropriate for the data type.",
+            "Line Styles: A different thickness would have been more appropriate.",
+            "Point Styles: A different size would have been more appropriate."
             ]
         }
     ]

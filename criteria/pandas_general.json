@@ -6,9 +6,9 @@
     {
         "mainPoint":"Overall Pandas feedback",
         "subPoints":[
+            "built-in functions: Effective use of Pandas functions.",
             "Data Cleaning & Preparation: Very nicely done (e.g., dropping duplicates, handling missing values)!",
-            "DataFrame Display: Nicely displayed Pandas DataFrames for better readability",
-            "Effective use of Pandas and its built-in functions"              
+            "DataFrame Display: Nicely displayed Pandas DataFrames for better readability."             
         ]
     },
     {
@@ -17,18 +17,9 @@
             "Absolute Value: Good on taking the absolute value of the data for analysis.",
             "Correlation Analysis: Well done.",
             "Merging DataFrames: The merge of data was incorrect or not done well.",
+            "Running Averages: Good inea on performing a running averages of the data.",
             "Sorting: Good job on sorting the data for easier interpretation/understanding.",
             "Statitical Analysis: Good job on interpreting the statistical analysis."
-        ]
-    }
-    ],
-        "neutral":[
-    {
-        "mainPoint":"The following functions might have been good to use in your solution",
-        "subPoints":[
-            "`reset_index`",
-            "`loc`: to easily operate over the columns",
-            "`sort_values`: would have been logical to after data cleaning, but fine."
         ]
     }
     ],
@@ -37,12 +28,11 @@
         "mainPoint":"Reading Data Into Pandas",
         "subPoints":[
             "Delimiter (`sep`): Incorrectly specified the separator used within the CSV-formatted file.",
-            "Function creation: Creating a function to read in the data is not necessary and adds unnecessary complexity to the code.",
-            "Header (`header`): Incorrectly specified the header line.",
+            "Function Creation: Creating a function to read in the data is not necessary and adds unnecessary complexity to the code.",
             "Header (`header`): Incorrectly specified the header line.",
             "Incorrectly loading of the data.",
             "New Object: Creating a new object that is string of the input file is uneeded - not concise coding when using it once.",
-            "Renaming file: Renaming the source data file is generally not a good practice."
+            "Renaming File: Renaming the source data file is generally not a good practice."
         ]
     },
     {
@@ -57,7 +47,7 @@
         "mainPoint":"Topic-Specific Applications (if applicable per assignment)",
         "subPoints":[
             "Correlation Analysis: Did not use Pandas' built-in correlation function.",
-            "Absolute value: You needed to take the absolute value of the data for analysis.",
+            "Absolute Value: You needed to take the absolute value of the data for analysis.",
             "Interpretation: Lack of interpreting what the statitical analysis means (i.e., context is missing).",
             "Merging DataFrames: The merge of data was incorrect or not done well.",
             "Sorting: The data was not sorted, or the sorting was incorrect/not saved."
@@ -67,7 +57,7 @@
         "mainPoint":"Output, Persistence, and Presentation",
         "subPoints":[
             "Final Data Not Saved: The final processed data was not saved to a file.",
-            "Saving index: Saving the default numerical index was unnecessary for the resulting data file."
+            "Saving Index: Saving the default numerical index was unnecessary for the resulting data file."
         ]
     }
     ]

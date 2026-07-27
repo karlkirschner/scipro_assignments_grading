@@ -1,0 +1,126 @@
+{
+    "Pandas":{
+        "title":"Pandas",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall Pandas feedback",
+            "subPoints":[
+                "Good use of Pandas.",
+                "Good use of the Pandas functions.",
+                "Good use of 'to_numpy()'.",
+                "Good job on adding data to the main DataFrame."
+            ]
+        }
+        ],
+        "negative":[
+        {
+            "mainPoint":"Reading Data Into Pandas",
+            "subPoints":[
+                "Data cleaning: for this assignment, data cleaning was not required, but it is fine that you did it.",
+                "Delimiter (i.e., `sep`): incorrectly specified the separator used within the CSV-formatted file.",
+                "Data reading: incorrectly read in the data."
+            ]
+        },
+        {
+            "mainPoint":"Miscellaneous",
+            "subPoints":[
+                "Constants: creating a lot of objects that represent constants doesn't make sense here - you are just replacing a string for an object, which is not concise coding.",
+                "Displaying Data: data is not displayed well (e.g., a print statement) - should display data in a Pandas' table when possible.",
+                "Dataframes: the creation of DataFrames was more complicated than needed to be.",
+                "Dataframes: too many DataFrames were created, causing less concise work and more mental load."
+            ]
+        }
+        ]
+    },
+    "NumPy":{
+        "title":"NumPy Library",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"The following points were well done",
+            "subPoints":[
+                "Abbreviation: good job on using use the community abbreviation of 'np'.",
+                "Function: good job on using Numpy's functions (e.g., np.add, np.subtract, np.exp) to perform calculations.",
+                "Function: good job on using Numpy's np.exp functions to perform calculations.",
+                "Types: good job on ensuring Numpy objects (e.g. np.ndarray, np.float64) were used in the solution."
+             ]
+        }
+        ],
+        "neutral":[
+        {
+            "mainPoint":"The following points would improve your NumPy solution slightly",
+            "subPoints":[
+                "Abbreviation: use the community abbreviation of 'np'.",
+                "Function: fine usage of both regular and Numpy's functions. While this is more readable, it may detract from performance. Keep this in mind for your future programming."
+            ]
+        }
+        ],
+        "negative":[
+        {
+            "mainPoint":"The following points were problems in your solution",
+            "subPoints":[
+                "Functions: use Numpy's np.exp functions to perform calculations.",
+                "Types: ensure Numpy objects (e.g. np.ndarray, np.float64) are used in the user-defined model."
+            ]
+        }
+        ]
+    },
+    "SciPy":{
+        "title":"SciPy Library",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"",
+            "subPoints":[
+                "Analysis: good job on using the elbow technique.",
+                "Analysis: good job on using RMSE and R^2 to evaluate the model.",
+                "Analysis: very good job on computing the prediction's errors based on the covariance matrix.",
+                "Functions: good job on using SciPy `curve_fit` function."
+
+            ]
+        }
+        ],
+        "negative":[
+        {
+            "mainPoint":"Miscellaneous",
+            "subPoints":[
+                "Analysis: if you used the elbow technique, you should have discussed the results of the elbow technique and how it relates to your model.",
+                "Analysis: if you computed RMSE or R^2, you should have used the built in functions.",
+                "Analysis: if you computed RMSE or R^2, you should have discussed the results.",
+                "Function: needed to use SciPy's `curve_fit` function to find the optimal value of the variable."
+            ]
+        }
+        ]
+    },
+    "sklearn":{
+        "title":"sklearn",
+        "additionalNotes":true,
+        "positive":[
+        {
+            "mainPoint":"Overall sklearn feedback",
+            "subPoints":[
+                "Functions: good use of sklearn and its functions (e.g., KMeans)."
+            ]
+        }
+        ],
+        "neutral":[
+        {
+            "mainPoint":"",
+            "subPoints":[
+                "Data normalization: Did not need to normalize the data since they were similar magnitude."
+            ]
+        }
+        ],
+        "negative":[
+        {
+            "mainPoint":"The following points were problems in your solution",
+            "subPoints":[
+                "Model: did not use sklearn's 'KMeans' functions.",
+                "Results: incorrectly computed cluster.",
+                "Results: incorrect, poor (e.g., no discussion of which model performs best/worse), or no analysis done."
+            ]
+        }
+        ]
+    }
+}

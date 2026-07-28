@@ -6,11 +6,13 @@
         {
         "mainPoint": "The following points were well done",
         "subPoints": [
-            "Good use of Pandas.",
             "Functions: good use of Pandas functions.",
             "Functions: good use of `to_numpy()` when passing coordinates to `curve_fit`.",
             "Data loading: correct use of `pd.read_csv`.",
-            "Data inspection: good use of `head()` to preview the DataFrame."
+            "Data inspection: good use of `head()` to preview the DataFrame.",
+            "DataFrame display: Nicely displayed Pandas DataFrames for better readability.",
+            "Merging data: The merge of data into the a DataFrame was well done.",
+            "Statitical Analysis: Good job on including and interpreting basic statistical analysis."
         ]
         }
         ],
@@ -26,18 +28,20 @@
         {
             "mainPoint":"Data Loading",
             "subPoints":[
-                
                 "Delimiter (i.e., `sep`): incorrectly specified the separator used within the CSV-formatted file.",
-                "Data reading: incorrectly read in the data."
+                "Data reading: incorrectly read in the data.",
+                "Function Creation: Creating a function to read in the data is not necessary here and adds complexity/verboseness to the code."
             ]
         },
         {
-            "mainPoint":"Miscellaneous",
+            "mainPoint":"The following points were problems in your solution",
             "subPoints":[
                 "Constants: creating a lot of objects that represent `constants` doesn't make sense here. For a short notebook, you are replacing a string for an object, which is not concise coding.",
                 "Displaying data: data is not displayed well (e.g., a print statement) - should display data in a Pandas' DataFrame table (e.g. `display()`) when possible.",
                 "Dataframes: the creation of DataFrames was more complicated than needed to be.",
-                "Dataframes: too many DataFrames were created, causing less concise work and more mental load."
+                "Dataframes: too many DataFrames were created, causing less concise work and more mental load.",
+                "Interpretation: Lack of interpreting what the statitical analysis means (i.e., context is missing).",
+                "Merging DataFrames: The merge of data was incorrect or not done well."
             ]
         }
         ]
@@ -50,9 +54,12 @@
             "mainPoint":"The following points were well done",
             "subPoints":[
                 "Abbreviation: good job on using use the community abbreviation of `np`.",
+                "Array Operations: array reshaping done correctly.",
+                "Array Operations: combining arrays done correctly.",
                 "Function: good job on maximizing the use use of NumPy's functions (e.g., `np.add`, `np.subtract`, `np.exp`) to perform meathematics.",
                 "Function: good job on using NumPy's `np.exp` functions to perform meathematics.",
-                "Types: good job on ensuring NumPy objects (e.g. `np.ndarray`, `np.float64`) were used in the solution."
+                "Types: good job on ensuring NumPy objects (e.g. `np.ndarray`, `np.float64`) were used in the solution.",
+                "Vectorization: good use of NumPy's vectorization instead of loops (e.g., for loops)."
              ]
         }
         ],
@@ -70,7 +77,8 @@
             "subPoints":[
                 "Abbreviation: use the community abbreviation of `np`.",
                 "Function: use NumPy's `np.exp` functions to perform calculations.",
-                "Types: ensure NumPy objects (e.g. `np.ndarray`, `np.float64`) are used in the user-defined model."
+                "Types: ensure NumPy objects (e.g. `np.ndarray`, `np.float64`) are used in the user-defined model.",
+                "Vectorization: iterating over the NumPy ndarray via a loop defeats the purpose of vectorization and hurts performance."
             ]
         }
         ]
@@ -92,7 +100,7 @@
         ],
         "negative":[
         {
-            "mainPoint":"Miscellaneous",
+            "mainPoint":"The following points were problems in your solution",
             "subPoints":[
                 "Analysis: if you used the elbow technique, the results and how it relates to your model should have been discussed.",
                 "Analysis: if you computed RMSE or R^2, then use the built in functions (e.g., `r2_score`, `mean_squared_error`), thus reducing the chances of introducing errors.",

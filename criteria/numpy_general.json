@@ -4,18 +4,13 @@
         "additionalNotes":true,
         "positive": [
         {
-        "mainPoint": "Core Deliverables & Structure",
+        "mainPoint": "The following points were well done",
         "subPoints": [
-          "Good use of NumPy for your homework assignment."
-        ]
-        },
-        {
-        "mainPoint": "NumPy Best Practices",
-        "subPoints": [
-          "Use of NumPy vectorization instead of loops (e.g., for loops).",
-          "Correct usage of the standard community abbreviation 'import numpy as np'.",
-          "Appropriate use of NumPy data types.",
-          "Good usage of NumPy functions (e.g., np.mean, np.sqrt, np.square, np.subtract, etc.)."
+          "Good use of NumPy for your homework assignment.",
+          "Abbreviation: good job on using use the community abbreviation of `np`.",
+          "Types: Good job on ensuring NumPy objects usage.",
+          "Functions: Good usage of NumPy functions (e.g., `np.mean`, `np.sqrt`, `np.square`, `np.subtract`, etc.).",
+          "Vectorization: Good use of NumPy's vectorization instead of loops (e.g., for loops)."
         ]
         },
         {
@@ -23,7 +18,7 @@
         "subPoints": [
           "Array Operations: Array reshaping done correctly.",
           "Array Operations: Array slicing and/or filtering done correctly.",
-          "Array Operations: Concatenating DataFrames done correctly.",
+          "Array Operations: Combining arrays done correctly.",
           "Polynomials: Correctly utilized the 'numpy.polynomial.polynomial' module or 'Polynomial.fit'.",
           "Random Number: Very nice application of NumPy's random number generation.",
           "Toy Data: Excellent inclusion of noise into your toy data."
@@ -45,9 +40,8 @@
       {
         "mainPoint": "Performance & Vectorization Issues",
         "subPoints": [
-          "Iterating over the NumPy ndarray via a loop defeats the purpose of vectorization and hurts performance.",
-          "Performance - the NumPy solution ran slower than expected."
-        ]
+          "Performance: the NumPy solution ran slower than expected.",
+          "Vectorization: iterating over the NumPy ndarray via a loop defeats the purpose of vectorization and hurts performance."        ]
       },
       {
         "mainPoint": "NumPy Built-ins and Data Type Handling",

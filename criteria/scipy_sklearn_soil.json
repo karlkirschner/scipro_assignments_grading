@@ -1,23 +1,32 @@
 {
-    "Pandas":{
-        "title":"Pandas",
-        "additionalNotes":true,
-        "positive":[
+"Pandas": {
+    "title": "Pandas",
+    "additionalNotes":true,
+    "positive": [
         {
-            "mainPoint":"Overall Pandas feedback",
-            "subPoints":[
-                "Good use of Pandas.",
-                "Good use of the Pandas functions.",
-                "Good use of 'to_numpy()'.",
-                "Good job on adding data to the main DataFrame."
-            ]
+        "mainPoint": "The following points were well done",
+        "subPoints": [
+            "Good use of Pandas.",
+            "Functions: good use of Pandas functions.",
+            "Functions: good use of `to_numpy()` when passing coordinates to `curve_fit`.",
+            "Data loading: correct use of `pd.read_csv`.",
+            "Data inspection: good use of `head()` to preview the DataFrame."
+        ]
         }
         ],
-        "negative":[
+    "neutral": [
+      {
+        "mainPoint": "Data Cleaning",
+        "subPoints": [
+            "Data cleaning: for this assignment, data cleaning was not required, but it is fine that you did it."
+        ]
+      }
+    ],
+    "negative":[
         {
-            "mainPoint":"Reading Data Into Pandas",
+            "mainPoint":"Data Loading",
             "subPoints":[
-                "Data cleaning: for this assignment, data cleaning was not required, but it is fine that you did it.",
+                
                 "Delimiter (i.e., `sep`): incorrectly specified the separator used within the CSV-formatted file.",
                 "Data reading: incorrectly read in the data."
             ]
@@ -25,8 +34,8 @@
         {
             "mainPoint":"Miscellaneous",
             "subPoints":[
-                "Constants: creating a lot of objects that represent constants doesn't make sense here - you are just replacing a string for an object, which is not concise coding.",
-                "Displaying Data: data is not displayed well (e.g., a print statement) - should display data in a Pandas' table when possible.",
+                "Constants: creating a lot of objects that represent `constants` doesn't make sense here. For a short notebook, you are replacing a string for an object, which is not concise coding.",
+                "Displaying data: data is not displayed well (e.g., a print statement) - should display data in a Pandas' DataFrame table (e.g. `display()`) when possible.",
                 "Dataframes: the creation of DataFrames was more complicated than needed to be.",
                 "Dataframes: too many DataFrames were created, causing less concise work and more mental load."
             ]
@@ -34,25 +43,24 @@
         ]
     },
     "NumPy":{
-        "title":"NumPy Library",
+        "title":"NumPy",
         "additionalNotes":true,
         "positive":[
         {
             "mainPoint":"The following points were well done",
             "subPoints":[
-                "Abbreviation: good job on using use the community abbreviation of 'np'.",
-                "Function: good job on using Numpy's functions (e.g., np.add, np.subtract, np.exp) to perform calculations.",
-                "Function: good job on using Numpy's np.exp functions to perform calculations.",
-                "Types: good job on ensuring Numpy objects (e.g. np.ndarray, np.float64) were used in the solution."
+                "Abbreviation: good job on using use the community abbreviation of `np`.",
+                "Function: good job on maximizing the use use of NumPy's functions (e.g., `np.add`, `np.subtract`, `np.exp`) to perform meathematics.",
+                "Function: good job on using NumPy's `np.exp` functions to perform meathematics.",
+                "Types: good job on ensuring NumPy objects (e.g. `np.ndarray`, `np.float64`) were used in the solution."
              ]
         }
         ],
         "neutral":[
         {
-            "mainPoint":"The following points would improve your NumPy solution slightly",
+            "mainPoint":"The following would improve your NumPy solution slightly",
             "subPoints":[
-                "Abbreviation: use the community abbreviation of 'np'.",
-                "Function: fine usage of both regular and Numpy's functions. While this is more readable, it may detract from performance. Keep this in mind for your future programming."
+                "Function: fine usage of both regular and NumPy's functions. While this is more readable, it may detract from performance. Keep this in mind for your future programming."
             ]
         }
         ],
@@ -60,14 +68,15 @@
         {
             "mainPoint":"The following points were problems in your solution",
             "subPoints":[
-                "Functions: use Numpy's np.exp functions to perform calculations.",
-                "Types: ensure Numpy objects (e.g. np.ndarray, np.float64) are used in the user-defined model."
+                "Abbreviation: use the community abbreviation of `np`.",
+                "Function: use NumPy's `np.exp` functions to perform calculations.",
+                "Types: ensure NumPy objects (e.g. `np.ndarray`, `np.float64`) are used in the user-defined model."
             ]
         }
         ]
     },
     "SciPy":{
-        "title":"SciPy Library",
+        "title":"SciPy",
         "additionalNotes":true,
         "positive":[
         {
@@ -75,9 +84,9 @@
             "subPoints":[
                 "Analysis: good job on using the elbow technique.",
                 "Analysis: good job on using RMSE and R^2 to evaluate the model.",
+                "Analysis: nice idea to do a double check the number of clusters using the elbow technique.",
                 "Analysis: very good job on computing the prediction's errors based on the covariance matrix.",
                 "Functions: good job on using SciPy `curve_fit` function."
-
             ]
         }
         ],
@@ -85,10 +94,11 @@
         {
             "mainPoint":"Miscellaneous",
             "subPoints":[
-                "Analysis: if you used the elbow technique, you should have discussed the results of the elbow technique and how it relates to your model.",
-                "Analysis: if you computed RMSE or R^2, you should have used the built in functions.",
-                "Analysis: if you computed RMSE or R^2, you should have discussed the results.",
-                "Function: needed to use SciPy's `curve_fit` function to find the optimal value of the variable."
+                "Analysis: if you used the elbow technique, the results and how it relates to your model should have been discussed.",
+                "Analysis: if you computed RMSE or R^2, then use the built in functions (e.g., `r2_score`, `mean_squared_error`), thus reducing the chances of introducing errors.",
+                "Analysis: if you computed RMSE or R^2, the resulting values should have discussed in context to the model.",
+                "Function: needed to use SciPy's `curve_fit` function to find the optimal value of the variable.",
+                "Parameter value: why did you set `maxfev=200000` (or similar large numbers)? What is the justification of replacing its default value?"
             ]
         }
         ]
@@ -100,7 +110,7 @@
         {
             "mainPoint":"Overall sklearn feedback",
             "subPoints":[
-                "Functions: good use of sklearn and its functions (e.g., KMeans)."
+                "Functions: good use of sklearn and its class/functions (e.g., `KMeans`, `k_means`)."
             ]
         }
         ],
@@ -108,7 +118,7 @@
         {
             "mainPoint":"",
             "subPoints":[
-                "Data normalization: Did not need to normalize the data since they were similar magnitude."
+                "Data normalization: did not need to normalize the data since they were of similar magnitude."
             ]
         }
         ],
@@ -116,9 +126,31 @@
         {
             "mainPoint":"The following points were problems in your solution",
             "subPoints":[
-                "Model: did not use sklearn's 'KMeans' functions.",
+                "Model: did not use sklearn's `KMeans` class or `k_means` functions.",
+                "Parameter value: why did you set `n_init=10` (or similar value), replacing the default value of `auto`? What is the justification for this?",
                 "Results: incorrectly computed cluster.",
                 "Results: incorrect, poor (e.g., no discussion of which model performs best/worse), or no analysis done."
+            ]
+        }
+        ]
+    },
+    "GenAI":{
+        "title":"GenAI",
+        "additionalNotes":true,
+        "neutral":[
+        {
+            "mainPoint":"Becarefull with the following",
+            "subPoints":[
+                "Written context: your writing and understanding of the problem is very refined. I have the feeling that GenAI was used so much that it replaced your own voice."
+            ]
+        }
+        ],
+        "negative":[
+        {
+            "mainPoint":"The following points were observed about your solution",
+            "subPoints":[
+                "Code: your solution indicates the usage of GenAI to generate the code, which was not allowed in the course (see Syllabus).",
+                "Written context: your writing and understanding of the problem is exceptionally thorough - so much so that it implies you heavy GenAI usage. This raises the concern that you do not understand the solution that present to that depth."
             ]
         }
         ]

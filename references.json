@@ -96,6 +96,12 @@
             "title":"Plotting Data",
             "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/plotting_data.json"
+        },
+        {
+            "id": 17,
+            "title":"Soil Contamination",
+            "enabled": true,
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/scipy_sklearn_soil.json"
         }
     ]
 }

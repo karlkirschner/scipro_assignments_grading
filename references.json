@@ -22,7 +22,7 @@
         {
             "id": 4,
             "title":"Pandas",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas.json"
         },
         {

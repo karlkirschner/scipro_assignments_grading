@@ -50,6 +50,7 @@
             "Absolute Value: You needed to take the absolute value of the data for analysis.",
             "Interpretation: Lack of interpreting what the statitical analysis means (i.e., context is missing).",
             "Merging DataFrames: The merge of data was incorrect or not done well.",
+            "The data was not plotted using the Pandas' built-in methods, which was a requirement for the assignment.",
             "Sorting: The data was not sorted, or the sorting was incorrect/not saved."
         ]
     },

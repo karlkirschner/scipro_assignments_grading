@@ -23,7 +23,7 @@
             "id": 4,
             "title":"Pandas",
             "enabled": true,
-            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas.json"
+            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas_general.json"
         },
         {
             "id": 5,
@@ -81,24 +81,18 @@
         },
         {
             "id": 14,
-            "title":"Pandas",
-            "enabled": true,
-            "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas_general.json"
-        },
-        {
-            "id": 15,
             "title":"NumPy",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/numpy_general.json"
         },
         {
-            "id": 16,
+            "id": 15,
             "title":"Plotting Data",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/plotting_data.json"
         },
         {
-            "id": 17,
+            "id": 16,
             "title":"Soil Contamination",
             "enabled": false,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/scipy_sklearn_soil.json"

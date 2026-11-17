@@ -10,7 +10,7 @@
         {
             "id": 2,
             "title":"User Function",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/user_function.json"
         },
         {
@@ -22,7 +22,7 @@
         {
             "id": 4,
             "title":"Pandas",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas.json"
         },
         {
@@ -82,7 +82,7 @@
         {
             "id": 14,
             "title":"Pandas",
-            "enabled": false,
+            "enabled": true,
             "url":"https://raw.githubusercontent.com/karlkirschner/scipro_assignments_grading/master/criteria/pandas_general.json"
         },
         {

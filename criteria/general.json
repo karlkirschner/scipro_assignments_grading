@@ -119,6 +119,7 @@
                "imports - not alphabetized",
                "imports - not listed together at the notebook's top",
                "indentation - improperly done (i.e., 4 spaces and multiples thereof)",
+               "indentation - multiline function calls should use a hanging indent aligned with the opening parenthesis rather than placing every argument on a new line",
                "f-string - not used - instead an older approach is used for string formatting (e.g., print statements)",
                "f-string - ensure that proper grammar and syntax are maintained in the print statements",
                "line length - too long (i.e., requiring horizontal scrolling)",
